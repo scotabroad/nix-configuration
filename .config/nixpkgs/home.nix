@@ -110,40 +110,12 @@ in {
       corner-radius = 20
     '';
     vSync = true;
-    #package = pkgs.picom.overrideAttrs (
-    #  o: {
-    #    src = pkgs.fetchFromGitHub {
-    #      owner = "jonaburg";
-    #      repo = "picom";
-    #      rev = "e3c19cd7d1108d114552267f302548c113278d45";
-    #      sha256 = "4voCAYd0fzJHQjJo4x3RoWz5l3JJbRvgIXn1Kg6nz6Y=";
-    #    };
-    #  }
-    #);
   };
 
   #Manage eww
   programs.eww = {
     enable = true;
-    #configDir = /home/liamdp/.config/eww;
     configDir = ../eww;
-    #package = pkgs.eww.overrideAttrs (drv: rec {
-    #    name = "eww-0.2.0";
-    #	version = "0.2.0";
-	
-    #    src = pkgs.fetchFromGitHub {
-    #	  owner = "elkowar";
-    #	  repo = "eww";
-    #	  rev = "b2f60a1f436567bca7bb4c8edd04096c573c4caa";
-    #	  sha256 = "1dhbjydq64wyy5g8z5l5790s9wxzcpzz1l6rzmhc360sa27377ng";
-    #	};
-	
-    #	cargoDeps = cargoDeps.overrideAttrs (lib.const {
-    #	  name = "eww-0.2.0-vendor.tar.gz";
-    #	  inherit src;
-    #	  outputHash = "0000000000000000000000000000000000000000000000000000";
-    #	});
-    #});
     package = unstable.eww;
   };
 
@@ -185,17 +157,18 @@ in {
     
     theme = {
       name = "Nordic";
-      package = null;
+      package = unstable.nordic;
     };
 
     font = {
-      name = "Ubuntu Regular 11";
-      package = null;
+      name = "Ubuntu Regular";
+      size = 11;
+      package = pkgs.ubuntu_font_family;
     };
 
     iconTheme = {
       name = "Nordzy-dark";
-      package = null;
+      package = unstable.nordzy-icon-theme;
     };
 
     gtk3.extraConfig = {
@@ -217,6 +190,7 @@ in {
     pkgs.gtk-engine-murrine
     pkgs.imagemagick
     pkgs.libreoffice
+    pkgs.lua
     pkgs.trayer
     unstable.vivaldi
     pkgs.zplug
