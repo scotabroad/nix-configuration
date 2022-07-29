@@ -36,6 +36,7 @@ in {
     "e5e9f0"
     "4c566a"
     "bf616a"
+    "a3be8c"
     "ebcb8b"
     "81a1c1"
     "b48ead"
