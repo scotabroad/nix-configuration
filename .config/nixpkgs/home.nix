@@ -112,7 +112,7 @@ in {
     vSync = true;
   };
 
-  #Manage eww
+  # Manage eww
   programs.eww = {
     enable = true;
     configDir = ../eww;
@@ -178,22 +178,21 @@ in {
     };
   };
 
-  #Additional Packages
-  home.packages = [
-    pkgs.cinnamon.nemo
-    pkgs.dconf
-    pkgs.discord
-    pkgs.element-desktop
-    pkgs.exa
-    pkgs.feh
-    pkgs.gnome.gedit
-    pkgs.gtk-engine-murrine
-    pkgs.imagemagick
-    pkgs.libreoffice
-    pkgs.lua
-    pkgs.trayer
+  # Additional Packages
+  home.packages = with pkgs; [
+    cinnamon.nemo
+    dconf
+    discord
+    element-desktop
+    exa
+    feh
+    gnome.gedit
+    gtk-engine-murrine
+    imagemagick
+    libreoffice
+    trayer
     unstable.vivaldi
-    pkgs.zplug
+    zplug
   ];
 
   # This value determines the Home Manager release that your
