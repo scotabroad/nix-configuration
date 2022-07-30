@@ -2,6 +2,25 @@
 
 let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+  
+  wallpaper = pkgs.writeScriptBin "wallpaper" ''
+    #!${pkgs.zsh}
+
+    #variable=$(command -args)
+    #args come in the form of $1, $2, etc.
+
+    #check if $1 exists, quit if no
+    #[[ ]] is a file in for 'test'
+    #Use [ ] to be portable with older shells
+    #test -e returns true if file exists
+    #test -f returns true only if file is a regular file and not a directory or device
+    if [[ -f "$1" ]]; then
+      #set wallpaper
+      ln -sf $1 $HOME/Wallpaper && feh --bg-fill --no-fehbg $HOME/Wallpaper
+    else
+      echo "$1 does not exist"
+    fi
+  '';
 in {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -191,6 +210,7 @@ in {
     imagemagick
     libreoffice
     trayer
+    wallpaper
     unstable.vivaldi
     zplug
   ];
