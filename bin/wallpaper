@@ -10,7 +10,7 @@
 #test -f returns true only if file is a regular file and not a directory or device
 if [[ -f "$1" ]]; then	
 	#set wallpaper
-	ln -sf $1 /home/liamdp/Wallpaper && feh --bg-fill --no-fehbg /home/liamdp/Wallpaper
+	ln -sf $1 $HOME/Wallpaper && feh --bg-fill --no-fehbg $HOME/Wallpaper
 else
 	echo "$1 does not exist"
 fi
