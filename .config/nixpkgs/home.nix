@@ -3,7 +3,7 @@
 let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
   
-  wallpaper = pkgs.writeScriptBin "wallpaper" ''
+  wallpaper = pkgs.writeShellScriptBin "wallpaper" ''
     #!${pkgs.zsh}
 
     #variable=$(command -args)
