@@ -85,10 +85,11 @@ in {
     # videoDrivers = [ "r128" ]; # this is for xf86-video-r128, might need this for xorg-x11-dev-intel
     displayManager = {
       defaultSession = "none+xmonad";
-      lightdm.greeters.gtk = {
+      lightdm.greeters.enso = {
         enable = true;
 	cursorTheme = {
-	  size = 48;
+	  name = "Nordzy-dark";
+	  package = unstable.nordzy-icon-theme;
 	};
 	theme = {
 	  name = "Nordic";
@@ -98,16 +99,8 @@ in {
 	  name = "Nordzy-dark";
 	  package = unstable.nordzy-icon-theme;
 	};
-      # extraConfig = ''
-      #   [greeter-theme]
-      #   background-color = "#f0f0f0"
-      #   text-color = "#0f0f0f"
-      #   error-color = "#0f0f0f"
-      #   password-color = "0f0f0f"
-      #   password-background-color = "#f0f0f0"
-      #   window-color = "#f0f0f0"
-      #   border-color = "#0f0f0f"
-      # '';
+	blur = false;
+	brightness = 7;
       };
     };
 
@@ -213,6 +206,7 @@ in {
      networkmanagerapplet
      vim
      xmobar
+     ubuntu_font_family
      wget
      which
    ];
