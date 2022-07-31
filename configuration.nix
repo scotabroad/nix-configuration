@@ -85,10 +85,11 @@ in {
     # videoDrivers = [ "r128" ]; # this is for xf86-video-r128, might need this for xorg-x11-dev-intel
     displayManager = {
       defaultSession = "none+xmonad";
-      lightdm.greeters.enso = {
+      lightdm.greeters.gtk = {
         enable = true;
 	cursorTheme = {
 	  name = "Nordzy-dark";
+	  size = 48;
 	  package = unstable.nordzy-icon-theme;
 	};
 	theme = {
@@ -99,8 +100,6 @@ in {
 	  name = "Nordzy-dark";
 	  package = unstable.nordzy-icon-theme;
 	};
-	blur = false;
-	brightness = 7;
       };
     };
 
