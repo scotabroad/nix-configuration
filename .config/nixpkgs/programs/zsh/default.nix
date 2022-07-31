@@ -31,7 +31,7 @@
       path = "/home/liamdp/.zsh_history";
     };
     initExtra = ''
-      export PATH=$PATH:/hoe/liamdp/bin
+      export PATH=$PATH:/home/liamdp/bin
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
     '';
   };
