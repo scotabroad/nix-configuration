@@ -77,6 +77,11 @@ in {
   console.font =
     "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
 
+  # Install custom fonts system-wide
+  fonts.fonts = [
+    pkgs.ubuntu_font_family
+  ];
+
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
@@ -101,7 +106,7 @@ in {
 	  package = unstable.nordzy-icon-theme;
 	};
 	extraConfig = ''
-          font-name=${pkgs.ubuntu_font_family}/share/fonts/ubuntu/Ubuntu-R.ttf
+          font-name=Ubuntu,11
         '';
       };
     };
@@ -208,7 +213,6 @@ in {
      networkmanagerapplet
      vim
      xmobar
-     ubuntu_font_family
      wget
      which
    ];
