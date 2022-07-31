@@ -90,6 +90,14 @@ in {
 	cursorTheme = {
 	  size = 48;
 	};
+	theme = {
+	  name = "Nordic";
+	  package = unstable.nordic;
+	};
+	iconTheme = {
+	  name = "Nordzy-dark";
+	  package = unstable.nordzy-icon-theme;
+	};
       # extraConfig = ''
       #   [greeter-theme]
       #   background-color = "#f0f0f0"
