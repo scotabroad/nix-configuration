@@ -100,6 +100,9 @@ in {
 	  name = "Nordzy-dark";
 	  package = unstable.nordzy-icon-theme;
 	};
+	extraConfig = ''
+          font-name=${pkgs.ubuntu_font_family}/share/fonts/ubuntu/Ubuntu-R.ttf
+        '';
       };
     };
 
