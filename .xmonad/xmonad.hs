@@ -95,6 +95,7 @@ myAdditionalKeys =
     , ("C-M1-t", spawn myTerminal) --probably should change modkey for explicit alt, incompatible with guake
     , ("M-f", spawn "firefox")
     , ("M-d", spawn "discord")
+    , ("M-v", spawn "vivaldi")
     , ("C-M-i", spawn "element-desktop")
     --, ("M-s", spawn "flatpak run com.valvesoftware.Steam")
 
