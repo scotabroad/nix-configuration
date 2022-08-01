@@ -14,6 +14,20 @@ let
   monitorWidthInches  = 7.5;   #190.5 mm;
   newDPI = builtins.ceil ((monitorHeight / monitorHeightInches) + (monitorWidth / monitorWidthInches)) / 2; #Looking at a DPI of 201
 
+  #Should write script lightdm_dpi_fix to nix-store
+  lightdm_dpi_fix = pkgs.writeShellScript "lightdm_dpi_fix" ''
+    # -*- Mode: sh; indent-tabs-mode: nil; tab-width: 4 -*-
+    #
+    # Wrapper to run around LightDM Greeter X sessions.
+  
+    # hidpi
+    export GDK_SCALE=2
+    export GDK_DPI_SCALE=0.5
+
+    # run greeter
+    exec $@
+  '';
+
 in {
   imports =
     [ # Include the results of the hardware scan.
@@ -89,7 +103,7 @@ in {
   fonts.fonts = [
     pkgs.ubuntu_font_family
   ];
-
+ 
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
@@ -120,6 +134,9 @@ in {
           font-name=Ubuntu,11
         '';
       };
+      lightdm.extraSeatDefaults = ''
+          greeter-wrapper = ${lightdm_dpi_fix}
+      '';
     };
 
     # Need one desktop manager or window manager, otherwise stuck with xterm
