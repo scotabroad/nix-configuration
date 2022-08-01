@@ -1,6 +1,7 @@
 { config, inputs, pkgs, home-manager, ... }:
 
 {
+  # Manage zsh
   programs.zsh = {
     enable = true;
     shellAliases = {
@@ -15,7 +16,7 @@
 	{ name = "lib/theme-and-appearance"; tags = [ from:oh-my-zsh ]; }
 	{ name = "plugins/command-not-found"; tags = [ from:oh-my-zsh ]; }
 	{ name = "plugins/sudo"; tags = [ from:oh-my-zsh ]; }
-	{ name = "ChrisPenner/copy-pasta"; }
+	{ name = "chisui/zsh-nix-shell"; }
 	{ name = "zpm-zsh/ls"; }
 	{ name = "zsh-users/zsh-syntax-highlighting"; }
 	{ name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; }
