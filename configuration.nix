@@ -228,6 +228,15 @@ in {
      which
    ];
 
+  # Switch out sudo for doas
+  security.sudo.enable = false;
+  security.doas.enable = true;
+  security.doas.extraRules = [{
+    users = [ "liamdp" ];
+    keepEnv = true;
+    persist = true;
+  }];
+
   # Configure backlight
   programs.light.enable = true;
   services.udev.extraRules = ''
