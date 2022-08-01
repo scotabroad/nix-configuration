@@ -84,7 +84,7 @@ in {
     };
   };
   
-  dconf.enable = true;
+  dconf.enable = true; # does not seem to install dconf
   
   # Manage Gtk Themes
   gtk = {
@@ -116,8 +116,8 @@ in {
   # Additional Packages
   home.packages = with pkgs; [
     cinnamon.nemo
-    dconf
     discord
+    dconf # because dconf.enable=true; does not seem to install dconf
     element-desktop
     exa
     feh
@@ -128,7 +128,6 @@ in {
     trayer
     wallpaper
     unstable.vivaldi
-    zplug
   ];
 
   # This value determines the Home Manager release that your
