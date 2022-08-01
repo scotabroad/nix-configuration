@@ -98,6 +98,9 @@ in {
     # videoDrivers = [ "r128" ]; # this is for xf86-video-r128, might need this for xorg-x11-dev-intel
     displayManager = {
       defaultSession = "none+xmonad";
+      setupCommands = ''
+	xrandr --output eDP-1 --mode 2256x1504 --dpi 201 &
+      '';
       lightdm.greeters.gtk = {
         enable = true;
 	cursorTheme = {
@@ -117,9 +120,6 @@ in {
           font-name=Ubuntu,11
         '';
       };
-      setupCommands = ''
-	xrandr --output eDP-1 --mode 2256x1504 --dpi 201 &
-      '';
     };
 
     # Need one desktop manager or window manager, otherwise stuck with xterm
