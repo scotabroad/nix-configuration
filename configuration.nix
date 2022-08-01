@@ -5,7 +5,15 @@
 { config, pkgs, ... }:
 
 let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; }; 
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+  
+  # dpi adjustment calculations
+  monitorHeight = 2256; #in pixels
+  monitorWidth  = 1504; #in pixels
+  monitorHeightInches = 11.25; #285 mm;
+  monitorWidthInches  = 7.5;   #190.5 mm;
+  newDPI = builtins.ceil ((monitorHeight / monitorHeightInches) + (monitorWidth / monitorWidthInches)) / 2; #Looking at a DPI of 201
+
 in {
   imports =
     [ # Include the results of the hardware scan.
@@ -85,7 +93,7 @@ in {
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    dpi = 180; #HiDPI fix, may need to adjust number
+    dpi = newDPI; #HiDPI fix, may need to adjust number
     # Video Drivers can be specified here
     # videoDrivers = [ "r128" ]; # this is for xf86-video-r128, might need this for xorg-x11-dev-intel
     displayManager = {
@@ -109,6 +117,9 @@ in {
           font-name=Ubuntu,11
         '';
       };
+      setupCommands = ''
+	xrandr --output eDP-1 --mode 2256x1504 --dpi 201 &
+      '';
     };
 
     # Need one desktop manager or window manager, otherwise stuck with xterm
