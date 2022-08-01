@@ -63,6 +63,11 @@ in {
       package = null;
       size = 24;
     };
+    keybindings = {
+      "ctrl+c" = "copy_or_interrupt";
+      "ctrl+v" = "paste_from_clipboard";
+      "ctrl+x" = "copy_and_clear_or_interrupt";
+    };
     settings = {
 	background_opacity = "0.9";
     };
