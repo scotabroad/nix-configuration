@@ -86,6 +86,17 @@ in {
   
   dconf.enable = true; # does not seem to install dconf
   
+  # Manage exa
+  programs.exa = {
+    enable = true;
+    enableAliases = false; # interferes with a zsh plugin, zpm-zsh/ls
+  };
+
+  # Manage feh
+  programs.feh = {
+    enable = true;
+  };
+  
   # Manage Gtk Themes
   gtk = {
     enable = true;
@@ -119,8 +130,6 @@ in {
     discord
     dconf # because dconf.enable=true; does not seem to install dconf
     element-desktop
-    exa
-    feh
     gnome.gedit
     gtk-engine-murrine
     imagemagick
