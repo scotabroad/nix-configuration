@@ -219,7 +219,6 @@ in {
      htop
      firefox
      lightlocker
-     neovim
      networkmanager
      networkmanagerapplet
      vim
@@ -236,6 +235,14 @@ in {
     keepEnv = true;
     persist = true;
   }];
+
+  #Set neovim as default editor
+  programs.neovim = {
+    enable = true;
+    vimAlias = true;
+    viAlias = true;
+    defaultEditor = true;
+  };
 
   # Configure backlight
   programs.light.enable = true;
