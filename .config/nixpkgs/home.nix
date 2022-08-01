@@ -41,9 +41,9 @@ in {
     backend = "glx";
     experimentalBackends = false;
     shadow = false;
-    extraOptions = ''
-      corner-radius = 20
-    '';
+    # extraOptions = ''
+    #   corner-radius = 15
+    # '';
     vSync = true;
   };
 
