@@ -89,7 +89,7 @@ in {
     };
   };
   
-  dconf.enable = true; # does not seem to install dconf
+  dconf.enable = true;
   
   # Manage exa
   programs.exa = {
@@ -133,7 +133,6 @@ in {
   home.packages = with pkgs; [
     cinnamon.nemo
     discord
-    dconf # because dconf.enable=true; does not seem to install dconf
     element-desktop
     gnome.gedit
     gtk-engine-murrine

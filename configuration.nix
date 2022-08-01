@@ -261,6 +261,9 @@ in {
     defaultEditor = true;
   };
 
+  # Enable dconf systemwide
+  programs.dconf.enable = true;
+
   # Configure backlight
   programs.light.enable = true;
   services.udev.extraRules = ''
