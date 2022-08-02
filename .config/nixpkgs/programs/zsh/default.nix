@@ -6,7 +6,6 @@
     enable = true;
     shellAliases = {
       rm = "rm -i";
-      sudo = "doas";
     };
     zplug = {
       enable = true;
