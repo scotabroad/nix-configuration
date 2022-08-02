@@ -46,6 +46,8 @@ in {
     # Define on which hard drive you want to install Grub.
     device = "nodev"; # "nodev" for efi only
     useOSProber = false; # enable only if dual booting
+    font = "${pkgs.ubuntu_font_family}/share/fonts/ubuntu/UbuntuMono-R.ttf";
+    fontSize = 30;
   };
 
   # EFI settings
