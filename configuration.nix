@@ -128,6 +128,14 @@ in {
 	  name = "Nordzy-dark";
 	  package = unstable.nordzy-icon-theme;
 	};
+	indicators = [
+	  "~host"
+	  "~spacer"
+	  "~session"
+	  "~a11y"
+	  "~clock"
+	  "~power"
+	];
 	extraConfig = ''
           font-name=Ubuntu,11
         '';
