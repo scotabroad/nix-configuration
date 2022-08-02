@@ -38,14 +38,24 @@ in {
   boot.kernelPackages = pkgs.linuxPackages; # Latest LTS
 
   # Use the GRUB 2 boot loader.
-  # boot.loader.grub.enable = true;
-  # boot.loader.grub.version = 2;
-  # boot.loader.grub.efiSupport = true;
-  # boot.loader.grub.efiInstallAsRemovable = true;
-  # boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  # Define on which hard drive you want to install Grub.
-  # boot.loader.grub.device = "nodev"; # "nodev" for efi only
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.grub = {
+    enable = true;
+    version = 2;
+    efiSupport = true;
+    efiInstallAsRemovable = true;
+    # Define on which hard drive you want to install Grub.
+    device = "nodev"; # "nodev" for efi only
+    useOSProber = false; # enable only if dual booting
+  };
+
+  # EFI settings
+  boot.loader.efi = {
+    efiSysMountPoint = "/boot";
+    canTouchEfiVariables = false;
+  };
+  
+  # Disable systemd-boot
+  boot.loader.systemd-boot.enable = false;
 
   console.colors = [
     "3b4252"
