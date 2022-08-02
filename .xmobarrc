@@ -75,7 +75,7 @@ Config { font = "xft:Ubuntu:size=11:antialias=true"
                 -- , Run Swap [] 10
 
 		-- date monitor %date%
-                    , Run Date "%a %b %d <fc=#88c0d0>%I:%M</fc> %p" "date" 10
+                    , Run Date "%a %b %d <fc=#88c0d0>%l:%M</fc> %p" "date" 10
 
 		-- Xmonad monitor %XmonadLog%
 		    , Run XMonadLog
