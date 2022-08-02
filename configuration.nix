@@ -46,8 +46,9 @@ in {
     # Define on which hard drive you want to install Grub.
     device = "nodev"; # "nodev" for efi only
     useOSProber = false; # enable only if dual booting
-    font = "${pkgs.ubuntu_font_family}/share/fonts/ubuntu/UbuntuMono-R.ttf";
-    fontSize = 30;
+    font = "${pkgs.nerdfonts}/share/fonts/truetype/NerdFonts/'Ubuntu Mono Nerd Font Complete Mono.ttf'";
+    # font = "${pkgs.ubuntu_font_family}/share/fonts/ubuntu/UbuntuMono-R.ttf";
+    fontSize = 24;
   };
 
   # EFI settings
@@ -114,6 +115,7 @@ in {
   # Install custom fonts system-wide
   fonts.fonts = [
     pkgs.ubuntu_font_family
+    pkgs.nerdfonts
   ];
  
   # Enable the X11 windowing system.

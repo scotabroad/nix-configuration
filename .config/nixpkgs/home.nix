@@ -60,7 +60,7 @@ in {
     package = pkgs.kitty;
     font = {
       name = "Ubuntu Mono Nerd Font Complete Mono";
-      package = null;
+      package = pkgs.nerdfonts;
       size = 24;
     };
     keybindings = {
