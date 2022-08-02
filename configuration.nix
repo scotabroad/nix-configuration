@@ -114,6 +114,7 @@ in {
       defaultSession = "none+xmonad";
       lightdm.greeters.gtk = {
         enable = true;
+	clock-format = "%l:%M %p";
 	cursorTheme = {
 	  name = "Nordzy-dark";
 	  size = 48;
