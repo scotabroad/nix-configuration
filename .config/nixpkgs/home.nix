@@ -21,11 +21,15 @@ let
       echo "$1 does not exist"
     fi
   '';
+
 in {
 
   imports = [
-    ./programs/zsh
+    ./programs/git
+    ./programs/kitty
     ./programs/neovim
+    ./programs/zsh
+    ./services/picom
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -33,63 +37,12 @@ in {
   home.username = "liamdp";
   home.homeDirectory = "/home/liamdp";
 
-  # Manage picom
-  services.picom = {
-    enable = true;
-    inactiveOpacity = "1.00";
-    activeOpacity = "1.00";
-    backend = "glx";
-    experimentalBackends = false;
-    shadow = false;
-    # extraOptions = ''
-    #   corner-radius = 15
-    # '';
-    vSync = true;
-  };
-
   # Manage eww
   programs.eww = {
     enable = true;
-    configDir = ../eww;
+    configDir = /home/liamdp/.config/eww;
     package = unstable.eww;
   };
-
-  # Manage kitty
-  programs.kitty = {
-    enable = true;
-    package = pkgs.kitty;
-    font = {
-      name = "Ubuntu Mono Nerd Font Complete Mono";
-      package = pkgs.nerdfonts;
-      size = 24;
-    };
-    keybindings = {
-      "ctrl+c" = "copy_or_interrupt";
-      "ctrl+v" = "paste_from_clipboard";
-      "ctrl+x" = "copy_and_clear_or_interrupt";
-    };
-    settings = {
-	background_opacity = "0.9";
-    };
-    theme = "Nord";
-  };
-
-  # Manage git
-  programs.git = {
-    enable = true;
-    userName = "Liam Petrie";
-    userEmail = "liamdpetrie@vivaldi.net";
-    extraConfig = { 
-      core = { 
-        editor = "nvim"; 
-      };
-      init = { 
-        defaultBranch = "main";
-      };
-    };
-  };
-  
-  dconf.enable = true;
   
   # Manage exa
   programs.exa = {
@@ -101,6 +54,9 @@ in {
   programs.feh = {
     enable = true;
   };
+
+  # Enable dconf
+  dconf.enable = true;
   
   # Manage Gtk Themes
   gtk = {
