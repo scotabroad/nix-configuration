@@ -52,15 +52,15 @@ in {
       # Use the GRUB 2 boot loader.
       grub = {
         enable = true;
-        version = 2;
-        efiSupport = true;
-        efiInstallAsRemovable = true;
-        # Define on which hard drive you want to install Grub.
         device = "nodev"; # "nodev" for efi only
-        useOSProber = false; # enable only if dual booting
+        efiInstallAsRemovable = true;
+        efiSupport = true;
+        # Define on which hard drive you want to install Grub.
         font = "${pkgs.nerdfonts}/share/fonts/truetype/NerdFonts/'Ubuntu Mono Nerd Font Complete Mono.ttf'";
         fontSize = 28;
         theme = /etc/nixos/theme;
+        useOSProber = false; # enable only if dual booting
+        version = 2;
       };
 
       # Disable systemd-boot
@@ -96,142 +96,6 @@ in {
     # useXkbConfig = true; # use xkbOptions in tty.
   };
 
-  # Install custom fonts system-wide
-  fonts.fonts = [
-    pkgs.terminus_font
-    pkgs.nerdfonts
-    pkgs.ubuntu_font_family
-  ];
- 
-  # Enable Zram
-  zramSwap = {
-    enable = true;
-    algorithm = "zstd";
-  };
-
-  # Networking Options
-  networking = {
-    hostName = "nixos"; # Define your hostname.
-    # Pick only one of the below networking options.
-    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-    networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-    # Configure network proxy if necessary
-    # proxy = {
-    #   default = "http://user:password@proxy:port/";
-    #   noProxy = "127.0.0.1,localhost,internal.domain";
-    # };
-    # firewall = {
-    #   # Open ports in the firewall.
-    #   allowedTCPPorts = [ ... ];
-    #   allowedUDPPorts = [ ... ];
-    #   # Or disable the firewall altogether.
-    #   enable = false;
-    # };
-  };
-
-  # Set your time zone.
-  time.timeZone = "America/Phoenix";
-
-  # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
-
-  # Enable the X11 windowing system.
-  services.xserver = {
-    enable = true;
-    dpi = newDPI; #HiDPI fix, may need to adjust number
-    # Video Drivers can be specified here
-    # videoDrivers = [ "r128" ]; # this is for xf86-video-r128, might need this for xorg-x11-dev-intel
-    displayManager = {
-      defaultSession = "none+xmonad";
-      lightdm.greeters.gtk = {
-        enable = true;
-	clock-format = "%l:%M %p";
-	cursorTheme = {
-	  name = "Nordzy-dark";
-	  size = 48;
-	  package = unstable.nordzy-icon-theme;
-	};
-	theme = {
-	  name = "Nordic";
-	  package = unstable.nordic;
-	};
-	iconTheme = {
-	  name = "Nordzy-dark";
-	  package = unstable.nordzy-icon-theme;
-	};
-	indicators = [
-	  "~host"
-	  "~spacer"
-	  "~session"
-	  "~a11y"
-	  "~clock"
-	  "~power"
-	];
-	extraConfig = ''
-          font-name=Ubuntu,11
-        '';
-      };
-      lightdm.background = /home/liamdp/Pictures/Wallpapers/Nordic.jpg;
-      lightdm.extraSeatDefaults = ''
-          greeter-wrapper = ${lightdm_dpi_fix}
-      '';
-    };
-
-    # Need one desktop manager or window manager, otherwise stuck with xterm
-    windowManager.xmonad = {
-      enable = true;
-      enableContribAndExtras = true;
-      extraPackages = haskellPackages: [
-        haskellPackages.xmonad
-	haskellPackages.xmonad-contrib
-	haskellPackages.xmonad-extras
-      ];
-    };
-    # Configure keymap in X11
-    layout = "us";
-    # xkbOptions = {
-    #   "eurosign:e";
-    #   "caps:escape" # map caps to escape.
-    # };
-    # Uncomment below to disable X server on boot
-    # autorun = false; #Must run systemctl start display display-manager.service
-    # Enable touchpad support (enabled default in most desktopManager).
-    libinput = {
-      enable = true;
-      touchpad = {
-        accelProfile = "adaptive";
-        accelSpeed = null;
-        additionalOptions = "";
-        buttonMapping = null;
-        calibrationMatrix = null;
-        clickMethod = "clickfinger";
-        dev = null;
-        disableWhileTyping = true;
-        horizontalScrolling = true;
-        leftHanded = false;
-        middleEmulation = false;
-        naturalScrolling = true;
-        scrollButton = null;
-        scrollMethod = "twofinger";
-        sendEventsMode = "enabled";
-        tapping = false;
-        tappingDragLock = false;
-        transformationMatrix = "3 0 0 0 3 0 0 0 1";
-      };
-      mouse = {
-        accelProfile = "flat";
-	accelSpeed = null;
-	disableWhileTyping = true;
-      };
-    };
-  };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable Avahi to discover network devices
-  services.avahi.enable = true;
-
   # Set up Environment
   environment = {
     # Select default shells
@@ -266,45 +130,224 @@ in {
     };
   };
 
-  # Was not available in NixOS 20.03, is in Unstable, but this is 22.05... does the same as some earlier fixes
-  hardware.video.hidpi.enable = true;
+  # Install custom fonts system-wide
+  fonts.fonts = [
+    pkgs.terminus_font
+    pkgs.nerdfonts
+    pkgs.ubuntu_font_family
+  ];
+ 
+  # Select internationalisation properties.
+  # i18n.defaultLocale = "en_US.UTF-8";
+  
+  # Hardware settings
+  hardware = {
+    # Enable sound
+    pulseaudio.enable = true;
+    
+    # Was not available in NixOS 20.03, is in Unstable, but this is 22.05... does the same as some earlier fixes
+    video.hidpi.enable = true;
+  };
+  
+  # Networking Options
+  networking = {
+    # Firewall settings
+    # firewall = {
+    #   # Open ports in the firewall.
+    #   allowedTCPPorts = [ ... ];
+    #   allowedUDPPorts = [ ... ];
+    #   # Or disable the firewall altogether.
+    #   enable = false;
+    # };
+    hostName = "nixos"; # Define your hostname.
+    # Pick only one of the below networking options.
+    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+    networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+    # Configure network proxy if necessary
+    # proxy = {
+    #   default = "http://user:password@proxy:port/";
+    #   noProxy = "127.0.0.1,localhost,internal.domain";
+    # };
+  };
 
+  # Configure default programs
+  programs = {
+    # Enable dconf systemwide
+    dconf.enable = true;
+
+    # Some programs need SUID wrappers, can be configured further or are
+    # started in user sessions.
+    # programs.gnupg.agent = {
+    #   enable = true;
+    #   enableSSHSupport = true;
+    # };
+    
+    # Enable backlight
+    light.enable = true;
+
+    # Some programs need SUID wrappers, can be configured further or are
+    # started in user sessions.
+    # mtr.enable = true;
+    
+    # Set neovim as default editor
+    neovim = {
+      defaultEditor = true;
+      enable = true;
+      viAlias = true;
+      vimAlias = true;
+    };
+  
+  };
+
+  # Security Options
+  security.sudo.enable = true;
+
+  # List services that you want to enable:
+  services = {
+
+    # Enable Avahi to discover network devices
+    avahi.enable = true;
+  
+    # Enable Firmware Update Daemon
+    fwupd.enable = true; # Now run "sudo fwupdmgr update"
+
+    # Enable the OpenSSH daemon.
+    openssh.enable = true;
+
+    # Enable CUPS to print documents.
+    printing.enable = true;  
+  
+    # Configure backlight
+    udev.extraRules = ''
+      ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
+    '';
+    
+    # Enable the X11 windowing system.
+    xserver = {
+      enable = true;
+      # Uncomment below to disable X server on boot
+      # autorun = false; #Must run systemctl start display display-manager.service
+      dpi = newDPI; #HiDPI fix, may need to adjust number
+      # Video Drivers can be specified here
+      # videoDrivers = [ "r128" ]; # this is for xf86-video-r128, might need this for xorg-x11-dev-intel
+      displayManager = {
+        defaultSession = "none+xmonad";
+        lightdm = {
+          background = /home/liamdp/Pictures/Wallpapers/Nordic.jpg;
+          extraSeatDefaults = ''
+            greeter-wrapper = ${lightdm_dpi_fix}
+          '';
+	  greeters.gtk = {
+            enable = true;
+	    clock-format = "%l:%M %p";
+	    cursorTheme = {
+	      name = "Nordzy-dark";
+	      size = 48;
+	      package = unstable.nordzy-icon-theme;
+	    };
+	    iconTheme = {
+	      name = "Nordzy-dark";
+	      package = unstable.nordzy-icon-theme;
+	    };
+	    indicators = [
+	      "~host"
+	      "~spacer"
+	      "~session"
+	      "~a11y"
+	      "~clock"
+	      "~power"
+	    ];
+	    theme = {
+	      name = "Nordic";
+	      package = unstable.nordic;
+	    };
+	    extraConfig = ''
+              font-name=Ubuntu,11
+            '';
+          };
+        };
+      };
+ 
+      # Configure keymap in X11
+      layout = "us";
+      
+      # Enable touchpad support (enabled default in most desktopManager).
+      libinput = {
+        enable = true;
+        mouse = {
+          accelProfile = "flat";
+	  accelSpeed = null;
+	  disableWhileTyping = true;
+        };
+        touchpad = {
+          accelProfile = "adaptive";
+          accelSpeed = null;
+          additionalOptions = "";
+          buttonMapping = null;
+          calibrationMatrix = null;
+          clickMethod = "clickfinger";
+          dev = null;
+          disableWhileTyping = true;
+          horizontalScrolling = true;
+          leftHanded = false;
+          middleEmulation = false;
+          naturalScrolling = true;
+          scrollButton = null;
+          scrollMethod = "twofinger";
+          sendEventsMode = "enabled";
+          tapping = false;
+          tappingDragLock = false;
+          transformationMatrix = "3 0 0 0 3 0 0 0 1";
+        };
+      };
+      # Need one desktop manager or window manager, otherwise stuck with xterm
+      windowManager.xmonad = {
+        enable = true;
+        enableContribAndExtras = true;
+        extraPackages = haskellPackages: [
+          haskellPackages.xmonad
+	  haskellPackages.xmonad-contrib
+	  haskellPackages.xmonad-extras
+        ];
+      };
+      
+      # Keyboard Layout switching
+      # xkbOptions = {
+      #   "caps:escape" # map caps to escape.
+      #   "eurosign:e";
+      # };
+    }; # end Xserver config
+  };
+  
   # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-  sound.mediaKeys.enable = true;
+  sound = {
+    enable = true;
+    mediaKeys.enable = true;
+  };
+
+  # Set your time zone.
+  time.timeZone = "America/Phoenix";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.liamdp = {
-    isNormalUser = true;
-    uid = 1000;
-    extraGroups = [ "wheel" "video" ]; # Enable ‘sudo’ for the user.
     createHome = true;
+    extraGroups = [ "wheel" "video" ]; # Enable ‘sudo’ for the user.
     home = "/home/liamdp";
+    isNormalUser = true;
+    # packages = with pkgs; [
+    #   flameshot
+    # ];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-      flameshot
-     ];
-   };
-
-  security.sudo.enable = true;
-
-  #Set neovim as default editor
-  programs.neovim = {
-    enable = true;
-    vimAlias = true;
-    viAlias = true;
-    defaultEditor = true;
+    uid = 1000;
   };
 
-  # Enable dconf systemwide
-  programs.dconf.enable = true;
+  # Enable Zram
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+  };
 
-  # Configure backlight
-  programs.light.enable = true;
-  services.udev.extraRules = ''
-    ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
-  '';
+  ### NIXOS SPECIFIC OPTIONS ###
 
   # Enable flakes
   # nix = {
@@ -320,14 +363,6 @@ in {
   # };
   # systemd.services.nix-gc.unitConfig.ConditionACPower = true;
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-  
   # Nixpkgs Options
   nixpkgs = {
     # Enables non-free packages (still need to be configured on a per-user basis in ~/.config/nixpkgs/config.nix
@@ -337,17 +372,6 @@ in {
     # Nixpkgs platform
     system = "x86_64-linux";
   };
-
-
-  # List services that you want to enable:
-
-  # Enable Firmware Update Daemon
-  services.fwupd.enable = true;
-  # Now run "sudo fwupdmgr update"
-
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
