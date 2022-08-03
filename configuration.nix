@@ -49,7 +49,8 @@ in {
     font = "${pkgs.nerdfonts}/share/fonts/truetype/NerdFonts/'Ubuntu Mono Nerd Font Complete Mono.ttf'";
     # font = "${pkgs.ubuntu_font_family}/share/fonts/ubuntu/UbuntuMono-R.ttf";
     fontSize = 24;
-    theme = pkgs.nixos-grub2-theme;
+    #theme = pkgs.nixos-grub2-theme;
+    theme = /etc/nixos/theme;
   };
 
   # EFI settings
