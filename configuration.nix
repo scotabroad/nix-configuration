@@ -29,97 +29,112 @@ let
   '';
 
 in {
+  
   imports =
     [ # Include the results of the hardware scan.
       <nixos-hardware/framework>
       ./hardware-configuration.nix
     ];
 
-  boot.kernelPackages = pkgs.linuxPackages; # Latest LTS
+  # Boot Options
+  boot = {
+    # Kernel
+    kernelPackages = pkgs.linuxPackages; # Latest LTS
 
-  # Use the GRUB 2 boot loader.
-  boot.loader.grub = {
-    enable = true;
-    version = 2;
-    efiSupport = true;
-    efiInstallAsRemovable = true;
-    # Define on which hard drive you want to install Grub.
-    device = "nodev"; # "nodev" for efi only
-    useOSProber = false; # enable only if dual booting
-    font = "${pkgs.nerdfonts}/share/fonts/truetype/NerdFonts/'Ubuntu Mono Nerd Font Complete Mono.ttf'";
-    # font = "${pkgs.ubuntu_font_family}/share/fonts/ubuntu/UbuntuMono-R.ttf";
-    fontSize = 24;
-    #theme = pkgs.nixos-grub2-theme;
-    theme = /etc/nixos/theme;
+    # Boot Loader settings
+    loader = {
+      # EFI settings
+      efi = {
+        efiSysMountPoint = "/boot";
+	canTouchEfiVariables = false;
+      };
+
+      # Use the GRUB 2 boot loader.
+      grub = {
+        enable = true;
+        version = 2;
+        efiSupport = true;
+        efiInstallAsRemovable = true;
+        # Define on which hard drive you want to install Grub.
+        device = "nodev"; # "nodev" for efi only
+        useOSProber = false; # enable only if dual booting
+        font = "${pkgs.nerdfonts}/share/fonts/truetype/NerdFonts/'Ubuntu Mono Nerd Font Complete Mono.ttf'";
+        fontSize = 28;
+        theme = /etc/nixos/theme;
+      };
+
+      # Disable systemd-boot
+      systemd-boot.enable = false;
+    };
   };
 
-  # EFI settings
-  boot.loader.efi = {
-    efiSysMountPoint = "/boot";
-    canTouchEfiVariables = false;
+  # tty console settings
+  console = {
+    # Enable Nord theme
+    colors = [
+      "3b4252"
+      "bf616a"
+      "a3be8c"
+      "ebcb8b"
+      "81a1c1"
+      "b48ead"
+      "88c0d0"
+      "e5e9f0"
+      "4c566a"
+      "bf616a"
+      "a3be8c"
+      "ebcb8b"
+      "81a1c1"
+      "b48ead"
+      "8fbcbb"
+      "eceff4"
+    ];
+    # Bigger tty font
+    font = "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
+    # Select internationalization properties for tty console
+    # keyMap = "us";
+    # useXkbConfig = true; # use xkbOptions in tty.
   };
-  
-  # Disable systemd-boot
-  boot.loader.systemd-boot.enable = false;
 
-  console.colors = [
-    "3b4252"
-    "bf616a"
-    "a3be8c"
-    "ebcb8b"
-    "81a1c1"
-    "b48ead"
-    "88c0d0"
-    "e5e9f0"
-    "4c566a"
-    "bf616a"
-    "a3be8c"
-    "ebcb8b"
-    "81a1c1"
-    "b48ead"
-    "8fbcbb"
-    "eceff4"
+  # Install custom fonts system-wide
+  fonts.fonts = [
+    pkgs.terminus_font
+    pkgs.nerdfonts
+    pkgs.ubuntu_font_family
   ];
-
-  #Enable Zram
+ 
+  # Enable Zram
   zramSwap = {
     enable = true;
     algorithm = "zstd";
   };
 
-  # Enable all hardware
-  # hardware.enableAllFirmware = true;
-
-  networking.hostName = "nixos"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  # Networking Options
+  networking = {
+    hostName = "nixos"; # Define your hostname.
+    # Pick only one of the below networking options.
+    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+    networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+    # Configure network proxy if necessary
+    # proxy = {
+    #   default = "http://user:password@proxy:port/";
+    #   noProxy = "127.0.0.1,localhost,internal.domain";
+    # };
+    # firewall = {
+    #   # Open ports in the firewall.
+    #   allowedTCPPorts = [ ... ];
+    #   allowedUDPPorts = [ ... ];
+    #   # Or disable the firewall altogether.
+    #   enable = false;
+    # };
+  };
 
   # Set your time zone.
   time.timeZone = "America/Phoenix";
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkbOptions in tty.
-  # };
 
-  # bigger tty fonts
-  console.font =
-    "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
-
-  # Install custom fonts system-wide
-  fonts.fonts = [
-    pkgs.ubuntu_font_family
-    pkgs.nerdfonts
-  ];
- 
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
@@ -217,15 +232,38 @@ in {
   # Enable Avahi to discover network devices
   services.avahi.enable = true;
 
-  # Zsh
-  environment.shells = [ pkgs.zsh ];
-
-  # Environment Variables
-  environment.variables = {
-    GDK_SCALE = "2";
-    GDK_DPI_SCALE = "0.5";
-    # QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-    # _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
+  # Set up Environment
+  environment = {
+    # Select default shells
+    shells = [ pkgs.zsh ];
+    
+    # List packages installed in system profile. To search, run:
+    # $ nix search wget
+    systemPackages = with pkgs; [
+      curl
+      dmenu
+      dunst
+      git
+      htop
+      firefox
+      lightlocker
+      networkmanager
+      networkmanagerapplet
+      vim
+      xmobar
+      wget
+      which
+      unzip
+      zip
+    ];
+    
+    # Environment Variables for DPI fixes
+    variables = {
+      GDK_SCALE = "2";
+      GDK_DPI_SCALE = "0.5";
+      # QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+      # _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
+    };
   };
 
   # Was not available in NixOS 20.03, is in Unstable, but this is 22.05... does the same as some earlier fixes
@@ -248,24 +286,6 @@ in {
       flameshot
      ];
    };
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-     curl
-     dmenu
-     dunst
-     git
-     htop
-     firefox
-     lightlocker
-     networkmanager
-     networkmanagerapplet
-     vim
-     xmobar
-     wget
-     which
-   ];
 
   security.sudo.enable = true;
 
@@ -308,18 +328,15 @@ in {
   #   enableSSHSupport = true;
   # };
   
-  # Enables non-free packages (still need to be configured on a per-user basis in ~/.config/nixpkgs/config.nix
-  nixpkgs.config = {
-    allowUnfree = true;
-    
-    # Enable Unstable Packages via an alias
-    #packageOverrides = pkgs: {
-    # unstable = import <nixos-unstable> {
-    #   config = config.nixpkgs.config; # ensures allowUnfree = true; is propagated
-    # };
-    #};
+  # Nixpkgs Options
+  nixpkgs = {
+    # Enables non-free packages (still need to be configured on a per-user basis in ~/.config/nixpkgs/config.nix
+    config = {
+      allowUnfree = true;
+    };
+    # Nixpkgs platform
+    system = "x86_64-linux";
   };
-  nixpkgs.system = "x86_64-linux";
 
 
   # List services that you want to enable:
@@ -331,12 +348,6 @@ in {
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
