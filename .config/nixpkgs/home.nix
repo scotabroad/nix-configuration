@@ -29,6 +29,7 @@ in {
     ./programs/kitty
     ./programs/neovim
     ./programs/zsh
+    ./services/flameshot
     ./services/picom
   ];
 
