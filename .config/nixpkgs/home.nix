@@ -28,7 +28,9 @@ in {
     ./programs/git
     ./programs/kitty
     ./programs/neovim
+    ./programs/rofi
     ./programs/zsh
+    ./services/dunst
     ./services/flameshot
     ./services/picom
   ];

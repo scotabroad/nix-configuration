@@ -97,6 +97,7 @@ myAdditionalKeys =
     , ("M-f", spawn "firefox")
     , ("M-d", spawn "discord")
     , ("M-v", spawn "vivaldi")
+    , ("M-p", spawn "rofi -show run")
     , ("C-M-i", spawn "element-desktop")
     --, ("M-s", spawn "flatpak run com.valvesoftware.Steam")
 

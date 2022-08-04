@@ -108,11 +108,9 @@ in {
     # $ nix search wget
     systemPackages = with pkgs; [
       curl
-      dmenu
-      dunst
+      firefox
       git
       htop
-      firefox
       lightlocker
       networkmanager
       networkmanagerapplet
@@ -313,7 +311,7 @@ in {
 	  haskellPackages.xmonad-extras
         ];
       };
-      
+     
       # Keyboard Layout switching
       # xkbOptions = {
       #   "caps:escape" # map caps to escape.
