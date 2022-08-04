@@ -1,10 +1,20 @@
 /**
  * Nordic rofi theme
- * Adapted by undiabler <undiabler@gmail.com>
+ * Modified from undiabler <undiabler@gmail.com>
  *
  * Nord Color palette imported from https://www.nordtheme.com/
  *
  */
+
+configuration {
+    font: "UbuntuMono Nerd Font Mono 12";
+    show-icons: true;
+    icon-theme: "Nordzy-dark";
+    display-drun: "";
+    drun-display-format: "{name}";
+    disable-history: true;
+    sidebar-mode: false;
+}
 
 
 * {

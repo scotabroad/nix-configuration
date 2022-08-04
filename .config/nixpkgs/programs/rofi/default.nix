@@ -4,6 +4,10 @@
   programs.rofi = {
     enable = true;
     terminal = "${pkgs.kitty}/bin/kitty";
-    theme = ./nord.rasi;
+    theme = ./rofi.rasi;
+    extraConfig = {
+      modi = "drun,window,ssh,filebrowser";
+      dpi = 1;
+    };
   };
 }
