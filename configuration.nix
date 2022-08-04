@@ -52,13 +52,16 @@ in {
       # Use the GRUB 2 boot loader.
       grub = {
         enable = true;
-        device = "nodev"; # "nodev" for efi only
+        backgroundColor = "#2f302f";
+	device = "nodev"; # "nodev" for efi only
         efiInstallAsRemovable = true;
         efiSupport = true;
         # Define on which hard drive you want to install Grub.
         font = "${pkgs.nerdfonts}/share/fonts/truetype/NerdFonts/'Ubuntu Mono Nerd Font Complete Mono.ttf'";
         fontSize = 28;
         theme = /etc/nixos/theme;
+	# splashImage = null;
+	splashMode = "normal";
         useOSProber = false; # enable only if dual booting
         version = 2;
       };
