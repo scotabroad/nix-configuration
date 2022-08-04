@@ -5,7 +5,7 @@ Config { font = "xft:Ubuntu:size=11:antialias=true"
        , bgColor = "#1d2128"
        , fgColor = "#eceff4"
        , alpha = 255
-       , position = TopP 15 15
+       , position = TopW L 90
        , textOffset = -1
        , iconOffset = -1
        , lowerOnStart = True
