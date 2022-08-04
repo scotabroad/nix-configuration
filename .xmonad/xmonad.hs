@@ -98,9 +98,6 @@ myAdditionalKeys =
     , ("M-d", spawn "discord")
     , ("M-v", spawn "vivaldi")
     , ("M-p", spawn "rofi -show drun")
-    , ("M-S-p", spawn "rofi -show filebrowser")
-    , ("M-w", spawn "rofi -show window")
-    , ("C-M-S-p", spawn "rofi -show ssh")
     , ("C-M-i", spawn "element-desktop")
     --, ("M-s", spawn "flatpak run com.valvesoftware.Steam")
 
@@ -138,6 +135,7 @@ myUnusedKeys :: [String]
 myUnusedKeys = 
     [ "M-S-<Return>"
     , "M-S-c"
+    , "M-w"
     , "M-S-w"
     , "M-e"
     , "M-S-e"
