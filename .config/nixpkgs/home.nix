@@ -41,11 +41,11 @@ in {
   home.homeDirectory = "/home/liamdp";
 
   # Manage eww
-  programs.eww = {
-    enable = true;
-    configDir = /home/liamdp/.config/eww;
-    package = unstable.eww;
-  };
+  #programs.eww = {
+  #  enable = true;
+  #  configDir = /home/liamdp/.config/eww;
+  #  package = unstable.eww;
+  #};
   
   # Manage exa
   programs.exa = {
@@ -93,6 +93,7 @@ in {
     cinnamon.nemo
     discord
     element-desktop
+    unstable.eww
     gnome.gedit
     gtk-engine-murrine
     imagemagick

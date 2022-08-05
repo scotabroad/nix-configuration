@@ -18,7 +18,7 @@ in {
       set number
       lua << EOF
       require('nvim-treesitter.configs').setup {
-        ensure_installed = {"bash", "c", "cpp", "css", "html", "java", "json", "lua", "nix", "vim"},
+        ensure_installed = {"bash", "c", "cpp", "comment", "cmake", "css", "html", "java", "json", "latex", "lua", "nix", "rust", "scheme", "scss", "vim"},
 	sync_install = false,
 	highlight = {
 	  enable = true,
