@@ -2,15 +2,44 @@
 
 let
   unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+  
+  yuck = pkgs.vimUtils.buildVimPlugin {
+    name = "yuck.vim";
+    src = pkgs.fetchFromGitHub {
+      owner = "elkowar";
+      repo = "yuck.vim";
+      rev = "6dc3da77c53820c32648cf67cbdbdfb6994f4e08";
+      sha256 = "lp7qJWkvelVfoLCyI0aAiajTC+0W1BzDhmtta7tnICE=";
+    };
+  };
 in {
   # Manage Neovim
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
       nord-vim
-      nvim-treesitter
+      (nvim-treesitter.withPlugins (
+        plugins: with plugins; [
+          tree-sitter-bash
+	  tree-sitter-c
+	  tree-sitter-cpp
+	  tree-sitter-comment
+	  tree-sitter-cmake
+	  tree-sitter-css
+	  tree-sitter-html
+	  tree-sitter-java
+	  tree-sitter-json
+	  tree-sitter-latex
+	  tree-sitter-nix
+	  tree-sitter-rust
+	  tree-sitter-scheme
+	  tree-sitter-scss
+	  tree-sitter-vim
+        ]
+      ))
       lualine-nvim
       nvim-web-devicons
+      yuck
     ];
     extraConfig = ''
       let g:nord_disable_background = v:true
@@ -18,8 +47,6 @@ in {
       set number
       lua << EOF
       require('nvim-treesitter.configs').setup {
-        ensure_installed = {"bash", "c", "cpp", "comment", "cmake", "css", "html", "java", "json", "latex", "lua", "nix", "rust", "scheme", "scss", "vim"},
-	sync_install = false,
 	highlight = {
 	  enable = true,
 	},
