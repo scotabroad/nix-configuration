@@ -17,6 +17,7 @@ in {
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
+      lualine-nvim
       nord-vim
       (nvim-treesitter.withPlugins (
         plugins: with plugins; [
@@ -37,8 +38,8 @@ in {
 	  tree-sitter-vim
         ]
       ))
-      lualine-nvim
       nvim-web-devicons
+      vim-parinfer
       yuck
     ];
     extraConfig = ''
