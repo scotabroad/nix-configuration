@@ -35,7 +35,7 @@ myXmobarPP = def
     , ppTitleSanitize   = xmobarStrip
     , ppCurrent         = wrap " " "" . xmobarBorder "Top" "#88c0d0" 2 --nord8
     , ppHidden          = white . wrap " " ""
-    , ppHiddenNoWindows = lowWhite . wrap " " ""
+    , ppHiddenNoWindows = black . wrap " " ""
     , ppUrgent          = red . wrap (yellow "!") (yellow "!")
     , ppOrder           = \[ws, l, _, wins] -> [ws, l, wins] --ws: workspace, l: layout, _: window (blank for omission), wins: ppExtras
     , ppExtras          = [logTitles formatFocused formatUnfocused]
@@ -56,6 +56,7 @@ myXmobarPP = def
     yellow   = xmobarColor "#ebcb8b" "" --nord13
     red      = xmobarColor "#bf616a" "" --nord11
     lowWhite = xmobarColor "#d8dee9" "" --nord4
+    black    = xmobarColor "#2e3440" "" --nord0
 
 myTerminal = "kitty"
 
@@ -66,7 +67,7 @@ myStartupHook = do
     ; spawnOnce "ibus-daemon -drx"
     }
 
-myLayout = tiled ||| Mirror tiled ||| Full ||| threeCol ||| simpleTabbedLeft
+myLayout = tiled ||| Mirror tiled ||| Full ||| threeCol ||| Mirror threeCol
   where
     threeCol = ThreeColMid nmaster delta ratio
     tiled    = Tall nmaster delta ratio
