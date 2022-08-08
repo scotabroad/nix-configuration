@@ -31,32 +31,31 @@ main = xmonad
 
 myXmobarPP :: PP
 myXmobarPP = def
-    { ppSep             = magenta " • "
+    { ppSep             = nord14 " • "
     , ppTitleSanitize   = xmobarStrip
-    , ppCurrent         = wrap " " "" . xmobarBorder "Top" "#88c0d0" 2 --nord8
-    , ppHidden          = white . wrap " " ""
-    , ppHiddenNoWindows = black . wrap " " ""
-    , ppUrgent          = red . wrap (yellow "!") (yellow "!")
+    , ppCurrent         = nord6 . wrap " " ""
+    , ppHidden          = nord4 . wrap " " ""
+    , ppUrgent          = nord11 . wrap (nord13 "!") (nord13 "!")
     , ppOrder           = \[ws, l, _, wins] -> [ws, l, wins] --ws: workspace, l: layout, _: window (blank for omission), wins: ppExtras
     , ppExtras          = [logTitles formatFocused formatUnfocused]
     }
   where
-    formatFocused   = wrap (white "[") (white "]") . magenta . ppWindow
-    formatUnfocused = wrap (lowWhite "[") (lowWhite "]") . blue . ppWindow
+    formatFocused   = wrap (nord6 " ") (nord6 "") . nord15 . ppWindow
+    formatUnfocused = wrap (nord4 " ") (nord4 "") . nord9 . ppWindow
 
     -- | Windows should have *some* title, which should not exceed a
     -- sane length.
     ppWindow :: String -> String
     ppWindow = xmobarRaw . (\w -> if null w then "untitled" else w) . shorten 15
 
-    blue, lowWhite, magenta, red, white, yellow :: String -> String
-    magenta  = xmobarColor "#b48ead" "" --nord15
-    blue     = xmobarColor "#81a1c1" "" --nord9
-    white    = xmobarColor "#eceff4" "" --nord6
-    yellow   = xmobarColor "#ebcb8b" "" --nord13
-    red      = xmobarColor "#bf616a" "" --nord11
-    lowWhite = xmobarColor "#d8dee9" "" --nord4
-    black    = xmobarColor "#2e3440" "" --nord0
+    nord4, nord6, nord9, nord11, nord13, nord14, nord15 :: String -> String
+    nord4    = xmobarColor "#d8dee9" ""
+    nord6    = xmobarColor "#eceff4" ""
+    nord9    = xmobarColor "#81a1c1" ""
+    nord11   = xmobarColor "#bf616a" ""
+    nord13   = xmobarColor "#ebcb8b" ""
+    nord14   = xmobarColor "#a3be8c" ""
+    nord15   = xmobarColor "#b48ead" ""
 
 myTerminal = "kitty"
 
@@ -100,7 +99,7 @@ myAdditionalKeys =
     , ("M-v", spawn "vivaldi")
     , ("M-p", spawn "rofi -show drun")
     , ("C-M-i", spawn "element-desktop")
-    --, ("M-s", spawn "flatpak run com.valvesoftware.Steam")
+    , ("M-s", spawn "steam")
 
     ---------------------------------------------------------------------
     --                      Multimedia Controls                        --
