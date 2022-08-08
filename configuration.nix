@@ -155,6 +155,9 @@ in {
     # Enable sound
     pulseaudio.enable = true;
     
+    # Enable steam hardware
+    steam-hardware.enable = true;
+
     # Was not available in NixOS 20.03, is in Unstable, but this is 22.05... does the same as some earlier fixes
     video.hidpi.enable = true;
   };
@@ -205,6 +208,13 @@ in {
       enable = true;
       viAlias = true;
       vimAlias = true;
+    };
+
+    # Configure steam, which requires 32-bit libraries
+    steam = {
+      enable = true;
+      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+      remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     };
   
   };
