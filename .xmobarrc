@@ -4,7 +4,7 @@ Config { font = "xft:Ubuntu:size=11:antialias=true"
        -- , borderColor = "#1d2128"
        , bgColor = "#2e3440"
        , fgColor = "#eceff4"
-       , alpha = 255
+       , alpha = 230
        , position = TopW C 99
        , textOffset = -1
        , iconOffset = -1
@@ -82,12 +82,12 @@ Config { font = "xft:Ubuntu:size=11:antialias=true"
 
 		-- Keyboard Layout monitor %kbd%
 		 -- , Run Kbd
-		     -- [ ("English (US)", ("EN")
-		     -- , ("ipa-xsampa (m17n)", ("X")
+		     -- [ ("us", ("US")
+		     -- , ("ipa-x-sampa", ("IPA")
 		     -- ]
                     ]
 
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "  %XMonadLog% }{ %KPHX% | %date% | %alsa:default:Master% | %battery% "
+       , template = "  %XMonadLog% } %KPHX% | %date% { %alsa:default:Master% | %battery% "
        }

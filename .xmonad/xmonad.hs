@@ -35,7 +35,8 @@ myXmobarPP = def
     , ppTitleSanitize   = xmobarStrip
     , ppCurrent         = nord6 . wrap " " ""
     , ppHidden          = nord4 . wrap " " ""
-    , ppUrgent          = nord11 . wrap (nord13 "!") (nord13 "!")
+    , ppUrgent          = nord11 . wrap " " ""
+    , ppLayout          = nord4 . wrap " " ""
     , ppOrder           = \[ws, l, _, wins] -> [ws, l, wins] --ws: workspace, l: layout, _: window (blank for omission), wins: ppExtras
     , ppExtras          = [logTitles formatFocused formatUnfocused]
     }
@@ -48,12 +49,12 @@ myXmobarPP = def
     ppWindow :: String -> String
     ppWindow = xmobarRaw . (\w -> if null w then "untitled" else w) . shorten 15
 
-    nord4, nord6, nord9, nord11, nord13, nord14, nord15 :: String -> String
+    nord0, nord4, nord6, nord9, nord11, nord14, nord15 :: String -> String
+    nord0    = xmobarColor "#2e3440" ""
     nord4    = xmobarColor "#d8dee9" ""
     nord6    = xmobarColor "#eceff4" ""
     nord9    = xmobarColor "#81a1c1" ""
     nord11   = xmobarColor "#bf616a" ""
-    nord13   = xmobarColor "#ebcb8b" ""
     nord14   = xmobarColor "#a3be8c" ""
     nord15   = xmobarColor "#b48ead" ""
 
@@ -75,9 +76,7 @@ myLayout = tiled ||| Mirror tiled ||| Full ||| threeCol ||| Mirror threeCol
     delta    = 3/100  -- Percent of screen to increment by when resizing panes
 
 myLayoutHook = windowArrange $ spacingRaw False (Border 10 10 10 10) True (Border 5 5 5 5) True $ myLayout
--- myLayoutHook = windowArrangeAll $ spacingRaw False (Border 10 10 10 10) True (Border 5 5 5 5) True $ myLayout
-                        --smartborder   screenborder<-bool windowborder        windowborder bool      
--- myLayoutHook = windowArrangeAll $ myLayout
+                        --smartborder   screenborder<-bool screenwborder        windowborder bool      
 
 
 -- Keybindings
@@ -92,7 +91,7 @@ myAdditionalKeys =
     --                          App Launchers                          --
     ---------------------------------------------------------------------
 
-    , ("C-S-<Escape>", spawn "gnome-system-monitor")
+    -- , ("C-S-<Escape>", spawn "gnome-system-monitor")
     , ("C-M1-t", spawn myTerminal) --probably should change modkey for explicit alt, incompatible with guake
     , ("M-f", spawn "firefox")
     , ("M-d", spawn "discord")

@@ -103,6 +103,17 @@ in {
     unstable.vivaldi
   ];
 
+  # Nix Overlays
+  nixpkgs.overlays = [
+    (self: super: { 
+      discord = super.discord.overrideAttrs (_: {
+        src = builtins.fetchTarball {
+	  url = "https://discord.com/api/download?platform=linux&format=tar.gz";
+	}; 
+      });
+    })
+  ];
+
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
