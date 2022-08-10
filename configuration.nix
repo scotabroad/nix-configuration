@@ -370,7 +370,7 @@ in {
   ### NIXOS SPECIFIC OPTIONS ###
 
   # Enable flakes
-  # nix = {
+  nix = {
   #   package = pkgs.nixUnstable;
   #   extraOptions = ''
   #     experimental-features = nix-command flakes
@@ -380,7 +380,8 @@ in {
   #     automatic = true;
   #     dates = "*:0/10";
   #   };
-  # };
+    settings.experimental-features = [ "nix-command" "flakes" ];
+  };
   # systemd.services.nix-gc.unitConfig.ConditionACPower = true;
 
   # Nixpkgs Options
