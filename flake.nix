@@ -1,5 +1,5 @@
 {
-  description = "Ghost of Hallownest's Flake";
+  description = "Liam Petrie's Flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
