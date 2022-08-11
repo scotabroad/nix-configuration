@@ -23,11 +23,14 @@ let
 in {
 
   imports = [
+    ./programs/exa
+    ./programs/feh
     ./programs/git
     ./programs/kitty
     ./programs/neovim
     ./programs/rofi
     ./programs/zsh
+    
     ./services/dunst
     ./services/flameshot
     ./services/picom
@@ -45,17 +48,6 @@ in {
   #  package = unstable.eww;
   #};
   
-  # Manage exa
-  programs.exa = {
-    enable = true;
-    enableAliases = false; # interferes with a zsh plugin, zpm-zsh/ls
-  };
-
-  # Manage feh
-  programs.feh = {
-    enable = true;
-  };
-
   # Enable dconf
   dconf.enable = true;
   
