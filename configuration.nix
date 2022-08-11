@@ -5,8 +5,6 @@
 { config, pkgs, ... }:
 
 let
-  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-  
   # dpi adjustment calculations
   monitorHeight = 2256; #in pixels
   monitorWidth  = 1504; #in pixels
@@ -32,7 +30,6 @@ in {
   
   imports =
     [ # Include the results of the hardware scan.
-      <nixos-hardware/framework>
       ./hardware-configuration.nix
     ];
 
@@ -59,7 +56,7 @@ in {
         # Define on which hard drive you want to install Grub.
         font = "${pkgs.nerdfonts}/share/fonts/truetype/NerdFonts/'Ubuntu Mono Nerd Font Complete Mono.ttf'";
         fontSize = 28;
-        theme = /etc/nixos/theme;
+        theme = ./theme;
 	# splashImage = null;
 	splashMode = "normal";
         useOSProber = false; # enable only if dual booting
@@ -253,7 +250,7 @@ in {
       displayManager = {
         defaultSession = "none+xmonad";
         lightdm = {
-          background = /home/liamdp/Pictures/Wallpapers/Nordic.jpg;
+          background = ./wallpaper/Nordic.jpg;
           extraSeatDefaults = ''
             greeter-wrapper = ${lightdm_dpi_fix}
           '';
@@ -263,11 +260,11 @@ in {
 	    cursorTheme = {
 	      name = "Nordzy-dark";
 	      size = 48;
-	      package = unstable.nordzy-icon-theme;
+	      package = pkgs.nordzy-icon-theme;
 	    };
 	    iconTheme = {
 	      name = "Nordzy-dark";
-	      package = unstable.nordzy-icon-theme;
+	      package = pkgs.nordzy-icon-theme;
 	    };
 	    indicators = [
 	      "~host"
@@ -279,7 +276,7 @@ in {
 	    ];
 	    theme = {
 	      name = "Nordic";
-	      package = unstable.nordic;
+	      package = pkgs.nordic;
 	    };
 	    extraConfig = ''
               font-name=Ubuntu,11
@@ -354,9 +351,6 @@ in {
     extraGroups = [ "wheel" "video" ]; # Enable ‘sudo’ for the user.
     home = "/home/liamdp";
     isNormalUser = true;
-    # packages = with pkgs; [
-    #   flameshot
-    # ];
     shell = pkgs.zsh;
     uid = 1000;
   };
@@ -371,7 +365,7 @@ in {
 
   # Enable flakes
   nix = {
-  #   package = pkgs.nixUnstable;
+    package = pkgs.nix;
   #   extraOptions = ''
   #     experimental-features = nix-command flakes
   #   '';
