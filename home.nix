@@ -29,6 +29,7 @@ in {
     ./programs/kitty
     ./programs/neovim
     ./programs/rofi
+    ./programs/xmobar
     ./programs/zsh
     
     ./services/dunst
