@@ -84,7 +84,7 @@
 
 		-- swap monitor %swap%
                    , Run Swap 
-		       [ "-t", "<fn=1>\xf16c</fn> <usedratio>%"
+		       [ "-t", "<fn=1>\xf472</fn> <usedratio>%"
 		       ] 10
 
 		-- date monitor %date%
