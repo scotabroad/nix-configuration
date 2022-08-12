@@ -35,12 +35,13 @@
 			] 36000
 
 		 -- cpu monitor	%cpu%
-                 -- , Run Cpu 
-		     -- [ "-L", "3"
-		     -- , "-H", "50"
-		     -- , "--normal", "#a3be8c"
-		     -- , "--high", "#bf616a"
-		     -- ] 10
+                    , Run Cpu 
+		        [ "-t", "<fn=1>\xe266</fn> <total>%"
+		        , "-L", "3"
+			, "-H", "50"
+		        , "--normal", "#a3be8c"
+		        , "--high", "#bf616a"
+		        ] 10
 
 		-- battery monitor %battery%
 		    , Run Battery
@@ -77,10 +78,14 @@
 	               ]
 
 		-- memory monitor %memory%
-                -- , Run Memory ["-t","Mem: <usedratio>%"] 10
+                   , Run Memory 
+		       [ "-t", "<fn=1>\xf85a</fn> <usedratio>%"
+		       ] 10
 
 		-- swap monitor %swap%
-                -- , Run Swap [] 10
+                   , Run Swap 
+		       [ "-t", "<fn=1>\xf16c</fn> <usedratio>%"
+		       ] 10
 
 		-- date monitor %date%
                     , Run Date "%a %b %d <fc=#88c0d0>%l:%M</fc> %p" "date" 10
@@ -97,7 +102,7 @@
 
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "  %XMonadLog% } %KPHX% | %date% { %alsa:default:Master% | %battery% "
+       , template = " %XMonadLog% } %KPHX% | %date% { %alsa:default:Master% | %cpu% | %memory% | %swap% | %battery% "
        }
     '';
   };
