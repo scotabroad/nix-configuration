@@ -90,6 +90,7 @@ in {
     imagemagick
     libreoffice
     trayer
+    trim-generations
     wallpaper
     vivaldi
   ];
