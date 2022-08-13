@@ -13,6 +13,9 @@
     let
       system = "x86_64-linux";
 
+      config = nixpkgs.config;
+      lib = nixpkgs.lib;
+
       make-packages = ps: attrs:
         import ps ({
           inherit system;
@@ -20,7 +23,8 @@
         } // attrs);
 
       pkgs = make-packages nixpkgs {
-        overlays = [
+        
+	overlays = [
 
           # Discord Overlay
           (self: super: {
@@ -44,7 +48,8 @@
 	      vivaldi = unstable.vivaldi;
             })
 
-        ];
+        ]
+	++ import ./packages { inherit lib pkgs; };
       };
 
     in {

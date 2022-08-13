@@ -56,7 +56,7 @@ in {
         # Define on which hard drive you want to install Grub.
         font = "${pkgs.nerdfonts}/share/fonts/truetype/NerdFonts/'Ubuntu Mono Nerd Font Complete Mono.ttf'";
         fontSize = 28;
-        theme = ./theme;
+        theme = pkgs.framework-grub-theme;
 	# splashImage = null;
 	splashMode = "normal";
         useOSProber = false; # enable only if dual booting
