@@ -29,10 +29,9 @@
       ignoreDups = true;
       expireDuplicatesFirst = true;
       save = 5000;
-      path = "/home/liamdp/.zsh_history";
+      path = "$HOME/.zsh_history";
     };
     initExtra = ''
-      export PATH=$PATH:/home/liamdp/bin
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
     '';
   };
