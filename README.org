@@ -1,5 +1,7 @@
 #+TITLE: Nix Configuration
 
+This is my NixOS configuration. I uses a flake to manage everything.
+
 * Xmonad
 
 [[Screenshot][images/xmonad.png]]
