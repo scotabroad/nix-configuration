@@ -2,8 +2,6 @@
 
 final: prev: {
   wallpaper = pkgs.writeScriptBin "wallpaper" ''
-    #!${pkgs.zsh}
-
     #variable=$(command -args)
     #args come in the form of $1, $2, etc.
 
