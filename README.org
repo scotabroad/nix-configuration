@@ -1,0 +1,23 @@
+#+TITLE: Nix Configuration
+
+* Xmonad
+
+[[Screenshot][images/xmonad.png]]
+
+#+ATTR_HTML: :border 2 :rules all :frame border
+|---------------+---------+
+| *OS*          | NixOS   |
+| *Shell*       | zsh     |
+| *Terminal*    | kitty   |
+| *Colorscheme* | Nord    |
+| *DM*          | LightDM |
+| *WM*          | xmonad  |
+| *Bar*         | xmobar  |
+| *Font*        | Ubuntu  |
+| *Editor*      | neovim  |
+
+* Inspired by
+
+- [[https://github.com/corytertel/nix-configuration][Cory Tertel's Nix Configuration]]
+- [[https://github.com/erikbackman/nixos-config][Erik Backman's NixOS Config]]
+- [[https://github.com/alternateved/nixos-config][Alternateved's NixOS Config]]
