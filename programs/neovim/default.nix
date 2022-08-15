@@ -1,18 +1,6 @@
 { config, inputs, pkgs, ... }:
 
-let
-  #unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
-  
-  yuck = pkgs.vimUtils.buildVimPlugin {
-    name = "yuck.vim";
-    src = pkgs.fetchFromGitHub {
-      owner = "elkowar";
-      repo = "yuck.vim";
-      rev = "6dc3da77c53820c32648cf67cbdbdfb6994f4e08";
-      sha256 = "lp7qJWkvelVfoLCyI0aAiajTC+0W1BzDhmtta7tnICE=";
-    };
-  };
-in {
+{
   # Manage Neovim
   programs.neovim = {
     enable = true;
@@ -40,7 +28,7 @@ in {
       ))
       nvim-web-devicons
       vim-parinfer
-      yuck
+      (pkgs.callPackage ./yuck-vim.nix {} )
     ];
     extraConfig = ''
       let g:nord_disable_background = v:true
