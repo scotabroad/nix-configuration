@@ -61,6 +61,7 @@
 
   # Additional Packages
   home.packages = with pkgs; [
+    # Personal
     cinnamon.nemo
     discord
     element-desktop
@@ -73,6 +74,10 @@
     trim-generations
     wallpaper
     vivaldi
+
+    #School
+    javaPackages.junit_4_12
+    mars-mips
   ];
 
   xsession.windowManager.xmonad = {
