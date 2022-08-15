@@ -113,6 +113,7 @@ in {
       GDK_DPI_SCALE = "0.5";
       QT_AUTO_SCREEN_SCALE_FACTOR = "1";
       _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
+      _JAVA_AWT_WM_NONREPARENTING= "1"; # MATLAB Fix
     };
   };
 
