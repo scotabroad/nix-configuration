@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1650374568,
+        "narHash": "sha256-Z+s0J8/r907g149rllvwhb4pKi8Wam5ij0st8PwAh+E=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "b4a34015c698c7793d592d66adbab377907a2be8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -19,6 +35,27 @@
         "ref": "release-22.05",
         "repo": "home-manager",
         "type": "github"
+      }
+    },
+    "nix-matlab": {
+      "inputs": {
+        "flake-compat": "flake-compat",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1660575790,
+        "narHash": "sha256-zEsFzJ0KEC5e+1CZS8c1+qh7rxURCYCGRDo61HxIYis=",
+        "owner": "doronbehar",
+        "repo": "nix-matlab",
+        "rev": "051cc05423565d71a50013433aa9c0543643d9b8",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "doronbehar",
+        "repo": "nix-matlab",
+        "type": "gitlab"
       }
     },
     "nixos-hardware": {
@@ -72,6 +109,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "nix-matlab": "nix-matlab",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable"

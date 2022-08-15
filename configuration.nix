@@ -2,6 +2,8 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
+flake-overlays:
+
 { config, pkgs, ... }:
 
 let
@@ -109,8 +111,8 @@ in {
     variables = {
       GDK_SCALE = "2";
       GDK_DPI_SCALE = "0.5";
-      # QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-      # _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
+      QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+      _JAVA_OPTIONS = "-Dsun.java2d.uiScale=2";
     };
   };
 
@@ -370,6 +372,7 @@ in {
     config = {
       allowUnfree = true;
     };
+    overlays = flake-overlays;
     # Nixpkgs platform
     system = "x86_64-linux";
   };
