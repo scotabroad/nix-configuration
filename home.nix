@@ -76,8 +76,9 @@
     vivaldi
 
     #School
-    astah-uml
     javaPackages.junit_4_12
+    jdk8
+    jre8
     mars-mips
   ];
 
