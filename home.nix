@@ -76,6 +76,7 @@
     vivaldi
 
     #School
+    astah-uml
     javaPackages.junit_4_12
     mars-mips
   ];
