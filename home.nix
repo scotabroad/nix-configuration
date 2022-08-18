@@ -15,6 +15,7 @@
     ./services/dunst
     ./services/flameshot
     ./services/picom
+    ./services/taffybar
   ];
 
   # Home Manager needs a bit of information about you and the
