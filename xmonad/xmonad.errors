@@ -1,8 +1,0 @@
-$ /nix/store/bp87fjwan2qh8hwnw202jfm13wmjzgnv-ghc-9.0.2-with-packages/bin/ghc --make xmonad.hs -i -ilib -fforce-recomp -main-is main -v0 -outputdir /home/liamdp/.xmonad/build-x86_64-linux -o /home/liamdp/.xmonad/xmonad-x86_64-linux
-
-xmonad.hs:146:1: warning: [-Wtabs]
-    Tab character found here, and in 7 further locations.
-    Please use spaces instead.
-    |
-146 |         { -- modMask = mod4Mask change Mod key from alt to super
-    | ^^^^^^^^
