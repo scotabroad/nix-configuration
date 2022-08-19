@@ -13,8 +13,10 @@ import XMonad.Layout.WindowArranger
 -- Hooks
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
+import XMonad.Hooks.TaffybarPagerHints (pagerHints)
 
 -- Utils
 import XMonad.Util.EZConfig
@@ -24,8 +26,10 @@ import XMonad.Util.Ungrab
 
 main :: IO ()
 main = xmonad 
+     . docks
      . ewmhFullscreen 
      . ewmh 
+     . pagerHints
      . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey --to import info to xmobar
      $ myConfig
 

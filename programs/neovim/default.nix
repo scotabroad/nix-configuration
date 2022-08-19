@@ -16,6 +16,7 @@
 	  tree-sitter-cmake
 	  tree-sitter-css
 	  tree-sitter-html
+	  tree-sitter-haskell
 	  tree-sitter-java
 	  tree-sitter-json
 	  tree-sitter-latex
@@ -24,6 +25,7 @@
 	  tree-sitter-scheme
 	  tree-sitter-scss
 	  tree-sitter-vim
+	  tree-sitter-yaml
         ]
       ))
       nvim-web-devicons
