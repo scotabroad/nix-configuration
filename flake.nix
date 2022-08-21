@@ -42,14 +42,12 @@
 	      vivaldi = unstable.vivaldi;
             })
 
+	    nix-matlab.overlay
+
         ]
 	++ import ./overlays { inherit pkgs; }
 	++ import ./packages { inherit lib pkgs; };
       };
-
-      flake-overlays = [
-        nix-matlab.overlay
-      ];
 
     in {
 
@@ -57,7 +55,7 @@
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system pkgs;
         modules = [
-          (import ./configuration.nix flake-overlays)
+          ./configuration.nix
           nixos-hardware.nixosModules.framework
           home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;

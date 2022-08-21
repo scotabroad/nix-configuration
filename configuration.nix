@@ -2,8 +2,6 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-flake-overlays:
-
 { config, pkgs, ... }:
 
 let
@@ -373,7 +371,6 @@ in {
     config = {
       allowUnfree = true;
     };
-    overlays = flake-overlays;
     # Nixpkgs platform
     system = "x86_64-linux";
   };
