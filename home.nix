@@ -81,6 +81,7 @@
     jdk8
     jre8
     mars-mips
+    octaveFull
   ];
 
   xsession.windowManager.xmonad = {
