@@ -9,7 +9,7 @@
     ./programs/kitty
     ./programs/neovim
     ./programs/rofi
-    ./programs/xmobar
+    #./programs/xmobar
     ./programs/zsh
     
     ./services/dunst
@@ -71,7 +71,7 @@
     gtk-engine-murrine
     imagemagick
     libreoffice
-    trayer
+    #trayer
     trim-generations
     wallpaper
     vivaldi
@@ -81,6 +81,7 @@
     jdk8
     jre8
     mars-mips
+    octaveFull
   ];
 
   xsession.windowManager.xmonad = {

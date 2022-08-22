@@ -5,11 +5,11 @@
     flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-community/home-manager/release-22.05";
+      url = "github:nix-community/home-manager/master";
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/master";
     nix-matlab = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "gitlab:doronbehar/nix-matlab";
@@ -31,23 +31,24 @@
         import ps ({
           inherit system;
           config.allowUnfree = true;
+	  config.allowBroken = true;
         } // attrs);
 
-      pkgs = make-packages nixpkgs {
+      pkgs = make-packages nixpkgs{
         
 	overlays = [
 
 	  # Unstable Overlay
-          (final: prev:
-            let unstable = make-packages nixpkgs-unstable { };
-            in {
-              eww = unstable.eww;
-	      nix = unstable.nix;
-	      nordic = unstable.nordic;
-	      nordzy-icon-theme = unstable.nordzy-icon-theme;
-              steam = unstable.steam;
-	      vivaldi = unstable.vivaldi;
-            })
+          #(final: prev:
+          #  let unstable = make-packages nixpkgs-unstable { };
+          #  in {
+          #    eww = unstable.eww;
+	  #    nix = unstable.nix;
+	  #    nordic = unstable.nordic;
+	  #    nordzy-icon-theme = unstable.nordzy-icon-theme;
+          #    steam = unstable.steam;
+	  #    vivaldi = unstable.vivaldi;
+          #  })
 
 	    (import ./taffybar/overlay.nix)
 
