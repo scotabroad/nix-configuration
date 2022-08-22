@@ -56,7 +56,8 @@
 
         ]
 	++ import ./overlays { inherit pkgs; }
-	++ import ./packages { inherit lib pkgs; };
+	++ import ./packages { inherit lib pkgs; }
+	++ taffybar.overlays;
       };
 
     in {
