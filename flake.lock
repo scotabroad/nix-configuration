@@ -76,6 +76,21 @@
         "type": "github"
       }
     },
+    "flake-utils_5": {
+      "locked": {
+        "lastModified": 1659877975,
+        "narHash": "sha256-zllb8aq3YO3h8B/U0/J1WBgAL8EX5yWf5pMj3G0NAmc=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "c0e246b9b83f637f4681389ecabcb2681b4f3af0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "git-ignore-nix": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
@@ -154,7 +169,7 @@
     },
     "gtk-sni-tray": {
       "inputs": {
-        "flake-utils": "flake-utils_2",
+        "flake-utils": "flake-utils_3",
         "git-ignore-nix": "git-ignore-nix_2",
         "nixpkgs": "nixpkgs_4",
         "status-notifier-item": "status-notifier-item"
@@ -176,7 +191,7 @@
     },
     "gtk-strut": {
       "inputs": {
-        "flake-utils": "flake-utils_4",
+        "flake-utils": "flake-utils_5",
         "git-ignore-nix": "git-ignore-nix_4",
         "nixpkgs": "nixpkgs_8"
       },
@@ -385,6 +400,7 @@
     },
     "root": {
       "inputs": {
+        "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "nix-matlab": "nix-matlab",
         "nixos-hardware": "nixos-hardware",
@@ -395,7 +411,7 @@
     },
     "status-notifier-item": {
       "inputs": {
-        "flake-utils": "flake-utils_3",
+        "flake-utils": "flake-utils_4",
         "git-ignore-nix": "git-ignore-nix_3",
         "nixpkgs": "nixpkgs_6"
       },
@@ -416,7 +432,7 @@
     },
     "taffybar": {
       "inputs": {
-        "flake-utils": "flake-utils",
+        "flake-utils": "flake-utils_2",
         "git-ignore-nix": "git-ignore-nix",
         "gtk-sni-tray": "gtk-sni-tray",
         "gtk-strut": "gtk-strut",
