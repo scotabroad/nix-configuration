@@ -69,7 +69,7 @@ myStartupHook = do
     ; spawnOnce "light-locker"
     ; spawnOnce "nm-applet --sm-disable"
     ; spawnOnce "ibus-daemon -drx"
-    ; spawnOnce "trayer --edge bottom --align center --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent false --tint 0x2e3440 --height 30"
+    -- ; spawnOnce "trayer --edge bottom --align center --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent false --tint 0x2e3440 --height 30"
     }
 
 myLayout = tiled ||| Mirror tiled ||| Full ||| threeCol ||| Mirror threeCol

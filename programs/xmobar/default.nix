@@ -13,7 +13,7 @@
        , bgColor = "#2e3440"
        , fgColor = "#eceff4"
        , alpha = 230
-       , position = TopW C 99
+       , position = BottomW C 99
        , textOffset = -1
        , iconOffset = -1
        , lowerOnStart = True

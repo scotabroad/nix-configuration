@@ -15,7 +15,7 @@
     ./services/dunst
     ./services/flameshot
     ./services/picom
-    #./services/taffybar
+    ./services/taffybar
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -71,7 +71,7 @@
     gtk-engine-murrine
     imagemagick
     libreoffice
-    trayer
+    #trayer
     trim-generations
     wallpaper
     vivaldi

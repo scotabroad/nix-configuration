@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 let
   # dpi adjustment calculations
@@ -371,6 +371,9 @@ in {
     config = {
       allowUnfree = true;
     };
+    overlays = with inputs; [
+      (import ./taffybar/overlay.nix)
+    ];
     # Nixpkgs platform
     system = "x86_64-linux";
   };
