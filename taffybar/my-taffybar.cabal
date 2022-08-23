@@ -17,6 +17,9 @@ executable taffybar
 		     , gi-gtk
 		     , gtk-sni-tray
 		     , haskell-gi-base
+		     , hslogger
+		     , status-notifier-item
                      , taffybar
                      , X11>=1.8
+		     , xdg-basedir
   default-language:    Haskell2010

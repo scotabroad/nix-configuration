@@ -1,5 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 import System.Taffybar
+import StatusNotifier.Tray
 import System.Taffybar.Information.CPU
 import System.Taffybar.SimpleConfig
 import System.Taffybar.Widget
@@ -20,6 +21,7 @@ main = do
       workspaces = workspacesNew defaultWorkspacesConfig
       simpleConfig = defaultSimpleTaffyConfig
                        { startWidgets = [ workspaces ]
-                       , endWidgets = [ sniTrayNew, clock, cpu]
+                       , endWidgets = [ sniTrayNew, 
+		         clock, cpu]
                        }
   simpleTaffybar simpleConfig

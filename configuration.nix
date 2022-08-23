@@ -121,6 +121,9 @@ in {
     pkgs.nerdfonts
     pkgs.ubuntu_font_family
   ];
+
+  # 2nd step taffybar fix
+  gtk.iconCache.enable = true;
  
   # Select internationalisation properties.
   i18n = {
@@ -270,7 +273,14 @@ in {
             '';
           };
         };
+	# 1st step taffybar workaround
+	sessionCommands = ''
+	  systemctl --user import-environment GDK_PIXBUF_MODULE_FILE DBUS_SESSION_BUS_ADDRESS PATH
+	'';
       };
+
+      # 3rd step taffybar workaround
+      gdk-pixbuf.modulePackages = [ pkgs.librsvg ];
  
       # Configure keymap in X11
       layout = "us";

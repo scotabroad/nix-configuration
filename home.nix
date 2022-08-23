@@ -84,10 +84,12 @@
     octaveFull
   ];
 
-  xsession.windowManager.xmonad = {
-    enable = true;
-    enableContribAndExtras = true;
-    config = ./xmonad/xmonad.hs;
+  xsession = {
+    windowManager.xmonad = {
+      enable = true;
+      enableContribAndExtras = true;
+      config = ./xmonad/xmonad.hs;
+    };
   };
 
   # This value determines the Home Manager release that your

@@ -7,19 +7,21 @@ This is my NixOS configuration. I uses a flake to manage everything.
 [[Screenshot][images/xmonad.png]]
 
 #+ATTR_HTML: :border 2 :rules all :frame border
-|---------------+---------+
-| *OS*          | NixOS   |
-| *Shell*       | zsh     |
-| *Terminal*    | kitty   |
-| *Colorscheme* | Nord    |
-| *DM*          | LightDM |
-| *WM*          | xmonad  |
-| *Bar*         | xmobar  |
-| *Font*        | Ubuntu  |
-| *Editor*      | neovim  |
+|----------------+--------------------+
+| *OS*           | NixOS              |
+| *Shell*        | zsh                | 
+| *Terminal*     | kitty              |
+| *Colorscheme*  | Nord               |
+| *DM*           | LightDM            |
+| *WM*           | xmonad             |
+| *Bars*         | xmobar & taffybar  |
+| *Font*         | Ubuntu             |
+| *Editor*       | neovim             |
 
 * Inspired by
 
 - [[https://github.com/corytertel/nix-configuration][Cory Tertel's Nix Configuration]]
 - [[https://github.com/erikbackman/nixos-config][Erik Backman's NixOS Config]]
 - [[https://github.com/alternateved/nixos-config][Alternateved's NixOS Config]]
+- [[https://github.com/IvanMalison/dotfiles][Ivan Malison's taffybar Config]]
+- [[https://github.com/Icy-Thought/Snowflake/tree/935b7e2a53ed37eaa9011459f3dcacef9af31058/config/my-taffybar][Icy's taffybar Config]]
