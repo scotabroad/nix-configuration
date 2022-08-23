@@ -4,6 +4,6 @@
   #Manage picom
   services.taffybar = {
     enable = true;
-    package = pkgs.haskellPackages.taffybar;
+    package = pkgs.haskellPackages.my-taffybar;
   };
 }

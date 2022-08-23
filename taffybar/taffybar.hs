@@ -5,6 +5,7 @@ import System.Taffybar.SimpleConfig
 import System.Taffybar.Widget
 import System.Taffybar.Widget.Generic.Graph
 import System.Taffybar.Widget.Generic.PollingGraph
+import System.Taffybar.Widget.SNITray
 
 cpuCallback = do
   (_, systemLoad, totalLoad) <- cpuLoad
@@ -19,6 +20,6 @@ main = do
       workspaces = workspacesNew defaultWorkspacesConfig
       simpleConfig = defaultSimpleTaffyConfig
                        { startWidgets = [ workspaces ]
-                       , endWidgets = [ sniTrayNew, clock, cpu ]
+                       , endWidgets = [ sniTrayNew, clock, cpu]
                        }
   simpleTaffybar simpleConfig
