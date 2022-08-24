@@ -86,6 +86,13 @@
     octaveFull
   ];
 
+  systemd.user.targets.tray = {
+    Unit = {
+      Description = "tray target";
+      Requires = ["graphical-session-pre.target"];
+    };
+  };
+
   xsession = {
     preferStatusNotifierItems = true; # For taffybar sni tray
     windowManager.xmonad = {

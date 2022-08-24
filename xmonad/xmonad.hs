@@ -30,7 +30,7 @@ main = xmonad
      . ewmhFullscreen 
      . ewmh 
      . pagerHints
-     -- . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey --to import info to xmobar
+     . withEasySB (statusBarProp "xmobar" (pure def)) defToggleStrutsKey --to import info to xmobar
      $ myConfig
 
 {- myXmobarPP :: PP
