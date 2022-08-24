@@ -1,7 +1,7 @@
 { config, inputs, pkgs, home-manager, ... }:
 
 {
-  #Manage picom
+  #Manage taffybar
   services.taffybar = {
     enable = true;
     package = pkgs.haskellPackages.my-taffybar;

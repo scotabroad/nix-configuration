@@ -30,10 +30,10 @@ main = xmonad
      . ewmhFullscreen 
      . ewmh 
      . pagerHints
-     . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey --to import info to xmobar
+     -- . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey --to import info to xmobar
      $ myConfig
 
-myXmobarPP :: PP
+{- myXmobarPP :: PP
 myXmobarPP = def
     { ppSep             = nord14 " • "
     , ppTitleSanitize   = xmobarStrip
@@ -60,7 +60,7 @@ myXmobarPP = def
     nord9    = xmobarColor "#81a1c1" ""
     nord11   = xmobarColor "#bf616a" ""
     nord14   = xmobarColor "#a3be8c" ""
-    nord15   = xmobarColor "#b48ead" ""
+    nord15   = xmobarColor "#b48ead" "" -}
 
 myTerminal = "kitty"
 

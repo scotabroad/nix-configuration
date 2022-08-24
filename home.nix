@@ -9,13 +9,14 @@
     ./programs/kitty
     ./programs/neovim
     ./programs/rofi
-    ./programs/xmobar
     ./programs/zsh
     
     ./services/dunst
     ./services/flameshot
     ./services/picom
+    ./services/status-notifier-watcher
     ./services/taffybar
+
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -86,6 +87,7 @@
   ];
 
   xsession = {
+    preferStatusNotifierItems = true; # For taffybar sni tray
     windowManager.xmonad = {
       enable = true;
       enableContribAndExtras = true;
