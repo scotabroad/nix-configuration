@@ -67,9 +67,6 @@ myTerminal = "kitty"
 myStartupHook = do
     { spawnOnce "feh --bg-fill --no-fehbg ~/Wallpaper"
     ; spawnOnce "light-locker"
-    ; spawnOnce "nm-applet --sm-disable"
-    ; spawnOnce "ibus-daemon -drx"
-    -- ; spawnOnce "trayer --edge bottom --align center --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent false --tint 0x2e3440 --height 30"
     }
 
 myLayout = tiled ||| Mirror tiled ||| Full ||| threeCol ||| Mirror threeCol

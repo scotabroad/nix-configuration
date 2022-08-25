@@ -13,6 +13,7 @@
     
     ./services/dunst
     ./services/flameshot
+    ./services/network-manager-applet
     ./services/picom
     ./services/status-notifier-watcher
     ./services/taffybar
@@ -86,10 +87,25 @@
     octaveFull
   ];
 
-  systemd.user.targets.tray = {
-    Unit = {
-      Description = "tray target";
-      Requires = ["graphical-session-pre.target"];
+  systemd.user = {
+    services = {
+      ibus = {
+        Unit = {
+	  Description = "ibus daemon";
+	  After = ["tray.target"];
+	};
+	Service = {
+	  ExecStart = "${pkgs.ibus}/bin/ibus-daemon -drxR";
+	};
+      };
+    };
+    targets = {
+      tray = {
+        Unit = {
+          Description = "tray target";
+          Requires = ["graphical-session-pre.target"];
+	};
+      };
     };
   };
 

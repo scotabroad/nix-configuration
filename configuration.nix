@@ -130,6 +130,7 @@ in {
     defaultLocale = "en_US.UTF-8";
     inputMethod = {
       enabled = "ibus";
+      #package = pkgs.ibus-with-plugins;
       ibus.engines = with pkgs.ibus-engines; [
 	table
 	table-others
