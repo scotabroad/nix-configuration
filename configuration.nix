@@ -223,7 +223,10 @@ in {
     openssh.enable = true;
 
     # Enable CUPS to print documents.
-    printing.enable = true;  
+    printing = {
+      enable = true;
+      drivers = [ pkgs.hplipWithPlugin ];
+    };
   
     # Configure backlight
     udev.extraRules = ''
