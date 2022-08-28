@@ -17,6 +17,7 @@ executable taffybar
 		     , gi-gtk
 		     , gtk-sni-tray
 		     , haskell-gi-base
+		     , hostname
 		     , hslogger
 		     , status-notifier-item
                      , taffybar

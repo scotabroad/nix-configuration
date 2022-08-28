@@ -1,33 +1,42 @@
 {-# LANGUAGE OverloadedStrings #-}
-import System.Taffybar
-import StatusNotifier.Tray
-import System.Taffybar.Information.CPU
-import System.Taffybar.SimpleConfig
-import System.Taffybar.Widget
-import System.Taffybar.Widget.Battery
-import System.Taffybar.Widget.Generic.Graph
-import System.Taffybar.Widget.Generic.PollingGraph
-import System.Taffybar.Widget.Layout
-import System.Taffybar.Widget.SNITray
+import qualified Data.Map                                    as M
+import           Data.Maybe
+import qualified GI.Gtk                                      as Gtk
+import qualified GI.Gtk.Objects.Overlay                      as Gtk
+import           Network.HostName
+import           StatusNotifier.Tray
+import           System.Directory
+import           System.Environment.XDG.BaseDir
+import           System.FilePath
+import           System.Taffybar
+import           System.Taffybar.Information.CPU
+import           System.Taffybar.SimpleConfig
+import           System.Taffybar.Widget
+import           System.Taffybar.Widget.Battery
+import           System.Taffybar.Widget.Generic.Graph
+import           System.Taffybar.Widget.Generic.PollingGraph
+import           System.Taffybar.Widget.Layout
+import           System.Taffybar.Widget.SNITray
 
-{- cpuCallback = do
-  (_, systemLoad, totalLoad) <- cpuLoad
-  return [ totalLoad, systemLoad ] -}
+main :: IO ()
+main = simpleTaffybar myConfig
+  
+cssFile :: [FilePath]
+cssFile = ["./taffybar.css"]
+      
+myBatteryIcon = batteryIconNew
 
-main = do
-  let {-cpuCfg = defaultGraphConfig { graphDataColors = [ (0, 1, 0, 1), (1, 0, 1, 0.5)]
-                                  , graphLabel = Just "cpu"
-                                  }-}
+myBatteryText = textBatteryNew "$percentage$%" 
 
-      myBatteryIcon = batteryIconNew
-      myBatteryText = textBatteryNew "$percentage$%" 
-      myClock = textClockNewWith defaultClockConfig
-      -- myCpu = pollingGraphNew cpuCfg 0.5 cpuCallback
-      myLayout = layoutNew defaultLayoutConfig
-      myWorkspaces = workspacesNew defaultWorkspacesConfig
-      simpleConfig = defaultSimpleTaffyConfig
-                       { startWidgets = [ myWorkspaces, myLayout ]
-		       , centerWidgets = [ myClock ]
-                       , endWidgets = [ myBatteryText, myBatteryIcon, sniTrayNew ]
-                       }
-  simpleTaffybar simpleConfig
+myClock = textClockNewWith defaultClockConfig
+
+myLayout = layoutNew defaultLayoutConfig
+
+myWorkspaces = workspacesNew defaultWorkspacesConfig
+      
+myConfig = defaultSimpleTaffyConfig
+    { startWidgets = [ myWorkspaces, myLayout ]
+    , centerWidgets = [ myClock ]
+    , endWidgets = [ myBatteryText, myBatteryIcon, sniTrayNew ]
+    , cssPaths = cssFile
+    }
