@@ -3,6 +3,7 @@
 {
 
   imports = [
+    ./programs/emacs
     ./programs/exa
     ./programs/feh
     ./programs/git
