@@ -3,7 +3,7 @@
 /* Top Level Styling */
 .taffy-window * {
 	font-family: "Ubuntu";
-	font-size: 24px;
+	font-size: 12pt;
 	color: @nord6;
 	/*text-shadow: 1px 1px @nord0;?*/
 }
@@ -11,7 +11,7 @@
 .taffy-box {
 	/* border-color: ;
 	 * border-style: solid; */
-        background-color: @nord16;
+        background-color: @nord0;
 	/* padding: 3px;
 	 * margin: 4px;
 	 * border-radius: 4px; */
@@ -22,8 +22,8 @@
 	 * border-radius: 8px; */
 	padding-bottom: 5px;
 	padding-top: 5px;
-	padding-left: 2px;
-	padding-right: 2px;
+	padding-left: 5px;
+	padding-right: 5px;
 	/* margin: 4px;
 	 * transition: background-color .5s;
 	 * opacity: 0.9 */
