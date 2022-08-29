@@ -21,9 +21,6 @@ import           System.Taffybar.Widget.SNITray
 main :: IO ()
 main = simpleTaffybar myConfig
   
-cssFile :: [FilePath]
-cssFile = ["./taffybar.css"]
-      
 myBatteryIcon = batteryIconNew
 
 myBatteryText = textBatteryNew "$percentage$%" 
@@ -38,5 +35,4 @@ myConfig = defaultSimpleTaffyConfig
     { startWidgets = [ myWorkspaces, myLayout ]
     , centerWidgets = [ myClock ]
     , endWidgets = [ myBatteryText, myBatteryIcon, sniTrayNew ]
-    , cssPaths = cssFile
     }

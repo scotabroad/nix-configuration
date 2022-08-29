@@ -2,9 +2,8 @@
 
 /* Top Level Styling */
 .taffy-window * {
-	font-family: "UbuntuMono Nerd Font Mono";
-	font-size: 12px;
-	font-weight: regular;
+	font-family: "Ubuntu";
+	font-size: 24px;
 	color: @nord6;
 	/*text-shadow: 1px 1px @nord0;?*/
 }
@@ -44,7 +43,7 @@
 }
 
 .active .contents {
-	background-color: @nord13;
+	background-color: @nord7;
 }
 
 .visible .contents {
@@ -115,3 +114,4 @@ button:checked, button:hover .Contents:hover {
 
 .taffy-window menuitem:hover > label, menuitem:hover > label {
 	color: @nord5;
+}
