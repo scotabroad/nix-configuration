@@ -26,6 +26,9 @@ myBatteryIcon = batteryIconNew
 myBatteryText = textBatteryNew "$percentage$%" 
 
 myClock = textClockNewWith defaultClockConfig
+  { clockUpdateStrategy = RoundedTargetInterval 60 0.0
+  , clockFormatString = "%a %b %d %l:%M %p"
+  }
 
 myLayout = layoutNew defaultLayoutConfig
 
