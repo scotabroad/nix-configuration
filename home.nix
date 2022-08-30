@@ -3,22 +3,7 @@
 {
 
   imports = [
-    ./programs/emacs
-    ./programs/exa
-    ./programs/feh
-    ./programs/git
-    ./programs/kitty
-    ./programs/neovim
-    ./programs/rofi
-    ./programs/zsh
-    
-    ./services/dunst
-    ./services/flameshot
-    ./services/network-manager-applet
-    ./services/picom
-    ./services/status-notifier-watcher
-    ./services/taffybar
-
+    ./xmonad-desktop.nix
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -26,19 +11,6 @@
   home.username = "liamdp";
   home.homeDirectory = "/home/liamdp";
 
-  # Custom files
-  home.file = {
-    ".config/taffybar/nord.css".source = ./config/taffybar/nord.css;
-    ".config/taffybar/taffybar.css".source = ./config/taffybar/taffybar.css;
-  };
-
-  # Manage eww
-  #programs.eww = {
-  #  enable = true;
-  #  configDir = /home/liamdp/.config/eww;
-  #  package = unstable.eww;
-  #};
-  
   # Enable dconf
   dconf.enable = true;
   
@@ -94,42 +66,11 @@
     octaveFull
   ];
 
-  systemd.user = {
-    services = {
-      ibus = {
-        Unit = {
-	  Description = "ibus daemon";
-	  After = ["tray.target"];
-	};
-	Service = {
-	  ExecStart = "${pkgs.ibus}/bin/ibus-daemon -drxR";
-	};
-      };
-    };
-    targets = {
-      tray = {
-        Unit = {
-          Description = "tray target";
-          Requires = ["graphical-session-pre.target"];
-	};
-      };
-    };
-  };
-
   # Qt theme
   qt = {
     enable = true;
     platformTheme = "gtk";
     style.name = "gtk2";
-  };
-
-  xsession = {
-    preferStatusNotifierItems = true; # For taffybar sni tray
-    windowManager.xmonad = {
-      enable = true;
-      enableContribAndExtras = true;
-      config = ./xmonad/xmonad.hs;
-    };
   };
 
   # This value determines the Home Manager release that your
