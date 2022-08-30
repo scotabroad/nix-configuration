@@ -17,6 +17,7 @@ import           System.Taffybar.Widget.Generic.Graph
 import           System.Taffybar.Widget.Generic.PollingGraph
 import           System.Taffybar.Widget.Layout
 import           System.Taffybar.Widget.SNITray
+import           System.Taffybar.Widget.Workspaces
 
 main :: IO ()
 main = simpleTaffybar myConfig
@@ -33,6 +34,10 @@ myClock = textClockNewWith defaultClockConfig
 myLayout = layoutNew defaultLayoutConfig
 
 myWorkspaces = workspacesNew defaultWorkspacesConfig
+    { minIcons = 1
+    , widgetGap = 0
+    , showWorkspaceFn = hideEmpty
+    }
       
 myConfig = defaultSimpleTaffyConfig
     { startWidgets = [ myWorkspaces, myLayout ]

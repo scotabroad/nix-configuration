@@ -26,6 +26,12 @@
   home.username = "liamdp";
   home.homeDirectory = "/home/liamdp";
 
+  # Custom files
+  home.file = {
+    ".config/taffybar/nord.css".source = ./config/taffybar/nord.css;
+    ".config/taffybar/taffybar.css".source = ./config/taffybar/taffybar.css;
+  };
+
   # Manage eww
   #programs.eww = {
   #  enable = true;
