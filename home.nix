@@ -116,6 +116,13 @@
     };
   };
 
+  # Qt theme
+  qt = {
+    enable = true;
+    platformTheme = "gtk";
+    style.name = "gtk2";
+  };
+
   xsession = {
     preferStatusNotifierItems = true; # For taffybar sni tray
     windowManager.xmonad = {
