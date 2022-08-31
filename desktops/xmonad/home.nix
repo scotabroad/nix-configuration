@@ -2,14 +2,14 @@
 
 {
   imports = [
-    ./programs/xmonad.nix
-    ./services/xmonad.nix
+    ../../programs/xmonad.nix
+    ../../services/xmonad.nix
   ];
 
   # Custom files
   home.file = {
-    ".config/taffybar/nord.css".source = ./config/taffybar/nord.css;
-    ".config/taffybar/taffybar.css".source = ./config/taffybar/taffybar.css;
+    ".config/taffybar/nord.css".source = ../../config/taffybar/nord.css;
+    ".config/taffybar/taffybar.css".source = ../../config/taffybar/taffybar.css;
   };
 
   xsession = {
@@ -17,7 +17,7 @@
     windowManager.xmonad = {
       enable = true;
       enableContribAndExtras = true;
-      config = ./xmonad/xmonad.hs;
+      config = ./xmonad.hs;
     };
   };
 }

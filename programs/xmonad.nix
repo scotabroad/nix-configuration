@@ -9,7 +9,7 @@
     ./kitty
     ./neovim
     ./rofi
-    #./xmobar
+    ./xmobar
     ./zsh
   ];
 }

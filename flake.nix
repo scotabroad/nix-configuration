@@ -50,7 +50,7 @@
 	  #    vivaldi = unstable.vivaldi;
           #  })
 
-	    (import ./taffybar/overlay.nix)
+	    (import ./config/taffybar/overlay.nix)
 
 	    nix-matlab.overlay
 

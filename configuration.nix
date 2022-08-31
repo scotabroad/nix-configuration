@@ -389,7 +389,7 @@ in {
       allowUnfree = true;
     };
     overlays = with inputs; [
-      (import ./taffybar/overlay.nix)
+      (import ./config/taffybar/overlay.nix)
     ];
     # Nixpkgs platform
     system = "x86_64-linux";
