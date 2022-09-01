@@ -18,6 +18,22 @@ This is my NixOS configuration. I uses a flake to manage everything.
 | *Font*         | Ubuntu    |
 | *Editor*       | neovim    |
 
+* Cinnamon
+
+[[Screenshot][images/cinnamon.png]]
+
+#+ATTR_HTML: :border 2 :rules all :frame border
+|----------------+----------------+
+| *OS*           | NixOS          |
+| *Shell*        | zsh            |
+| *Terminal*     | GNOME Terminal |
+| *Colorscheme*  | Nord           |
+| *DM*           | LightDM        |
+| *DE*           | Cinnamon       |
+| *WM*           | Muffin         |
+| *Font*         | Ubuntu         |
+| *Editor        | neovim         |
+
 * Inspired by
 
 - [[https://github.com/corytertel/nix-configuration][Cory Tertel's Nix Configuration]]
