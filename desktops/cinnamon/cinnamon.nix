@@ -24,6 +24,7 @@
 	      name = "Nordic";
 	      package = pkgs.nordic;
 	    };
+	    # extraConfig = '' enable-hidpi = on ''; Failed dpi fix
 	  };
 	};
       };
