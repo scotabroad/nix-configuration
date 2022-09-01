@@ -8,8 +8,7 @@
     font = {
       name = "Ubuntu Mono Nerd Font Complete Mono";
       package = pkgs.nerdfonts;
-      #size = 24; Only for xmonad, may split this file later
-      size = 12;
+      size = 24; #Only for xmonad, may split this file later
     };
     #keybindings = {
     #  "ctrl+c" = "copy_or_interrupt";

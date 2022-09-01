@@ -2,8 +2,6 @@
 
 {
   imports = [
-    ./programs
-    ./services
+    ./kitty
   ];
-
 }

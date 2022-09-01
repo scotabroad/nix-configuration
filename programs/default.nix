@@ -6,7 +6,6 @@
     ./exa
     ./feh
     ./git
-    ./kitty
     ./neovim
     ./zsh
   ];

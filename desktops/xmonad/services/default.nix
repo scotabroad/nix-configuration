@@ -3,7 +3,6 @@
 {
   imports = [
     ./dunst
-    ./flameshot
     ./network-manager-applet
     ./picom
     ./status-notifier-watcher

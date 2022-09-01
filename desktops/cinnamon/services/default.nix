@@ -1,10 +1,6 @@
 { config, inputs, pkgs, ... }:
 
 {
-  imports = [
-    ./flameshot
-  ];
-
   systemd.user = {
     services = {
       # An attempt to get cinnamon screensaver working on NixOS with systemd

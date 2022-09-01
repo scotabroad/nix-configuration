@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ../../programs/xmonad.nix
-    ../../services/xmonad.nix
+    ./programs
+    ./services
   ];
 
   # Custom files

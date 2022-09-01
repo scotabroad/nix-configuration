@@ -1,9 +1,30 @@
 { config, pkgs, inputs, ... }:
 
-{
+let
+  # dpi adjustment calculations
+  monitorHeight = 2256;
+  monitorWidth = 1504;
+  monitorHeightInches = 11.25; # 285 mm
+  monitorWidthInches = 7.5; # 190.5 mm
+  newDPI = builtins.ceil ((monitorHeight / monitorHeightInches) + (monitorWidth / monitorWidthInches)) / 2; # Looking at a DPI of 201
+
+in {
+
+  # Set up Environment
+  environment = {
+    # Environment Variables for DPI fixes
+    variables = {
+      GDK_SCALE = "2";
+      GDK_DPI_SCALE = "0.5";
+      QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+      _JAVA_OPTIONS = "-Dsun.java2d.uiScale=1"; # 2 ruins MARS MIPS, have to do 1 as only integers are accepted
+      _JAVA_AWT_WM_NONREPARENTING = "1"; # MATLAB Fix
+    };
+  };
+  
   # 2nd step taffybar fix
   gtk.iconCache.enable = true;
-
+  
   #Programs specific to my xmonad sessions
   programs = {
     # Enable backlight
@@ -22,8 +43,9 @@
 
     # Xserver options specific to xmonad
     xserver = {
-      # 1st step taffybar workaround
+      dpi = newDPI;
       displayManager = {
+        defaultSession = "none+xmonad";
         lightdm = {
 	  greeters.gtk = {
 	    enable = true;
@@ -54,6 +76,7 @@
 	    '';
 	  };
 	};
+        # 1st step taffybar workaround
         sessionCommands = ''
 	  systemctl --user import-environment GDK_PIXBUF_MODULE_FILE_DBUS_SESSION_BUS_ADDRESS PATH
 	'';

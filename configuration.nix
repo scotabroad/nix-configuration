@@ -4,15 +4,6 @@
 
 { config, pkgs, inputs, ... }:
 
-#let
-  # dpi adjustment calculations
-  #monitorHeight = 2256; #in pixels
-  #monitorWidth  = 1504; #in pixels
-  #monitorHeightInches = 11.25; #285 mm;
-  #monitorWidthInches  = 7.5;   #190.5 mm;
-  #newDPI = builtins.ceil ((monitorHeight / monitorHeightInches) + (monitorWidth / monitorWidthInches)) / 2; #Looking at a DPI of 201
-
-#in 
 {
   
   imports =
@@ -105,15 +96,6 @@
       unzip
       zip
     ];
-    
-    # Environment Variables for DPI fixes
-    variables = {
-      #GDK_SCALE = "2";
-      #GDK_DPI_SCALE = "0.5";
-      #QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-      #_JAVA_OPTIONS = "-Dsun.java2d.uiScale=1"; # 2 ruins MARS MIPS, have to do 1 as only accepts intergers
-      #_JAVA_AWT_WM_NONREPARENTING= "1"; # MATLAB Fix
-    };
   };
 
   # Install custom fonts system-wide
@@ -228,31 +210,14 @@
       enable = true;
       # Uncomment below to disable X server on boot
       # autorun = false; #Must run systemctl start display display-manager.service
-      # dpi = newDPI; #HiDPI fix, may need to adjust number
       # Video Drivers can be specified here
       # videoDrivers = [ "r128" ]; # this is for xf86-video-r128, might need this for xorg-x11-dev-intel
       displayManager = {
-        defaultSession = "cinnamon";
         lightdm = {
           background = ./wallpaper/Nordic.jpg;
           extraSeatDefaults = ''
             greeter-wrapper = ${pkgs.lightdm-dpi-fix}
           '';
-	  greeters.slick = {
-            enable = true;
-	    font = {
-	      name = "Ubuntu 22";
-	      package = pkgs.ubuntu_font_family; 
-	    };
-	    iconTheme = {
-	      name = "Nordzy-dark";
-	      package = pkgs.nordzy-icon-theme;
-	    };
-	    theme = {
-	      name = "Nordic";
-	      package = pkgs.nordic;
-	    };
-          };
         };
       };
 

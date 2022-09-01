@@ -4,6 +4,8 @@
 
   imports = [
     ./desktops/cinnamon/home.nix
+    ./programs
+    ./services
   ];
 
   # Home Manager needs a bit of information about you and the
