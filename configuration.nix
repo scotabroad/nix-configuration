@@ -241,7 +241,7 @@
 	  greeters.slick = {
             enable = true;
 	    font = {
-	      name = "Ubuntu 11";
+	      name = "Ubuntu 22";
 	      package = pkgs.ubuntu_font_family; 
 	    };
 	    iconTheme = {

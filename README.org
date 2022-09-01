@@ -23,16 +23,16 @@ This is my NixOS configuration. I uses a flake to manage everything.
 [[Screenshot][images/cinnamon.png]]
 
 #+ATTR_HTML: :border 2 :rules all :frame border
-|----------------+----------------+
-| *OS*           | NixOS          |
-| *Shell*        | zsh            |
-| *Terminal*     | GNOME Terminal |
-| *Colorscheme*  | Nord           |
-| *DM*           | LightDM        |
-| *DE*           | Cinnamon       |
-| *WM*           | Muffin         |
-| *Font*         | Ubuntu         |
-| *Editor        | neovim         |
+|----------------+----------+
+| *OS*           | NixOS    |
+| *Shell*        | zsh      |
+| *Terminal*     | kitty    |
+| *Colorscheme*  | Nord     |
+| *DM*           | LightDM  |
+| *DE*           | Cinnamon |
+| *WM*           | Muffin   |
+| *Font*         | Ubuntu   |
+| *Editor*       | neovim   |
 
 * Inspired by
 
