@@ -17,6 +17,7 @@ in {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./desktops/xmonad/xmonad.nix
     ];
 
   # Boot Options
@@ -94,11 +95,10 @@ in {
       firefox
       git
       htop
-      lightlocker
+      lightlocker # Would this interfere with GNOME or Cinnamon... RESEARCH!!!
       networkmanager
       networkmanagerapplet
       vim
-      xmobar
       wget
       which
       unzip
@@ -122,9 +122,6 @@ in {
     pkgs.ubuntu_font_family
   ];
 
-  # 2nd step taffybar fix
-  gtk.iconCache.enable = true;
- 
   # Select internationalisation properties.
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -183,9 +180,6 @@ in {
     #   enableSSHSupport = true;
     # };
     
-    # Enable backlight
-    light.enable = true;
-
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
     # mtr.enable = true;
@@ -228,14 +222,6 @@ in {
       drivers = [ pkgs.hplipWithPlugin ];
     };
   
-    # Configure backlight
-    udev.extraRules = ''
-      ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
-    '';
-
-    # Enable Upower for battery management
-    upower.enable = true;
-    
     # Enable the X11 windowing system.
     xserver = {
       enable = true;
@@ -280,58 +266,11 @@ in {
             '';
           };
         };
-	# 1st step taffybar workaround
-	sessionCommands = ''
-	  systemctl --user import-environment GDK_PIXBUF_MODULE_FILE DBUS_SESSION_BUS_ADDRESS PATH
-	'';
       };
 
-      # 3rd step taffybar workaround
-      gdk-pixbuf.modulePackages = [ pkgs.librsvg ];
- 
       # Configure keymap in X11
       layout = "us";
       
-      # Enable touchpad support (enabled default in most desktopManager).
-      libinput = {
-        enable = true;
-        mouse = {
-          accelProfile = "flat";
-	  accelSpeed = null;
-	  disableWhileTyping = true;
-        };
-        touchpad = {
-          accelProfile = "adaptive";
-          accelSpeed = null;
-          additionalOptions = "";
-          buttonMapping = null;
-          calibrationMatrix = null;
-          clickMethod = "clickfinger";
-          dev = null;
-          disableWhileTyping = true;
-          horizontalScrolling = true;
-          leftHanded = false;
-          middleEmulation = false;
-          naturalScrolling = true;
-          scrollButton = null;
-          scrollMethod = "twofinger";
-          sendEventsMode = "enabled";
-          tapping = false;
-          tappingDragLock = false;
-          transformationMatrix = "3 0 0 0 3 0 0 0 1";
-        };
-      };
-      # Need one desktop manager or window manager, otherwise stuck with xterm
-      windowManager.xmonad = {
-        enable = true;
-        enableContribAndExtras = true;
-        extraPackages = haskellPackages: [
-          haskellPackages.xmonad
-	  haskellPackages.xmonad-contrib
-	  haskellPackages.xmonad-extras
-        ];
-      };
-     
       # Keyboard Layout switching
       # xkbOptions = {
       #   "caps:escape" # map caps to escape.
