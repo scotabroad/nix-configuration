@@ -34,6 +34,22 @@ This is my NixOS configuration. I uses a flake to manage everything.
 | *Font*         | Ubuntu   |
 | *Editor*       | neovim   |
 
+* Pantheon
+
+[[Screenshot][images/pantheon.png]]
+
+#+ATTR_HTML: :border 2 :rules all :frame border
+|----------------+------------------------+
+| *OS*           | NixOS                  |
+| *Shell*        | zsh                    |
+| *Terminal*     | io.elementary.terminal |
+| *Colorscheme*  | Nord                   |
+| *DM*           | LightDM                |
+| *DE*           | Pantheon               |
+| *WM*           | Gala                   |
+| *Font*         | Ubuntu                 |
+| *Editor*       | neovim                 |
+
 * Inspired by
 
 - [[https://github.com/corytertel/nix-configuration][Cory Tertel's Nix Configuration]]
