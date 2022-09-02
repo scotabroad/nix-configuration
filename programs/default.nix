@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./emacs
     ./exa
     ./feh
     ./git
