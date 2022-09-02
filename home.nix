@@ -3,7 +3,7 @@
 {
 
   imports = [
-    ./desktops/cinnamon/home.nix
+    ./desktops/pantheon/home.nix
     ./programs
     ./services
   ];
@@ -46,7 +46,6 @@
   # Additional Packages
   home.packages = with pkgs; [
     # Personal
-    cinnamon.nemo
     discord
     element-desktop
     eww
