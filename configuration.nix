@@ -77,6 +77,9 @@
 
   # Set up Environment
   environment = {
+    # Needed for wingpanel-indicator-ayatana
+    pathsToLink = [ "/libexec" ];
+
     # Select default shells
     shells = [ pkgs.zsh ];
     
@@ -87,6 +90,7 @@
       firefox
       git
       htop
+      indicator-application-gtk3 # Needed for wingpanel-indicator-ayatana
       lightlocker # Would this interfere with GNOME or Cinnamon... RESEARCH!!!
       networkmanager
       networkmanagerapplet
