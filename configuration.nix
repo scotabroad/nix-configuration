@@ -6,12 +6,12 @@
 
 {
   
-  imports =
-    [ ./boot/efi.nix
-      ./hardware-configuration.nix
-      ./desktops/pantheon/pantheon.nix
-      ./programs/steam.nix
-    ];
+  imports = [
+    ./boot/efi.nix
+    ./desktops/xserver.nix
+    ./hardware-configuration.nix
+    ./programs/steam.nix
+  ];
 
   # tty console settings
   console = {
@@ -163,32 +163,6 @@
       enable = true;
       drivers = [ pkgs.hplipWithPlugin ];
     };
-  
-    # Enable the X11 windowing system.
-    xserver = {
-      enable = true;
-      # Uncomment below to disable X server on boot
-      # autorun = false; #Must run systemctl start display display-manager.service
-      # Video Drivers can be specified here
-      # videoDrivers = [ "r128" ]; # this is for xf86-video-r128, might need this for xorg-x11-dev-intel
-      displayManager = {
-        lightdm = {
-          background = ./wallpaper/Nordic.jpg;
-          extraSeatDefaults = ''
-            greeter-wrapper = ${pkgs.lightdm-dpi-fix}
-          '';
-        };
-      };
-
-      # Configure keymap in X11
-      layout = "us";
-      
-      # Keyboard Layout switching
-      # xkbOptions = {
-      #   "caps:escape" # map caps to escape.
-      #   "eurosign:e";
-      # };
-    }; # end Xserver config
   };
   
   # Enable sound.

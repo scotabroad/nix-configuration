@@ -7,6 +7,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager/master";
     };
+    hyprland = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:hyprwm/hyprland";
+    };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/master";
@@ -20,7 +24,18 @@
     };
   };
 
-  outputs = { self, flake-utils, nixpkgs, nixpkgs-unstable, home-manager, nixos-hardware, nix-matlab, taffybar, ... }:
+  outputs = { 
+    self, 
+    flake-utils, 
+    nixpkgs, 
+    nixpkgs-unstable, 
+    home-manager, 
+    nixos-hardware, 
+    nix-matlab, 
+    taffybar, 
+    hyprland, 
+    ... 
+  }:
     let
       system = "x86_64-linux";
 
@@ -37,23 +52,8 @@
       pkgs = make-packages nixpkgs{
         
 	overlays = [
-
-	  # Unstable Overlay
-          #(final: prev:
-          #  let unstable = make-packages nixpkgs-unstable { };
-          #  in {
-          #    eww = unstable.eww;
-	  #    nix = unstable.nix;
-	  #    nordic = unstable.nordic;
-	  #    nordzy-icon-theme = unstable.nordzy-icon-theme;
-          #    steam = unstable.steam;
-	  #    vivaldi = unstable.vivaldi;
-          #  })
-
 	    (import ./config/taffybar/overlay.nix)
-
 	    nix-matlab.overlay
-
         ]
 	++ import ./overlays { inherit pkgs; }
 	++ import ./packages { inherit lib pkgs; }
@@ -75,6 +75,5 @@
           }
         ];
       };
-
-  };
+    };
 }
