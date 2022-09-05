@@ -55,6 +55,12 @@ This is my NixOS configuration. I use a flake to manage everything. Currently, m
 | **Font**            | Ubuntu                 |
 | **Editor**          | neovim                 |
 
+## TO DO
+
+- Continue modularization of nix files to improve readability
+- Increase the amount of things managed by nix (Firefox and Discord use custom css files I need to add, for example)
+- Create an ["Erase your darlings" Setup](https://grahamc.com/blog/erase-your-darlings "Erase your darlings")
+
 ## Inspiration
 
 - [Cory Tertel's Nix Configuration](https://github.com/corytertel/nix-configuration "Cory Tertel's Nix Configuration")
