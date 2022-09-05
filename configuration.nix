@@ -7,45 +7,11 @@
 {
   
   imports =
-    [ # Include the results of the hardware scan.
+    [ ./boot/efi.nix
       ./hardware-configuration.nix
       ./desktops/pantheon/pantheon.nix
+      ./programs/steam.nix
     ];
-
-  # Boot Options
-  boot = {
-    # Kernel
-    kernelPackages = pkgs.linuxPackages; # Latest LTS
-
-    # Boot Loader settings
-    loader = {
-      # EFI settings
-      efi = {
-        efiSysMountPoint = "/boot";
-	canTouchEfiVariables = false;
-      };
-
-      # Use the GRUB 2 boot loader.
-      grub = {
-        enable = true;
-        backgroundColor = "#2f302f";
-	device = "nodev"; # "nodev" for efi only
-        efiInstallAsRemovable = true;
-        efiSupport = true;
-        # Define on which hard drive you want to install Grub.
-        font = "${pkgs.nerdfonts}/share/fonts/truetype/NerdFonts/'Ubuntu Mono Nerd Font Complete Mono.ttf'";
-        fontSize = 28;
-        theme = pkgs.framework-grub-theme;
-	# splashImage = null;
-	splashMode = "normal";
-        useOSProber = false; # enable only if dual booting
-        version = 2;
-      };
-
-      # Disable systemd-boot
-      systemd-boot.enable = false;
-    };
-  };
 
   # tty console settings
   console = {
@@ -127,9 +93,6 @@
     # Enable sound
     pulseaudio.enable = true;
     
-    # Enable steam hardware
-    steam-hardware.enable = true;
-
     # Was not available in NixOS 20.03, is in Unstable, but this is 22.05... does the same as some earlier fixes
     video.hidpi.enable = true;
   };
@@ -178,14 +141,6 @@
       viAlias = true;
       vimAlias = true;
     };
-
-    # Configure steam, which requires 32-bit libraries
-    steam = {
-      enable = true;
-      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-      remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    };
-  
   };
 
   # Security Options
@@ -248,7 +203,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.liamdp = {
     createHome = true;
-    extraGroups = [ "wheel" "video" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "video" "networkmanager" ]; # Enable ‘sudo’ for the user.
     home = "/home/liamdp";
     isNormalUser = true;
     shell = pkgs.zsh;
