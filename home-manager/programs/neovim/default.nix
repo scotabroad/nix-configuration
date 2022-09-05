@@ -20,6 +20,7 @@
 	  tree-sitter-java
 	  tree-sitter-json
 	  tree-sitter-latex
+	  tree-sitter-markdown
 	  tree-sitter-nix
 	  tree-sitter-rust
 	  tree-sitter-scheme
