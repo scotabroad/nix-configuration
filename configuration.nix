@@ -9,6 +9,7 @@
   imports = [
     ./boot/efi.nix
     ./desktops/xserver.nix
+    ./fonts.nix
     ./hardware-configuration.nix
     ./programs/steam.nix
   ];
@@ -36,9 +37,6 @@
     ];
     # Bigger tty font
     font = "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
-    # Select internationalization properties for tty console
-    # keyMap = "us";
-    # useXkbConfig = true; # use xkbOptions in tty.
   };
 
   # Set up Environment
@@ -68,19 +66,11 @@
     ];
   };
 
-  # Install custom fonts system-wide
-  fonts.fonts = [
-    pkgs.terminus_font
-    pkgs.nerdfonts
-    pkgs.ubuntu_font_family
-  ];
-
   # Select internationalisation properties.
   i18n = {
     defaultLocale = "en_US.UTF-8";
     inputMethod = {
       enabled = "ibus";
-      #package = pkgs.ibus-with-plugins;
       ibus.engines = with pkgs.ibus-engines; [
 	table
 	table-others
