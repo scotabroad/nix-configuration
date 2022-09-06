@@ -20,6 +20,7 @@
       discord
       element-desktop
       eww
+      gnome.dconf-editor
       gnome.gedit
       gtk-engine-murrine
       imagemagick
