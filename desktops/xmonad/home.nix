@@ -4,6 +4,7 @@
   imports = [
     ./programs
     ./services
+    ./dconf.nix
   ];
 
   # Custom files

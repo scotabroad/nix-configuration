@@ -6,6 +6,7 @@
     ../desktops/pantheon/home.nix
     ./programs
     ./services
+    ./dconf.nix
     ./theme.nix
   ];
 
