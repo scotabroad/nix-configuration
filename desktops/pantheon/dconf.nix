@@ -175,7 +175,7 @@ in {
     };
 
     "org/gnome/desktop/wm/preferences" = {
-      button-layout = "close:maximize";
+      button-layout = "close,maximize:minimize";
       titlebar-font = "Ubuntu 11";
     };
     
@@ -249,9 +249,15 @@ in {
       name = "firefox";
     };
 
-    "org/gnome/settings-daemon/plugins/xsettings" = {
-      overrides = "{'Gtk/DialogsUseHeader': <0>, 'Gtk/ShellShowsAppMenu': <0>, 'Gtk/EnablePrimaryPaste': <0>, 'Gtk/DecorationLayout': <'close:maximize'>}"; # This may not be the correct type, do research!!!
-    };
+    # Gvariant dictionaries are not currently supported, modify this module by hand
+    #"org/gnome/settings-daemon/plugins/xsettings" = {
+    #  overrides = {
+    #   "Gtk/DialogsUseHeader": <0>, 
+    #	'Gtk/ShellShowsAppMenu': <0>, 
+    #	'Gtk/EnablePrimaryPaste': <0>, 
+    #	'Gtk/DecorationLayout': <'close:maximize'>
+    #  };
+    #};
 
     "org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9" = {
       background-color = "rgb(46,52,64)";
@@ -311,7 +317,7 @@ in {
 
     "org/pantheon/desktop/gala/appearance" = {
                       #leftside:rightside Options: close, minimize, maximize
-      button-layout = "close:maximize"; # also need to modify org/gnome/desktop/wm/preferences/button-layout and
+      button-layout = "close,maximize:minimize"; # also need to modify org/gnome/desktop/wm/preferences/button-layout and
     };                                           # org/gnome/settings-daemon/plugins/xsettings
   };
 }
