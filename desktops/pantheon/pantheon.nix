@@ -24,7 +24,10 @@
       desktopManager = {
         pantheon = {
 	  enable = true;
-	  extraWingpanelIndicators = [ pkgs.wingpanel-indicator-ayatana ];
+	  extraWingpanelIndicators = [ 
+	    pkgs.wingpanel-indicator-ayatana
+	    pkgs.monitor
+	  ];
 	};
       };
     };
