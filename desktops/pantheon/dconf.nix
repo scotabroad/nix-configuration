@@ -1,7 +1,9 @@
 { config, inputs, lib, home-manager, pkgs, ... }:
 
 let
+  mkDictionaryEntry = lib.hm.gvariant.mkDictionaryEntry;
   mkTuple = lib.hm.gvariant.mkTuple;
+  mkVariant = lib.hm.gvariant.mkVariant;
 in {
   dconf.settings = {
     "io/elementary/calculator/saved-state" = {
@@ -175,7 +177,7 @@ in {
     };
 
     "org/gnome/desktop/wm/preferences" = {
-      button-layout = "close,maximize:minimize";
+      button-layout = "close,minimize:maximize";
       titlebar-font = "Ubuntu 11";
     };
     
@@ -250,14 +252,14 @@ in {
     };
 
     # Gvariant dictionaries are not currently supported, modify this module by hand
-    #"org/gnome/settings-daemon/plugins/xsettings" = {
-    #  overrides = {
-    #   "Gtk/DialogsUseHeader": <0>, 
-    #	'Gtk/ShellShowsAppMenu': <0>, 
-    #	'Gtk/EnablePrimaryPaste': <0>, 
-    #	'Gtk/DecorationLayout': <'close:maximize'>
-    #  };
-    #};
+    "org/gnome/settings-daemon/plugins/xsettings" = {
+      overrides = [
+        (mkDictionaryEntry ["Gtk/DialogsUseHeader" (mkVariant 0)]) 
+    	(mkDictionaryEntry ["Gtk/ShellShowsAppMenu" (mkVariant 0)]) 
+    	(mkDictionaryEntry ["Gtk/EnablePrimaryPaste" (mkVariant 0)]) 
+    	(mkDictionaryEntry ["Gtk/DecorationLayout" (mkVariant "close,minimize:maximize")])
+      ];
+    };
 
     "org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9" = {
       background-color = "rgb(46,52,64)";
@@ -317,7 +319,7 @@ in {
 
     "org/pantheon/desktop/gala/appearance" = {
                       #leftside:rightside Options: close, minimize, maximize
-      button-layout = "close,maximize:minimize"; # also need to modify org/gnome/desktop/wm/preferences/button-layout and
+      button-layout = "close,minimize:maximize"; # also need to modify org/gnome/desktop/wm/preferences/button-layout and
     };                                           # org/gnome/settings-daemon/plugins/xsettings
   };
 }

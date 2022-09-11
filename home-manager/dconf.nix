@@ -1,6 +1,7 @@
 { config, inputs, lib, home-manager, pkgs, ... }:
 
-let 
+let
+  mkUint32 = lib.hm.gvariant.mkUint32;
   mkTuple = lib.hm.gvariant.mkTuple;
 in {
   dconf.settings = {
@@ -28,7 +29,7 @@ in {
     };
 
     "org/gnome/desktop/input-sources" = {
-      current="uint32 0";
+      current= (mkUint32 0);
       sources = [(mkTuple ["xkb" "us"]) (mkTuple ["ibus" "xkb:us::eng"]) (mkTuple ["ibus" "table:ipa-x-sampa"])];
       xkb-options = [ "grp:alt_shift_toggle" ];
     };

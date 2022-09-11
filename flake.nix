@@ -5,7 +5,8 @@
     flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-community/home-manager/master";
+      #url = "github:nix-community/home-manager/master";
+      url = "github:scotabroad/home-manager/add-gvariant-types";
     };
     hyprland = {
       inputs.nixpkgs.follows = "nixpkgs";
