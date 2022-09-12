@@ -5,7 +5,7 @@ let
 in {
   dconf.settings = {
     "com/github/stsdc/monitor/settings" = {
-      background-state = false;
+      background-state = true;
       indicator-state = true;
     };
 
@@ -36,7 +36,7 @@ in {
     };
 
     "io/elementary/notifications" = {
-      do-not-disturb = true;
+      do-not-disturb = false;
     };
 
     "org/gnome/desktop/interface" = {

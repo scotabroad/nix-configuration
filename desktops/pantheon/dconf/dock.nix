@@ -11,6 +11,7 @@
 	"firefox.dockitem"
 	"vivaldi-stable.dockitem"
 	"discord.dockitem"
+	"element-desktop.dockitem"
 	"io.elementary.terminal.dockitem"
 	"io.elementary.switchbaord.dockitem"
       ];
@@ -20,7 +21,7 @@
       items-alignment = "center";
       lock-items = false;
       monitor = "";
-      offset = -82;
+      offset = 0;
       pinned-only = false;
       position = "left";
       pressure-reveal = false;

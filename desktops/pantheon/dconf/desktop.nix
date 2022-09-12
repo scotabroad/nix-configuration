@@ -24,7 +24,7 @@ in {
     };
 
     "org/gnome/desktop/wm/preferences" = {
-      button-layout = "close,maximize:minimize";
+      button-layout = "close:maximize";
       titlebar-font = "Ubuntu 11";
     };
 
@@ -33,13 +33,13 @@ in {
         (mkDictionaryEntry ["Gtk/DialogsUseHeader" (mkVariant 0)])
 	(mkDictionaryEntry ["Gtk/ShellShowsAppMenu" (mkVariant 0)])
 	(mkDictionaryEntry ["Gtk/EnablePrimaryPaste" (mkVariant 0)])
-	(mkDictionaryEntry ["Gtk/DecorationLayout" (mkVariant "close,maximize:minimize")])
+	(mkDictionaryEntry ["Gtk/DecorationLayout" (mkVariant "close:maximize")])
       ];
     };
 
     "org/pantheon/desktop/gala/appearance" = {
                       #leftside:rightside Options: close, minimize, maximize, menu
-      button-layout = "close,maximize:minimize"; # also need to modify org/gnome/desktop/wm/preferences/button-layout and
+      button-layout = "close:maximize"; # also need to modify org/gnome/desktop/wm/preferences/button-layout and
     };                                           # org/gnome/settings-daemon/plugins/xsettings
   };
 }
