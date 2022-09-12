@@ -20,6 +20,12 @@
       package = pkgs.nordzy-icon-theme;
     };
 
+    cursorTheme = {
+      name = "Nordzy-cursors";
+      package = pkgs.nordzy-cursor-theme;
+      size = 24;
+    };
+
     gtk3.extraConfig = {
       gtk-icon-theme-name = "Nordzy-dark";
       gtk-theme-name = "Nordic";

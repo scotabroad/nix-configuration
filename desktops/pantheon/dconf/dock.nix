@@ -7,13 +7,16 @@
       auto-pinning = true;
       current-workspace-only = false;
       dock-items = [
+        "gala-multitaskingview.dockitem"
         "io.elementary.files.dockitem"
 	"firefox.dockitem"
 	"vivaldi-stable.dockitem"
 	"discord.dockitem"
 	"element-desktop.dockitem"
+	"steam-desktop.dockitem"
 	"io.elementary.terminal.dockitem"
 	"io.elementary.switchbaord.dockitem"
+	"trash.dockitem"
       ];
       hide-delay = 500;
       hide-mode = "window-dodge";
@@ -26,7 +29,7 @@
       position = "left";
       pressure-reveal = false;
       show-dock-item = false;
-      theme = "Gtk+";
+      theme = "Matte";
       tooltips-enabled = true;
       unhide-delay = 250;
       zoom-enabled = false;
