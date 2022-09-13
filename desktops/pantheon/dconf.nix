@@ -113,7 +113,7 @@ in {
 
     "org/gnome/gedit/preferences/editor" = {
       highlight-current-line = false; # KEEP THIS FALSE!!! I HATE THIS FEATURE
-      scheme = "tango"; # see if nord or Nord will work
+      scheme = "nord-gedit"; # file is an xml file in ~/.local/share/gedit/styles
       wrap-last-split-mode = "word";
     };
 
