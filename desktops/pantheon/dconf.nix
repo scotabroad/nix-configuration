@@ -23,10 +23,11 @@ in {
       window-size = (mkTuple [1024 750]);
     };
 
-    "io/elementary/camera/settings" = {
-      window-maximized = false;
-      window-size = (mkTuple [918 722]);
-    };
+    # Removing the camera
+    #"io/elementary/camera/settings" = {
+    #  window-maximized = false;
+    #  window-size = (mkTuple [918 722]);
+    #};
 
     "io/elementary/code/saved-state" = {
       hp1-size = 232;
@@ -83,15 +84,16 @@ in {
       window-size = (mkTuple [1000 782]);
     };
 
-    "org/gnome/epiphany" = {
-      ask-for-default = false;
-    };
+    # Removing epiphany for now
+    #"org/gnome/epiphany" = {
+    #  ask-for-default = false;
+    #};
 
-    "org/gnome/epiphany/state" = {
-      is-maximized = false;
-      window-position = (mkTuple [0 0]);
-      window-size = (mkTuple [1024 722]);
-    };
+    #"org/gnome/epiphany/state" = {
+    #  is-maximized = false;
+    #  window-position = (mkTuple [0 0]);
+    #  window-size = (mkTuple [1024 722]);
+    #};
 
     "org/gnome/evince/default" = {
       window-ratio = (mkTuple [0.75757575757575757 0.98039215686274506]);

@@ -5,7 +5,7 @@
   imports = [
     ../desktops/pantheon/home.nix
     ./programs
-    ./services
+    #./services
     ./dconf.nix
     ./theme.nix
   ];

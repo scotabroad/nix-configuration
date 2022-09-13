@@ -1,6 +1,11 @@
 { config, inputs, pkgs, ... }:
 
 {
+  environment.pantheon.excludePackages = [
+    pkgs.pantheon.epiphany
+    pkgs.pantheon.elementary-camera
+  ];
+
   programs = {
     pantheon-tweaks.enable = true;
   };
