@@ -26,6 +26,7 @@
       gtk-engine-murrine
       imagemagick
       libreoffice
+      nord-gedit
       trim-generations
       wallpaper
       vivaldi
