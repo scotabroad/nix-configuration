@@ -104,33 +104,6 @@ in {
       network-monitor-gio-name = "";
     };
 
-    "org/gnome/gedit/plugins" = {
-      active-plugins = ["spell" "sort" "openlinks" "modelines" "filebrowser" "docinfo"];
-    };
-
-    "org/gnome/gedit/plugins/filebrowser" = {
-      root="file:///";
-      tree-view = true;
-    };
-
-    "org/gnome/gedit/preferences/editor" = {
-      highlight-current-line = true;
-      scheme = "nord-gedit"; # file is an xml file in ~/.local/share/gedit/styles
-      wrap-last-split-mode = "word";
-    };
-
-    "org/gnome/gedit/preferences/ui" = {
-      show-tabs-mode = "auto";
-    };
-
-    "org/gnome/gedit/state/window" = {
-      bottom-panel-size = 10;
-      side-panel-active-page = "GeditWindowDocumentsPanel";
-      side-panel-size = 200;
-      size = (mkTuple [390 678]);
-      state = 87168; # should I actually keep track of this?
-    };
-
     "org/gnome/nm-applet" = {
       disable-connected-notifications = true;
     };

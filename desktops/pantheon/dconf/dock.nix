@@ -13,9 +13,9 @@
 	"vivaldi-stable.dockitem"
 	"discord.dockitem"
 	"element-desktop.dockitem"
-	"steam-desktop.dockitem"
+	"steam.dockitem"
 	"io.elementary.terminal.dockitem"
-	"io.elementary.switchbaord.dockitem"
+	"io.elementary.switchboard.dockitem"
 	"trash.dockitem"
       ];
       hide-delay = 500;
