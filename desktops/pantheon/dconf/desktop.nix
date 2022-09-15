@@ -4,6 +4,14 @@ let
   mkDictionaryEntry = lib.hm.gvariant.mkDictionaryEntry;
   mkTuple = lib.hm.gvariant.mkTuple;
   mkVariant = lib.hm.gvariant.mkVariant;
+  # Button Layouts
+  # leftside:rightside Options: close, minimize, maximize, and menu
+  windows = ":minimize,maximize,close";
+  elementary = "close:maximize";
+  ubuntu = "close,maximize,minimize:";
+  macOS = "close,minimize,maximize:";
+  gnome = ":close";
+  myButtons = macOS;
 in {
   dconf.settings = {
     "org/gnome/desktop/background" = {
@@ -24,7 +32,7 @@ in {
     };
 
     "org/gnome/desktop/wm/preferences" = {
-      button-layout = "close:maximize";
+      button-layout = myButtons;
       titlebar-font = "Ubuntu 11";
     };
 
@@ -33,13 +41,12 @@ in {
         (mkDictionaryEntry ["Gtk/DialogsUseHeader" (mkVariant 0)])
 	(mkDictionaryEntry ["Gtk/ShellShowsAppMenu" (mkVariant 0)])
 	(mkDictionaryEntry ["Gtk/EnablePrimaryPaste" (mkVariant 0)])
-	(mkDictionaryEntry ["Gtk/DecorationLayout" (mkVariant "close:maximize")])
+	(mkDictionaryEntry ["Gtk/DecorationLayout" (mkVariant myButtons)])
       ];
     };
 
     "org/pantheon/desktop/gala/appearance" = {
-                      #leftside:rightside Options: close, minimize, maximize, menu
-      button-layout = "close:maximize"; # also need to modify org/gnome/desktop/wm/preferences/button-layout and
-    };                                           # org/gnome/settings-daemon/plugins/xsettings
+      button-layout = myButtons;
+    };
   };
 }

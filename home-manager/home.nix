@@ -20,11 +20,7 @@
       # Personal
       discord
       element-desktop
-      eww
-      gnome.dconf-editor
       gnome.gedit
-      gtk-engine-murrine
-      imagemagick
       libreoffice
       nord-gedit
       trim-generations
@@ -37,7 +33,6 @@
       jdk8
       jre8
       mars-mips
-      octaveFull
     ];
     username = "liamdp";
 

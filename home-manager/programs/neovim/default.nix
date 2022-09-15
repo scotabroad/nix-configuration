@@ -31,7 +31,7 @@
       ))
       nvim-web-devicons
       vim-parinfer
-      (pkgs.callPackage ./yuck-vim.nix {} )
+      yuck-vim
     ];
     extraConfig = ''
       let g:nord_disable_background = v:true

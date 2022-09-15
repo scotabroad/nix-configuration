@@ -7,7 +7,6 @@
       auto-pinning = true;
       current-workspace-only = false;
       dock-items = [
-        "gala-multitaskingview.dockitem"
         "io.elementary.files.dockitem"
 	"firefox.dockitem"
 	"vivaldi-stable.dockitem"
@@ -16,20 +15,19 @@
 	"steam.dockitem"
 	"io.elementary.terminal.dockitem"
 	"io.elementary.switchboard.dockitem"
-	"trash.dockitem"
       ];
       hide-delay = 500;
       hide-mode = "window-dodge";
       icon-size = 48;
       items-alignment = "center";
-      lock-items = false;
+      lock-items = true;
       monitor = "";
       offset = 0;
       pinned-only = false;
-      position = "left";
+      position = "bottom";
       pressure-reveal = false;
       show-dock-item = false;
-      theme = "Matte";
+      theme = "Gtk+";
       tooltips-enabled = true;
       unhide-delay = 250;
       zoom-enabled = false;
