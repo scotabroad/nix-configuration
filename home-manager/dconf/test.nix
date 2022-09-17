@@ -48,8 +48,17 @@ in {
       variant-array = [(mkVariant ["Test" "123"]) (mkVariant 123)];
     };
     "test/dictionary" = {
-      dictionary = [(mkDictionaryEntry ["One" (mkVariant 1)]) (mkDictionaryEntry ["Two" (mkVariant "dos")])];
+      dictionary = [(mkDictionaryEntry ["One" (mkVariant (mkUint32 1))]) (mkDictionaryEntry ["Two" (mkVariant "dos")])];
       dictEntry = (mkDictionaryEntry [1 ["foo"]]);
+      dictionaryOfDictionaries = [
+        (mkDictionaryEntry ["Vortaro Unu" (mkVariant [
+          (mkDictionaryEntry ["Esperanto" 1])
+	  (mkDictionaryEntry ["Ido" 2])
+	])])
+	(mkDictionaryEntry ["English One" (mkVariant [
+	  (mkDictionaryEntry ["English" 1])
+	])])
+      ];
     };
   };
 }

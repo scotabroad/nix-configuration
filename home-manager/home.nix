@@ -20,6 +20,7 @@
       # Personal
       discord
       element-desktop
+      gnome.dconf-editor
       gnome.gedit
       libreoffice
       nord-gedit
@@ -33,6 +34,7 @@
       jdk8
       jre8
       mars-mips
+      octaveFull
     ];
     username = "liamdp";
 

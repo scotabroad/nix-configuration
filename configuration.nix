@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   
@@ -10,6 +10,7 @@
     ./boot/efi.nix
     ./desktops/xserver.nix
     ./fonts.nix
+    ./theme.nix
     ./hardware-configuration.nix
     ./programs/steam.nix
   ];
