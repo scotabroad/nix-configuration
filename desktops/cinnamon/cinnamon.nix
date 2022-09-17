@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, ... }:
+{ config, inputs, pkgs, lib, ... }:
 
 {
   services = {
@@ -11,19 +11,19 @@
         defaultSession = "cinnamon";
 	lightdm = {
 	  greeters.slick = {
-	    enable = true;
-	    font = {
-	      name = "Ubuntu 22";
-	      package = pkgs.ubuntu_font_family;
-	    };
-	    iconTheme = {
-	      name = "Nordzy-dark";
-	      package = pkgs.nordzy-icon-theme;
-	    };
-	    theme = {
-	      name = "Nordic";
-	      package = pkgs.nordic;
-	    };
+	    enable = lib.mkForce false;
+	    #font = {
+	    #  name = "Ubuntu 22";
+	    #  package = pkgs.ubuntu_font_family;
+	    #};
+	    #iconTheme = {
+	    #  name = "Nordzy-dark";
+	    #  package = pkgs.nordzy-icon-theme;
+	    #};
+	    #theme = {
+	    #  name = "Nordic";
+	    #  package = pkgs.nordic;
+	    #};
 	    # extraConfig = '' enable-hidpi = on ''; Failed dpi fix
 	  };
 	};

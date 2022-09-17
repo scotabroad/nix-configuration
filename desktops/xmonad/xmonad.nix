@@ -1,14 +1,6 @@
 { config, pkgs, inputs, ... }:
 
-let
-  # dpi adjustment calculations
-  monitorHeight = 2256;
-  monitorWidth = 1504;
-  monitorHeightInches = 11.25; # 285 mm
-  monitorWidthInches = 7.5; # 190.5 mm
-  newDPI = builtins.ceil ((monitorHeight / monitorHeightInches) + (monitorWidth / monitorWidthInches)) / 2; # Looking at a DPI of 201
-
-in {
+{
 
   # Set up Environment
   environment = {
@@ -43,39 +35,8 @@ in {
 
     # Xserver options specific to xmonad
     xserver = {
-      dpi = newDPI;
       displayManager = {
         defaultSession = "none+xmonad";
-        lightdm = {
-	  greeters.gtk = {
-	    enable = true;
-	    clock-format = "%l:%M %p";
-	    cursorTheme = {
-	      name = "Nordzy-dark";
-	      size = 48;
-	      package = pkgs.nordzy-icon-theme;
-	    };
-	    iconTheme = {
-	      name = "Nordzy-dark";
-	      package = pkgs.nordzy-icon-theme;
-	    };
-	    indicators = [
-	      "~host"
-	      "~spacer"
-	      "~session"
-	      "~a11y"
-	      "~clock"
-	      "~power"
-	    ];
-	    theme = {
-	      name = "Nordic";
-	      package = pkgs.nordic;
-	    };
-	    extraConfig = ''
-	      font-name=Ubuntu,11
-	    '';
-	  };
-	};
         # 1st step taffybar workaround
         sessionCommands = ''
 	  systemctl --user import-environment GDK_PIXBUF_MODULE_FILE_DBUS_SESSION_BUS_ADDRESS PATH

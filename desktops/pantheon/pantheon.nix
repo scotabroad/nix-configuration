@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, ... }:
+{ config, inputs, pkgs, lib, ... }:
 
 {
   environment.pantheon.excludePackages = [
@@ -21,7 +21,7 @@
         defaultSession = "pantheon";
 	lightdm = {
 	  greeters.pantheon = {
-	    enable = true;
+	    enable = lib.mkForce false;
 	  };
 	};
       };
