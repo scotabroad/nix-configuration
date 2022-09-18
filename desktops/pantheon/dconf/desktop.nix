@@ -11,7 +11,7 @@ let
   ubuntu = "close,maximize,minimize:";
   macOS = "close,minimize,maximize:";
   gnome = ":close";
-  myButtons = macOS;
+  myButtons = elementary;
 in {
   dconf.settings = {
     "org/gnome/desktop/background" = {

@@ -28,7 +28,7 @@ in {
 	    clock-format = "%l:%m %p";
 	    cursorTheme = {
 	      name = "Nordzy-cursors";
-	      size = 24;
+	      size = 48;
 	      package = pkgs.nordzy-cursor-theme;
 	    };
 	    iconTheme = {

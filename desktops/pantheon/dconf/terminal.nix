@@ -14,7 +14,7 @@ in {
     };
 
     "io/elementary/terminal/settings" = {
-      background = "rgb(46,52,64)";
+      background = "rgba(46,52,64,0.9)";
       cursor-color = "rgb(129,161,193)";
       follow-system-style = false; # shouldn't this be true?
       foreground = "rgb(216,222,233)";
