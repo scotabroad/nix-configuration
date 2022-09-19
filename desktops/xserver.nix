@@ -9,7 +9,7 @@ let
   newDPI = builtins.ceil ((monitorHeight / monitorHeightInches) + (monitorWidth / monitorWidthInches)) / 2; # Looking at a DPI of 201
 in {
   imports = [
-    ./pantheon/pantheon.nix
+    ./cinnamon/cinnamon.nix
   ];
 
   services = {

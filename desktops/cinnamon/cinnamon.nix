@@ -36,4 +36,8 @@
       };
     };
   };
+
+  systemd.packages = [
+    pkgs.cinnamon.cinnamon-screensaver
+  ];
 }
