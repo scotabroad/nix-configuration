@@ -14,6 +14,7 @@
 	"element-desktop.dockitem"
 	"steam.dockitem"
 	"io.elementary.terminal.dockitem"
+	"qt5ct.dockitem"
 	"io.elementary.switchboard.dockitem"
       ];
       hide-delay = 500;
