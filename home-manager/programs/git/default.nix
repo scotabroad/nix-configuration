@@ -7,7 +7,7 @@
     userName = "Liam Petrie";
     userEmail = "liamdpetrie@vivaldi.net";
     aliases = {
-      yolo = "!git commit -m \"$(curl -s whatthecommit.com/index.txt)\"";
+      yolo = "!git commit -am \"$(curl -s whatthecommit.com/index.txt)\"";
     };
     extraConfig = {
       core = {
