@@ -20,6 +20,7 @@
       # Personal
       discord
       element-desktop
+      gnome.aisleriot
       gnome.dconf-editor
       gnome.gedit
       libreoffice

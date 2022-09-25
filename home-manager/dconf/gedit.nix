@@ -14,7 +14,7 @@ in {
     };
 
     "org/gnome/gedit/preferences/editor" = {
-      highlight-current-line = true;
+      highlight-current-line = false;
       scheme = "nord-gedit"; # theme has been packaged
       wrap-last-split-mode = "word";
     };
