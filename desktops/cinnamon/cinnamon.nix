@@ -6,12 +6,16 @@
       apps.enable = true; # Some will eventually be turned off via the packages exclude option
     };
 
+    dbus.packages = [
+      pkgs.cinnamon.cinnamon-screensaver
+    ];
+
     xserver = {
       displayManager = {
         defaultSession = "cinnamon";
-	lightdm = {
-	  greeters.slick = {
-	    enable = lib.mkForce false;
+	#lightdm = {
+	  #greeters.slick = {
+	    #enable = lib.mkForce false;
 	    #font = {
 	    #  name = "Ubuntu 22";
 	    #  package = pkgs.ubuntu_font_family;
@@ -25,8 +29,8 @@
 	    #  package = pkgs.nordic;
 	    #};
 	    # extraConfig = '' enable-hidpi = on ''; Failed dpi fix
-	  };
-	};
+	  #};
+	#};
       };
 
       desktopManager = {
@@ -36,8 +40,4 @@
       };
     };
   };
-
-  systemd.packages = [
-    pkgs.cinnamon.cinnamon-screensaver
-  ];
 }

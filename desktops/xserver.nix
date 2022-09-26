@@ -9,7 +9,7 @@ let
   newDPI = builtins.ceil ((monitorHeight / monitorHeightInches) + (monitorWidth / monitorWidthInches)) / 2; # Looking at a DPI of 201
 in {
   imports = [
-    ./pantheon/pantheon.nix
+    ./cinnamon/cinnamon.nix
   ];
 
   services = {
@@ -23,31 +23,48 @@ in {
       displayManager = {
         lightdm = {
 	  background = ../wallpaper/Nordic.jpg;
-	  greeters.gtk = {
-	    enable = true;
-	    clock-format = "%l:%m %p";
-	    cursorTheme = {
-	      name = "Nordzy-cursors";
-	      size = 48;
-	      package = pkgs.nordzy-cursor-theme;
+	  greeters = {
+	    gtk = {
+	      enable = false;
+	      clock-format = "%l:%m %p";
+	      cursorTheme = {
+	        name = "Nordzy-cursors";
+	        size = 48;
+	        package = pkgs.nordzy-cursor-theme;
+	      };
+	      iconTheme = {
+	        name = "Nordzy-dark";
+	        package = pkgs.nordzy-icon-theme;
+	      };
+	      indicators = [
+	        "~host"
+	        "~spacer"
+	        "~session"
+	        "~a11y"
+	        "~clock"
+	        "~power"
+	      ];
+	      theme = {
+	        name = "Nordic";
+	        package = pkgs.nordic;
+	      };
+	      extraConfig = '' font-name=Ubuntu,11 '';
 	    };
-	    iconTheme = {
-	      name = "Nordzy-dark";
-	      package = pkgs.nordzy-icon-theme;
+	    slick = {
+	      enable = true;
+	      font = {
+	        name = "Ubuntu 22";
+		package = pkgs.ubuntu_font_family;
+	      };
+	      iconTheme = {
+	        name = "Nordzy-dark";
+		package = pkgs.nordzy-icon-theme;
+	      };
+	      theme = {
+	        name = "Nordic";
+		package = pkgs.nordic;
+	      };
 	    };
-	    indicators = [
-	      "~host"
-	      "~spacer"
-	      "~session"
-	      "~a11y"
-	      "~clock"
-	      "~power"
-	    ];
-	    theme = {
-	      name = "Nordic";
-	      package = pkgs.nordic;
-	    };
-	    extraConfig = '' font-name=Ubuntu,11 '';
           };
 	  extraSeatDefaults = ''
             greeter-wrapper = ${pkgs.lightdm-dpi-fix}

@@ -1,10 +1,15 @@
 { config, inputs, pkgs, lib, ... }:
 
 {
-  environment.pantheon.excludePackages = [
-    pkgs.pantheon.epiphany
-    pkgs.pantheon.elementary-camera
-  ];
+  environment = {
+    pantheon.excludePackages = with pkgs; [
+      pantheon.epiphany
+      pantheon.elementary-camera
+    ];
+    systemPackages = with pkgs; [
+      indicator-application-gtk3 # Needed for wingpanel-indicator-ayatana
+    ];
+  };
 
   programs = {
     pantheon-tweaks.enable = true;
