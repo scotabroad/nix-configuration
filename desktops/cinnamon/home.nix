@@ -3,7 +3,7 @@
 {
   imports = [
     ./programs
-    ./dconf.nix
+    ./dconf
   ];
 
 }

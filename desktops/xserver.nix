@@ -9,7 +9,7 @@ let
   newDPI = builtins.ceil ((monitorHeight / monitorHeightInches) + (monitorWidth / monitorWidthInches)) / 2; # Looking at a DPI of 201
 in {
   imports = [
-    ./cinnamon/cinnamon.nix
+    ./pantheon/pantheon.nix
   ];
 
   services = {
@@ -25,7 +25,7 @@ in {
 	  background = ../wallpaper/Nordic.jpg;
 	  greeters = {
 	    gtk = {
-	      enable = false;
+	      enable = true;
 	      clock-format = "%l:%m %p";
 	      cursorTheme = {
 	        name = "Nordzy-cursors";
@@ -51,7 +51,7 @@ in {
 	      extraConfig = '' font-name=Ubuntu,11 '';
 	    };
 	    slick = {
-	      enable = true;
+	      enable = false;
 	      font = {
 	        name = "Ubuntu 22";
 		package = pkgs.ubuntu_font_family;
