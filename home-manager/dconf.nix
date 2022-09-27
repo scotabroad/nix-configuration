@@ -4,6 +4,5 @@
   imports = [
     ./dconf/gedit.nix
     ./dconf/ibus.nix
-    ./dconf/test.nix
   ];
 }
