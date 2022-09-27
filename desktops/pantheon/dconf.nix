@@ -29,13 +29,13 @@ in {
     #  window-size = (mkTuple [918 722]);
     #};
 
-    "io/elementary/code/saved-state" = {
-      hp1-size = 232;
-      vp-size = 125;
-      window-position = (mkTuple [139 116]);
-      window-size = (mkTuple [850 550]);
-      window-state = "Normal";
-    };
+    #"io/elementary/code/saved-state" = {
+    #  hp1-size = 232;
+    #  vp-size = 125;
+    #  window-position = (mkTuple [139 116]);
+    #  window-size = (mkTuple [850 550]);
+    #  window-state = "Normal";
+    #};
 
     "io/elementary/files/file-chooser" = {
       window-size = (mkTuple [850 450]);
@@ -77,12 +77,12 @@ in {
       window-size = (mkTuple [1024 720]);
     };
 
-    "io/elementary/tasks" = {
-      selected-list = "system-task-list";
-      window-maximized = false;
-      window-position = (mkTuple [94 30]);
-      window-size = (mkTuple [1000 782]);
-    };
+    #"io/elementary/tasks" = {
+    #  selected-list = "system-task-list";
+    #  window-maximized = false;
+    #  window-position = (mkTuple [94 30]);
+    #  window-size = (mkTuple [1000 782]);
+    #};
 
     # Removing epiphany for now
     #"org/gnome/epiphany" = {

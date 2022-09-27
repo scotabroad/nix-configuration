@@ -5,6 +5,8 @@
     pantheon.excludePackages = with pkgs; [
       pantheon.epiphany
       pantheon.elementary-camera
+      pantheon.elementary-code
+      pantheon.elementary-tasks
     ];
     systemPackages = with pkgs; [
       indicator-application-gtk3 # Needed for wingpanel-indicator-ayatana

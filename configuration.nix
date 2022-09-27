@@ -54,12 +54,6 @@
       curl
       firefox
       git
-      htop
-      #indicator-application-gtk3 # Needed for wingpanel-indicator-ayatana
-      lightlocker # Would this interfere with GNOME or Cinnamon... RESEARCH!!!
-      networkmanager
-      networkmanagerapplet
-      vim
       wget
       which
       unzip

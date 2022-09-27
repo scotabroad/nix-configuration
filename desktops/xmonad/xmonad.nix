@@ -4,6 +4,12 @@
 
   # Set up Environment
   environment = {
+    systemPackages = with pkgs; [
+      htop
+      lightlocker
+      networkmanager
+      networkmanagerapplet
+    ]
     # Environment Variables for DPI fixes
     variables = {
       GDK_SCALE = "2";
