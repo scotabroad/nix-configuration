@@ -17,6 +17,7 @@
     settings = {
       background_opacity = "0.9";
     };
-    theme = "Nord";
+    #theme = "Nord";
+    theme = "Rosé Pine Moon";
   };
 }
