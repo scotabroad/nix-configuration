@@ -16,7 +16,6 @@ in {
   dconf.settings = {
     "org/gnome/desktop/background" = {
       picture-options = "zoom";
-      primary-color = "rgb(46,52,64)";
     };
 
     "org/gnome/desktop/peripherals/mouse" = {
