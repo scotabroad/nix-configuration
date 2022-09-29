@@ -6,6 +6,7 @@
     ./feh
     ./fzf
     ./git
+    ./kitty
     ./neovim
     ./zoxide
     ./zsh

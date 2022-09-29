@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./dconf/gedit.nix
-    ./dconf/ibus.nix
+    ./gedit.nix
+    ./ibus.nix
   ];
 }
