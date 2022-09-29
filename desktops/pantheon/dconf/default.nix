@@ -5,10 +5,11 @@ let
 in {
 
   imports = [
-    ./dconf/desktop.nix
-    ./dconf/dock.nix
-    ./dconf/terminal.nix
-    ./dconf/wingpanel.nix
+    ./desktop.nix
+    ./dock.nix
+    ./terminal.nix
+    ./theme.nix
+    ./wingpanel.nix
   ];
 
   dconf.settings = {

@@ -4,6 +4,6 @@
   imports = [
     ./programs
     ./services
-    ./dconf.nix
+    ./dconf
   ];
 }

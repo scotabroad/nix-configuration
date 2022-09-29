@@ -31,6 +31,7 @@
 
       #School
       gcc11
+      gnumake
       javaPackages.junit_4_12
       jdk8
       jre8
