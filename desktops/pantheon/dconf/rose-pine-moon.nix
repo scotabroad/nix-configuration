@@ -17,8 +17,8 @@
     };
 
     "org/gnome/desktop/interface" = {
-      gtk-theme = "Nordic";
-      icon-theme = "Nordzy-dark";
+      #gtk-theme = "Nordic";
+      #icon-theme = "Nordzy-dark";
     };
   };
 }

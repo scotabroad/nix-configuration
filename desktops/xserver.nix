@@ -10,6 +10,7 @@ let
 in {
   imports = [
     ./pantheon/pantheon.nix
+    ./theme
   ];
 
   services = {
@@ -22,20 +23,10 @@ in {
       dpi = newDPI;
       displayManager = {
         lightdm = {
-	  background = ../wallpaper/Nordic.jpg;
 	  greeters = {
 	    gtk = {
 	      enable = true;
 	      clock-format = "%l:%m %p";
-	      cursorTheme = {
-	        name = "Nordzy-cursors";
-	        size = 48;
-	        package = pkgs.nordzy-cursor-theme;
-	      };
-	      iconTheme = {
-	        name = "Nordzy-dark";
-	        package = pkgs.nordzy-icon-theme;
-	      };
 	      indicators = [
 	        "~host"
 	        "~spacer"
@@ -44,10 +35,6 @@ in {
 	        "~clock"
 	        "~power"
 	      ];
-	      theme = {
-	        name = "Nordic";
-	        package = pkgs.nordic;
-	      };
 	      extraConfig = '' font-name=Ubuntu,11 '';
 	    };
 	    slick = {
@@ -55,14 +42,6 @@ in {
 	      font = {
 	        name = "Ubuntu 22";
 		package = pkgs.ubuntu_font_family;
-	      };
-	      iconTheme = {
-	        name = "Nordzy-dark";
-		package = pkgs.nordzy-icon-theme;
-	      };
-	      theme = {
-	        name = "Nordic";
-		package = pkgs.nordic;
 	      };
 	    };
           };
