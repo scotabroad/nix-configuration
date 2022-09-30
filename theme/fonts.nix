@@ -1,6 +1,12 @@
 { config, inputs, pkgs, ... }:
 
 {
+  # tty console settings
+  console = {
+    #Bigger tty font
+    font = "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
+  };
+
   fonts = {
     fonts = [
       pkgs.terminus_font

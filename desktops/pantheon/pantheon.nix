@@ -8,6 +8,10 @@
       pantheon.elementary-code
       pantheon.elementary-tasks
     ];
+
+    #Needed for wingpanel-indicator-ayatana
+    pathsToLink = [ "/libexec" ];
+
     systemPackages = with pkgs; [
       indicator-application-gtk3 # Needed for wingpanel-indicator-ayatana
     ];

@@ -1,6 +1,11 @@
 { config, pkgs, inputs, lib, ... }:
 
 {
+  imports = [
+    ./fonts.nix
+    ./rose-pine-moon.nix
+  ];
+
   environment.variables = {
     QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct";
   };
