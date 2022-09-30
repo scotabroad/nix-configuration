@@ -29,7 +29,7 @@
     gtk3.extraConfig = {
       gtk-icon-theme-name = "Nordzy-dark";
       gtk-theme-name = "Nordic";
-      gtk-application-prefer-dark-theme = 1;
+      gtk-application-prefer-dark-theme = 0;
     };
   };
 }

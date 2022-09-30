@@ -7,7 +7,7 @@ let
   # Button Layouts
   # leftside:rightside Options: close, minimize, maximize, and menu
   windows = ":minimize,maximize,close";
-  elementary = "close:menu,maximize";
+  elementary = "close:maximize";
   ubuntu = "close,maximize,minimize:";
   macOS = "close,minimize,maximize:";
   gnome = ":close";
