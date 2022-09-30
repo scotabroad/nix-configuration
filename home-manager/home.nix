@@ -24,7 +24,6 @@
       gnome.dconf-editor
       gnome.gedit
       libreoffice
-      nord-gedit
       trim-generations
       wallpaper
       vivaldi

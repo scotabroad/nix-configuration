@@ -1,6 +1,10 @@
 { config, inputs, pkgs, ... }:
 
 {
+  imports = [
+    ./rose-pine-moon-apps
+  ];
+
   gtk = {
     enable = true;
 

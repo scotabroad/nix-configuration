@@ -1,6 +1,10 @@
 { config, inputs, pkgs, ... }:
 
 {
+  imports = [
+    ./nordic-apps
+  ];
+  
   gtk = {
     enable = true;
 
