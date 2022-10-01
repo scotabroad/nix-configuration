@@ -10,9 +10,12 @@
       nvim-web-devicons
     ];
     extraConfig = ''
-      colorscheme rose-pine
-      set number
       lua << EOF
+      require('rose-pine').setup({
+        dark_variant = 'moon',
+      })
+      vim.cmd('set number')
+      vim.cmd('colorscheme rose-pine')
       require('nvim-treesitter.configs').setup {
 	highlight = {
 	  enable = true,
