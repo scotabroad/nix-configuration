@@ -3,5 +3,7 @@
 {
   imports = [
     ./kitty
+    ./rofi
+    ./waybar
   ];
 }
