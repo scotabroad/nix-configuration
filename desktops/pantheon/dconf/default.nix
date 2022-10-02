@@ -119,8 +119,8 @@ in {
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Primary><Alt>t";
-      command = "io.elementary.terminal";
-      name = "io.elementary.terminal";
+      command = "kitty";
+      name = "kitty";
     };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {

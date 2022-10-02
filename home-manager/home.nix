@@ -3,7 +3,7 @@
 {
 
   imports = [
-    ../desktops/hyprland/home.nix
+    ../desktops/pantheon/home.nix
     ./programs
     #./services
     ./dconf

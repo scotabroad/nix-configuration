@@ -13,7 +13,7 @@
 	"discord.dockitem"
 	"element-desktop.dockitem"
 	"steam.dockitem"
-	"io.elementary.terminal.dockitem"
+	"kitty.dockitem"
 	"io.elementary.switchboard.dockitem"
       ];
       hide-delay = 500;

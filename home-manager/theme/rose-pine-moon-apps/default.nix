@@ -3,6 +3,7 @@
 {
   imports = [
     ./gedit
+    ./kitty
     ./neovim
   ];
 }
