@@ -67,11 +67,14 @@
         inherit system pkgs;
         modules = [
           ./configuration.nix
-          nixos-hardware.nixosModules.framework
+          hyprland.nixosModules.default
+	  nixos-hardware.nixosModules.framework
           home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-	      home-manager.users.liamdp = import ./home-manager/home.nix;
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.liamdp = import ./home-manager/home.nix;
+	     };
           }
         ];
       };
