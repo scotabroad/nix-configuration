@@ -3,7 +3,7 @@
 {
 
   imports = [
-    ../desktops/pantheon/home.nix
+    ../desktops/hyprland/home.nix
     ./programs
     #./services
     ./dconf
@@ -22,6 +22,7 @@
       element-desktop
       gnome.aisleriot
       gnome.dconf-editor
+      gnome.evince
       gnome.gedit
       libreoffice
       trim-generations

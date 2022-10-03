@@ -5,15 +5,32 @@
   programs.waybar = {
     enable = true;
     package = pkgs.waybar;
-    settings = {
-      mainBar = {
-        layer = "top";
-	position = "top";
-	height = 30; #play around with this
-      };
-      #modules-left = [ "wlr/workspaces" "wlr/taskbar" ];
-      #modules-center = [ "wlr/window" ];
-      #modules-right = [ "mpd" "temperature" ];
-    };
+    settings = [
+      {
+        mainBar = {
+          layer = "top";
+	  position = "top";
+	  height = 30; #play around with this
+        };
+        modules-left = [ "hyprland/window" "wlr/workspaces" "wlr/taskbar" ];
+        modules-center = [ "clock" ];
+        modules-right = [ "tray" "cpu" "memory" "temperature" "battery" ];
+
+        "clock" = {
+          interval = 60;
+	  format = "{:%a %b %d %I:%M %p}";
+	  max-length = 25;
+        };
+
+        "hyprland/window" = {
+          format = "{}";
+        };
+
+        "tray" = {
+          icon-size = 24;
+	  spacing = 10;
+        };
+      }
+    ];
   };
 }
