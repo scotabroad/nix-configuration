@@ -9,6 +9,7 @@
   imports = [
     ./boot/efi.nix
     ./desktops/hyprland/hyprland.nix
+    #./desktops/xserver.nix
     ./theme
     ./hardware-configuration.nix
     ./programs/steam.nix
