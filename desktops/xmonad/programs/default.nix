@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./feh
     ./kitty
     ./rofi
     ./xmobar

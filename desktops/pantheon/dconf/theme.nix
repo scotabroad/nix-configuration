@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./nord.nix
+    ./rose-pine-moon.nix
   ];
 
   dconf.settings = {

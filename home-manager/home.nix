@@ -3,7 +3,7 @@
 {
 
   imports = [
-    ../desktops/hyprland/home.nix
+    ../desktops/pantheon/home.nix
     ./programs
     #./services
     ./dconf
@@ -25,7 +25,6 @@
       gnome.gedit
       libreoffice
       trim-generations
-      wallpaper
       vivaldi
 
       #School
