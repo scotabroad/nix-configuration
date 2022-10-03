@@ -17,6 +17,9 @@
 
   # Set up Environment
   environment = {
+    # Paths to link
+    pathsToLink = [ "/share/zsh" ];
+
     # Select default shells
     shells = [ pkgs.zsh ];
     

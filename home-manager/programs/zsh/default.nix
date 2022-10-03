@@ -4,6 +4,7 @@
   # Manage zsh
   programs.zsh = {
     enable = true;
+    enableCompletion = true;
     shellAliases = {
       rm = "rm -i";
     };
