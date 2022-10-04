@@ -55,7 +55,7 @@ message {
     padding: 5;
     border-color: @pur;
     border:  0px 2px 2px 2px;
-    background-color: @background;
+    background-color: @pur;
 }
 
 inputbar {
