@@ -23,29 +23,17 @@
 	font = "UbuntuMono Nerd Font Mono 10";
       };
 
-	urgency_low = {
-	  #background = "#2e3440";
-	  #foreground = "#eceff4";
-	  background = "#2a273f";
-	  foreground = "#908caa";
-	  timeout = 8;
-	};
+      urgency_low = {
+	timeout = 8;
+      };
 
-	urgency_normal = {
-	  #background = "#2e3440";
-	  #foreground = "#eceff4";
-	  background = "#2a273f";
-	  foreground = "#e0def4";
-	  timeout = 10;
-	};
+      urgency_normal = {
+	timeout = 10;
+      };
 
-	urgency_critical = {
-	  #background = "#1d2128";
-	  #foreground = "#bf616a";
-	  background = "#232136";
-	  foreground = "#eb6f92";
-	  timeout = 16;
-	};
+      urgency_critical = {
+	timeout = 16;
+      };
     };
   };
 }
