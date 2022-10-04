@@ -30,6 +30,10 @@
           icon-size = 24;
 	  spacing = 10;
         };
+
+	"tempurature" = {
+	  thermal-zone = 3;
+	};
       }
     ];
   };
