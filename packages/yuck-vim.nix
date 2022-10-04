@@ -3,7 +3,8 @@
 final: prev: {
   vimPlugins = prev.vimPlugins // {
     yuck-vim = prev.vimUtils.buildVimPlugin {
-      name = "yuck.vim";
+      pname = "yuck.vim";
+      version = "2021-08-09";
       src = pkgs.fetchFromGitHub {
         owner = "elkowar";
         repo = "yuck.vim";
