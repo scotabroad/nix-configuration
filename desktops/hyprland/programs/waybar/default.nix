@@ -14,7 +14,13 @@
         };
         modules-left = [ "hyprland/window" "wlr/workspaces" "wlr/taskbar" ];
         modules-center = [ "clock" ];
-        modules-right = [ "tray" "cpu" "memory" "temperature" "battery" ];
+        modules-right = [ 
+	  "tray" 
+	  "cpu" 
+	  "memory" 
+	  #"temperature" 
+	  "battery" 
+	];
 
         "clock" = {
           interval = 60;

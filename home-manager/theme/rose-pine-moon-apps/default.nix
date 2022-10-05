@@ -5,5 +5,6 @@
     ./gedit
     ./kitty
     ./neovim
+    ./qt5ct
   ];
 }
