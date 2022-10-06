@@ -36,6 +36,9 @@
       jre8
       mars-mips
       octaveFull
+
+      # Work
+      audacity
     ];
     username = "liamdp";
 

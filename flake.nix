@@ -18,10 +18,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "gitlab:doronbehar/nix-matlab";
     };
-    taffybar = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:taffybar/taffybar";
-    };
+    #taffybar = {
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #  url = "github:taffybar/taffybar";
+    #};
   };
 
   outputs = { 
@@ -32,7 +32,7 @@
     home-manager, 
     nixos-hardware, 
     nix-matlab, 
-    taffybar, 
+    #taffybar, 
     hyprland, 
     ... 
   }:
@@ -42,22 +42,22 @@
       config = nixpkgs.config;
       lib = nixpkgs.lib;
 
-      make-packages = ps: attrs:
+      make-packages = ps: attr:
         import ps ({
           inherit system;
           config.allowUnfree = true;
 	  config.allowBroken = true;
-        } // attrs);
+        } // attr);
 
       pkgs = make-packages nixpkgs{
         
 	overlays = [
-	    (import ./config/taffybar/overlay.nix)
+	    #(import ./desktops/xmonad/taffybar/overlay.nix)
 	    nix-matlab.overlay
         ]
 	++ import ./overlays { inherit pkgs; }
-	++ import ./packages { inherit lib pkgs; }
-	++ taffybar.overlays;
+	++ import ./packages { inherit lib pkgs; };
+	#++ taffybar.overlays;
       };
 
     in {
@@ -65,7 +65,7 @@
       # nixos is my hostname (lame, I know)
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system pkgs;
-        modules = [
+	modules = [
           ./configuration.nix
           hyprland.nixosModules.default
 	  nixos-hardware.nixosModules.framework
