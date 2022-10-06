@@ -3,7 +3,8 @@
 {
   imports = [
     ./fonts.nix
-    ./nord.nix
+    #./nord.nix
+    ./rose-pine-moon.nix
   ];
 
   environment.variables = {

@@ -5,6 +5,7 @@
     ./dconf
     ./programs
     ./services
+    ./theme
   ];
 
   home.packages = with pkgs; [
