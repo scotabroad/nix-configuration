@@ -2,6 +2,6 @@
 
 {
   imports = [
-    ./rose-pine-moon.nix
+    ./nordic
   ];
 }

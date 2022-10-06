@@ -5,7 +5,7 @@
     enable = true;
     package = pkgs.rofi-wayland;
     terminal = "${pkgs.kitty}/bin/kitty";
-    theme = ./rosepinemoon.rasi;
+    theme = ./nord.rasi;
     plugins = with pkgs; [
       rofi-calc
       rofi-emoji
