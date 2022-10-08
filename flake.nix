@@ -42,12 +42,12 @@
       config = nixpkgs.config;
       lib = nixpkgs.lib;
 
-      make-packages = ps: attr:
+      make-packages = ps: attrs:
         import ps ({
           inherit system;
           config.allowUnfree = true;
 	  config.allowBroken = true;
-        } // attr);
+        } // attrs);
 
       pkgs = make-packages nixpkgs{
         
