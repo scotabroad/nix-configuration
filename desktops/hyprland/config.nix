@@ -16,9 +16,6 @@ OR EDIT THIS ONE ACCORDING TO THE WIKI INSTRUCTIONS.
 
 monitor=,preferred,auto,2
 
-#exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-#exec-once=systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-#exec-once=${pkgs.wayland-gtk-fix}
 exec-once=xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2
 exec-once=hyprpaper &
 exec-once=waybar &

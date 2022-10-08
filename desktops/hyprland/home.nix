@@ -3,7 +3,7 @@
 {
   imports = [
     ./dconf
-    ./hyprland.conf.nix
+    ./config.nix
     ./programs
     ./services
     ./theme
@@ -20,6 +20,6 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    systemdIntegration = false;
+    systemdIntegration = true;
   };
 }

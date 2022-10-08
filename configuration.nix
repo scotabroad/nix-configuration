@@ -51,9 +51,6 @@
   
   # Hardware settings
   hardware = {
-    # Enable sound
-    pulseaudio.enable = true;
-    
     # Was not available in NixOS 20.03, is in Unstable, but this is 22.05... does the same as some earlier fixes
     video.hidpi.enable = true;
   };
@@ -118,6 +115,15 @@
 
     # Enable the OpenSSH daemon.
     openssh.enable = true;
+    
+    # Enable sound
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      jack.enable = true;
+      pulse.enable = true;
+    };
 
     # Enable CUPS to print documents.
     printing = {
