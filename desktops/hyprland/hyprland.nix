@@ -4,6 +4,7 @@
   programs = {
     hyprland = {
       enable = true;
+      package = null;
     };
     
     # Enable backlight

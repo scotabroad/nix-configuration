@@ -29,6 +29,7 @@
       curl
       firefox
       git
+      killall
       wget
       which
       unzip

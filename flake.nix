@@ -35,7 +35,7 @@
     #taffybar, 
     hyprland, 
     ... 
-  }:
+  }@inputs:
     let
       system = "x86_64-linux";
 
@@ -70,7 +70,8 @@
           hyprland.nixosModules.default
 	  nixos-hardware.nixosModules.framework
           home-manager.nixosModules.home-manager {
-              home-manager = {
+	      home-manager = {
+                extraSpecialArgs = { inherit inputs; };
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.liamdp = import ./home-manager/home.nix;
