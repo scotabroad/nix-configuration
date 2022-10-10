@@ -1,6 +1,12 @@
 { config, inputs, pkgs, ... }:
 
 {
+  environment = {
+    systemPackages = with pkgs; [
+      htop
+    ];
+  };
+
   programs = {
     hyprland = {
       enable = true;

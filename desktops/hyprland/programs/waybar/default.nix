@@ -7,12 +7,11 @@
     package = pkgs.waybar;
     settings = [
       {
-        mainBar = {
-          layer = "top";
-	  position = "top";
-	  height = 30; #play around with this
-        };
-        modules-left = [ "hyprland/window" "wlr/workspaces" "wlr/taskbar" ];
+        layer = "top";
+        position = "top";
+	height = 26; #play around with this
+        
+	modules-left = [ "hyprland/window" "wlr/workspaces" "wlr/taskbar" ];
         modules-center = [ "clock" ];
         modules-right = [ 
 	  "tray" 

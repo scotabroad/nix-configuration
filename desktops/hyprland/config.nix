@@ -15,7 +15,6 @@ OR EDIT THIS ONE ACCORDING TO THE WIKI INSTRUCTIONS.
 #
 
 monitor=,preferred,auto,2
-
 exec-once=xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2
 exec-once=hyprpaper &
 exec-once=waybar &
