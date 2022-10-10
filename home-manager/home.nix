@@ -22,6 +22,7 @@
       element-desktop
       gnome.aisleriot
       gnome.dconf-editor
+      gnome.eog
       gnome.evince
       gnome.gedit
       libreoffice
@@ -36,9 +37,6 @@
       jre8
       mars-mips
       octaveFull
-
-      # Work
-      audacity
     ];
     username = "liamdp";
 
