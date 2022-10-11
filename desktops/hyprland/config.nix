@@ -9,7 +9,7 @@ ONLY PUT THINGS IN HERE TO BE SHARED BY ALL THEMES.
 
 
 monitor=,preferred,auto,2
-exec-once=xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2
+exec-once=${pkgs.xorg.xprop}/bin/xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2
 exec-once=hyprpaper &
 exec-once=waybar &
 

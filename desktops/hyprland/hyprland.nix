@@ -1,10 +1,16 @@
-{ config, inputs, pkgs, ... }:
+{ config, inputs, lib, pkgs, ... }:
 
 {
   environment = {
     systemPackages = with pkgs; [
       htop
     ];
+    variables = {
+      GDK_SCALE = "2";
+      QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+      XCURSOR_SIZE = lib.mkForce "48";
+      #XCURSOR_SIZE = "24"; #based on ../../home-manager/theme/nordic.nix
+    };
   };
 
   programs = {
