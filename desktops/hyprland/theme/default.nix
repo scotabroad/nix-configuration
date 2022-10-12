@@ -2,7 +2,8 @@
 
 {
   imports = [
-    #./nordic
-    ./rose-pine-moon
+    ./dracula
+    #./nord
+    #./rose-pine-moon
   ];
 }

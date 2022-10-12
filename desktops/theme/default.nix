@@ -2,7 +2,8 @@
 
 {
   imports = [
-    #./nordic.nix
-    ./rose-pine-moon.nix
+    ./dracula.nix
+    #./nord.nix
+    #./rose-pine-moon.nix
   ];
 }

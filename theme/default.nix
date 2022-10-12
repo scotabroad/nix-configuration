@@ -3,9 +3,9 @@
 {
   imports = [
     ./fonts.nix
-    #./dracula.nix
+    ./dracula.nix
     #./nord.nix
-    ./rose-pine-moon.nix
+    #./rose-pine-moon.nix
   ];
 
   environment.variables = {

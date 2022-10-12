@@ -2,7 +2,10 @@
 
 {
   imports = [
-    ./rose-pine-moon-apps
+    ./gedit
+    ./kitty
+    ./neovim
+    ./qt5ct
   ];
 
   home = {

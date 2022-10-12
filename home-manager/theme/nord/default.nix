@@ -2,7 +2,10 @@
 
 {
   imports = [
-    ./nordic-apps
+    ./gedit
+    ./kitty
+    ./neovim
+    ./qt5ct
   ];
   
   home = {
