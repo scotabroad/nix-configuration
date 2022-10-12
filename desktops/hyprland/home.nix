@@ -13,8 +13,9 @@
 
 
   home.packages = with pkgs; [
-    grim
+    fuzzel
     gnome.nautilus
+    grim
     hyprpaper
   ];
 

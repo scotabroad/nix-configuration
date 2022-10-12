@@ -2,7 +2,7 @@
 
 {
   programs.rofi = {
-    enable = true;
+    enable = false;
     package = pkgs.rofi-wayland;
     terminal = "${pkgs.kitty}/bin/kitty";
     plugins = with pkgs; [

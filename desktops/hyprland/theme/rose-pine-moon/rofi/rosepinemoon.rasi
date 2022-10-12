@@ -28,7 +28,7 @@ configuration {
     
     highlight:     underline bold #eceff4;
 
-    transparent: rgba(35,33,64,0);
+    transparent: rgba(35,33,54,0);
 }
 
 window {
