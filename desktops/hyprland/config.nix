@@ -84,7 +84,7 @@ bindm=SUPER,mouse:273,resizewindow #right click
 bind=CTRL_ALT,T,exec,kitty
 bind=ALT,F,exec,firefox
 bind=SUPER,F,exec,nautilus
-bind=ALT,R,exec,rofi -show drun
+bind=ALT,R,exec,env rofi -show drun
 bind=,Print,exec,grim #screenshot tool
 
 # management

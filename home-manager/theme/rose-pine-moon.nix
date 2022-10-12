@@ -5,6 +5,22 @@
     ./rose-pine-moon-apps
   ];
 
+  home = {
+    pointerCursor = {
+      name = "Nordzy-cursors";
+      package = pkgs.nordzy-cursor-theme;
+      size = 24;
+      gtk.enable = true;
+      x11 = {
+        enable = true;
+	defaultCursor = "left_ptr";
+      };
+    };
+    sessionVariables = {
+      XCURSOR_THEME = "Nordzy-cursors";
+    };
+  };
+
   gtk = {
     enable = true;
 

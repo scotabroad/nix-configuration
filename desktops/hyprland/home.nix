@@ -3,6 +3,7 @@
 {
   imports = [
     ./dconf
+    ./desktop
     ./config.nix
     ./programs
     ./services

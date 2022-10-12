@@ -8,8 +8,7 @@
     variables = {
       GDK_SCALE = "2";
       QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-      XCURSOR_SIZE = lib.mkForce "48";
-      #XCURSOR_SIZE = "24"; #based on ../../home-manager/theme/nordic.nix
+      XCURSOR_SIZE = lib.mkForce "48"; #needed for GTK XWayland apps
     };
   };
 
