@@ -18,10 +18,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "gitlab:doronbehar/nix-matlab";
     };
-    #taffybar = {
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #  url = "github:taffybar/taffybar";
-    #};
   };
 
   outputs = { 
@@ -32,7 +28,6 @@
     home-manager, 
     nixos-hardware, 
     nix-matlab, 
-    #taffybar, 
     hyprland, 
     ... 
   }@inputs:
@@ -52,12 +47,10 @@
       pkgs = make-packages nixpkgs{
         
 	overlays = [
-	    #(import ./desktops/xmonad/taffybar/overlay.nix)
 	    nix-matlab.overlay
         ]
 	++ import ./overlays { inherit pkgs; }
 	++ import ./packages { inherit lib pkgs; };
-	#++ taffybar.overlays;
       };
 
     in {

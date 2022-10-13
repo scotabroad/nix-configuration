@@ -5,40 +5,6 @@ This is my NixOS configuration. I use a flake to manage everything. Currently, m
 
 ## Desktops
 
-### Xmonad
-
-![Image](images/xmonad.png)
-
-| **OS**              | NixOS    |
-|:-------------------:|:--------:|
-| **Shell**           | zsh      |
-| **Terminal**        | kitty    |
-| **Colorscheme**     | Nord     |
-| **DM**              | LightDM  |
-| **LightDM Greeter** | GTK      |
-| **WM**              | xmonad   |
-| **Bar**             | taffybar |
-| **Font**            | Ubuntu   |
-| **Editor**          | neovim   |
-
----
-### Cinnamon
-
-![Image](images/cinnamon.png)
-
-| **OS**              | NixOS    |
-|:-------------------:|:--------:|
-| **Shell**           | zsh      |
-| **Terminal**        | kitty    |
-| **Colorscheme**     | Nord     |
-| **DM**              | LightDM  |
-| **LightDM Greeter** | Slick    |
-| **DE**              | Cinnamon |
-| **WM**              | Muffin   |
-| **Font**            | Ubuntu   |
-| **Editor**          | neovim   |
-
----
 ### Pantheon
 
 ![Image](images/pantheon.png)
@@ -54,6 +20,10 @@ This is my NixOS configuration. I use a flake to manage everything. Currently, m
 | **WM**              | Gala                   |
 | **Font**            | Ubuntu                 |
 | **Editor**          | neovim                 |
+
+### Hyprland
+
+Coming Soon
 
 ## TO DO
 

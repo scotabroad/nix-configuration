@@ -3,7 +3,6 @@
 {
   imports = [
     ./kitty
-    ./rofi
     ./waybar
   ];
 }

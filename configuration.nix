@@ -180,9 +180,8 @@
     config = {
       allowUnfree = true;
     };
-    overlays = with inputs; [
-      #(import ./desktops/xmonad/taffybar/overlay.nix)
-    ];
+    #overlays = with inputs; [
+    #];
     # Nixpkgs platform
     system = "x86_64-linux";
   };
