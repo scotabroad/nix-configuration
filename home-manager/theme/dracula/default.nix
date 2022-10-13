@@ -39,8 +39,8 @@
     };
 
     iconTheme = {
-      name = "Nordzy-dark";
-      package = pkgs.nordzy-icon-theme;
+      name = "Zafiro-icons-Dark";
+      package = pkgs.zafiro-icons;
     };
 
     cursorTheme = {
@@ -50,7 +50,7 @@
     };
 
     gtk3.extraConfig = {
-      gtk-icon-theme-name = "Nordzy-dark";
+      gtk-icon-theme-name = "Zafiro-icons-Dark";
       gtk-theme-name = "Dracula";
       gtk-application-prefer-dark-theme = 1;
     };
