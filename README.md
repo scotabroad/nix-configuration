@@ -1,33 +1,28 @@
 # Nix Configuration
 
 ## About
-This is my NixOS configuration. I use a flake to manage everything. Currently, many things have been modularized to help organize everything.
+This is my NixOS configuration. I use a flake to manage everything. Three themes are available (Dracula, Nord, and Rosé Pine Moon) for two desktops (Pantheon and Hyprland). These can easily be changed from with in the flake.
 
 ## Desktops
 
 ### Pantheon
 
-![Image](images/pantheon.png)
+#### Dracula
+![Image](images/pantheon-dracula.png)
 
-| **OS**              | NixOS                  |
-|:-------------------:|:----------------------:|
-| **Shell**           | zsh                    |
-| **Terminal**        | io.elementary.terminal |
-| **Colorscheme**     | Nord                   |
-| **DM**              | LightDM                |
-| **LightDM Greeter** | Pantheon               |
-| **DE**              | Pantheon               |
-| **WM**              | Gala                   |
-| **Font**            | Ubuntu                 |
-| **Editor**          | neovim                 |
+#### Nord
+![Image](images/pantheon-nord.png)
 
+#### Rosé-Pine-Moon
+![Image](images/pantheon-rose-pine-moon.png)
+---
 ### Hyprland
 
 Coming Soon
 
 ## TO DO
 
-- Continue modularization of nix files to improve readability
+- Remove my name from most files to make it easier for others to replace my name with theirs
 - Increase the amount of things managed by nix (Firefox and Discord use custom css files I need to add, for example)
 - Create an ["Erase your darlings" Setup](https://grahamc.com/blog/erase-your-darlings "Erase your darlings")
 
@@ -37,4 +32,4 @@ Coming Soon
 - [Erik Backman's NixOS Config](https://github.com/erikbackman/nixos-config "Erik Backman's NixOS Config")
 - [Alternateved's NixOS Config](https://github.com/alternateved/nixos-config "Alternateved's NixOS Config")
 - [Ivan Malison's NixOS Config](https://github.com/IvanMalison/dotfiles "Ivan Malison's NixOS Config")
-- [Icy Thought's taffybar Config](https://github.com/Icy-Thought/Snowflake/tree/935b7e2a53ed37eaa9011459f3dcacef9af31058/config/my-taffybar "Icy Thought's taffybar Config")
+- [Mihai Fufezan's NixOS Config](https://github.com/fufexan/dotfiles "Mihai Fufezan's NixOS Config") 
