@@ -4,14 +4,14 @@
   # Manage waybar, might replace with eww
   programs.waybar = {
     enable = true;
-    package = inputs.hyprland.packages.x86_64-linux.waybar-hyprland;
+    package = pkgs.waybar;
     settings = [
       {
         layer = "top";
         position = "top";
-	height = 26; #play around with this
+	height = 26;
         
-	modules-left = [ "hyprland/window" "wlr/workspaces" "wlr/taskbar" ];
+	modules-left = [ "wlr/workspaces" "hyprland/window" ];
         modules-center = [ "clock" ];
         modules-right = [ 
 	  "tray" 
@@ -27,10 +27,6 @@
 	  max-length = 25;
         };
 
-        "hyprland/window" = {
-          format = "{}";
-        };
-
         "tray" = {
           icon-size = 24;
 	  spacing = 10;
@@ -39,6 +35,10 @@
 	"tempurature" = {
 	  thermal-zone = 3;
 	};
+
+	#"wlr/workspaces" = {
+	#  on-click = "activate"; #doesn't seem to work
+	#};
       }
     ];
   };
