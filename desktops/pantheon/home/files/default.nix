@@ -2,9 +2,6 @@
 
 {
   imports = [
-    ./dconf
-    ./files
-    ./programs
-    ./services
+    ./plank.nix
   ];
 }

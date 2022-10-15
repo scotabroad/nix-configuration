@@ -11,11 +11,6 @@
   ];
 
   home = {
-    file = {
-      # Empty file to prevent fuzzel from saving history
-      ".cache/fuzzel".text = ''
-      '';
-    };
     packages = with pkgs; [
       fuzzel
       gnome.nautilus
