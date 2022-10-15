@@ -10,14 +10,19 @@
     inputs.hyprland.homeManagerModules.default
   ];
 
-
-  home.packages = with pkgs; [
-    fuzzel
-    gnome.nautilus
-    grim
-    hyprpaper
-  ];
-
+  home = {
+    file = {
+      # Empty file to prevent fuzzel from saving history
+      ".cache/fuzzel".text = ''
+      '';
+    };
+    packages = with pkgs; [
+      fuzzel
+      gnome.nautilus
+      grim
+      hyprpaper
+    ];
+  };
 
   wayland.windowManager.hyprland = {
     enable = true;
