@@ -1,0 +1,14 @@
+diff --git a/src/modules/wlr/workspace_manager.cpp b/src/modules/wlr/workspace_manager.cpp
+index cc3c815..4801b4e 100644
+--- a/src/modules/wlr/workspace_manager.cpp
++++ b/src/modules/wlr/workspace_manager.cpp
+@@ -439,7 +439,8 @@ auto Workspace::handle_clicked(GdkEventButton *bt) -> bool {
+   if (action.empty())
+     return true;
+   else if (action == "activate") {
+-    zext_workspace_handle_v1_activate(workspace_handle_);
++    const std::string command = "hyprctl dispatch workspace " + name_;
++    system(command.c_str());
+   } else if (action == "close") {
+     zext_workspace_handle_v1_remove(workspace_handle_);
+   } else {

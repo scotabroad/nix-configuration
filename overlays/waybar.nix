@@ -11,6 +11,10 @@ final: prev: {
     mesonFlags = oldAttrs.mesonFlags ++ [
       "-Dexperimental=true"
       "-Djack=disabled"
-      ];
+    ];
+    #This patch is for hyprland only
+    patches = (oldAttrs.patches or []) ++ [
+      ./waybar.patch
+    ];
   });
 }

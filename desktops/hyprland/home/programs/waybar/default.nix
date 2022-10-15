@@ -36,9 +36,10 @@
 	  thermal-zone = 3;
 	};
 
-	#"wlr/workspaces" = {
-	#  on-click = "activate"; #doesn't seem to work
-	#};
+	"wlr/workspaces" = {
+	  disable-scroll = false;
+	  on-click = "activate";
+	};
       }
     ];
   };
