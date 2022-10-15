@@ -3,6 +3,5 @@
 {
   imports = [
     ./kitty
-    ./waybar
   ];
 }
