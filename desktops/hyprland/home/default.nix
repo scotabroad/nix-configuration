@@ -13,7 +13,7 @@
   home = {
     packages = with pkgs; [
       fuzzel
-      gnome.nautilus
+      cinnamon.nemo
       grim
       hyprpaper
     ];
