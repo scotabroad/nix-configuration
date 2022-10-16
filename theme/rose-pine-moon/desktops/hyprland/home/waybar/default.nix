@@ -20,15 +20,56 @@
         modules-right = [ 
 	  "tray" 
 	  "cpu" 
-	  "memory" 
+	  "memory"
+	  "temperature"
 	  "battery" 
 	];
 
+	"battery" = {
+	  states = {
+	    full = 100;
+	    nines = 99;
+	    eights = 89;
+	    sevens = 79;
+            sixes = 69;
+	    fives = 59;
+	    fours = 49;
+	    threes = 39;
+	    twos = 29;
+	    ones = 19;
+	  };
+	  format-ones = " {capacity}%";
+	  format-twos = " {capacity}%";
+	  format-threes = " {capacity}%";
+	  format-fours = " {capcacity}%";
+	  format-fives = " {capacity}%";
+	  format-sixes = " {capacity}%";
+	  format-sevens = " {capacity}%";
+	  format-eights = " {capacity}%"; 
+	  format-nines = " {capacity}%"; 
+	  format-full = " {capacity}%";
+	};
+
         "clock" = {
-          interval = 60;
 	  format = "{:%a %b %d %I:%M %p}";
+          interval = 60;
 	  max-length = 25;
         };
+
+	"cpu" = {
+	  format = " {}%";
+	};
+
+	"memory" = {
+	  format = " {}%";
+	};
+
+	"temperature" = {
+	  thermal-zone = 1;
+	  critical-threshold = 60;
+	  format = " {temperatureC}°C";
+	  format-critical = " {temperatureC}°C";
+	};
 
         "tray" = {
           icon-size = 24;
@@ -41,7 +82,7 @@
 	};
 
 	"custom/search" = {
-	  format = "  Applications";
+	  format = "   Applications";
 	  on-click = "fuzzel -b 232136e6 -t e0def4ff -B 2 -r 5 -C c4a7e7ff -s c4a7e7ff -S 232136ff -i rose-pine-moon-icons -f UbuntuMono:size=14";
 	};
       }
