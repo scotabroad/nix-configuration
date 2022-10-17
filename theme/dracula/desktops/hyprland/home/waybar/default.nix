@@ -42,7 +42,7 @@
 	  format-ones = " {capacity}%";
 	  format-twos = " {capacity}%";
 	  format-threes = " {capacity}%";
-	  format-fours = " {capcacity}%";
+	  format-fours = " {capacity}%";
 	  format-fives = " {capacity}%";
 	  format-sixes = " {capacity}%";
 	  format-sevens = " {capacity}%";
