@@ -22,6 +22,7 @@
 	  "cpu" 
 	  "memory"
 	  "temperature"
+	  "custom/pipewire"
 	  "battery" 
 	];
 
@@ -82,8 +83,17 @@
 	};
 
 	"custom/search" = {
+	  tooltip = false;
 	  format = "   Applications";
 	  on-click = "fuzzel -b 282a36e6 -t f8f8f2ff -B 2 -r 5 -C 6272a4ff -s 44475aff -S f8f8f2ff -i Zafiro-icons-Dark -f UbuntuMono:size=14";
+	};
+
+	"custom/pipewire" = {
+	  tooltip = false;
+	  max-length = 7;
+	  signal = 8;
+	  restart-interval = 0;
+	  exec = "${pkgs.waybar-pipewire}/bin/waybar-pipewire";
 	};
       }
     ];

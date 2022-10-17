@@ -93,9 +93,9 @@ bind=CTRL_ALT,P,exec,poweroff
 bind=CTRL_ALT,R,exec,reboot
 
 # audio
-bind=,xf86audiolowervolume,exec,amixer -q set Master unmute 2%-
-bind=,xf86audioraisevolume,exec,amixer -q set Master unmute 2%+
-bind=,xf86audiomute,exec,amixer -q set Master toggle
+bind=,xf86audiolowervolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
+bind=,xf86audioraisevolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+
+bind=,xf86audiomute,exec,wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 
 # brightness
 bind=,xf86monbrightnessup,exec,light -A 10
