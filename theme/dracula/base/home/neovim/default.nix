@@ -3,7 +3,6 @@
 {
   # Manage Neovim
   programs.neovim = {
-    enable = true;
     plugins = with pkgs.vimPlugins; [
       lualine-nvim
       dracula-vim
