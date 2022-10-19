@@ -22,7 +22,7 @@
 	  "cpu" 
 	  "memory"
 	  "temperature"
-	  "custom/pipewire"
+	  "pulseaudio"
 	  "battery" 
 	];
 
@@ -88,12 +88,20 @@
 	  on-click = "fuzzel -b 282a36e6 -t f8f8f2ff -B 2 -r 5 -C 6272a4ff -s 44475aff -S f8f8f2ff -i Zafiro-icons-Dark -f UbuntuMono:size=14";
 	};
 
-	"custom/pipewire" = {
-	  tooltip = false;
-	  max-length = 7;
-	  signal = 8;
-	  restart-interval = 0;
-	  exec = "${pkgs.waybar-pipewire}/bin/waybar-pipewire";
+	"pulseaudio" = {
+	  format = "{icon} {volume}%";
+	  format-bluetooth = "{icon} {volume}%";
+	  format-muted = "婢 Muted";
+          format-icons = {
+            headphone = "";
+            hands-free = "";
+            headset = "";
+            phone = "";
+            portable = "";
+            car = "";
+            default = ["" ""];
+          };
+          scroll-step = 1;
 	};
       }
     ];
