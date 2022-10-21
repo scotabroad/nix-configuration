@@ -44,7 +44,7 @@ general {
 }
 
 decoration {
-    rounding=5
+    rounding=10
     blur=1
     blur_size=3
     blur_passes=1

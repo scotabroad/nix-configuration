@@ -14,7 +14,7 @@
 	modules-left = [ 
 	  "custom/search"
 	  "wlr/workspaces"
-	  "hyprland/window"
+	  #"hyprland/window"
 	];
         modules-center = [ "clock" ];
         modules-right = [ 
