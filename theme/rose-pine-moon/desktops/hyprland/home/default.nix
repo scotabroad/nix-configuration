@@ -5,7 +5,7 @@
     ../../../../../desktops/hyprland/home
     ../../../base/home
     ./dunst
-    ./waybar
+    #./waybar
   ];
 
   wayland.windowManager.hyprland = {
