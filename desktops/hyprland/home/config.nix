@@ -83,7 +83,7 @@ bindm=SUPER,mouse:273,resizewindow #right click
 # open apps
 bind=CTRL_ALT,T,exec,kitty
 bind=ALT,F,exec,firefox
-bind=SUPER,F,exec,nemo
+bind=SUPER,F,exec,nautilus
 bind=,Print,exec,grim #screenshot tool
 
 # management

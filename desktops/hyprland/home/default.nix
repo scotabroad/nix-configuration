@@ -8,14 +8,16 @@
     ./programs
     ./services
     inputs.hyprland.homeManagerModules.default
+
   ];
 
   home = {
     packages = with pkgs; [
       fuzzel
-      cinnamon.nemo
+      gnome.nautilus
       grim
       hyprpaper
+      hyprpicker
     ];
   };
 

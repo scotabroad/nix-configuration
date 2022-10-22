@@ -11,6 +11,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:hyprwm/hyprland";
     };
+    hyprpicker = {
+      url = "github:hyprwm/hyprpicker";
+    };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/master";
@@ -28,7 +31,8 @@
     home-manager, 
     nixos-hardware, 
     nix-matlab, 
-    hyprland, 
+    hyprland,
+    hyprpicker,
     ... 
   }@inputs:
     let
@@ -48,6 +52,7 @@
         
 	overlays = [
 	    nix-matlab.overlay
+	    hyprpicker.overlays.default
         ]
 	++ import ./overlays { inherit pkgs; }
 	++ import ./packages { inherit lib pkgs; };
