@@ -18,7 +18,7 @@ tooltip {
 }
 
 tooltip label {
-    color: white;
+    color: @theme_text_color;
 }
 
 /* -- Modules -- */
@@ -61,7 +61,7 @@ tooltip label {
 
 #workspaces button.active {
     background: #c4a7e7;
-    color: #232136;
+    color: #393552;
 }
 
 /* -- Center Modules -- */
