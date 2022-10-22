@@ -18,7 +18,14 @@ This is my NixOS configuration. I use a flake to manage everything. Three themes
 ---
 ### Hyprland
 
-Coming Soon
+#### Dracula
+![Image](images/hyprland-dracula.png)
+
+#### Nord
+![Image](images/hyprland-nord.png)
+
+#### Rosé-Pine-Moon
+![Image](images/hyprland-rose-pine-moon.png)
 
 ## TO DO
 

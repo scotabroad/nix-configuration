@@ -23,7 +23,8 @@
 	  "memory"
 	  "temperature"
 	  "pulseaudio"
-	  "battery" 
+	  "battery"
+	  "custom/power"
 	];
 
 	"battery" = {
@@ -102,6 +103,10 @@
             default = ["" ""];
           };
           scroll-step = 1;
+	};
+
+	"custom/power" = {
+	  format = "  ";
 	};
       }
     ];
