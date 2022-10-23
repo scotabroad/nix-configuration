@@ -64,7 +64,7 @@
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system pkgs;
 	modules = [
-          ./theme/rose-pine-moon/desktops/hyprland/system/default.nix
+          ./theme/dracula/desktops/hyprland/system/default.nix
           hyprland.nixosModules.default
 	  nixos-hardware.nixosModules.framework
           home-manager.nixosModules.home-manager {
@@ -72,7 +72,7 @@
                 extraSpecialArgs = { inherit inputs; };
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.liamdp = import ./theme/rose-pine-moon/desktops/hyprland/home/default.nix;
+                users.liamdp = import ./theme/dracula/desktops/hyprland/home/default.nix;
 	     };
           }
         ];

@@ -9,7 +9,7 @@
     xserver = {
       displayManager = {
         lightdm = {
-	  background = ../../../../wallpapers/Nordic.jpg;
+	  background = ../../../../wallpapers/dracula-base.png;
 	  greeters = {
 	    gtk = {
 	      cursorTheme = {
