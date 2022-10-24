@@ -75,7 +75,8 @@ tooltip label {
 
 #tray {
     border-radius: 20px;
-    margin-right: 45px;
+    margin-right: 15px;
+    margin-left: 15px;
 }
 
 #cpu {
