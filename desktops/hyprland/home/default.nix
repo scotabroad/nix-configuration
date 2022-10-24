@@ -13,8 +13,9 @@
 
   home = {
     packages = with pkgs; [
+      cinnamon.nemo
       fuzzel
-      gnome.nautilus
+      #gnome.nautilus
       grim
       hyprpaper
       hyprpicker

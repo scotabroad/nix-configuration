@@ -29,11 +29,8 @@
       #School
       gcc11
       gnumake
-      javaPackages.junit_4_12
       jdk8
-      jetbrains.idea-community
       jre8
-      mars-mips
       octaveFull
     ];
     username = "liamdp";

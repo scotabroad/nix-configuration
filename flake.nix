@@ -40,7 +40,8 @@
 
       config = nixpkgs.config;
       lib = nixpkgs.lib;
-
+      stdenv = nixpkgs.legacyPackages.${system}.stdenv;
+      
       make-packages = ps: attrs:
         import ps ({
           inherit system;

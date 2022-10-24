@@ -44,6 +44,7 @@ tooltip label {
 #custom-search {
     border-radius: 20px 0px 0px 20px;
     border-right: 0px;
+    margin-left: 10px;
 }
 
 #workspaces {
@@ -110,4 +111,5 @@ tooltip label {
 #custom-power {
     border-radius: 0px 20px 20px 0px;
     border-left: 0px;
+    margin-right: 10px;
 }
