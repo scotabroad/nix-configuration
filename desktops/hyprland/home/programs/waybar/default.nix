@@ -50,20 +50,24 @@
 	  format-eights = " {capacity}%"; 
 	  format-nines = " {capacity}%"; 
 	  format-full = " {capacity}%";
+	  on-click = "true";
 	};
 
         "clock" = {
 	  format = "{:%a %b %d %I:%M %p}";
           interval = 60;
 	  max-length = 25;
+	  on-click = "true";
         };
 
 	"cpu" = {
 	  format = " {}%";
+	  on-click = "true";
 	};
 
 	"memory" = {
 	  format = " {}%";
+	  on-click = "true";
 	};
 
 	"temperature" = {
@@ -71,11 +75,13 @@
 	  critical-threshold = 60;
 	  format = " {temperatureC}°C";
 	  format-critical = " {temperatureC}°C";
+	  on-click = "true";
 	};
 
         "tray" = {
           icon-size = 24;
 	  spacing = 10;
+	  on-click = "true";
         };
 
 	"wlr/workspaces" = {
@@ -86,6 +92,7 @@
 	"custom/search" = {
 	  tooltip = false;
 	  format = "   Applications";
+	  on-click = "true";
 	  #on-click = "fuzzel -b 2e3440e6 -t d8dee9ff -B 2 -r 5 -C 8fbcbbff -s 8fbcbbff -S 2e3440ff -i Nordzy-dark -f UbuntuMono:size=14";
 	};
 
@@ -103,10 +110,12 @@
             default = ["" ""];
           };
           scroll-step = 1;
+	  on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
 	};
 
 	"custom/power" = {
 	  format = "  ";
+	  on-click = "true";
 	};
       }
     ];
