@@ -66,6 +66,7 @@ dwindle {
 gestures {
     workspace_swipe=yes
     workspace_swipe_fingers = 3
+    workspace_swipe_create_new = true
 }
 
 misc {
