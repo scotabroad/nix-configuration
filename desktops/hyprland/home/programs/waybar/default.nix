@@ -94,8 +94,7 @@
 	"custom/search" = {
 	  tooltip = false;
 	  format = "   Applications";
-	  on-click = "true";
-	  #on-click = "fuzzel -b 2e3440e6 -t d8dee9ff -B 2 -r 5 -C 8fbcbbff -s 8fbcbbff -S 2e3440ff -i Nordzy-dark -f UbuntuMono:size=14";
+	  on-click = "pkill wofi || wofi --show drun";
 	};
 
 	"pulseaudio" = {

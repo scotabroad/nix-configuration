@@ -14,11 +14,11 @@
   home = {
     packages = with pkgs; [
       cinnamon.nemo
-      fuzzel
       #gnome.nautilus
       grim
       hyprpaper
       hyprpicker
+      wofi
     ];
   };
 
