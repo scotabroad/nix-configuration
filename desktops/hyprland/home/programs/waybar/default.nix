@@ -14,7 +14,6 @@
 	modules-left = [ 
 	  "custom/search"
 	  "wlr/workspaces"
-	  #"hyprland/window"
 	];
         modules-center = [ "clock" ];
         modules-right = [ 
@@ -85,7 +84,8 @@
         };
 
 	"wlr/workspaces" = {
-	  disable-scroll = false;
+	  disable-scroll = true;
+	  sort-by-number = true;
 	  on-click = "activate";
 	  on-scroll-up = "hyprctl dispatch workspace e+1";
 	  on-scroll-down = "hyprctl dispatch workspace e-1";

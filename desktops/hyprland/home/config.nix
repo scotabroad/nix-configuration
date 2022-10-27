@@ -74,6 +74,10 @@ misc {
     disable_splash_rendering=1
 }
 
+binds {
+    allow_workspace_cycles = false
+}
+
 # window rules
 windowrule=fullscreen,^(.*x86_64)$ #games should start fullscreen
 
