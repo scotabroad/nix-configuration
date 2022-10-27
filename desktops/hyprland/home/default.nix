@@ -19,6 +19,7 @@
       hyprpaper
       hyprpicker
       nwg-launchers
+      wofi
     ];
   };
 
