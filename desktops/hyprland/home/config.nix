@@ -86,7 +86,7 @@ bind=CTRL_ALT,T,exec,kitty
 bind=ALT,F,exec,firefox
 bind=SUPER,F,exec,nemo
 bind=,Print,exec,grim #screenshot tool
-bind=ALT,R,exec,pkill wofi || wofi --show drun
+bind=ALT,R,exec,pkill nwggrid || nwggrid
 
 # management
 bind=CTRL,Q,killactive,

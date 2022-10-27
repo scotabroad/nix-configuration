@@ -18,7 +18,7 @@
       grim
       hyprpaper
       hyprpicker
-      wofi
+      nwg-launchers
     ];
   };
 

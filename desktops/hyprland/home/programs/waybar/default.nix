@@ -94,7 +94,7 @@
 	"custom/search" = {
 	  tooltip = false;
 	  format = "   Applications";
-	  on-click = "pkill wofi || wofi --show drun";
+	  on-click = "pkill nwggrid || nwggrid";
 	};
 
 	"pulseaudio" = {
@@ -116,7 +116,7 @@
 
 	"custom/power" = {
 	  format = "  ";
-	  on-click = "true";
+	  on-click = "pkill nwgbar || nwgbar";
 	};
       }
     ];
