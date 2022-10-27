@@ -94,7 +94,7 @@
 	"custom/search" = {
 	  tooltip = false;
 	  format = "   Applications";
-	  on-click = "pkill nwggrid || nwggrid";
+	  on-click = "pkill nwggrid || nwggrid -layer-shell-exclusive-zone -1";
 	};
 
 	"pulseaudio" = {
@@ -116,7 +116,7 @@
 
 	"custom/power" = {
 	  format = "  ";
-	  on-click = "pkill nwgbar || nwgbar";
+	  on-click = "pkill nwgbar || nwgbar -layer-shell-exclusive-zone -1";
 	};
       }
     ];
