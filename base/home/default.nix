@@ -27,10 +27,6 @@
       vivaldi
 
       #School
-      gcc11
-      gnumake
-      jdk8
-      jre8
       octaveFull
     ];
     username = "liamdp";
