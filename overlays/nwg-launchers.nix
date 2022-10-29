@@ -5,12 +5,16 @@ final: prev: {
     src = pkgs.fetchFromGitHub {
       owner = "nwg-piotr";
       repo = "nwg-launchers";
-      rev = "29ee3b0501ebc7524eb43ba8a28375f811925d3c";
-      sha256 = "+waoJHU/QrVH7o9qfwdvFTFJzTGLcV9CeYPn3XHEAkM=";
+      rev = "771a06e1690f0f2743c8738151cf6ea71d0884e8";
+      sha256 = "GHnmn8CdpemrpB3+IxFbbry7fjAJGjc7PUeSYxZrNM4=";
     };
 
     buildInputs = oldAttrs.buildInputs ++ [
       pkgs.librsvg
+    ];
+
+    patches = (oldAttrs.patches or []) ++ [
+      ./nwg-launchers.patch
     ];
   });
 }

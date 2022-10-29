@@ -12,6 +12,7 @@ monitor=,preferred,auto,2
 exec-once=${pkgs.xorg.xprop}/bin/xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2
 exec-once=hyprpaper &
 exec-once=waybar &
+exec-once=nwggrid-server -layer-shell-exclusive-zone -1
 
 input {
     kb_file=
@@ -90,7 +91,7 @@ bind=CTRL_ALT,T,exec,kitty
 bind=ALT,F,exec,firefox
 bind=SUPER,F,exec,nemo
 bind=,Print,exec,grim #screenshot tool
-bind=ALT,R,exec,pkill nwggrid || nwggrid -layer-shell-exclusive-zone -1
+bind=ALT,R,exec,nwggrid -client
 
 # management
 bind=CTRL,Q,killactive,
