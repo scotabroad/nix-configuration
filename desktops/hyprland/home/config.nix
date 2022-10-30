@@ -96,8 +96,8 @@ bind=ALT,R,exec,nwggrid -client
 # management
 bind=CTRL,Q,killactive,
 bind=SUPER,Q,exit,
-bind=CTRL_ALT,P,exec,poweroff
-bind=CTRL_ALT,R,exec,reboot
+bind=CTRL_ALT,P,exec,pkill nwgbar || nwgbar -layer-shell-exclusive-zone -1
+bind=CTRL_ALT,R,exec,pkill nwgbar || nwgbar -layer-shell-exclusive-zone -1
 
 # audio
 bind=,xf86audiolowervolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
