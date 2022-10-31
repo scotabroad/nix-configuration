@@ -29,7 +29,11 @@ Launcher=file://${pkgs.kitty}/share/applications/kitty.desktop
 '';
       ".config/plank/dock1/launchers/vivaldi-stable.dockitem".text = ''
 [PlankDockItemPreferences]
-Launcher=file://${pkgs.vivaldi}/share/applications/vivaldi.desktop
+Launcher=file://${pkgs.vivaldi}/share/applications/vivaldi-stable.desktop
+'';
+      ".config/plank/dock1/launchers/steam.dockitem".text = ''
+[PlankDockItemPreferences]
+Launcher=file://${pkgs.steam}/share/applications/steam.desktop
 '';
     };
   };

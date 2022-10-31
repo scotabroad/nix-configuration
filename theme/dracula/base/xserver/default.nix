@@ -18,8 +18,8 @@
 		package = pkgs.dracula-theme;
 	      };
 	      iconTheme = {
-	        name = "Nordzy-dark";
-		package = pkgs.nordzy-icon-theme;
+	        name = "Zafiro-icons-Dark";
+		package = pkgs.zafiro-icons;
 	      };
 	      theme = {
 	        name = "Dracula";
