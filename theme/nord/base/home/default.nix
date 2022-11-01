@@ -9,7 +9,17 @@
     ./qt5ct
   ];
   
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+
   home = {
+    file = {
+    ".config/gtk-4.0/gtk.css".source = "${pkgs.nordic}/share/themes/Nordic/gtk-4.0/gtk.css";
+    ".config/gtk-4.0/gtk-dark.css".source = "${pkgs.nordic}/share/themes/Nordic/gtk-4.0/gtk-dark.css";
+    };
     pointerCursor = {
       name = "Nordzy-cursors";
       package = pkgs.nordzy-cursor-theme;
