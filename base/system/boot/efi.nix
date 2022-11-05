@@ -33,6 +33,12 @@
       # Disable systemd-boot
       systemd-boot.enable = false;
     };
+
+    # Supported Filesystems
+    supportedFilesystems = [
+      "btrfs"
+      "ntfs"
+    ];
   };
 }
 
