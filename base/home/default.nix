@@ -28,17 +28,6 @@
 
       #School
       octaveFull
-
-      #theme packages to investigate
-      dracula-theme
-      zafiro-icons
-
-      nordic
-      nordzy-icon-theme
-      nordzy-cursor-theme
-
-      rose-pine-gtk-theme
-      rose-pine-icon-theme
     ];
     username = "liamdp";
 
