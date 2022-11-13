@@ -3,18 +3,18 @@
 final: prev: {
   nwg-launchers = prev.nwg-launchers.overrideAttrs (oldAttrs: {
     src = pkgs.fetchFromGitHub {
-      owner = "nwg-piotr";
+      owner = "scotabroad";
       repo = "nwg-launchers";
-      rev = "6ada38ed4e95b41cecadf77a55cdb1a109c407be";
-      sha256 = "3TaAfuzwVFRdFTQQ0nCaGumgnlnawjHILOP5W8k8WeM=";
+      rev = "ebcaf1f1f3478407f05cb48be4bb365df797e616";
+      sha256 = "KB19LTjtgsJ6Z3kLlddpdqD/lr0ClpwfPP7fWjv+UdQ=";
     };
 
     buildInputs = oldAttrs.buildInputs ++ [
       pkgs.librsvg
     ];
 
-    patches = (oldAttrs.patches or []) ++ [
-      ./nwg-launchers.patch
-    ];
+    #patches = (oldAttrs.patches or []) ++ [
+    #  ./nwg-launchers.patch
+    #];
   });
 }
