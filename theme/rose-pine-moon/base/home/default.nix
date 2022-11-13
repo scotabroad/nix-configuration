@@ -10,6 +10,9 @@
   ];
 
   home = {
+    file = {
+    ".config/gtk-4.0/gtk.css".source = "${pkgs.rose-pine-gtk-theme}/share/themes/rose-pine-moon/gtk.css";
+    };
     pointerCursor = {
       name = "Nordzy-cursors";
       package = pkgs.nordzy-cursor-theme;
@@ -17,7 +20,7 @@
       gtk.enable = true;
       x11 = {
         enable = true;
-	defaultCursor = "left_ptr";
+        defaultCursor = "left_ptr";
       };
     };
     sessionVariables = {
