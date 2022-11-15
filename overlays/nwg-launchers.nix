@@ -5,8 +5,8 @@ final: prev: {
     src = pkgs.fetchFromGitHub {
       owner = "scotabroad";
       repo = "nwg-launchers";
-      rev = "ebcaf1f1f3478407f05cb48be4bb365df797e616";
-      sha256 = "KB19LTjtgsJ6Z3kLlddpdqD/lr0ClpwfPP7fWjv+UdQ=";
+      rev = "3387d9cd499c9319072ddc41ca32ac5a955a2dc1";
+      sha256 = "S6LEX74Zztvt7Di4VJq9gi91g6XjiReSfhCQQiJxe88=";
     };
 
     buildInputs = oldAttrs.buildInputs ++ [
