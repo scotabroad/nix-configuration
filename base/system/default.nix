@@ -38,11 +38,18 @@
   i18n = {
     defaultLocale = "en_US.UTF-8";
     inputMethod = {
-      enabled = "ibus";
-      ibus.engines = with pkgs.ibus-engines; [
-	table
-	table-others
+      enabled = "fcitx";
+      fcitx.engines = with pkgs.fcitx-engines; [
+        table-other
       ];
+      #fcitx5.addons = with pkgs; [
+      #  fcitx5-gtk
+      #  fcitx5-table-other
+      #];
+      #ibus.engines = with pkgs.ibus-engines; [
+      #  table
+      #  table-others
+      #];
     };
   };
   

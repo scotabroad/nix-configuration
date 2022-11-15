@@ -3,6 +3,5 @@
 {
   imports = [
     ./gedit.nix
-    ./ibus.nix
   ];
 }
