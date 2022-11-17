@@ -19,12 +19,12 @@
     file = {
       ".config/gtk-4.0/gtk.css".source = "${pkgs.nordic}/share/themes/Nordic/gtk-4.0/gtk.css";
       ".config/gtk-4.0/gtk-dark.css".source = "${pkgs.nordic}/share/themes/Nordic/gtk-4.0/gtk-dark.css";
-      ".config/fcitx/skin".source = pkgs.fetchFromGitHub {
-        owner = "Yucklys";
-        repo = "fcitx-nord-skin";
-        rev = "4ae8525024be78d5fb9b9589bac7ff78ab9c4b34";
-        sha256 = "K6qy09XqnotglMRdd4H2Na6D8QgikY11/PsZKb41dVI=";
-      };
+      #".config/fcitx/skin".source = pkgs.fetchFromGitHub {
+      #  owner = "Yucklys";
+      #  repo = "fcitx-nord-skin";
+      #  rev = "4ae8525024be78d5fb9b9589bac7ff78ab9c4b34";
+      #  sha256 = "K6qy09XqnotglMRdd4H2Na6D8QgikY11/PsZKb41dVI=";
+      #};
     };
     pointerCursor = {
       name = "Nordzy-cursors";

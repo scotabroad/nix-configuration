@@ -8,16 +8,16 @@ in {
     "desktop/ibus/general" = {
       engines-order = ["xkb:us::eng" "table:ipa-x-sampa"];
       preload-engines = ["xkb:us::eng" "table:ipa-x-sampa"];
-      version= "1.5.26";
+      #version= "1.5.26";
     };
 
     "desktop/ibus/general/hotkey" = {
       triggers = ["<Alt>space"];
     };
 
-    "desktop/ibus/panel" = {
-      show-icon-on-systray = true;
-    };
+    #"desktop/ibus/panel" = {
+    #  show-icon-on-systray = true;
+    #};
 
     "desktop/ibus/panel/emoji" = {
       font = "UbuntuMono Nerd Font Mono 16";
