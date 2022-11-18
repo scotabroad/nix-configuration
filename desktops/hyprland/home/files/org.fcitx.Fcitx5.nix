@@ -44,5 +44,6 @@ X-GNOME-Autostart-Notify=false
 X-KDE-autostart-after=panel
 X-KDE-StartupNotify=false
 X-KDE-Wayland-VirtualKeyboard=true
+NoDisplay=true
 '';
 }
