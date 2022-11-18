@@ -12,6 +12,7 @@ monitor=,preferred,auto,2
 exec-once=${pkgs.xorg.xprop}/bin/xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2
 exec-once=hyprpaper &
 exec-once=waybar &
+exec-once=fcitx5 -r &
 exec-once=nwggrid-server -layer-shell-exclusive-zone -1
 
 input {
