@@ -1,8 +1,8 @@
 diff --git a/src/modules/wlr/workspace_manager.cpp b/src/modules/wlr/workspace_manager.cpp
-index da83cb7..6975ab2 100644
+index 6f11e1f..0b88044 100644
 --- a/src/modules/wlr/workspace_manager.cpp
 +++ b/src/modules/wlr/workspace_manager.cpp
-@@ -450,7 +450,8 @@ auto Workspace::handle_clicked(GdkEventButton *bt) -> bool {
+@@ -454,7 +454,8 @@ auto Workspace::handle_clicked(GdkEventButton *bt) -> bool {
    if (action.empty())
      return true;
    else if (action == "activate") {
