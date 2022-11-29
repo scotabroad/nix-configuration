@@ -28,7 +28,7 @@
       gtk.enable = true;
       x11 = {
         enable = true;
-	defaultCursor = "left_ptr";
+        defaultCursor = "left_ptr";
       };
     };
     sessionVariables = {

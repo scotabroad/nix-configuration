@@ -1,0 +1,13 @@
+diff --git a/theme.conf b/theme.conf
+index 8cd8949..20e744e 100644
+--- a/theme.conf
++++ b/theme.conf
+@@ -30,7 +30,7 @@ Bottom=10
+ # 透明选择 peneltrans.png 
+ # 不透明选择 panel.png
+ [InputPanel/Background]
+-Image=paneltrans.png
++Image=panel.png
+ 
+ [InputPanel/Background/Margin]
+ Left=2

@@ -9,9 +9,15 @@
     ./qt5ct
   ];
 
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-light";
+    };
+  };
+
   home = {
     file = {
-    ".config/gtk-4.0/gtk.css".source = "${pkgs.rose-pine-gtk-theme}/share/themes/rose-pine-moon/gtk.css";
+    ".config/gtk-4.0/gtk.css".source = "${pkgs.rose-pine-gtk-theme}/share/themes/rose-pine-moon-gtk/gtk-4.0/gtk.css";
     };
     pointerCursor = {
       name = "Nordzy-cursors";
@@ -32,6 +38,8 @@
     enable = true;
 
     theme = {
+      #name = "Nordic";
+      #package = pkgs.nordic;
       name = "rose-pine-moon-gtk";
       package = pkgs.rose-pine-gtk-theme;
     };
@@ -54,8 +62,8 @@
     };
 
     gtk3.extraConfig = {
-      gtk-icon-theme-name = "Nordzy-dark";
-      gtk-theme-name = "Nordic";
+      gtk-icon-theme-name = "rose-pine-moon-icons";
+      gtk-theme-name = "rose-pine-moon-gtk";
       gtk-application-prefer-dark-theme = 0;
     };
   };

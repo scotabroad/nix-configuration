@@ -1,8 +1,10 @@
 { lib, pkgs, ... }:
 
 [
+  (import ./custom-wallpapers.nix { inherit pkgs; })
   (import ./dracula-gedit.nix { inherit lib pkgs; })
   (import ./framework-grub.nix { inherit lib pkgs; })
+  (import ./fcitx5-dracula-theme.nix { inherit pkgs; })
   (import ./lightdm-dpi-fix.nix { inherit pkgs; })
   (import ./nord-gedit.nix { inherit lib pkgs; })
   (import ./rose-pine-gtk.nix { inherit lib pkgs; })

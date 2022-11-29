@@ -3,13 +3,24 @@
 {
   imports = [
     ../../../../base/home
+    ./fcitx5
     ./gedit
     ./kitty
     ./neovim
     ./qt5ct
   ];
   
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+
   home = {
+    file = {
+      ".config/gtk-4.0/gtk.css".source = "${pkgs.dracula-theme}/share/themes/Dracula/gtk-4.0/gtk.css";
+      ".config/gtk-4.0/gtk-dark.css".source = "${pkgs.dracula-theme}/share/themes/Dracula/gtk-4.0/gtk-dark.css";
+    };
     pointerCursor = {
       name = "Dracula-cursors";
       package = pkgs.dracula-theme;
@@ -17,7 +28,7 @@
       gtk.enable = true;
       x11 = {
         enable = true;
-	defaultCursor = "left_ptr";
+        defaultCursor = "left_ptr";
       };
     };
     sessionVariables = {
