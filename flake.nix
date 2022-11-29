@@ -58,17 +58,17 @@
       # nixos is my hostname (lame, I know)
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system pkgs;
-	modules = [
+        modules = [
           ./theme/rose-pine-moon/desktops/hyprland/system/default.nix
           hyprland.nixosModules.default
-	  nixos-hardware.nixosModules.framework
+          nixos-hardware.nixosModules.framework
           home-manager.nixosModules.home-manager {
-	    home-manager = {
+            home-manager = {
               extraSpecialArgs = { inherit inputs; };
               useGlobalPkgs = true;
               useUserPackages = true;
               users.liamdp = import ./theme/rose-pine-moon/desktops/hyprland/home/default.nix;
-	    };
+            };
           }
         ];
       };

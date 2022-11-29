@@ -9,26 +9,26 @@
     xserver = {
       displayManager = {
         lightdm = {
-	  background = ../../../../wallpapers/Nordic.jpg;
-	  greeters = {
-	    gtk = {
-	      cursorTheme = {
-	        name = "Nordzy-cursors";
-		size = 48;
-		package = pkgs.nordzy-cursor-theme;
-	      };
-	      iconTheme = {
-	        name = "Nordzy-dark";
-		package = pkgs.nordzy-icon-theme;
-	      };
-	      theme = {
-	        name = "Nordic";
-		package = pkgs.nordic;
-	      };
-	      extraConfig = '' font-name=Ubuntu,11 '';
-	    };
-	  };
-	};
+          background = "${pkgs.custom-wallpapers}/Nordic.jpg";
+          greeters = {
+            gtk = {
+              cursorTheme = {
+                name = "Nordzy-cursors";
+                size = 48;
+                package = pkgs.nordzy-cursor-theme;
+              };
+              iconTheme = {
+                name = "Nordzy-dark";
+                package = pkgs.nordzy-icon-theme;
+              };
+              theme = {
+                name = "Nordic";
+                package = pkgs.nordic;
+              };
+              extraConfig = '' font-name=Ubuntu,11 '';
+            };
+          };
+        };
       };
     };
   };
