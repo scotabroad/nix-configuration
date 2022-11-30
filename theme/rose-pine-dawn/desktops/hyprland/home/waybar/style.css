@@ -1,0 +1,116 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Ubuntu Nerd Font;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @theme_text_color;
+}
+
+tooltip {
+    background: alpha(@theme_base_color, 0.5);
+    border-radius: 10px 10px 10px 10px;
+    border: 1.5px solid #907aa9;
+}
+
+tooltip label {
+    color: @theme_text_color;
+}
+
+/* -- Modules -- */
+#custom-search,
+#workspaces,
+#window, 
+#clock, 
+#tray, 
+#cpu, 
+#memory, 
+#temperature,
+#pulseaudio, 
+#battery,
+#custom-power { 
+    color: @theme_text_color;
+    background: alpha(@theme_base_color, 0.9);
+    border: 1.5px solid #907aa9;
+    padding: 0 10px;
+}
+
+/* -- Left Modules -- */
+
+#custom-search {
+    border-radius: 20px 0px 0px 20px;
+    border-right: 0px;
+    margin-left: 10px;
+}
+
+#workspaces {
+    padding: 0 0px;
+    border-radius: 0px 20px 20px 0px;
+    border-left: 0px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    border-radius: 20px 20px 20px 20px;
+    background: transparent;
+    color: @theme_text_color;
+}
+
+#workspaces button.active {
+    background: #907aa9;
+    color: #f2e9e1;
+}
+
+/* -- Center Modules -- */
+
+#clock {
+    border-radius: 20px;
+}
+
+/* -- Right Modules -- */
+
+#tray {
+    border-radius: 20px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+#cpu {
+    border-radius: 20px 0px 0px 20px;
+    border-right: 0px;
+}
+
+#memory, #temperature, #pulseaudio, #battery {
+    border-right: 0px;
+    border-left: 0px;
+}
+
+#temperature.critical {
+    color: #b4637a;
+}
+
+#battery.charging {
+    color: #286983;
+}
+
+#battery.threes:not(.charging) {
+    color: #b4637a;
+}
+
+#battery.twos:not(.charging) {
+    color: #b4637a;
+}
+
+#battery.ones:not(.charging) {
+    color: #b4637a;
+}
+
+#custom-power {
+    border-radius: 0px 20px 20px 0px;
+    border-left: 0px;
+    margin-right: 10px;
+}
