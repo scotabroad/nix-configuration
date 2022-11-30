@@ -9,7 +9,7 @@
     xserver = {
       displayManager = {
         lightdm = {
-          background = "${pkgs.custom-wallpapers}/winter-in-bohemia.png";
+          background = "${pkgs.custom-wallpapers}/winter-in-bohemia_dark.jpg";
           greeters = {
             gtk = {
               cursorTheme = {
