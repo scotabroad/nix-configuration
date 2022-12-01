@@ -12,5 +12,9 @@ final: prev: {
     buildInputs = oldAttrs.buildInputs ++ [
       pkgs.librsvg
     ];
+
+    patches = (oldAttrs.patches or []) ++ [
+      ./nwg-launchers.patch
+    ];
   });
 }

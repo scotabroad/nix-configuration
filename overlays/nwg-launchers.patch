@@ -1,0 +1,13 @@
+diff --git a/grid/grid_classes.cc b/grid/grid_classes.cc
+index 9460283..b39189b 100644
+--- a/grid/grid_classes.cc
++++ b/grid/grid_classes.cc
+@@ -237,7 +237,7 @@ GridWindow::GridWindow(GridConfig& config):
+     searchbox
+         .signal_search_changed()
+         .connect(sigc::mem_fun(*this, &GridWindow::filter_view));
+-    searchbox.set_placeholder_text("Type to search");
++    //searchbox.set_placeholder_text("Type to search");
+     searchbox.set_sensitive(true);
+     searchbox.set_name("searchbox");
+ 
