@@ -4,8 +4,10 @@
   imports = [
     ../../../../../desktops/hyprland/home
     ../../../base/home
-    ./hyprpaper
     ./dunst
+    ./hyprpaper
+    ./nwgbar
+    ./nwggrid
     ./waybar
   ];
 

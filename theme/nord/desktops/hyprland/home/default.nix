@@ -6,6 +6,8 @@
     ../../../base/home
     ./dunst
     ./hyprpaper
+    ./nwgbar
+    ./nwggrid
     ./waybar
   ];
 
