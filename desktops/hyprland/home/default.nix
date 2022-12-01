@@ -13,7 +13,7 @@
 
   home = {
     packages = with pkgs; [
-      #cinnamon.nemo
+      gnome.gnome-calculator
       gnome.nautilus
       grim
       hyprpaper
