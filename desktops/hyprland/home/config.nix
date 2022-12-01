@@ -13,7 +13,7 @@ exec-once=${pkgs.xorg.xprop}/bin/xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32
 exec-once=hyprpaper &
 exec-once=waybar &
 exec-once=fcitx5 -r &
-exec-once=nwggrid-server -layer-shell-exclusive-zone -1
+exec-once=nwggrid-server -o 0 -layer-shell-exclusive-zone -1
 
 input {
     kb_file=
@@ -27,7 +27,7 @@ input {
 
     touchpad {
         natural_scroll=yes
-	clickfinger_behavior=yes
+        clickfinger_behavior=yes
     }
 
     sensitivity=0 # -1.0 - 1.0, 0 means no modification.
@@ -95,8 +95,8 @@ bind=ALT,R,exec,nwggrid -client
 # management
 bind=CTRL,Q,killactive,
 bind=SUPER,Q,exit,
-bind=CTRL_ALT,P,exec,pkill nwgbar || nwgbar -layer-shell-exclusive-zone -1
-bind=CTRL_ALT,R,exec,pkill nwgbar || nwgbar -layer-shell-exclusive-zone -1
+bind=CTRL_ALT,P,exec,pkill nwgbar || nwgbar -o 0 -layer-shell-exclusive-zone -1
+bind=CTRL_ALT,R,exec,pkill nwgbar || nwgbar -o 0 -layer-shell-exclusive-zone -1
 
 # audio
 bind=,xf86audiolowervolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-

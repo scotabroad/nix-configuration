@@ -116,7 +116,7 @@
 
 	"custom/power" = {
 	  format = "  ";
-	  on-click = "pkill nwgbar || nwgbar -layer-shell-exclusive-zone -1";
+	  on-click = "pkill nwgbar || nwgbar -o 0 -layer-shell-exclusive-zone -1";
 	};
       }
     ];
