@@ -21,8 +21,8 @@
 
     "org/gnome/desktop/interface" = {
       # Color theme
-      gtk-theme = "rose-pine-moon-gtk";
-      icon-theme = "rose-pine-moon-icons";
+      gtk-theme = "rose-pine-gtk";
+      icon-theme = "rose-pine-icons";
       primary-color = "rgb(25,23,36)";
       # Font theme
       document-font-name = "Ubuntu 10";
