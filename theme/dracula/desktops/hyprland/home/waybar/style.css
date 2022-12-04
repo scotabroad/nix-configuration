@@ -1,4 +1,20 @@
+/* Define Dracula Palette */
+/* Polar Night */
+@define-color background #282a36;
+@define-color current-line #44475a;
+@define-color foreground #f8f8f2;
+@define-color comment #6272a4;
+@define-color cyan #8be9fd;
+@define-color green #50fa7b;
+@define-color orange #ffb86c;
+@define-color pink #ff79c6;
+@define-color purple #bd93f9;
+@define-color red #ff5555;
+@define-color yellow #f1fa8c;
+
+
 * {
+    all: initial;
     border: none;
     border-radius: 0;
     font-family: Ubuntu Nerd Font;
@@ -8,17 +24,18 @@
 
 window#waybar {
     background: transparent;
-    color: @theme_text_color;
+    color: @foreground;
 }
 
 tooltip {
-    background: alpha(@theme_base_color, 0.5);
+    background: alpha(@background, 0.5);
     border-radius: 10px 10px 10px 10px;
-    border: 1.5px solid #6272a4;
+    border: 1.5px solid @comment;
 }
 
 tooltip label {
-    color: @theme_text_color;
+    color: @foreground;
+    padding: 7.5px;
 }
 
 /* -- Modules -- */
@@ -33,9 +50,9 @@ tooltip label {
 #pulseaudio, 
 #battery,
 #custom-power { 
-    color: @theme_text_color;
-    background: alpha(@theme_base_color, 0.9);
-    border: 1.5px solid #6272a4;
+    color: @foreground;
+    background: alpha(@background, 0.9);
+    border: 1.5px solid @comment;
     padding: 0 10px;
 }
 
@@ -54,15 +71,25 @@ tooltip label {
 }
 
 #workspaces button {
+    min-height: 24px;
+    min-width: 16px;
     padding: 0 5px;
     border-radius: 20px 20px 20px 20px;
     background: transparent;
-    color: @theme_text_color;
+    color: @foreground;
 }
 
 #workspaces button.active {
-    background: #6272a4;
-    color: #282a36;
+    background: @comment;
+    color: @background;
+}
+
+#workspaces label {
+    color: @foreground;
+}
+
+#workspaces button.active label {
+    color: @background;
 }
 
 /* -- Center Modules -- */
@@ -79,6 +106,35 @@ tooltip label {
     margin-left: 15px;
 }
 
+#tray menu {
+    background: alpha(@background, 1);
+    border-radius: 10px 10px 10px 10px;
+    border: 1.5px solid @comment;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+#tray menu menuitem {
+    border-radius: 7.5px 7.5px 7.5px 7.5px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#tray menu menuitem:hover {
+    background: @purple;
+}
+
+#tray menu label {
+    color: @foreground;
+    padding: 5px;
+}
+
+#tray menu menuitem:hover label {
+    color: @background;
+}
+
 #cpu {
     border-radius: 20px 0px 0px 20px;
     border-right: 0px;
@@ -90,23 +146,23 @@ tooltip label {
 }
 
 #temperature.critical {
-    color: #ff5555;
+    color: @red;
 }
 
 #battery.charging {
-    color: #50fa7b;
+    color: @green;
 }
 
 #battery.threes:not(.charging) {
-    color: #ff5555;
+    color: @red;
 }
 
 #battery.twos:not(.charging) {
-    color: #ff5555;
+    color: @red;
 }
 
 #battery.ones:not(.charging) {
-    color: #ff5555;
+    color: @red;
 }
 
 #custom-power {

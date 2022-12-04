@@ -1,4 +1,23 @@
+/* Define Rose Pine Moon Palette */
+@define-color base #232136;
+@define-color surface #2a273f;
+@define-color overlay #393552;
+@define-color muted #6e6a86;
+@define-color subtle #908caa;
+@define-color text #e0def4;
+@define-color love #eb6f92;
+@define-color gold #f6c177;
+@define-color rose #ea9a97;
+@define-color pine #3e8fb0;
+@define-color foam #9ccfd8;
+@define-color iris #c4a7e7;
+@define-color highlight-low #2a283e;
+@define-color highlight-med #403d52;
+@define-color highlight-high #524f67;
+
+
 * {
+    all: initial;
     border: none;
     border-radius: 0;
     font-family: Ubuntu Nerd Font;
@@ -8,17 +27,18 @@
 
 window#waybar {
     background: transparent;
-    color: @theme_text_color;
+    color: @text;
 }
 
 tooltip {
-    background: alpha(@theme_base_color, 0.5);
+    background: alpha(@overlay, 0.5);
     border-radius: 10px 10px 10px 10px;
-    border: 1.5px solid #c4a7e7;
+    border: 1.5px solid @iris;
 }
 
 tooltip label {
-    color: @theme_text_color;
+    color: @text;
+    padding: 7.5px;
 }
 
 /* -- Modules -- */
@@ -33,9 +53,9 @@ tooltip label {
 #pulseaudio, 
 #battery,
 #custom-power { 
-    color: @theme_text_color;
-    background: alpha(@theme_base_color, 0.9);
-    border: 1.5px solid #c4a7e7;
+    color: @text;
+    background: alpha(@overlay, 0.9);
+    border: 1.5px solid @iris;
     padding: 0 10px;
 }
 
@@ -54,15 +74,25 @@ tooltip label {
 }
 
 #workspaces button {
+    min-height: 24px;
+    min-width: 16px;
     padding: 0 5px;
     border-radius: 20px 20px 20px 20px;
     background: transparent;
-    color: @theme_text_color;
+    color: @text;
 }
 
 #workspaces button.active {
-    background: #c4a7e7;
-    color: #393552;
+    background: @iris;
+    color: @overlay;
+}
+
+#workspaces label {
+    color: @text;
+}
+
+#workspaces button.active label {
+    color: @overlay;
 }
 
 /* -- Center Modules -- */
@@ -79,6 +109,35 @@ tooltip label {
     margin-left: 15px;
 }
 
+#tray menu {
+    background: alpha(@base, 0.9);
+    border-radius: 10px 10px 10px 10px;
+    border: 1.5px solid @iris;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+#tray menu menuitem {
+    border-radius: 7.5px 7.5px 7.5px 7.5px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#tray menu menuitem:hover {
+    background: @iris;
+}
+
+#tray menu label {
+    color: @text;
+    padding: 5px;
+}
+
+#tray menu menuitem:hover label {
+    color: @base;
+}
+
 #cpu {
     border-radius: 20px 0px 0px 20px;
     border-right: 0px;
@@ -90,23 +149,23 @@ tooltip label {
 }
 
 #temperature.critical {
-    color: #eb6f92;
+    color: @love;
 }
 
 #battery.charging {
-    color: #3e8fb0;
+    color: @pine;
 }
 
 #battery.threes:not(.charging) {
-    color: #eb6f92;
+    color: @love;
 }
 
 #battery.twos:not(.charging) {
-    color: #eb6f92;
+    color: @love;
 }
 
 #battery.ones:not(.charging) {
-    color: #eb6f92;
+    color: @love;
 }
 
 #custom-power {

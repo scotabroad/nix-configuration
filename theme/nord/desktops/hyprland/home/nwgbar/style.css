@@ -26,6 +26,7 @@
 /* Extra */
 @define-color nord16 #1d2128; /* a darker nord0 */
 
+
 window > scrolledwindow {
   background-color: alpha(@nord0, 0.9);
 }
