@@ -5,27 +5,39 @@ This is my NixOS configuration. I use a flake to manage everything. Three themes
 
 ## Desktops
 
-### Pantheon
-
-#### Dracula
-![Image](images/pantheon-dracula.png)
-
-#### Nord
-![Image](images/pantheon-nord.png)
-
-#### Rosé-Pine-Moon
-![Image](images/pantheon-rose-pine-moon.png)
----
 ### Hyprland
 
-#### Dracula
-![Image](images/hyprland-dracula.png)
+#### Rosé-Pine
+![Image](images/hyprland-rose-pine.png)
+
+#### Rosé-Pine-Moon
+![Image](images/hyprland-rose-pine-moon.png)
+
+#### Rosé-Pine-Dawn
+![Image](images/hyprland-rose-pine-dawn.png)
 
 #### Nord
 ![Image](images/hyprland-nord.png)
 
+#### Dracula
+![Image](images/hyprland-dracula.png)
+---
+### Pantheon
+
+#### Rosé-Pine
+![Image](images/pantheon-rose-pine.png)
+
 #### Rosé-Pine-Moon
-![Image](images/hyprland-rose-pine-moon.png)
+![Image](images/pantheon-rose-pine-moon.png)
+
+#### Rosé-Pine-Moon
+![Image](images/pantheon-rose-pine-dawn.png)
+
+#### Nord
+![Image](images/pantheon-nord.png)
+
+#### Dracula
+![Image](images/pantheon-dracula.png)
 
 ## TO DO
 
