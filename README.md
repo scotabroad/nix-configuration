@@ -1,7 +1,7 @@
 # Nix Configuration
 
 ## About
-This is my NixOS configuration. I use a flake to manage everything. Three themes are available (Dracula, Nord, and Rosé Pine Moon) for two desktops (Pantheon and Hyprland). These can easily be changed from with in the flake.
+This is my NixOS configuration. I use a flake to manage everything. Five themes are available (Dracula, Nord, Rosé Pine, Rosé Pine Moon, and Rosé Pine Dawn) for two desktops (Hyprland and Pantheon). These can easily be changed from with in the flake.
 
 ## Desktops
 
