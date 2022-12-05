@@ -63,6 +63,8 @@
           hyprland.nixosModules.default
           nixos-hardware.nixosModules.framework
           home-manager.nixosModules.home-manager {
+            # The following could be transplanted elsewhere,
+            # like hyprland.nixosModules.default
             home-manager = {
               extraSpecialArgs = { inherit inputs; };
               useGlobalPkgs = true;
