@@ -5,6 +5,7 @@
   imports = [
     ./programs
     ./dconf
+    ./users
   ];
 
   # Enable dconf
@@ -12,7 +13,6 @@
   
   # Additional Packages
   home = {
-    homeDirectory = "/home/liamdp";
     packages = with pkgs; [
       # Personal
       discord
@@ -29,7 +29,6 @@
       #School
       octaveFull
     ];
-    username = "liamdp";
 
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
