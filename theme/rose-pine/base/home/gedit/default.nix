@@ -3,7 +3,8 @@
 {
   dconf.settings = {
     "org/gnome/gedit/preferences/editor" = {
-      scheme = "classic";
+      scheme = "rose-pine-gedit";
     };
   };
+  home.file.".local/share/gedit/styles/rosepine.xml".source = ./rosepine.xml;
 }
