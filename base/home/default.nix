@@ -41,7 +41,7 @@
     stateVersion = "22.05";
   };
 
-  manual.manpages.enable = false; # temp fix for https://github.com/NixOS/nixpkgs/issues/196651#issuecomment-1283912272
+  manual.manpages.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
