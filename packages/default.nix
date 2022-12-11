@@ -6,6 +6,7 @@
   (import ./framework-grub.nix { inherit lib pkgs; })
   (import ./fcitx5-dracula-theme.nix { inherit pkgs; })
   (import ./lightdm-dpi-fix.nix { inherit pkgs; })
+  (import ./nixos-grub.nix { inherit lib pkgs; })
   (import ./nord-gedit.nix { inherit lib pkgs; })
   (import ./rose-pine-gtk.nix { inherit lib pkgs; })
   (import ./rose-pine-icons.nix { inherit lib pkgs; })

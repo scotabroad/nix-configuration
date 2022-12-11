@@ -1,8 +1,8 @@
 { lib, pkgs, ... }:
 
 final: prev: {
-  framework-grub-theme = final.stdenv.mkDerivation rec {
-    pname = "framework-grub-theme";
+  nixos-grub-theme = final.stdenv.mkDerivation rec {
+    pname = "nixos-grub-theme";
     version = "3.1";
 
     src = pkgs.fetchFromGitHub {
@@ -14,10 +14,10 @@ final: prev: {
 
     installPhase = ''
       mkdir -p $out
-      cp $src/themes/framework.tar $out
+      cp $src/themes/nixos.tar $out
       cd $out
-      tar -xf framework.tar
-      rm framework.tar
+      tar -xf nixos.tar
+      rm nixos.tar
     '';
 
     meta = with lib; {
