@@ -38,4 +38,8 @@
       ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", MODE="0666", RUN+="${pkgs.coreutils}/bin/chmod a+w /sys/class/backlight/%k/brightness"
     '';
   };
+
+  security = {
+    pam.services.swaylock.text = "auth include login";
+  };
 }
