@@ -6,5 +6,5 @@
       scheme = "rose-pine-moon-gedit";
     };
   };
-  home.file."~/.local/share/gedit/styles/rosepinemoon.xml".source = ./rosepinemoon.xml;
+  home.file.".local/share/gedit/styles/rosepinemoon.xml".source = ./rosepinemoon.xml;
 }

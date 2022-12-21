@@ -6,5 +6,5 @@
       scheme = "rose-pine-dawn-gedit";
     };
   };
-  home.file."~/.local/share/gedit/styles/rosepinedawn.xml".source = ./rosepinedawn.xml;
+  home.file.".local/share/gedit/styles/rosepinedawn.xml".source = ./rosepinedawn.xml;
 }
