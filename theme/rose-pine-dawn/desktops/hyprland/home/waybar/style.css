@@ -54,7 +54,7 @@ tooltip label {
 #battery,
 #custom-power { 
     color: @text;
-    background: alpha(@overlay, 0.9);
+    background: alpha(@overlay, 0.75);
     border: 1.5px solid @iris;
     padding: 0 10px;
 }
@@ -110,7 +110,7 @@ tooltip label {
 }
 
 #tray menu {
-    background: alpha(@base, 0.9);
+    background: alpha(@base, 0.75);
     border-radius: 10px 10px 10px 10px;
     border: 1.5px solid @iris;
     padding-left: 3px;

@@ -17,7 +17,7 @@
 
 
 window > box {
-    background-color: alpha(@base, 0.9);
+    background-color: alpha(@base, 0.75);
 }
 
 window > box > scrolledwindow > overshoot,
@@ -47,11 +47,11 @@ button {
 }
 
 button:hover {
-    background-color: alpha(@overlay, 0.5);
+    background-color: alpha(@overlay, 0.9);
 }
 
 button:focus {
-    background-color: alpha(@overlay, 0.5);
+    background-color: alpha(@overlay, 0.9);
     color: alpha(@overlay, 0); /*affects box-shadow*/
     box-shadow: 0 0 0 0px; /*right-border bottom-border shadow/blur all-border*/
     outline: none;
@@ -67,7 +67,7 @@ button:checked > label {
 }
 
 #searchbox {
-    background: alpha(@surface, 0.75);
+    background: alpha(@surface, 0.5);
     border-color: @iris;
     border-radius: 20px;
     color: @text; /*text color*/

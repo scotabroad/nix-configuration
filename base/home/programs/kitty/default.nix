@@ -14,8 +14,5 @@
     #  "ctrl+v" = "paste_from_clipboard";
     #  "ctrl+x" = "copy_and_clear_or_interrupt";
     #};
-    settings = {
-      background_opacity = "0.9";
-    };
   };
 }

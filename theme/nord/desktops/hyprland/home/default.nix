@@ -19,6 +19,12 @@
           col.active_border=rgba(8fbcbbff) rgba(88c0d0ff) rgba(81a1c1ff) rgba(5e81acff) 45deg
           col.inactive_border=rgba(2e3440ff) rgba(3b4252ff) rgba(434c5eff) rgba(4c566aff) rgba(434c5eff) rgba(3b4252ff) rgba(2e3440ff) 135deg
       }
+      decoration {
+          blur=1
+          blur_size=3
+          blur_passes=1
+          blur_new_optimizations=1
+      }
     '';
   };
 }

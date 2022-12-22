@@ -17,7 +17,7 @@
 
 
 window > scrolledwindow {
-    background-color: alpha(@base, 0.9)
+    background-color: alpha(@base, 0.75)
 }
 
 #bar {
@@ -46,18 +46,18 @@ button {
 }
 
 button:hover {
-    background-color: alpha(@overlay, 0.6)
+    background-color: alpha(@overlay, 0.8)
 }
 
 button:focus {
-    background-color: alpha(@overlay, 0.6);
+    background-color: alpha(@overlay, 0.8);
     box-shadow: 0 0 0 0px; /*right bottom blur border*/
     outline: none;
 }
 
 grid {
     /* e.g. for common background to all buttons */
-    background: alpha(@base, 0.9);
+    background: alpha(@base, 0.75);
     border: 1.5px solid @iris;
     border-radius: 15 15 15 15px;
 }

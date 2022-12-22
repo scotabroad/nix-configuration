@@ -45,10 +45,6 @@ general {
 
 decoration {
     rounding=10
-    blur=1
-    blur_size=3
-    blur_passes=1
-    blur_new_optimizations=1
 }
 
 animations {
@@ -95,6 +91,7 @@ bind=ALT,R,exec,nwggrid -client
 # management
 bind=CTRL,Q,killactive,
 bind=SUPER,Q,exit,
+bind=SUPER,L,exec,swaylock -f
 bind=CTRL_ALT,P,exec,pkill nwgbar || nwgbar -o 0 -layer-shell-exclusive-zone -1
 bind=CTRL_ALT,R,exec,pkill nwgbar || nwgbar -o 0 -layer-shell-exclusive-zone -1
 
