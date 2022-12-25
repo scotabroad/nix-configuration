@@ -8,6 +8,7 @@
     ./hyprpaper
     ./nwgbar
     ./nwggrid
+    ./swaylock
     ./waybar
   ];
 
