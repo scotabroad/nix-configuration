@@ -53,6 +53,12 @@
       ++ import ./packages { inherit lib pkgs; };
       };
 
+      #User info
+      name = "liamdp";
+      fullName = "Liam Petrie";
+      email = "liamdpetrie@vivaldi.net";
+      uid = 1000;
+
     in {
 
       # nixos is my hostname (lame, I know)
@@ -62,14 +68,20 @@
           ./theme/rose-pine/desktops/hyprland/system/default.nix
           hyprland.nixosModules.default
           nixos-hardware.nixosModules.framework
-          home-manager.nixosModules.home-manager {
-            # The following could be transplanted elsewhere,
-            # like hyprland.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            #NixOS stuff
+            _module.args = { inherit name fullName email uid; };
+            
+            #Home-manager stuff
             home-manager = {
               extraSpecialArgs = { inherit inputs; };
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.liamdp = import ./theme/rose-pine/desktops/hyprland/home/default.nix;
+              users.${name} = {
+                imports = [ ./theme/rose-pine/desktops/hyprland/home/default.nix ];
+                _module.args = { inherit fullName email uid; };
+              };   
             };
           }
         ];

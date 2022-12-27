@@ -1,7 +1,7 @@
 # Nix Configuration
 
 ## About
-This is my NixOS configuration. I use a flake to manage everything. Five themes are available (Dracula, Nord, Rosé Pine, Rosé Pine Moon, and Rosé Pine Dawn) for two desktops (Hyprland and Pantheon). These can easily be changed from with in the flake.
+This is my NixOS configuration. I use a flake to manage everything. Five themes are available (Dracula, Nord, Rosé Pine, Rosé Pine Moon, and Rosé Pine Dawn) for two desktops (Hyprland and Pantheon). These can easily be changed from with in the flake, which also includes user info.
 
 ## Desktops
 
@@ -41,7 +41,6 @@ This is my NixOS configuration. I use a flake to manage everything. Five themes 
 
 ## TO DO
 
-- Remove my name from most files to make it easier for others to replace my name with theirs
 - Increase the amount of things managed by nix (Firefox and Discord use custom css files I need to add, for example)
 - Create an ["Erase your darlings" Setup](https://grahamc.com/blog/erase-your-darlings "Erase your darlings")
 
