@@ -82,7 +82,7 @@ bindm=SUPER,mouse:272,movewindow #left click
 bindm=SUPER,mouse:273,resizewindow #right click
 
 # open apps
-bind=CTRL_ALT,T,exec,kitty
+bind=CTRL_ALT,T,exec,env XCURSOR_SIZE=24 kitty
 bind=ALT,F,exec,firefox
 bind=SUPER,F,exec,nautilus
 bind=,Print,exec,grim #screenshot tool
