@@ -36,21 +36,21 @@
     xserver = {
       displayManager = {
         defaultSession = "pantheon";
-	lightdm = {
-	  greeters.pantheon = {
-	    enable = lib.mkForce false;
-	  };
-	};
+        lightdm = {
+          greeters.pantheon = {
+            enable = lib.mkForce false;
+          };
+        };
       };
 
       desktopManager = {
         pantheon = {
-	  enable = true;
-	  extraWingpanelIndicators = [ 
-	    pkgs.wingpanel-indicator-ayatana
-	    pkgs.monitor
-	  ];
-	};
+          enable = true;
+          extraWingpanelIndicators = [
+            pkgs.wingpanel-indicator-ayatana
+            pkgs.monitor
+          ];
+        };
       };
     };
   };

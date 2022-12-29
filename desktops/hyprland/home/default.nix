@@ -8,7 +8,6 @@
     ./programs
     ./services
     inputs.hyprland.homeManagerModules.default
-
   ];
 
   home = {

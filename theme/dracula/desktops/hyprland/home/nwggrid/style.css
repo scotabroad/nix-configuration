@@ -36,8 +36,9 @@ button {
     /*padding and margin can affect custom column count*/
     padding: 3px; /*space around buttons*/
     margin: 0px;  /*space between buttons*/
+    border-radius: 20px;
     text-shadow: none;
-    color: #000000;
+    color: @foreground;
 }
 
 button:hover {

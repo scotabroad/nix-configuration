@@ -3,6 +3,7 @@
 {
   imports = [
     ./kitty
+    ./nwgbar
     ./nwggrid
     ./waybar
   ];

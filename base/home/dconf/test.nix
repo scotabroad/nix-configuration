@@ -53,11 +53,11 @@ in {
       dictionaryOfDictionaries = [
         (mkDictionaryEntry ["Vortaro Unu" (mkVariant [
           (mkDictionaryEntry ["Esperanto" 1])
-	  (mkDictionaryEntry ["Ido" 2])
-	])])
-	(mkDictionaryEntry ["English One" (mkVariant [
-	  (mkDictionaryEntry ["English" 1])
-	])])
+          (mkDictionaryEntry ["Ido" 2])
+        ])])
+        (mkDictionaryEntry ["English One" (mkVariant [
+          (mkDictionaryEntry ["English" 1])
+        ])])
       ];
     };
   };

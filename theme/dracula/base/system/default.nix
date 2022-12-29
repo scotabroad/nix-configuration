@@ -50,14 +50,14 @@
       enable = true;
       defaultFonts = {
         monospace = [
-	  "Ubuntu Mono Nerd Font Complete Mono"
-	];
-	sansSerif = [
-	  "Ubuntu Regular"
-	];
-	serif = [
-	  "Ubuntu Regular"
-	];
+          "Ubuntu Mono Nerd Font Complete Mono"
+        ];
+        sansSerif = [
+          "Ubuntu Regular"
+        ];
+        serif = [
+          "Ubuntu Regular"
+        ];
       };
     };
   };

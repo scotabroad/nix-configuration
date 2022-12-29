@@ -37,9 +37,9 @@ in {
     "org/gnome/settings-daemon/plugins/xsettings" = {
       overrides = [
         (mkDictionaryEntry ["Gtk/DialogsUseHeader" (mkVariant 0)])
-	(mkDictionaryEntry ["Gtk/ShellShowsAppMenu" (mkVariant 0)])
-	(mkDictionaryEntry ["Gtk/EnablePrimaryPaste" (mkVariant 0)])
-	(mkDictionaryEntry ["Gtk/DecorationLayout" (mkVariant myButtons)])
+        (mkDictionaryEntry ["Gtk/ShellShowsAppMenu" (mkVariant 0)])
+        (mkDictionaryEntry ["Gtk/EnablePrimaryPaste" (mkVariant 0)])
+        (mkDictionaryEntry ["Gtk/DecorationLayout" (mkVariant myButtons)])
       ];
     };
 

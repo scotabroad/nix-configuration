@@ -8,13 +8,13 @@
       current-workspace-only = false;
       dock-items = [
         "io.elementary.files.dockitem"
-	"firefox.dockitem"
-	"vivaldi-stable.dockitem"
-	"discord.dockitem"
-	"element-desktop.dockitem"
-	"steam.dockitem"
-	"kitty.dockitem"
-	"io.elementary.switchboard.dockitem"
+        "firefox.dockitem"
+        "vivaldi-stable.dockitem"
+        "discord.dockitem"
+        "element-desktop.dockitem"
+        "steam.dockitem"
+        "kitty.dockitem"
+        "io.elementary.switchboard.dockitem"
       ];
       hide-delay = 500;
       hide-mode = "window-dodge";

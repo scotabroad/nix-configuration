@@ -12,15 +12,15 @@
       enable = true;
       plugins = [
         { name = "lib/clipboard"; tags = [ from:oh-my-zsh ]; }
-	{ name = "lib/history"; tags = [ from:oh-my-zsh ]; }
-	{ name = "lib/key-bindings"; tags = [ from:oh-my-zsh ]; }
-	{ name = "lib/theme-and-appearance"; tags = [ from:oh-my-zsh ]; }
-	{ name = "plugins/command-not-found"; tags = [ from:oh-my-zsh ]; }
-	{ name = "plugins/sudo"; tags = [ from:oh-my-zsh ]; }
-	{ name = "chisui/zsh-nix-shell"; }
-	{ name = "zpm-zsh/ls"; }
-	{ name = "zsh-users/zsh-syntax-highlighting"; }
-	{ name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; }
+        { name = "lib/history"; tags = [ from:oh-my-zsh ]; }
+        { name = "lib/key-bindings"; tags = [ from:oh-my-zsh ]; }
+        { name = "lib/theme-and-appearance"; tags = [ from:oh-my-zsh ]; }
+        { name = "plugins/command-not-found"; tags = [ from:oh-my-zsh ]; }
+        { name = "plugins/sudo"; tags = [ from:oh-my-zsh ]; }
+        { name = "chisui/zsh-nix-shell"; }
+        { name = "zpm-zsh/ls"; }
+        { name = "zsh-users/zsh-syntax-highlighting"; }
+        { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; }
       ];
     };
     defaultKeymap = "emacs"; #emacs, vicmd, or viins (vim mode bad)

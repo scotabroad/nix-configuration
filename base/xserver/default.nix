@@ -18,24 +18,24 @@ in {
       dpi = newDPI;
       displayManager = {
         lightdm = {
-	  greeters = {
-	    gtk = {
-	      enable = true;
-	      clock-format = "%l:%m %p";
-	      indicators = [
-	        "~host"
-	        "~spacer"
-	        "~session"
-	        "~a11y"
-	        "~clock"
-	        "~power"
-	      ];
-	    };
+          greeters = {
+            gtk = {
+              enable = true;
+              clock-format = "%l:%m %p";
+              indicators = [
+                "~host"
+                "~spacer"
+                "~session"
+                "~a11y"
+                "~clock"
+                "~power"
+              ];
+            };
           };
-	  extraSeatDefaults = ''
+          extraSeatDefaults = ''
             greeter-wrapper = ${pkgs.lightdm-dpi-fix}
           '';
-	};
+        };
       };
 
       # Configure keymap in X11
