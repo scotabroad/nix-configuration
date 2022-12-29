@@ -20,8 +20,8 @@
     ".config/gtk-4.0/gtk.css".source = "${pkgs.rose-pine-gtk-theme}/share/themes/rose-pine-dawn-gtk/gtk-4.0/gtk.css";
     };
     pointerCursor = {
-      name = "Nordzy-cursors";
-      package = pkgs.nordzy-cursor-theme;
+      name = "Yaru";
+      package = pkgs.yaru-theme;
       size = 24;
       gtk.enable = true;
       x11 = {
@@ -30,7 +30,7 @@
       };
     };
     sessionVariables = {
-      XCURSOR_THEME = "Nordzy-cursors";
+      XCURSOR_THEME = "Yaru";
     };
   };
 
@@ -54,8 +54,8 @@
     };
 
     cursorTheme = {
-      name = "Nordzy-cursors";
-      package = pkgs.nordzy-cursor-theme;
+      name = "Yaru";
+      package = pkgs.yaru-theme;
       size = 24;
     };
 
