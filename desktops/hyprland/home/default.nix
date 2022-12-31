@@ -17,6 +17,7 @@
       grim
       hyprpaper
       hyprpicker
+      networkmanagerapplet
       nwg-launchers
       swaylock
     ];
