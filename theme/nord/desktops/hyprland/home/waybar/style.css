@@ -120,7 +120,8 @@ tooltip label {
     margin-left: 15px;
 }
 
-#tray menu {
+#tray menu,
+#tray menu menuitem:hover menu {
     background: alpha(@nord0, 0.9);
     border-radius: 10px 10px 10px 10px;
     border: 1.5px solid @nord7;
@@ -130,22 +131,26 @@ tooltip label {
     padding-bottom: 3px;
 }
 
-#tray menu menuitem {
+#tray menu menuitem,
+#tray menu menuitem:hover menu menuitem {
     border-radius: 7.5px 7.5px 7.5px 7.5px;
     padding-left: 25px;
     padding-right: 25px;
 }
 
-#tray menu menuitem:hover {
+#tray menu menuitem:hover,
+#tray menu menuitem:hover menu menuitem:hover {
     background: @nord7;
 }
 
-#tray menu label {
+#tray menu label,
+#tray menu menuitem:hover menu label {
     color: @nord4;
     padding: 5px;
 }
 
-#tray menu menuitem:hover label {
+#tray menu menuitem:hover label,
+#tray menu menuitem:hover menu menuitem:hover label {
     color: @nord0;
 }
 
