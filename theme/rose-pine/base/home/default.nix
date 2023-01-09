@@ -3,6 +3,7 @@
 {
   imports = [
     ../../../../base/home
+    ./firefox
     ./gedit
     ./kitty
     ./neovim

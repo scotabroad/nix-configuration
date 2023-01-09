@@ -4,6 +4,7 @@
   imports = [
     ../../../../base/home
     ./fcitx5
+    ./firefox
     ./gedit
     ./kitty
     ./neovim

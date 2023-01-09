@@ -17,6 +17,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/master";
+    nur.url = "github:nix-community/NUR";
   };
 
   outputs = { 
@@ -26,8 +27,9 @@
     nixpkgs-unstable, 
     home-manager, 
     nixos-hardware, 
-    hyprland,
-    hyprpicker,
+    nur, 
+    hyprland, 
+    hyprpicker, 
     ... 
   }@inputs:
     let
@@ -48,6 +50,7 @@
         
       overlays = [
         hyprpicker.overlays.default
+        nur.overlay
       ]
       ++ import ./overlays { inherit pkgs; }
       ++ import ./packages { inherit lib pkgs; };

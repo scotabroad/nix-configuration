@@ -3,6 +3,7 @@
 {
   imports = [
     ./exa
+    ./firefox
     ./fzf
     ./git
     ./kitty
