@@ -7,7 +7,12 @@ in {
   users.users.${name} = {
     inherit name home uid;
     createHome = true;
-    extraGroups = [ "wheel" "video" "networkmanager" ];
+    extraGroups = [ 
+      "wheel"
+      "video"
+      "networkmanager"
+      "libvirtd" #allows users access the virsh command
+    ];
     isNormalUser = true;
     shell = pkgs.zsh;
   };

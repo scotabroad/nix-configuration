@@ -11,6 +11,7 @@
     ./hardware-configuration.nix
     ./programs/steam.nix
     ./users
+    ./virtualisation.nix
   ];
 
   # Set up Environment
