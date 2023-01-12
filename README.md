@@ -50,4 +50,5 @@ This is my NixOS configuration. I use a flake to manage everything. Five themes 
 - [Erik Backman's NixOS Config](https://github.com/erikbackman/nixos-config "Erik Backman's NixOS Config")
 - [Alternateved's NixOS Config](https://github.com/alternateved/nixos-config "Alternateved's NixOS Config")
 - [Ivan Malison's NixOS Config](https://github.com/IvanMalison/dotfiles "Ivan Malison's NixOS Config")
-- [Mihai Fufezan's NixOS Config](https://github.com/fufexan/dotfiles "Mihai Fufezan's NixOS Config") 
+- [Mihai Fufezan's NixOS Config](https://github.com/fufexan/dotfiles "Mihai Fufezan's NixOS Config")
+- [Firefox themes](https://github.com/rafaelmardojai/firefox-gnome-theme "Firefox themes")
