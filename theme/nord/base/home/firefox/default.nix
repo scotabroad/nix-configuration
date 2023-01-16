@@ -16,6 +16,10 @@
     };
     userChrome = ''
     @import "firefox-nordic-theme/userChrome.css";
+    @import "firefox-nordic-theme/theme/hide-single-tab.css";
+    @import "firefox-nordic-theme/theme/matching-autocomplete-width.css";
+    @import "firefox-nordic-theme/theme/system-icons.css";
+    @import "firefox-nordic-theme/theme/symbolic-tab-icons.css";
     '';
   };
   
