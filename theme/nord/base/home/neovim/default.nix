@@ -14,7 +14,7 @@
       set number
       autocmd FileType c setlocal et ts=4 sw=4
       autocmd FileType cc setlocal et ts=4 sw=4
-      autocmd FileType ccp setlocal et ts=4 sw=4
+      autocmd FileType cpp setlocal et ts=4 sw=4
       autocmd FileType h setlocal et ts=4 sw=4
       autocmd FileType nix setlocal et ts=2 sw=2
       lua << EOF
