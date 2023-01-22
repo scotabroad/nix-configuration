@@ -5,8 +5,8 @@ final: prev: {
     src = pkgs.fetchFromGitHub {
       owner = "Alexays";
       repo = "Waybar";
-      rev = "cfef78a5bc8df6a29e06ec128f7a6075425db402";
-      sha256 = "XMpl1soXKFe1NOux4HRBrmMrANgcnjGeGsUUKOzOFkE=";
+      rev = "5e2895ccb3542e3402855c81b183a67790608ff5";
+      sha256 = "rb1TQk8mQyLUOxBxTb6zsTUW7uEvmvGYvVXTH/x19iw=";
     };
 
     mesonFlags = oldAttrs.mesonFlags ++ [

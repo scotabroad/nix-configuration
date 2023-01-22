@@ -34,7 +34,7 @@
     QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct";
   };
 
-  qt5 = {
+  qt = {
     enable = true;
     platformTheme = lib.mkForce "qt5ct";
   };
