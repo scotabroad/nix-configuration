@@ -19,6 +19,7 @@
       hyprpicker
       networkmanagerapplet
       nwg-launchers
+      slurp
       swaylock
     ];
     sessionVariables = {
