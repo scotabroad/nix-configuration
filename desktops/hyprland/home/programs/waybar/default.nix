@@ -4,7 +4,7 @@
   # Manage waybar, might replace with eww
   programs.waybar = {
     enable = true;
-    package = pkgs.waybar;
+    package = pkgs.waybar-hyprland;
     settings = [
       {
         layer = "top";

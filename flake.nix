@@ -49,6 +49,7 @@
       pkgs = make-packages nixpkgs{
         
       overlays = [
+        hyprland.overlays.default
         hyprpicker.overlays.default
         nur.overlay
       ]
