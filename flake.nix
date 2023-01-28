@@ -48,13 +48,13 @@
 
       pkgs = make-packages nixpkgs{
         
-      overlays = [
-        hyprland.overlays.default
-        hyprpicker.overlays.default
-        nur.overlay
-      ]
-      ++ import ./overlays { inherit pkgs; }
-      ++ import ./packages { inherit lib pkgs; };
+        overlays = [
+          hyprland.overlays.default
+          hyprpicker.overlays.default
+          nur.overlay
+        ]
+        ++ import ./overlays { inherit pkgs; }
+        ++ import ./packages { inherit lib pkgs; };
       };
 
       #User info

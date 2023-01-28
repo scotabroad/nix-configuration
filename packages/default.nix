@@ -1,18 +1,25 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs }:
 
 [
-  (import ./custom-wallpapers.nix { inherit pkgs; })
-  (import ./dracula-gedit.nix { inherit lib pkgs; })
-  (import ./framework-grub.nix { inherit lib pkgs; })
-  (import ./fcitx5-dracula-theme.nix { inherit pkgs; })
+  (final: prev: {
+    custom-wallpapers = prev.callPackage ./custom-wallpapers.nix {};
+    fcitx5-dracula-theme = pkgs.callPackage ./fcitx5-dracula-theme.nix {};
+    framework-grub-theme = pkgs.callPackage ./framework-grub.nix {};
+    nixos-grub-theme = prev.callPackage ./nixos-grub.nix {};
+    rose-pine-gtk-theme = prev.callPackage ./rose-pine-gtk.nix {};
+    rose-pine-icon-theme = prev.callPackage ./rose-pine-icons.nix {};
+  })
+  
+  # For now, scripts will be packaged using the old format
   (import ./lightdm-dpi-fix.nix { inherit pkgs; })
-  (import ./nixos-grub.nix { inherit lib pkgs; })
-  (import ./nord-gedit.nix { inherit lib pkgs; })
-  (import ./rose-pine-gtk.nix { inherit lib pkgs; })
-  (import ./rose-pine-icons.nix { inherit lib pkgs; })
   (import ./trim-generations { inherit pkgs; })
-  (import ./waybar-pipewire { inherit pkgs; })
   (import ./wallpaper.nix { inherit pkgs; })
+  (import ./waybar-pipewire { inherit pkgs; })
   (import ./wayland-gtk-fix.nix { inherit pkgs; })
+  
+  # These more complex packages override packages or scopes
+  # For now, they remain as individual overlays
+  (import ./dracula-gedit.nix { inherit lib pkgs; })
+  (import ./nord-gedit.nix { inherit lib pkgs; })
   (import ./yuck-vim.nix { inherit pkgs; })
 ]
