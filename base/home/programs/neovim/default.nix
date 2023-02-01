@@ -27,6 +27,7 @@
           tree-sitter-yaml
         ]
       ))
+      vim-numbertoggle
       vim-parinfer
       yuck-vim
     ];
