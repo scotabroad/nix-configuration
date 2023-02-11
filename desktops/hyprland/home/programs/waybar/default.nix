@@ -12,7 +12,10 @@
         height = 26;
 
         modules-left = [
+          "custom/close"
           "custom/search"
+          "custom/resize"
+          "custom/move"
           "wlr/workspaces"
         ];
         modules-center = [ "clock" ];
@@ -108,15 +111,38 @@
           on-scroll-down = "hyprctl dispatch workspace e-1";
         };
 
+        "custom/close" = {
+          format = "{}";
+          exec = "${pkgs.hyprland-close}/bin/hyprland-close";
+          on-click = "hyprctl dispatch killactive";
+          tooltip = false;
+        };
+
+        "custom/move" = {
+          format = "{}";
+          exec = "${pkgs.hyprland-move}/bin/hyprland-move";
+          on-click = "hyprctl dispatch submap move";
+          return-type = "json";
+          tooltip = true;
+        };
+
         "custom/power" = {
           format = "  ";
           on-click = "pkill nwgbar || nwgbar -o 0 -layer-shell-exclusive-zone -1";
           tooltip = false;
         };
 
+        "custom/resize" = {
+          format = "{}";
+          exec = "${pkgs.hyprland-resize}/bin/hyprland-resize";
+          on-click = "hyprctl dispatch submap resize";
+          return-type = "json";
+          tooltip = true;
+        };
+
         "custom/search" = {
           format = "   Applications";
-          on-click = "nwggrid -client";
+          on-click = "pkill nwggrid || nwggrid -o -0 -layer-shell-exclusive-zone -1";
           tooltip = false;
         };
       }

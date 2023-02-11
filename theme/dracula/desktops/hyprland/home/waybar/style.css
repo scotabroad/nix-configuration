@@ -1,5 +1,4 @@
 /* Define Dracula Palette */
-/* Polar Night */
 @define-color background #282a36;
 @define-color current-line #44475a;
 @define-color foreground #f8f8f2;
@@ -39,7 +38,10 @@ tooltip label {
 }
 
 /* -- Modules -- */
+#custom-close,
 #custom-search,
+#custom-resize,
+#custom-move,
 #workspaces,
 #window, 
 #clock, 
@@ -58,10 +60,38 @@ tooltip label {
 
 /* -- Left Modules -- */
 
+#custom-close {
+    color: @red;
+    border-radius: 20px 20px 20px 20px;
+    margin-left: 10px;
+    min-height: 24px;
+    min-width: 16px;
+    padding: 0 5px;
+}
+
 #custom-search {
     border-radius: 20px 0px 0px 20px;
     border-right: 0px;
     margin-left: 10px;
+}
+
+#custom-resize,
+#custom-move {
+    min-height: 24px;
+    min-width: 16px;
+    padding: 0 5px;
+    border-right: 0px;
+    border-left: 0px;
+}
+
+#custom-resize.disabled,
+#custom-move.disabled {
+    color: @current-line;
+}
+
+#custom-resize.selected,
+#custom-move.selected {
+    color: @comment;
 }
 
 #workspaces {

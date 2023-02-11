@@ -20,6 +20,7 @@
       networkmanagerapplet
       nwg-launchers
       slurp
+      socat #for waybar-close
       swaylock
     ];
     sessionVariables = {

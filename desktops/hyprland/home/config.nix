@@ -15,7 +15,6 @@ exec-once=hyprpaper &
 exec-once=waybar &
 exec-once=fcitx5 -r &
 exec-once=nm-applet --indicator &
-exec-once=nwggrid-server -o 0 -layer-shell-exclusive-zone -1
 
 input {
     kb_file=
@@ -77,16 +76,29 @@ binds {
 # window rules
 windowrule=fullscreen,^(.*x86_64)$ #games should start fullscreen
 
-# some nice mouse binds
-bindm=SUPER,mouse:272,movewindow #left click
-bindm=SUPER,mouse:273,resizewindow #right click
+# enter resize submap
+bind=SUPER,R,submap,resize
+submap=resize
+bindm=,mouse:272,resizewindow
+#exit to main submap
+bind=,escape,submap,reset
+submap=reset
+
+# enter move submap
+bind=SUPER,M,submap,move
+submap=move
+bindm=,mouse:272,movewindow
+#exit to main submap
+bind=,escape,submap,reset
+submap=reset
 
 # open apps
 bind=CTRL_ALT,T,exec,env XCURSOR_SIZE=24 kitty
 bind=ALT,F,exec,firefox
 bind=SUPER,F,exec,nautilus
+bind=ALT,Print,exec,grim -g "$(slurp)" #screenshot tool
 bind=,Print,exec,grim #screenshot tool
-bind=ALT,R,exec,nwggrid -client
+bind=ALT,R,exec,pkill nwggrid || nwggrid -o 0 -layer-shell-exclusive-zone -1
 
 # management
 bind=CTRL,Q,killactive,
@@ -105,8 +117,9 @@ bind=,xf86monbrightnessup,exec,light -A 10
 bind=,xf86monbrightnessdown,exec,light -U 10
 
 # switch window mode
-bind=SUPER,V,togglefloating,
-bind=SUPER,P,pseudo,
+bind=SUPER,V,workspaceopt,allfloat
+bind=SHIFT_SUPER,V,bringactivetotop
+bind=SUPER,P,workspaceopt,allpseudo
 bind=CTRL_ALT,F,fullscreen
 
 # switch between apps
