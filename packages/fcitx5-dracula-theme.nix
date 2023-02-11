@@ -17,4 +17,4 @@ stdenv.mkDerivation rec {
   '';
 
   patches = [./fcitx5-dracula-theme.patch];
-};
+}
