@@ -8,6 +8,7 @@
     ./git
     ./kitty
     ./neovim
+    ./obs-studio
     ./zoxide
     ./zsh
   ];

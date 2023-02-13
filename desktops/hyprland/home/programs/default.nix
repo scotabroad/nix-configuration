@@ -5,6 +5,7 @@
     ./kitty
     ./nwgbar
     ./nwggrid
+    ./obs-studio
     ./waybar
   ];
 }

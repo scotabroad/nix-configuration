@@ -23,6 +23,7 @@
       gnome.evince
       gnome.gedit
       libreoffice
+      rhythmbox
       trim-generations
       vivaldi
     ];
