@@ -24,8 +24,10 @@
       gnome.gedit
       libreoffice
       rhythmbox
+      scarab
       trim-generations
       vivaldi
+      vlc
     ];
 
     # This value determines the Home Manager release that your
