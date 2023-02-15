@@ -9,11 +9,11 @@
   programs.firefox = {
     enable = true;
     package = pkgs.firefox;
-    extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-      user-agent-string-switcher
-    ];
     profiles.${name} = {
       isDefault = true;
+      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        user-agent-string-switcher
+      ];
       search = {
         default = "DuckDuckGo";
         engines = {
