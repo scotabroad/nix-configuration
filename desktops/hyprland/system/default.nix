@@ -6,9 +6,17 @@
       htop
     ];
     variables = {
+      CLUTTER_BACKEND="wayland";
+
+      GDK_BACKEND = "wayland,x11";
       GDK_SCALE = "2";
+
       QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-      XCURSOR_SIZE = lib.mkForce "48"; #needed for GTK XWayland apps
+      QT_QPA_PLATFORM = "wayland;xcb";
+      QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+
+      #SDL_VIDEODRIVER = "wayland"; #disable or set to x11 for older games with older SDL version
+      #XCURSOR_SIZE = lib.mkForce "48"; #needed for GTK XWayland apps
     };
   };
 

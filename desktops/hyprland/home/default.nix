@@ -4,7 +4,6 @@
   imports = [
     ./config.nix
     ./dconf
-    ./files
     ./programs
     ./services
     inputs.hyprland.homeManagerModules.default
