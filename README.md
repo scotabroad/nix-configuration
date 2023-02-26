@@ -1,7 +1,7 @@
 # Nix Configuration
 
 ## About
-This is my NixOS configuration. I use a flake to manage everything. Five themes are available (Dracula, Nord, Rosé Pine, Rosé Pine Moon, and Rosé Pine Dawn) for two desktops (Hyprland and Pantheon). These can easily be changed from with in the flake, which also includes user info.
+This is my NixOS configuration. I use a flake to manage everything. Five themes are available (Dracula, Nord, Rosé Pine, Rosé Pine Moon, and Rosé Pine Dawn) for one desktop (Hyprland). These can easily be changed from with in the flake, which also includes user info.
 
 You are free to copy and implement this configuration however you want, so long as you update the user info inside the flake.nix and do not file issues or bug reports. This is my personal configuration, I fix whichever bugs I want on my implementation.
 
@@ -23,23 +23,6 @@ You are free to copy and implement this configuration however you want, so long 
 
 #### Dracula
 ![Image](images/hyprland-dracula.png)
----
-### Pantheon
-
-#### Rosé-Pine
-![Image](images/pantheon-rose-pine.png)
-
-#### Rosé-Pine-Moon
-![Image](images/pantheon-rose-pine-moon.png)
-
-#### Rosé-Pine-Moon
-![Image](images/pantheon-rose-pine-dawn.png)
-
-#### Nord
-![Image](images/pantheon-nord.png)
-
-#### Dracula
-![Image](images/pantheon-dracula.png)
 
 ## TO DO
 
