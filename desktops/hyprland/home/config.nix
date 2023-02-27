@@ -11,6 +11,7 @@ ONLY PUT THINGS IN HERE TO BE SHARED BY ALL THEMES.
 monitor=,preferred,auto,2
 exec-once=${pkgs.dbus}/bin/dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec-once=${pkgs.xorg.xprop}/bin/xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2
+exec-once=${pkgs.hyprland-active}/bin/hyprland-active
 exec-once=hyprpaper &
 exec-once=waybar &
 exec-once=fcitx5 -r &
@@ -117,9 +118,10 @@ bind=,xf86monbrightnessup,exec,light -A 10
 bind=,xf86monbrightnessdown,exec,light -U 10
 
 # switch window mode
-bind=SUPER,V,workspaceopt,allfloat
-bind=SHIFT_SUPER,V,bringactivetotop
-bind=SUPER,P,workspaceopt,allpseudo
+bind=SUPER,V,togglefloating,
+bind=SHIFT_SUPER,V,workspaceopt,allfloat
+bind=SUPER,P,pseudo,
+bind=SHIFT_SUPER,P,workspaceopt,allpseudo
 bind=CTRL_ALT,F,fullscreen
 
 # switch between apps

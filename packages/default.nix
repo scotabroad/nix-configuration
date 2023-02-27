@@ -11,6 +11,7 @@
   })
   
   # For now, scripts will be packaged using the old format
+  (import ./hyprland-active { inherit pkgs; })
   (import ./hyprland-close { inherit pkgs; })
   (import ./hyprland-move { inherit pkgs; })
   (import ./hyprland-resize { inherit pkgs; })
