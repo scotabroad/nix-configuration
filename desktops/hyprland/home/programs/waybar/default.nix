@@ -121,7 +121,6 @@
         "custom/move" = {
           format = "{}";
           exec = "${pkgs.hyprland-move}/bin/hyprland-move";
-          on-click = "hyprctl dispatch submap move";
           return-type = "json";
           tooltip = true;
         };
@@ -135,7 +134,6 @@
         "custom/resize" = {
           format = "{}";
           exec = "${pkgs.hyprland-resize}/bin/hyprland-resize";
-          on-click = "hyprctl dispatch submap resize";
           return-type = "json";
           tooltip = true;
         };

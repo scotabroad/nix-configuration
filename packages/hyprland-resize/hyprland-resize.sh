@@ -4,11 +4,11 @@ function handle {
   else if [[ ${1:0:12} == "submap>>move" ]]; then
          echo '{"text":"󰩨","tooltip":"Disabled","class":"disabled"}'
        else if [[ ${1:0:6} == "submap" ]]; then
-              echo '{"text":"󰩨","tooltip":"Click to enter resize mode"}'
+              echo '{"text":"󰩨","tooltip":"Press Super+R to enter resize mode"}'
             fi
        fi
   fi
 }
 
-echo '{"text":"󰩨","tooltip":"Click to enter resize mode"}'
+echo '{"text":"󰩨","tooltip":"Press Super+R to enter resize mode"}'
 socat -u UNIX-CONNECT:/tmp/hypr/$(echo $HYPRLAND_INSTANCE_SIGNATURE)/.socket2.sock - | while read line; do handle $line; done
