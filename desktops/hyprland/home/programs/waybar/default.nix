@@ -15,7 +15,6 @@
           "custom/close"
           "custom/search"
           "custom/resize"
-          "custom/move"
           "wlr/workspaces"
         ];
         modules-center = [ "clock" ];

@@ -77,10 +77,14 @@ binds {
 # window rules
 windowrule=fullscreen,^(.*x86_64)$ #games should start fullscreen
 
+#some nice mousebinds
+bindm=SUPER,mouse:272,movewindow #left click
+
 # enter resize submap
 bind=SUPER,R,submap,resize
 submap=resize
 bindm=,mouse:272,resizewindow
+bindm=SUPER,mouse:272,movewindow #left click
 #exit to main submap
 bind=,escape,submap,reset
 submap=reset
