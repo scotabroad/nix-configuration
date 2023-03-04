@@ -23,6 +23,8 @@
       gnome.evince
       gnome.gedit
       libreoffice
+      octaveFull
+      qpwgraph
       rhythmbox
       scarab
       trim-generations
