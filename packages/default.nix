@@ -4,6 +4,7 @@
   (final: prev: {
     custom-wallpapers = prev.callPackage ./custom-wallpapers.nix {};
     fcitx5-dracula-theme = pkgs.callPackage ./fcitx5-dracula-theme.nix {};
+    fcitx5-rose-pine = pkgs.callPackage ./fcitx5-rose-pine.nix {};
     framework-grub-theme = pkgs.callPackage ./framework-grub.nix {};
     nixos-grub-theme = prev.callPackage ./nixos-grub.nix {};
     rose-pine-gtk-theme = prev.callPackage ./rose-pine-gtk.nix {};
