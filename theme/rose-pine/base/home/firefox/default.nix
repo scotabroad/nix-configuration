@@ -13,6 +13,9 @@
 
       # Enable SVG context-properties
       "svg.context-properties.content.enabled" = true;
+
+      # Disable private window dark theme
+      "browser.theme.dark-private-windows" = false;
     };
     userChrome =
       builtins.readFile ./symbolic-tab-icons.css
@@ -46,7 +49,7 @@
     #customization-footer::before {
             background: url(./icons/icon.svg) no-repeat;
             background-size: contain;
-            content: "Firefox GNOME theme v108.1";
+            content: "Firefox GNOME theme v110";
             padding: 9px 9px 9px 50px;
     }
     '';
