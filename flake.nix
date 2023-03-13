@@ -69,7 +69,7 @@
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system pkgs;
         modules = [
-          ./theme/rose-pine-moon/desktops/hyprland/system/default.nix
+          ./theme/rose-pine/desktops/hyprland/system/default.nix
           hyprland.nixosModules.default
           nixos-hardware.nixosModules.framework
           home-manager.nixosModules.home-manager
@@ -83,7 +83,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users.${name} = {
-                imports = [ ./theme/rose-pine-moon/desktops/hyprland/home/default.nix ];
+                imports = [ ./theme/rose-pine/desktops/hyprland/home/default.nix ];
                 _module.args = { inherit fullName email uid; };
               };   
             };
