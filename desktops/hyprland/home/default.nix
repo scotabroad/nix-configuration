@@ -30,5 +30,9 @@
   wayland.windowManager.hyprland = {
     enable = true;
     systemdIntegration = true;
+    xwayland = {
+      enable = true;
+      hidpi = true; #Added as default package has now disabled this by default
+    };
   };
 }

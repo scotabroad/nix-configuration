@@ -23,7 +23,10 @@
   programs = {
     hyprland = {
       enable = true;
-      #package = null;
+      xwayland = {
+        enable = true;
+        hidpi = true; #Added as default package has now disabled this by default
+      };
     };
     
     # Enable backlight

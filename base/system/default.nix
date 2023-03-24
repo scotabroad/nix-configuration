@@ -48,12 +48,6 @@
     };
   };
   
-  # Hardware settings
-  hardware = {
-    # Was not available in NixOS 20.03, is in Unstable, but this is 22.05... does the same as some earlier fixes
-    video.hidpi.enable = true;
-  };
-  
   # Networking Options
   networking = {
     # Firewall settings
