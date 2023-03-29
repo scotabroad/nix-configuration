@@ -82,34 +82,33 @@
 		--gnome-tabbar-tab-identity-base-opacity: 0;
 		--gnome-tabbar-tab-needs-attetion: #907aa9;
 	}
-
 	/* Private window colors */
 	:root {
-		--gnome-private-accent: #71A1DB;
+		--gnome-private-accent: #1c71d8;
 		
 		/* Toolbars */
-		--gnome-private-toolbar-background: #1C2438;
-		--gnome-private-inactive-toolbar-background: var(--gnome-private-toolbar-background);
+		--gnome-private-toolbar-background: var(--gnome-headerbar-background);
+		--gnome-private-inactive-toolbar-background: var(--gnome-inactive-headerbar-background);
 		/* Menus */
-		--gnome-private-menu-background: #252F49;
+		--gnome-private-menu-background: #ffffff;
 		/* Header bar */
-		--gnome-private-headerbar-background: #252F49;
+		--gnome-private-headerbar-background: #D7E3F0;
 		--gnome-private-inactive-headerbar-background: var(--gnome-private-toolbar-background);
 		/* Tabs */
-		--gnome-private-tabbar-tab-hover-background: #343e56; /* Hardcoded color */
-		--gnome-private-tabbar-tab-active-background: #343e56; /* Hardcoded color */
-		--gnome-private-tabbar-tab-active-background-contrast: #495675; /* Hardcoded color */
-		--gnome-private-tabbar-tab-active-hover-background: #414a61; /* Hardcoded color */
-		--gnome-private-inactive-tabbar-tab-hover-background: #242c3f; /* Hardcoded color */
-		--gnome-private-inactive-tabbar-tab-active-background: #272e41; /* Hardcoded color */
+		--gnome-private-tabbar-tab-hover-background: #cbd7e3; /* Hardcoded color */
+		--gnome-private-tabbar-tab-active-background: #c6d1dd; /* Hardcoded color */
+		--gnome-private-tabbar-tab-active-background-contrast: #a9b6c4; /* Hardcoded color */
+		--gnome-private-tabbar-tab-active-hover-background: #c0cbd7; /* Hardcoded color */
+		--gnome-private-inactive-tabbar-tab-hover-background: #e4e9f0; /* Hardcoded color */
+		--gnome-private-inactive-tabbar-tab-active-background: #e1e7ed; /* Hardcoded color */
 
 		/* Text color for Firefox Logo in new private tab */
-		--gnome-private-wordmark: #FBFBFE;
+		--gnome-private-wordmark: #20123A;
 
 		/* New private tab background */
-		--gnome-private-in-content-page-background: #1C2438;
+		--gnome-private-in-content-page-background: #FAFAFA;
 
 		/* Private browsing info box */
-		--gnome-private-text-primary-color: #FBFBFE;
+		--gnome-private-text-primary-color: #15141A;
 	}
 }
