@@ -5,13 +5,15 @@
 { config, pkgs, inputs, lib, ... }:
 
 {
-  
+  disabledModules = ["services/x11/display-managers/sddm.nix"];
+
   imports = [
     ./boot/efi.nix
     ./hardware-configuration.nix
     ./programs/steam.nix
     ./users
     ./virtualisation.nix
+    ../../modules/sddm-git/sddm.nix
   ];
 
   # Set up Environment

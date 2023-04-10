@@ -1,6 +1,9 @@
 { config, inputs, lib, pkgs, ... }:
 
 {
+  imports = [
+    ../wayland/default.nix
+  ];
   environment = {
     systemPackages = with pkgs; [
       htop

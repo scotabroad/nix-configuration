@@ -4,5 +4,6 @@
   imports = [
     ../../../../../desktops/hyprland/system
     ../../../base/system
+    ../../../base/wayland
   ];
 }
