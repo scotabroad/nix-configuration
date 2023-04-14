@@ -35,5 +35,5 @@
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   # high-resolution display
-  fonts.optimizeForVeryHighDPI = lib.mkDefault true;
+  #fonts.optimizeForVeryHighDPI = lib.mkDefault true;
 }

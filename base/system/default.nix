@@ -94,6 +94,8 @@
       viAlias = true;
       vimAlias = true;
     };
+
+    zsh.enable = true;
   };
 
   # Security Options

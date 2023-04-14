@@ -32,6 +32,10 @@
       save = 5000;
       path = "$HOME/.zsh_history";
     };
+    #Prevent interference from /etc/zshrc
+    envExtra = ''
+      setopt no_global_rcs
+    '';
     initExtra = ''
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
     '';
