@@ -1,9 +1,6 @@
 { config, inputs, lib, pkgs, ... }:
 
 {
-  imports = [
-    ../wayland/default.nix
-  ];
   environment = {
     systemPackages = with pkgs; [
       htop
@@ -12,12 +9,12 @@
       CLUTTER_BACKEND="wayland";
 
       GDK_BACKEND = "wayland,x11";
+      GDK_PIXBUF_MODULE_FILE = "${pkgs.librsvg}/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache";
       GDK_SCALE = "2";
 
       QT_AUTO_SCREEN_SCALE_FACTOR = "1";
       QT_QPA_PLATFORM = "wayland;xcb";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-
       #SDL_VIDEODRIVER = "wayland"; #disable or set to x11 for older games with older SDL version
       #XCURSOR_SIZE = lib.mkForce "48"; #needed for GTK XWayland apps
     };

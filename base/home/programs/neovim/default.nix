@@ -13,6 +13,7 @@
           tree-sitter-comment
           tree-sitter-cmake
           tree-sitter-css
+          tree-sitter-fortran
           tree-sitter-html
           tree-sitter-haskell
           tree-sitter-java

@@ -1,37 +1,33 @@
 { config, inputs, pkgs, lib, ... }:
 
 let
-  # dpi adjustment calculations
-  monitorHeight = 2256;
-  monitorWidth = 1504;
-  monitorHeightInches = 11.25; # 285 mm
-  monitorWidthInches = 7.5; # 190.5 mm
-  newDPI = builtins.ceil ((monitorHeight / monitorHeightInches) + (monitorWidth / monitorWidthInches)) / 2; # Looking at a DPI of 201
+  greetdSwayConfig = pkgs.writeText "greetd-sway-config" ''
+    exec "dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP"
+    input "type:touchpad" {
+      tap enabled
+    }
+
+    xwayland disable
+
+    bindsym XF86MonBrightnessUp exec light -A 5
+    bindsym XF86MonBrightnessDown exec light -U 5
+    bindsym Mod4+shift+e exec swaynag \
+      -t warning \
+      -m 'What do you want to do?' \
+      -b 'Poweroff' 'systemctl poweroff' \
+      -b 'Reboot' 'systemctl reboot'
+
+    exec "${lib.getExe config.programs.regreet.package} -l debug; swaymsg exit"
+  '';
 in {
+  programs.regreet = {
+    enable = true;
+  };
+  
   services = {
-    xserver = {
-      enable = true;
-      # Uncomment below to disable X server on boot
-      # autorun = false; # Must run systemctl start display display-manager.service
-      # Video Drivers can be specified here
-      # videoDrivers = [ "r128" ]; this is for xf86-video-r128, might need this for xorg-x11-dev-intel
-      dpi = newDPI;
-      displayManager = {
-        sddm = {
-          enable = true;
-          enableHidpi = true;
-          #package = pkgs.libsForQt5.sddm;
-          package = pkgs.sddm-git;
-          settings = {
-            #General = {
-            #  DisplayServer = "wayland";
-            #  GreeterEnvironment = "QT_WAYLAND_SHELL_INTEGRATION=layer-shell";
-            #};
-          };
-        };
-      };
-      # Configure keymap in X11
-      layout = "us";
+    greetd = {
+      #enable = true;
+      settings.default_session.command =  "${config.programs.sway.package}/bin/sway --config ${greetdSwayConfig}";
     };
   };
 }

@@ -30,8 +30,14 @@
     font = "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
   };
 
-  environment.variables = {
-    QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct";
+  environment = {
+    systemPackages = with pkgs; [
+      dracula-theme
+      zafiro-icons
+    ];
+    variables = {
+      QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct";
+    };
   };
 
   qt = {
