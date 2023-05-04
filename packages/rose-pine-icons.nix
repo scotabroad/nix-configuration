@@ -11,6 +11,8 @@ stdenv.mkDerivation rec {
     sha256 = "x8SH/d1/mslB2b8fcWrlVu0VDtBYjwjOqd5Lnb3k5GA=";
   };
 
+  dontPatch = true;
+
   installPhase = ''
     runHook preInstall
     mkdir -p $out/share/icons

@@ -17,11 +17,12 @@ let
       -b 'Poweroff' 'systemctl poweroff' \
       -b 'Reboot' 'systemctl reboot'
 
-    exec "${lib.getExe config.programs.regreet.package} -l debug; swaymsg exit"
+    exec "${config.programs.regreet.package}/bin/regreet -l debug; swaymsg exit"
   '';
 in {
   programs.regreet = {
     enable = true;
+    package = pkgs.regreet-git;
   };
   
   services = {

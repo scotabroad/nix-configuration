@@ -18,5 +18,6 @@
         theme_name = "rose-pine-moon-gtk";
       };
     };
+    extraCss = (builtins.readFile ./regreet.css);
   };
 }

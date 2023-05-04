@@ -107,7 +107,7 @@ bind=ALT,R,exec,pkill nwggrid || nwggrid -o 0 -layer-shell-exclusive-zone -1
 
 # management
 bind=CTRL,Q,killactive,
-bind=SUPER,Q,exit,
+bind=SUPER,Q,exec,pkill nwgbar || nwgbar -o 0 -layer-shell-exclusive-zone -1
 bind=SUPER,L,exec,swaylock -f
 bind=CTRL_ALT,P,exec,pkill nwgbar || nwgbar -o 0 -layer-shell-exclusive-zone -1
 bind=CTRL_ALT,R,exec,pkill nwgbar || nwgbar -o 0 -layer-shell-exclusive-zone -1

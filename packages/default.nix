@@ -7,6 +7,7 @@
     fcitx5-rose-pine = pkgs.callPackage ./fcitx5-rose-pine.nix {};
     framework-grub-theme = pkgs.callPackage ./framework-grub.nix {};
     nixos-grub-theme = prev.callPackage ./nixos-grub.nix {};
+    regreet-git = prev.callPackage ./regreet-git.nix {};
     rose-pine-gtk-theme = prev.callPackage ./rose-pine-gtk.nix {};
     rose-pine-icon-theme = prev.callPackage ./rose-pine-icons.nix {};
     sddm-git = pkgs.sddm.overrideAttrs (oldAttrs: {

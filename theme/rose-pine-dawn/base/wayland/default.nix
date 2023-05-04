@@ -18,5 +18,6 @@
         theme_name = "rose-pine-dawn-gtk";
       };
     };
+    extraCss = (builtins.readFile ./regreet.css);
   };
 }

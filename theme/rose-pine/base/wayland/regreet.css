@@ -1,0 +1,430 @@
+/**********
+ * Common *
+ **********/
+* {
+  /*all: initial;*/
+  padding: 0;
+  outline-color: rgba(196, 167, 231, 0.5);
+  outline-style: dashed;
+  outline-offset: -1px;
+  outline-width: 0px;
+  -gtk-secondary-caret-color: #c5c3ce;
+}
+
+*:selected, :focus:selected {
+  background-color: #c4a7e7;
+  color: #191724;
+}
+
+/**********
+ * Widets *
+ **********/
+.background {
+  color: #f0f03;
+  background-color: #1f1d2e; /*this affects the selection labels which popup if having more than one session and hover text.*/
+}
+
+overlay { /*Image displays on top of this*/
+  color: #e0def4;
+  background-color: #191724;
+}
+
+/**********
+ * Frames *
+ **********/
+frame { /*frames include the clock and login window*/
+  border-radius: 10px;
+  padding: 6px;
+  /*background-color: #b00b69 !important; /*Can't overwrite @theme_bg_color as inline css*/
+}
+
+grid { /*login window*/
+  background-color: #1f1d2e;
+}
+
+/***********
+ * Buttons *
+ ***********/
+button, button.flat, button.destructive-action, button.suggested-action {
+  /*Line 214*/
+  min-height: 20px;
+  min-width: 20px;
+  padding: 3px;
+  border-width: 1px;
+  border-radius: 2px;
+  -gtk-outline-radius: 2px;
+  transition: 150ms ease;
+  outline-color: transparent;
+  /*transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);*/
+}
+button, button.flat {
+  font-weight: normal;
+  border: 1px solid #191724;
+  /*Line 330*/
+  background-color: #191724;
+  background-image: none;
+  border-color: rgba(158, 152, 221, 0.22);
+  color: #e0def4;
+  box-shadow: 0 1px 2px -1px rgba(43, 43, 54, 0.22);
+}
+button:disabled, button.flat:disabled {/*Line 340*/border-color: rgba(175, 170, 227, 0.22); }
+button:disabled:disabled, button.flat:disabled:disabled {/*Line 433*/border-color: alpha(mix(#191724, #e0def4,0.2),0.4);}
+button:disabled:disabled :disabled, button.flat:disabled:disabled :disabled {/*Line 440*/border-color: mix(#191724, #e0def4,0.6);}
+button:active, button:active:hover, button:active:focus, button:active:hover:focus, button:checked, button:checked:hover,
+button:checked:focus, button:checked:hover:focus {/*Line 338*/border-color: rgba(126, 117, 209, 0.22);}
+button:active:disabled, button:checked:disabled {/*Line 342*/border-color: rgba(158, 152, 221, 0.22);}
+
+button:focus, button.flat:focus, button:hover, button.flat:hover {
+  /*Line 336*/
+  border-color: mix(#c4a7e7, rgba(224, 222, 244, 0.22),0.3);
+}
+button:hover, button.flat:hover {
+  /*Line 374*/
+  background-color: #1a1826;
+  background-image: none; /*redundant as button already has*/
+  border-color: rgba(158, 152, 221, 0.3);
+  color: #e0def4;
+  box-shadow: 0 1px 2px -1px rgba(43, 43, 54, 0.32);
+}
+button:hover:focus, button:hover:hover,
+button.flat:hover:focus, button:hover:hover {/*Line 380*/ border-color: mix(#c4a7e7,rgba(224, 222, 244, 0.3),0.3);}
+button:hover:active, button:hover:active:focus,
+button:hover:checked, button:hover:checked:focus,
+button.flat:hover:active, button.flat:hover:active:focus,
+button.flat:hover:active:hover:focus, button.flat:hover:checked:hover:focus,
+button.flat:hover:checked, button.flat:hover:checked:focus {/*Line 382*/ border-color: rgba(126, 117, 209, 0.3);}
+button:hover:disabled, button.flat:hover:disabled {/*Line 384*/ border-color: rgba(175, 170, 227, 0.3);}
+button:hover:active:disabled, button.flat:hover:active:disabled {/*Line 386*/ border-color: rgba(158, 152, 221, 0.3);}
+button:focus, button.flat:focus {
+  /*Line 388*/
+  background-color: #1a1826;
+  background-image: none; /*redundant as button already has*/
+  border-color: rgba(224, 222, 244, 0.2);
+  outline-color: rgba(196, 167, 231, 0.5);
+  outline-width: 1px;
+  outline-style: solid;
+  outline-offset: -3px;
+  color: #e0def4; /*redundant as button already has*/
+  box-shadow: 0 1px 2px -1px rgba(43, 43, 54, 0.42);
+}
+button:focus:hover, button.flat:focus:hover {
+  /*Line 398*/
+  background-color: #1c1928;
+  background-image: none; /*redunandant as button already has*/
+  border-color:rgba(158, 152, 221, 0.3);
+  box-shadow: 0 1px 2px -1px rgba(43, 43, 54, 0.48);
+}
+button:focus:hover:hover, button.flat:focus:hover:hover {/*Line 403*/ border-color: mix(#c4a7e7,rgba(224, 222, 244, 0.3),0.3);}
+button:focus:hover:active, button.flat:focus:hover:active, 
+button:focus:hover:active:focus, button.flat:focus:hover:active:focus, 
+button:focus:hover:checked, button.flat:focus:hover:checked,
+button.flat:focus:hover:active:hover:focus, button.flat:focus:hover:checked:hover:focus, 
+button:focus:hover:checked:focus, button.flat:focus:hover:checked:focus {/*Line 405*/ border-color: rgba(126, 117, 209, 0.3);}
+button:focus:hover:disabled, button.flat:focus:hover:disabled {/*Line 407*/ border-color: rgba(175, 170, 227, 0.3);}
+button:focus:hover:disabled:active, button.flat:focus:hover:disabled:active,
+button:focus:hover:disabled:checked, button.flat:focus:hover:disabled:checked {/*Line 409*/ border-color: rgba(158, 152, 221, 0.3);}
+
+/***********************
+ * Reboot and Poweroff *
+ ***********************/
+button.destructive-action {
+  /*Line 1881*/
+  background-color: #eb6f92;
+  background-image: none;
+  border-color: rgba(20, 18, 29, 0.32);
+  color: #191724;
+  box-shadow: 0 1px 2px -1px rgba(43, 43, 54, 0.12);
+}
+button.destructive-action.flat {
+  /*Line 1919*/
+  color: #191724;
+  border-color: rgba(235, 111, 146, 0);
+  background-color: rgba(235, 111, 146, 0);
+  background-image: none;
+  box-shadow: none;
+}
+button.destructive-action:active, button.destructive-action:active:hover,
+button.destructive-action:active:focus, button.destructive-action:active:hover:focus,
+button.destructive-action:checked, button.destructive-action:checked:hover, button.destructive-action:checked:focus, 
+button.destructive-action:checked:hover:focus {/*line 1889*/ border-color: rgba(18, 16, 25, 0.32);}
+button.destructive-action:disabled {/*line 1891*/ border-color: rgba(21, 20, 31, 0.32);}
+button.destructive-action:disabled:active,
+button.destructive-action:disabled:checked {/*line 1893*/ border-color: rgba(20,18,29,0.32);}
+button.destructive-action:focus, button.destructive-action:hover {/*line 1887*/ border-color: mix (#c4a7e7,rgba(25,23,36,0.32),0.3);}
+button.destructive-action:hover, button.destructive-action.flat:hover {
+  /*Line 1925*/
+  background-color: #ed7e9d;
+  background-image: none;
+  border-color: rgba(20, 18, 29, 0.4);
+  color: #191724;
+  box-shadow: 0 1px 2px -1px rgba(43, 43, 54, 0.22);
+}
+button.destructive-action:hover:focus,
+button.destructive-action.flat:hover:focus {/*Line 1931*/border-color: mix(#c4a7e7,rgba(25,23,36,0.4),0.3);}
+button.destructive-action:hover:active, button.destructive-action:hover:active:hover, button.destructive-action:hover:active:focus, 
+button.destructive-action:hover:checked, button.destructive-action:hover:checked:hover, 
+button.destructive-action:hover:checked:focus, button.destructive-action.flat:hover:active, 
+button.destructive-action.flat:hover:active:hover, button.destructive-action.flat:hover:active:focus, 
+button.destructive-action.flat:hover:checked, button.destructive-action.flat:hover:checked:hover,
+button.destructive-action.flat:hover:checked:focus, button.destructive-action.flat:hover:active:hover:focus,
+button.destructive-action.flat:hover:checked:hover:focus {/*Line 1933*/border-color: rgba(18, 16, 25, 0.4);}
+button.destructive-action:hover:disabled,
+button.destructive-action.flat:hover:disabled {/*Line 1935*/border-color: rgba(21, 20, 31, 0.4);}
+button.destructive-action:hover:active:disabled, button.destructive-action:hover:checked:disabled,
+button.destructive-action.flat:hover:active:disabled, 
+button.destructive-action.flat:hover:checked:disabled {/*Line 1937*/border-color: rgba(20, 18, 29, 0.4);}
+button.destructive-action:focus, button.destructive-action.flat:focus {
+  /*Line 1939*/
+  background-color: #ed7e9d;
+  background-image: none;
+  border-color: rgba(25, 23, 36, 0.32);
+  outline-color: rgba(196, 167, 231, 0.5);
+  outline-width: 1px;
+  outline-style: solid;
+  outline-style: -3px;
+  color: #191724;
+  box-shadow: 0 1px 2px -1px rgba(43, 43, 54, 0.32);
+}
+button.destructive-action:focus:hover, button.destructive-action.flat:focus:hover {
+  /*Line 1949*/
+  background-color: #ef8da9;
+  background-image: none;
+  border-color: rgba(20, 18, 29, 0.4);
+  box-shadow: 0 1px 2px -1px rgba(43, 43, 54, 0.38);
+}
+button.destructive-action:focus:hover:focus, button.destructive-action.flat:focus:hover:hover,
+button.destructive-action.flat:focus:hover:focus,
+button.destructive-action.flat.flat:focus:hover:hover {/*Line 1954*/border-color: mix(#c4a7e7,rgba(25, 23, 36, 0.4),0.3);}
+button.destructive-action:focus:hover:active, button.destructive-action:focus:hover:active:hover,
+button.destructive-action:focus:hover:active:focus, button.destructive-action:focus:hover:active:hover:focus,
+button.destructive-action:focus:hover:checked, button.destructive-action:focus:hover:checked:hover,
+button.destructive-action:focus:hover:checked:focus, button.destructive-action:focus:hover:checked:hover:focus,
+button.destructive-action.flat:focus:hover:active, button.destructive-action.flat:focus:hover:active:hover,
+button.destructive-action.flat:focus:hover:active:focus, button.destructive-action.flat:focus:hover:active:hover:focus,
+button.destructive-action.flat:focus:hover:checked, button.destructive-action.flat:focus:hover:checked:hover, 
+button.destructive-action.flat:focus:hover:checked:focus,
+button.destructive-action.flat:focus:hover:checked:hover:focus {/*Line 1956*/border-color: rgba(18, 16, 25, 0.4);}
+button.destructive-action:focus:hover:disabled,
+button.destructive-action.flat:focus:hover:disabled {/*Line 1958*/border-color: rgba(21, 20, 31, 0.4);}
+button.destructive-action:focus:hover:active:disabled, button.destructive-action:focus:hover:checked:disabled, 
+button.destructive-action.flat:focus:hover:active:disabled, 
+button.destructive-action.flat:focus:hover:checked:disabled {/*Line 1960*/border-color: rgba(20, 18, 29, 0.4); }
+
+/*********
+ * Login *
+ *********/
+button.suggested-action {
+  /*Line 1691*/
+  background-color: #ebbcba;
+  background-image: none;
+  border-color: rgba(20, 18, 29, 0.32);
+  color: #191724;
+  box-shadow: 0 1px 2px -1px rgba(43, 43, 54, 0.12);
+}
+button.suggested-action.flat {
+  /*Line 1757*/
+  color: #191724;
+  border-color: rgba(235, 188, 186, 0);
+  background-color: rgba(235, 188, 186, 0);
+  background-image: none;
+  box-shadow: none;
+}
+button.suggested-action:active, button.suggested-action:active:hover, button.suggested-action:active:focus,
+button.suggested-action:active:hover:focus,button.suggested-action:checked,
+button.suggested-action:checked:hover, button.suggested-action:checked:focus,
+button.suggested-action:checked:hover:focus {/*line 1702*/border-color: rgba(18, 16, 25, 0.32);}
+button.suggested-action:disabled {/*line 1706*/border-color: rgba(21, 20, 31, 0.32);}
+button.suggested-action:active:disabled, button.suggested-action:checked:disabled {/*Line 1709*/border-color: rgba(20, 18, 29, 0.32);}
+button.suggested-action:focus,
+button.suggested-action:hover {/*line 1698*/border-color: mix(#c4a7e7,rgba(25, 23, 36, 0.32),0.3);}
+button.suggested-action:hover, button.suggested-action.flat:hover {
+  /* line 1764 */
+  background-color: #f0ccca;
+  background-image: none;
+  border-color: rgba(20, 18, 29, 0.4);
+  color: #191724;
+  box-shadow: 0 1px 2px -1px rgba(43, 43, 54, 0.22);
+}
+button.suggested-action:hover:focus, button.suggested-action:hover:hover, button.suggested-action.flat:hover:focus,
+button.suggested-action.flat:hover:hover {/*Line 1771*/border-color: mix(#c4a7e7,rgba(25,23,36,0.4),0.3);}
+button.suggested-action:hover:active, button.suggested-action:hover:active:focus, button.suggested-action:hover:checked,
+button.suggested-action:hover:checked:focus,button.suggested-action.flat:hover:active,
+button.suggested-action.flat:hover:active:focus, button.suggested-action.flat:hover:checked,
+button.suggested-action.flat:hover:checked:focus {/*Line 1774*/border-color: rgba(18,16,25,0.4);}
+button.suggested-action:hover:disabled, button.suggested-action.flat:disabled {/*Line 1778*/border-color: rgba(21, 20, 31, 0.4);}
+button.suggested-action:hover:active:disabled,
+button.suggested-action:hover:checked:disabled, button.suggested-action.flat:hover:active:disabled,
+button.suggested-action.flat:hover:checked:disabled {/*Line 1781*/border-color: rgba(20, 18, 29, 0.4);}
+button.suggested-action:focus, button.suggest-action.flat:focus {
+  /* Line 1783 */
+  background-color: #f0ccca;
+  background-image: none;
+  border-color: rgba(25, 23, 36, 0.32);
+  outline-color: rgba(196, 167, 231, 0.5);
+  outline-width: 1px;
+  outline-style: solid;
+  outline-offset: -3px;
+  color: #191724;
+  box-shadow: 0 1px 2px -1px rgba(43, 43, 54, 0.32);
+}
+button.suggested-action:focus:hover, button.suggested-action.flat:focus:hover {
+  /* Line 1794 */
+  background-color: #f4dcdb;
+  background-image: none;
+  border-color: rgba(20, 18, 29, 0.4);
+  box-shadow: 0 1px 2px -1px rgba(43, 43, 54, 0.38);
+}
+button.suggested-action:focus:hover:hover, 
+button.suggested-action.flat:focus:hover:hover {/*Line 1800*/border-color: mix(#c4a7e7,rgba(25,23,36,0.4),0.3);}
+button.suggested-action:focus:hover:active, button.suggested-action.flat:focus:hover:active,
+button.suggested-action.flat:focus:hover:active:focus, button.suggested-action:focus:hover:checked, 
+button.suggested-action.flat:focus:hover:checked, button.suggested-action.flat:focus:hover:checked:focus, 
+button.suggested-action.flat:focus:hover:active:hover:focus, 
+button.suggested-action.flat:focus:hover:checked:hover:focus {/*Line 1802*/border-color: rgba(18,16,25,0.4);}
+button.suggested-action:focus:hover:disabled, 
+button.suggested-action.flat:hover:disabled {/*Line 1804*/border-color: rgba(21,20,31,0.4);}
+button.suggested-action:focus:hover:active:disabled, button.suggested-action:focus:hover:checked:disabled, 
+button.suggested-action.flat:focus:hover:active:disabled, 
+button.suggested-action.flat:focus:hover:checked:disabled {/*Line 1806*/border-color: rgba(20,18,29,0.4);}
+
+/********
+ * Edit *
+ ********/
+button.toggle, button.flat.toggle {
+  /* line 7452 */
+  background-image: none;
+  background-color: tranparent;
+  border-color: transparent;
+  border-style: solid;
+  border-radius: 0;
+  border-width: 1px;
+  color: #e0def4;
+  text-shadow: none;
+  box-shadow: none;
+  padding: 2px;
+}
+button.toggle:hover:active, button.toggle:checked, button.toggle:checked:hover,
+button.flat.toggle:hover:active, button.flat.toggle:checked, button.flat.toggle:checked:hover {
+  /*Line 7475*/
+  background-image: none;
+  background-color: darker(#191724);
+  border-color: transparent;
+  border-radius: 0;
+  border-width: 1px;
+  color: lighter(#e0def4);
+  text-shadow: none;
+  padding: 2px;
+}
+button.toggle:hover, button.flat.toggle:hover {
+  /*Line 7488*/
+  background-image: none;
+  background-color: #211e2f;
+  border-color: transparent;
+  border-radius: 0;
+  border-width: 1px;
+  color: #191724;
+  text-shadow: none;
+  padding: 2px;
+}
+
+/*********
+ * Entry *
+ *********/
+entry, entry.password { /*Line 794*/
+  background-color: #26233a;
+  background-image: none;
+  border-color: mix(#c5c3ce,#26233a,0.8);
+  padding: 5px 3.4285714286px;
+  color: #c5c3ce;
+  caret-color: #c5c3ce;
+  -gtk-secondary-caret-color: #c5c3ce;
+}
+entry:focus, entry:hover, entry.password:focus, entry.password:hover { border-color: mix(#c4a7e7,mix(#c5c3ce,#26233a,0.7),0.3);}
+entry:active, entry:active:hover, entry:active:focus, entry:active:hover:focus, entry:checked, entry:checked:hover,
+entry:checked:focus, entry:checked:hover:focus, entry.password:active, entry.password:active:hover, entry.password:active:focus,
+entry.password:active:hover:focus, entry.password:checked, entry.password:checked:hover, entry.password:checked:focus,
+entry.password:checked:hover:focus { border-color: mix(#c5c3ce,#26233a,0.32);}
+entry:disabled, entry.password:disabled { border-color: mix(#c5c3ce,#26233a,0.84);}
+entry:active:disabled, entry:checked:disabled,
+entry.password:active:disabled, entry.password:checked:disabled { border-color: mix(#c5c3ce,#26233a,0.8);}
+entry:focus, entry:active, entry.password:focus, entry.password:active { border-color: mix(#c4a7e7,mix(#1f1d2e,#f0f0f3,0.18),0.3);}
+entry:disabled, entry.password:disabled {   
+  background-color: mix(#26233a,#c5c3ce,0.07);
+  background-image: none;
+  opacity: .9;
+  color: mix(#26233a,#c5c3ce,0.9);
+}
+
+/***************
+ * Combo Boxes *
+ ***************/
+combobox button.combo { /*Line 624*/
+  min-width: 0;
+  padding-left: 3.4285714286px;
+  padding-right: 3.4285714286px;
+}
+combobox arrow {
+  -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+  min-height: 16px;
+  min-width: 16px;
+  padding: 1.5px;
+}
+combobox box button, combobox box entry {
+  padding: 3px 3.4285714286px;
+}
+combobox box > entry + button.combo {
+  padding: 3px;
+}
+combobox menu menuitem {
+  padding: 3px 5px;
+}
+combobox menu menuitem cellview {
+  min-height: 20px;
+}
+
+/***********
+ * Infobar *
+ ***********/
+infobar {
+  /*Line 3028*/
+  border: 0;
+}
+infobar.info, infobar.info:backdrop {
+  background-color: #9ccfd8;
+  background-image: none;
+  border: 1px solid #67b5c3;
+  caret-color: currentColor;
+}
+infobar.info label, infobar.info, infobar.info:backdrop label, infobar.info:backdrop {
+  color: #191724;
+}
+infobar.warning, infobar.warning:backdrop {
+  /*Line 3165*/
+  background-color: #f6c177;
+  background-image: none;
+  border: 1px solid #f1a233;
+  caret-color: currentColor;
+}
+infobar.warning label, infobar.warning, infobar.warning:backdrop label, infobar.warning:backdrop {
+  color: #191724;
+}
+infobar.question, infobar.question:backdrop {
+  /*Line 3300*/
+  background-color: #9ccfd8;
+  background-image: none;
+  border: 1px solid #67b5c3;
+  caret-color: currentColor;
+}
+infobar.question label, infobar.question, infobar.question:backdrop label, infobar.question:backdrop {
+  color: #191724;
+}
+infobar.error, infobar.error:backdrop {
+  /*Line 3435*/
+  background-color: #eb6f92;
+  background-image: none;
+  border: 1px solid #e33264;
+  caret-color: currentColor;
+}
+infobar.error label, infobar.error, infobar.error:backdrop label, infobar.error:backdrop {
+  color: #191724;
+}
