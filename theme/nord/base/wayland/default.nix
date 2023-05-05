@@ -18,5 +18,10 @@
         theme_name = "Nordic";
       };
     };
+    extraCss = ''
+    frame {
+      border-radius: 10px;
+      padding: 6px;}
+    '';
   };
 }

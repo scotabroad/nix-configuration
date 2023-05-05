@@ -25,9 +25,9 @@
   
   #Patched version of EliverLara's firefox-nordic-theme for Firefox v108.1
   home.file.".mozilla/firefox/${name}/chrome/firefox-nordic-theme".source = pkgs.fetchFromGitHub {
-    owner = "glasket";
+    owner = "EliverLara";
     repo = "firefox-nordic-theme";
-    rev = "bef92bc8cf06d0e23e2a2241b9e04195cb8e4193";
-    sha256 = "b+q+/hAjCv2NapVsV0nOfExcwyfuAO9cGBW4HfSZbX0=";
+    rev = "8e5c529bc30072b0bebe4cbe540c8a4f2d4180a0";
+    sha256 = "ER2QeEqJkTtQfvGQ39GZ0aNQ7CthLGfZwCcw7AlArdQ=";
   };
 }
