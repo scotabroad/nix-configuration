@@ -39,8 +39,8 @@ general {
     gaps_in=5
     gaps_out=10
     border_size=2
-
     apply_sens_to_raw=0 # whether to apply the sensitivity to raw input (e.g. used by games where you aim using your mouse)
+    resize_on_border = true
 }
 
 decoration {
@@ -74,43 +74,25 @@ binds {
     allow_workspace_cycles = false
 }
 
+$mod1 = SUPER
+
 # window rules
 windowrule=fullscreen,^(.*x86_64)$ #games should start fullscreen
 
 #some nice mousebinds
-bindm=SUPER,mouse:272,movewindow #left click
-
-# enter resize submap
-bind=SUPER,R,submap,resize
-submap=resize
-bindm=,mouse:272,resizewindow
-bindm=SUPER,mouse:272,movewindow #left click
-#exit to main submap
-bind=,escape,submap,reset
-submap=reset
-
-# enter move submap
-bind=SUPER,M,submap,move
-submap=move
-bindm=,mouse:272,movewindow
-#exit to main submap
-bind=,escape,submap,reset
-submap=reset
+bindm=$mod1,mouse:272,movewindow #left click
 
 # open apps
 bind=CTRL_ALT,T,exec,env XCURSOR_SIZE=24 kitty
-bind=ALT,F,exec,firefox
-bind=SUPER,F,exec,nautilus
 bind=ALT,Print,exec,grim -g "$(slurp)" #screenshot tool
 bind=,Print,exec,grim #screenshot tool
-bind=ALT,R,exec,pkill nwggrid || nwggrid -o 0 -layer-shell-exclusive-zone -1
+bind=$mod1,R,exec,pkill nwggrid || nwggrid -o 0 -layer-shell-exclusive-zone -1
 
 # management
 bind=CTRL,Q,killactive,
-bind=SUPER,Q,exec,pkill nwgbar || nwgbar -o 0 -layer-shell-exclusive-zone -1
-bind=SUPER,L,exec,swaylock -f
-bind=CTRL_ALT,P,exec,pkill nwgbar || nwgbar -o 0 -layer-shell-exclusive-zone -1
-bind=CTRL_ALT,R,exec,pkill nwgbar || nwgbar -o 0 -layer-shell-exclusive-zone -1
+bind=$mod1,Q,exec,pkill nwgbar || nwgbar -o 0 -layer-shell-exclusive-zone -1
+bind=CTRL_ALT,Delete,exec,pkill nwgbar || nwgbar -o 0 -layer-shell-exclusive-zone -1
+bind=$mod1,L,exec,swaylock -f
 
 # audio
 bind=,xf86audiolowervolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
@@ -122,22 +104,24 @@ bind=,xf86monbrightnessup,exec,light -A 10
 bind=,xf86monbrightnessdown,exec,light -U 10
 
 # switch window mode
-bind=SUPER,V,togglefloating,
-bind=SHIFT_SUPER,V,workspaceopt,allfloat
-bind=SUPER,P,pseudo,
-bind=SHIFT_SUPER,P,workspaceopt,allpseudo
-bind=CTRL_ALT,F,fullscreen
+bind=$mod1,V,togglefloating,
+bind=SHIFT_$mod1,V,workspaceopt,allfloat
+bind=$mod1,P,pseudo,
+bind=SHIFT_$mod1,P,workspaceopt,allpseudo
+bind=$mod1,F,fullscreen
 
 # switch between apps
-bind=SUPER,TAB,movefocus,r
-bind=SHIFT_SUPER,TAB,movefocus,l
+bind=$mod1,TAB,movefocus,r
+bind=$mod1,up,movefocus,u
+bind=SHIFT_$mod1,TAB,movefocus,l
+bind=$mod1,down,movefocus,d
 
 # switch between workspaces
-bind=SUPER,left,workspace,-1
-bind=SUPER,right,workspace,+1
+bind=$mod1,left,workspace,-1
+bind=$mod1,right,workspace,+1
 
 # move apps between workspaces
-bind=SUPER_ALT,left,movetoworkspace,-1
-bind=SUPER_ALT,right,movetoworkspace,+1
+bind=$mod1_ALT,left,movetoworkspace,-1
+bind=$mod1_ALT,right,movetoworkspace,+1
 '';
 }

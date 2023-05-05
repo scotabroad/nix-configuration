@@ -9,7 +9,7 @@
     };
     hyprland = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:hyprwm/Hyprland/2df0d034bc4a18fafb3524401eeeceaa6b23e753";
+      url = "github:hyprwm/Hyprland";
     };
     hyprpicker = {
       url = "github:hyprwm/hyprpicker";

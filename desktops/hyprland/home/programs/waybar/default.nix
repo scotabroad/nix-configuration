@@ -130,13 +130,6 @@
           tooltip = false;
         };
 
-        "custom/resize" = {
-          format = "{}";
-          exec = "${pkgs.hyprland-resize}/bin/hyprland-resize";
-          return-type = "json";
-          tooltip = true;
-        };
-
         "custom/search" = {
           format = "   Applications";
           on-click = "pkill nwggrid || nwggrid -o -0 -layer-shell-exclusive-zone -1";
