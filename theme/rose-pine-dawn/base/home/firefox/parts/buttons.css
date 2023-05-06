@@ -54,7 +54,7 @@ button.close,
 	outline: 0 !important;
 	font: menu !important;
 	-moz-box-align: center !important;
-	transition: .3s;
+	transition: background .3s;
 }
 .subviewbutton-iconic {
 	-moz-box-pack: center !important;
@@ -68,7 +68,7 @@ button.close,
 .permission-popup-permission-remove-button,
 .unified-extensions-item-menu-button {
 	background: transparent !important;
-	transition: .3s;
+	transition: background .3s;
 }
 
 /* Buttons with margins */

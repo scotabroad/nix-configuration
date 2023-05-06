@@ -274,7 +274,7 @@ button.close::before {
 }
 @media (prefers-color-scheme: dark) {
 	.notificationbox-stack notification[type="warning"] .close-icon:not(.tab-close-button):not(:hover) image {
-		fill: #232136 !important;
+		fill: rgb(35, 33, 54) !important;
 	}
 }
 
@@ -304,6 +304,9 @@ button.close::before {
 }
 .tab-icon-overlay[muted] {
     list-style-image: url("./icons/audio-muted-symbolic.svg") !important;
+}
+.tab-icon-overlay[activemedia-blocked] {
+	list-style-image: url("./icons/play-large-disabled-symbolic.svg") !important;
 }
 
 /* Firefox View */

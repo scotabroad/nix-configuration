@@ -235,6 +235,7 @@ button.close {
 /* Downloads button */
 #downloads-indicator-progress-inner {
 	background: conic-gradient(var(--gnome-toolbar-icon-fill) var(--download-progress-pcent), transparent var(--download-progress-pcent)) !important;
+	background-color: var(--gnome-button-active-background) !important;
 }
 #downloads-indicator-progress-outer,
 #downloads-indicator-start-image,
@@ -250,9 +251,23 @@ button.close {
 #downloads-indicator-finish-image {
 	background: var(--gnome-toolbar-icon-fill) !important;
 }
+
+#downloads-button[progress="true"] #downloads-indicator-progress-outer {
+  visibility: visible !important;
+}
+#downloads-button:not([progress="true"]) #downloads-indicator-icon {
+  visibility: visible !important;
+}
+
+/* Stop/Reload button */
+#stop-reload-button .toolbarbutton-icon {
+	margin-top: -2px !important;
+}
+
+/* Toolbar Animations */
 #downloads-button .toolbarbutton-animatable-box {
 	top: 8px !important;
-    left: 8px !important;
+	left: 8px !important;
 }
 #downloads-button .toolbarbutton-animatable-box,
 #downloads-button .toolbarbutton-animatable-image,
@@ -260,21 +275,13 @@ button.close {
 	height: 16px !important;
 	width: 16px !important;
 }
-#downloads-button .toolbarbutton-animatable-image {
-	--anim-steps: 1 !important;
-	transform: none !important;
-	list-style-image: none !important;
-}
-
-/* Stop/Reload button */
-#stop-reload-button  .toolbarbutton-animatable-image:not(#hack) {
+#downloads-button .toolbarbutton-animatable-image,
+#stop-reload-button  .toolbarbutton-animatable-image:not(#hack),
+#nav-bar-overflow-button  .toolbarbutton-animatable-image:not(#hack) {
 	--anim-steps: 1 !important;
 	transform: none !important;
 	list-style-image: none !important;
 	display: none !important;
-}
-#stop-reload-button .toolbarbutton-icon {
-	margin-top: -2px !important;
 }
 
 /* Panel banner */

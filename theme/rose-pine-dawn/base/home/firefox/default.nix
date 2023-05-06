@@ -49,7 +49,7 @@
     #customization-footer::before {
             background: url(./icons/icon.svg) no-repeat;
             background-size: contain;
-            content: "Firefox GNOME theme v111";
+            content: "Firefox GNOME theme v112";
             padding: 9px 9px 9px 50px;
     }
     '';
