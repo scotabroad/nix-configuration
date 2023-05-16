@@ -36,4 +36,8 @@
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   # high-resolution display
   #fonts.optimizeForVeryHighDPI = lib.mkDefault true;
+  #For LVFS BIOS Update on Framework
+  services.fwupd.uefiCapsuleSettings = {
+    DisableCapsuleUpdateOnDisk = true;
+  };
 }
