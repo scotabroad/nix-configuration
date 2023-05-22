@@ -19,15 +19,14 @@
         enable = true;
         backgroundColor = "#2f302f";
         device = "nodev"; # "nodev" for efi only
-        efiInstallAsRemovable = true;
+        efiInstallAsRemovable = true; #Good for Framework BIOS updates
         efiSupport = true;
-        font = "${pkgs.nerdfonts}/share/fonts/truetype/NerdFonts/'Ubuntu Mono Nerd Font Complete Mono.ttf'";
+        font = "${pkgs.nerdfonts}/share/fonts/truetype/NerdFonts/UbuntuMonoNerdFontMono-Regular.ttf";
         fontSize = 28;
         theme = pkgs.nixos-grub-theme;
         # splashImage = null;
         splashMode = "normal";
         useOSProber = false; # enable only if dual booting
-        version = 2;
       };
 
       # Disable systemd-boot

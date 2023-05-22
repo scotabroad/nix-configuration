@@ -8,6 +8,12 @@
       qemu = {
         package = pkgs.qemu_full;
         swtpm.enable = true; #Simulate a TPM
+        ovmf = {
+          enable = true;
+          packages = with pkgs; [ 
+            OVMFFull.fd
+          ];
+        };
       };
     };
   };

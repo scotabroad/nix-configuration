@@ -41,16 +41,16 @@
             twos = 29;
             ones = 19;
           };
-          format-ones = " {capacity}%";
-          format-twos = " {capacity}%";
-          format-threes = " {capacity}%";
-          format-fours = " {capacity}%";
-          format-fives = " {capacity}%";
-          format-sixes = " {capacity}%";
-          format-sevens = " {capacity}%";
-          format-eights = " {capacity}%";
-          format-nines = " {capacity}%";
-          format-full = " {capacity}%";
+          format-ones = "󰁺 {capacity}%";
+          format-twos = "󰁻 {capacity}%";
+          format-threes = "󰁼 {capacity}%";
+          format-fours = "󰁽 {capacity}%";
+          format-fives = "󰁾 {capacity}%";
+          format-sixes = "󰁿 {capacity}%";
+          format-sevens = "󰂀 {capacity}%";
+          format-eights = "󰂁 {capacity}%";
+          format-nines = "󰂂 {capacity}%";
+          format-full = "󰁹 {capacity}%";
           on-click = "true";
         };
 
@@ -62,7 +62,7 @@
         };
 
         "cpu" = {
-          format = " {}%";
+          format = " {}%";
           on-click = "true";
         };
 
@@ -74,10 +74,10 @@
         "pulseaudio" = {
           format = "{icon} {volume}%";
           format-bluetooth = "{icon} {volume}%";
-          format-muted = "婢 Muted";
+          format-muted = "󰝟 Muted";
           format-icons = {
             headphone = "";
-            hands-free = "";
+            hands-free = "󰂑";
             headset = "";
             phone = "";
             portable = "";
@@ -131,7 +131,7 @@
         };
 
         "custom/search" = {
-          format = "   Applications";
+          format = "   Applications";
           on-click = "pkill nwggrid || nwggrid -o -0 -layer-shell-exclusive-zone -1";
           tooltip = false;
         };

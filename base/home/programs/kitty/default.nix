@@ -6,7 +6,7 @@
     enable = true;
     package = pkgs.kitty;
     font = {
-      name = "Ubuntu Mono Nerd Font Complete Mono";
+      name = "Ubuntu Mono Nerd Font Mono";
       package = pkgs.nerdfonts;
     };
     #keybindings = {

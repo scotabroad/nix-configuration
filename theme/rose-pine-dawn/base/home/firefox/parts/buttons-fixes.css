@@ -12,6 +12,11 @@
 	padding: 0 1px 0 4px !important;
 }
 
+/* Fix subviewbutton icon buttons alignment */
+.subviewbutton.subviewbutton-iconic:not(.subviewbutton-back) {
+	justify-content: center !important;
+}
+
 /* Fix hover background */
 .toolbarbutton-badge-stack:not(#hack), .toolbarbutton-icon:not(#hack), .toolbarbutton-text:not(#hack) {
 	background: transparent !important;
@@ -168,7 +173,10 @@ button.close {
 #sidebar-header {
 	font-size: 1em !important;
 }
-
+/* Sidebar header button sizing */
+#sidebar-switcher-target {
+	flex: unset !important;
+}
 /* Sidebar header button arrow opacity */
 #sidebar-switcher-arrow {
 	opacity: 1 !important;
