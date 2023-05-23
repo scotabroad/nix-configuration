@@ -13,21 +13,53 @@
 
       # Enable SVG context-properties
       "svg.context-properties.content.enabled" = true;
+
+      # Disable private window dark theme
+      "browser.theme.dark-private-windows" = false;
     };
-    userChrome = ''
-    @import "firefox-nordic-theme/userChrome.css";
-    @import "firefox-nordic-theme/theme/hide-single-tab.css";
-    @import "firefox-nordic-theme/theme/matching-autocomplete-width.css";
-    @import "firefox-nordic-theme/theme/system-icons.css";
-    @import "firefox-nordic-theme/theme/symbolic-tab-icons.css";
+    userChrome =
+      builtins.readFile ./symbolic-tab-icons.css
+    + builtins.readFile ./system-icons.css
+    
+    + builtins.readFile ./colors/dark.css
+    + builtins.readFile ./colors/light.css
+
+    + builtins.readFile ./parts/remove-white-flash.css
+    
+    + builtins.readFile ./parts/dialogs.css
+    + builtins.readFile ./parts/popups-contents.css
+    + builtins.readFile ./parts/popups.css
+
+    + builtins.readFile ./parts/icons.css
+    + builtins.readFile ./parts/controls.css
+    + builtins.readFile ./parts/entries.css
+    + builtins.readFile ./parts/buttons-fixes.css
+    + builtins.readFile ./parts/buttons.css
+
+    + builtins.readFile ./parts/toolbox.css
+    + builtins.readFile ./parts/headerbar.css
+    + builtins.readFile ./parts/headerbar-private-window.css
+    + builtins.readFile ./parts/csd.css
+    + builtins.readFile ./parts/urlbar.css
+    + builtins.readFile ./parts/tabsbar.css
+    + builtins.readFile ./parts/findbar.css
+    + builtins.readFile ./parts/sidebar.css
+    + builtins.readFile ./parts/lists.css
+    + ''
+    #customization-footer::before {
+            background: url(./icons/icon.svg) no-repeat;
+            background-size: contain;
+            content: "Firefox GNOME theme v113";
+            padding: 9px 9px 9px 50px;
+    }
     '';
+
+    userContent = 
+      builtins.readFile ./colors/dark.css
+      + builtins.readFile ./colors/light.css
+      + builtins.readFile ./pages/newtab.css
+      + builtins.readFile ./pages/privatebrowsing.css
+      + builtins.readFile ./parts/video-player.css;
   };
-  
-  #Patched version of EliverLara's firefox-nordic-theme for Firefox v108.1
-  home.file.".mozilla/firefox/${name}/chrome/firefox-nordic-theme".source = pkgs.fetchFromGitHub {
-    owner = "EliverLara";
-    repo = "firefox-nordic-theme";
-    rev = "8e5c529bc30072b0bebe4cbe540c8a4f2d4180a0";
-    sha256 = "ER2QeEqJkTtQfvGQ39GZ0aNQ7CthLGfZwCcw7AlArdQ=";
-  };
+  home.file.".mozilla/firefox/${name}/chrome/icons".source = ./icons;
 }
