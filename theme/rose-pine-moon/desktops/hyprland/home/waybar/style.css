@@ -44,8 +44,6 @@ tooltip label {
 /* -- Modules -- */
 #custom-close,
 #custom-search,
-#custom-resize,
-#custom-move,
 #workspaces,
 #window, 
 #clock, 
@@ -77,25 +75,6 @@ tooltip label {
     border-radius: 20px 0px 0px 20px;
     border-right: 0px;
     margin-left: 10px;
-}
-
-#custom-resize,
-#custom-move {
-    min-height: 24px;
-    min-width: 16px;
-    padding: 0 5px;
-    border-right: 0px;
-    border-left: 0px;
-}
-
-#custom-resize.disabled,
-#custom-move.disabled {
-    color: @muted;
-}
-
-#custom-resize.selected,
-#custom-move.selected {
-    color: @iris;
 }
 
 #workspaces {

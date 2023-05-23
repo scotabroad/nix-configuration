@@ -11,7 +11,6 @@ ONLY PUT THINGS IN HERE TO BE SHARED BY ALL THEMES.
 monitor=,preferred,auto,2
 exec-once=${pkgs.dbus}/bin/dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec-once=${pkgs.xorg.xprop}/bin/xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 2
-#exec-once={pkgs.hyprland-active}/bin/hyprland-active
 exec-once=hyprpaper &
 exec-once=waybar &
 exec-once=fcitx5 -r &

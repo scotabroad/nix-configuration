@@ -14,7 +14,6 @@
         modules-left = [
           "custom/close"
           "custom/search"
-          "custom/resize"
           "wlr/workspaces"
         ];
         modules-center = [ "clock" ];
@@ -115,13 +114,6 @@
           exec = "${pkgs.hyprland-close}/bin/hyprland-close";
           on-click = "hyprctl dispatch killactive";
           tooltip = false;
-        };
-
-        "custom/move" = {
-          format = "{}";
-          exec = "${pkgs.hyprland-move}/bin/hyprland-move";
-          return-type = "json";
-          tooltip = true;
         };
 
         "custom/power" = {
