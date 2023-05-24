@@ -1,7 +1,7 @@
 { fetchFromGitHub, stdenv }:
 
 stdenv.mkDerivation rec {
-  pname = "fcitx5-dracula-theme";
+  pname = "fcitx5-dracula";
   version = "unstable";
 
   src = fetchFromGitHub {
@@ -12,9 +12,9 @@ stdenv.mkDerivation rec {
   };
 
   installPhase = ''
-    mkdir $out
-    cp -r * $out
+    mkdir -p $out/dracula
+    cp -r * $out/dracula
   '';
 
-  patches = [./fcitx5-dracula-theme.patch];
+  patches = [./fcitx5-dracula.patch];
 }

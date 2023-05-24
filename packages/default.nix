@@ -3,7 +3,8 @@
 [
   (final: prev: {
     custom-wallpapers = prev.callPackage ./custom-wallpapers.nix {};
-    fcitx5-dracula-theme = pkgs.callPackage ./fcitx5-dracula-theme.nix {};
+    fcitx5-dracula = pkgs.callPackage ./fcitx5-dracula.nix {};
+    fcitx5-nord = pkgs.callPackage ./fcitx5-nord.nix {};
     fcitx5-rose-pine = pkgs.callPackage ./fcitx5-rose-pine.nix {};
     framework-grub-theme = pkgs.callPackage ./framework-grub.nix {};
     nixos-grub-theme = prev.callPackage ./nixos-grub.nix {};
