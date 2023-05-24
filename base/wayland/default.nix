@@ -17,7 +17,7 @@ let
       -b 'Poweroff' 'systemctl poweroff' \
       -b 'Reboot' 'systemctl reboot'
 
-    exec "${config.programs.regreet.package}/bin/regreet -l debug; swaymsg exit"
+    exec "${config.programs.regreet.package}/bin/regreet; swaymsg exit"
   '';
 in {
   programs.regreet = {
@@ -28,7 +28,8 @@ in {
   services = {
     greetd = {
       #enable = true;
-      settings.default_session.command =  "${config.programs.sway.package}/bin/sway --config ${greetdSwayConfig}";
+      #settings.default_session.command =  "${config.programs.sway.package}/bin/sway --config ${greetdSwayConfig}"; #Should only if sway is in defined via programs.sway.enable = true
+      settings.default_session.command =  "${lib.getExe pkgs.sway} --config ${greetdSwayConfig}";
     };
   };
 }

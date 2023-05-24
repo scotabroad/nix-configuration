@@ -33,6 +33,7 @@
     "browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.searchEngines" = "";
     #"browser.newtabpage.activity-stream.sectionOrder" = "topsites,topstories,highlights" #Only want topsites
     "browser.newtabpage.activity-stream.sectionOrder" = "topsites"; #Only want topsites
+    "browser.newtabpage.activity-stream.topSitesRows" = 0;
 
     #Disable Pocket
     "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;

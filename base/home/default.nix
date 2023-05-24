@@ -17,6 +17,7 @@
       # Personal
       discord
       element-desktop
+      epiphany
       gnome.aisleriot
       gnome.dconf-editor
       gnome.eog
