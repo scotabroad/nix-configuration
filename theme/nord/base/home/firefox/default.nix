@@ -56,10 +56,10 @@
 
     userContent = 
       builtins.readFile ./colors/dark.css
-      + builtins.readFile ./colors/light.css
-      + builtins.readFile ./pages/newtab.css
-      + builtins.readFile ./pages/privatebrowsing.css
-      + builtins.readFile ./parts/video-player.css;
+    + builtins.readFile ./colors/light.css
+    + builtins.readFile ./pages/newtab.css
+    + builtins.readFile ./pages/privatebrowsing.css
+    + builtins.readFile ./parts/video-player.css;
   };
   home.file.".mozilla/firefox/${name}/chrome/icons".source = ./icons;
 }

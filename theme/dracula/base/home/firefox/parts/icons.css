@@ -95,7 +95,7 @@ treechildren::-moz-tree-image(selected, focus, open),
 .item.client:focus .item-twisty-container,
 .sidebar-panel[lwt-sidebar-brighttext] .sidebar-placesTreechildren::-moz-tree-twisty,
 .sidebar-panel[lwt-sidebar-brighttext] .sidebar-placesTreechildren::-moz-tree-twisty(open) {
-	fill: #eceff4 !important;
+	fill: #f8f8f2 !important;
 }
 
 /* Fix flat buttons icons aproach */
@@ -275,12 +275,12 @@ button.close::before {
 }
 @media (prefers-color-scheme: light) {
 	.notificationbox-stack notification[type="critical"] .close-icon:not(.tab-close-button):not(:hover) {
-		fill: #eceff4 !important;
+		fill: #f8f8f2 !important;
 	}
 }
 @media (prefers-color-scheme: dark) {
 	.notificationbox-stack notification[type="warning"] .close-icon:not(.tab-close-button):not(:hover) image {
-		fill: rgb(46, 52, 64) !important;
+		fill: rgb(40, 42, 54) !important;
 	}
 }
 
