@@ -1,0 +1,72 @@
+/* Define Everforest Dark Hard Palette */
+/* Background */
+@define-color bg_dim #1e2326;
+@define-color bg0 #272e33;
+@define-color bg1 #2e383c;
+@define-color bg2 #374145;
+@define-color bg3 #414b50;
+@define-color bg4 #495156;
+@define-color bg5 #4f5b58;
+
+/* Foreground */
+@define-color default #d3c6aa;
+@define-color red #e67e80;
+@define-color orange #e69875;
+@define-color yellow #dbbc7f;
+@define-color green #a7c080;
+@define-color aqua #83c092;
+@define-color blue #7fbbb3;
+@define-color purlple #d699b6;
+@define-color grey0 #7a8478;
+@define-color grey1 #859289;
+@define-color grey2 #9da9a0;
+@define-color statusline1 #a7c080;
+@define-color statusline2 #d3c6aa;
+@define-color statusline3 #e67e80;
+
+
+window > scrolledwindow {
+  background-color: alpha(@bg0, 0.9);
+}
+
+#bar {
+    margin: 0 0px /* affects top/bottom & left/right alignment */
+}
+
+image {
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    color: @default;
+    text-shadow: none;
+}
+
+button {
+    background: none;
+    border-style: none;
+    border-radius: 10 10 10 10px;
+    box-shadow: none;
+    color: @default; /*button text and hover if hover not defined*/
+    text-shadow: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px;
+    -gtk-icon-shadow: none; /*has to be a color*/
+}
+
+button:hover {
+    background-color: alpha(@bg3, 0.6)
+}
+
+button:focus {
+    background-color: alpha(@bg3, 0.6);
+    box-shadow: 0 0 0 0px; /*right bottom blur border*/
+    outline: none;
+}
+
+grid {
+    /* e.g. for common background to all buttons */
+    background: alpha(@bg0, 0.9);
+    border: 1.5px solid @green;
+    border-radius: 15 15 15 15px;
+}

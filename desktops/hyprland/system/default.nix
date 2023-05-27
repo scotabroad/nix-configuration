@@ -36,6 +36,11 @@
   };
   
   services = {
+    #For Trash in Nautilus
+    gvfs = {
+      enable = true;
+      package = pkgs.gnome.gvfs;
+    };
     # Enable sound
     pipewire = {
       enable = true;

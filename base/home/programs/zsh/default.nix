@@ -37,6 +37,7 @@
       setopt no_global_rcs
     '';
     initExtra = ''
+      export PATH=$HOME/bin:$PATH
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
     '';
   };

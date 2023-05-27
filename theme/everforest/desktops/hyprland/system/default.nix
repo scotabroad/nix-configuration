@@ -1,0 +1,9 @@
+{ config, inputs, lib, pkgs, ... }:
+
+{
+  imports = [
+    ../../../../../desktops/hyprland/system
+    ../../../base/system
+    ../../../base/wayland
+  ];
+}

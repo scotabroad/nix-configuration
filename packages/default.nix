@@ -3,6 +3,8 @@
 [
   (final: prev: {
     custom-wallpapers = prev.callPackage ./custom-wallpapers.nix {};
+    everforest-gtk-theme = prev.callPackage ./everforest-gtk.nix {};
+    everforest-icon-theme = prev.callPackage ./everforest-icons.nix {};
     fcitx5-dracula = pkgs.callPackage ./fcitx5-dracula.nix {};
     fcitx5-nord = pkgs.callPackage ./fcitx5-nord.nix {};
     fcitx5-rose-pine = pkgs.callPackage ./fcitx5-rose-pine.nix {};
@@ -20,6 +22,7 @@
   # These more complex packages override packages or scopes
   # For now, they remain as individual overlays
   (import ./dracula-gedit.nix { inherit lib pkgs; })
+  (import ./everforest-gedit.nix { inherit lib pkgs; })
   (import ./nord-gedit.nix { inherit lib pkgs; })
   (import ./yuck-vim.nix { inherit pkgs; })
 ]

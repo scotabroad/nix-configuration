@@ -1,0 +1,199 @@
+/* Define Everforest Dark Hard Palette */
+/* Background */
+@define-color bg_dim #1e2326;
+@define-color bg0 #272e33;
+@define-color bg1 #2e383c;
+@define-color bg2 #374145;
+@define-color bg3 #414b50;
+@define-color bg4 #495156;
+@define-color bg5 #4f5b58;
+
+/* Foreground */
+@define-color default #d3c6aa;
+@define-color red #e67e80;
+@define-color orange #e69875;
+@define-color yellow #dbbc7f;
+@define-color green #a7c080;
+@define-color aqua #83c092;
+@define-color blue #7fbbb3;
+@define-color purlple #d699b6;
+@define-color grey0 #7a8478;
+@define-color grey1 #859289;
+@define-color grey2 #9da9a0;
+@define-color statusline1 #a7c080;
+@define-color statusline2 #d3c6aa;
+@define-color statusline3 #e67e80;
+
+
+* {
+    all: initial;
+    border: none;
+    border-radius: 0;
+    font-family: Ubuntu Nerd Font;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @default;
+}
+
+tooltip {
+    background: alpha(@bg2, 0.5);
+    border-radius: 10px 10px 10px 10px;
+    border: 1.5px solid @green;
+}
+
+tooltip label {
+    color: @default;
+    padding: 7.5px;
+}
+
+/* -- Modules -- */
+#custom-close,
+#custom-search,
+#workspaces,
+#window, 
+#clock, 
+#tray, 
+#cpu, 
+#memory, 
+#temperature,
+#pulseaudio, 
+#battery,
+#custom-power { 
+    color: @default;
+    background: alpha(@bg2, 0.9);
+    border: 1.5px solid @green;
+    padding: 0 10px;
+}
+
+/* -- Left Modules -- */
+
+#custom-close {
+    color: @red;
+    border-radius: 20px 20px 20px 20px;
+    margin-left: 10px;
+    min-height: 24px;
+    min-width: 16px;
+    padding: 0 5px;
+}
+
+#custom-search {
+    border-radius: 20px 0px 0px 20px;
+    border-right: 0px;
+    margin-left: 10px;
+}
+
+#workspaces {
+    padding: 0 0px;
+    border-radius: 0px 20px 20px 0px;
+    border-left: 0px;
+}
+
+#workspaces button {
+    min-height: 24px;
+    min-width: 16px;
+    padding: 0 5px;
+    border-radius: 20px 20px 20px 20px;
+    background: transparent;
+    color: @default;
+}
+
+#workspaces button.active {
+    background: @green;
+    color: @bg2;
+}
+
+#workspaces label {
+    color: @default;
+}
+
+#workspaces button.active label {
+    color: @bg2;
+}
+
+/* -- Center Modules -- */
+
+#clock {
+    border-radius: 20px;
+}
+
+/* -- Right Modules -- */
+
+#tray {
+    border-radius: 20px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+#tray menu,
+#tray menu menuitem:hover menu {
+    background: alpha(@bg0, 0.9);
+    border-radius: 10px 10px 10px 10px;
+    border: 1.5px solid @green;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+#tray menu menuitem,
+#tray menu menuitem:hover menu menuitem {
+    border-radius: 7.5px 7.5px 7.5px 7.5px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#tray menu menuitem:hover,
+#tray menu menuitem:hover menu menuitem:hover {
+    background: @green;
+}
+
+#tray menu label,
+#tray menu menuitem:hover menu label {
+    color: @default;
+    padding: 5px;
+}
+
+#tray menu menuitem:hover label,
+#tray menu menuitem:hover menu menuitem:hover label {
+    color: @bg0;
+}
+
+#cpu {
+    border-radius: 20px 0px 0px 20px;
+    border-right: 0px;
+}
+
+#memory, #temperature, #pulseaudio, #battery {
+    border-right: 0px;
+    border-left: 0px;
+}
+
+#temperature.critical {
+    color: @red;
+}
+
+#battery.charging {
+    color: @aqua;
+}
+
+#battery.threes:not(.charging) {
+    color: @red;
+}
+
+#battery.twos:not(.charging) {
+    color: @red;
+}
+
+#battery.ones:not(.charging) {
+    color: @red;
+}
+
+#custom-power {
+    border-radius: 0px 20px 20px 0px;
+    border-left: 0px;
+    margin-right: 10px;
+}
