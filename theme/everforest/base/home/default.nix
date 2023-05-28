@@ -58,8 +58,8 @@
     };
 
     cursorTheme = {
-      name = "Nordzy-cursors";
-      package = pkgs.nordzy-cursor-theme;
+      name = "Yaru";
+      package = pkgs.yaru-theme;
       size = 24;
     };
 
