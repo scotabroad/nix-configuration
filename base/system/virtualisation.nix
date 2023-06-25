@@ -2,6 +2,11 @@
 
 {
   virtualisation = {
+    #Docker
+    docker = {
+      enable = true;
+      storageDriver = "btrfs";
+    };
     #Virt-Manager
     libvirtd = {
       enable = true;
