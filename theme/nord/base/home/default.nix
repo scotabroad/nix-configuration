@@ -9,6 +9,7 @@
     ./kitty
     ./neovim
     ./qt5ct
+    ./qt6ct
   ];
   
   dconf.settings = {

@@ -36,7 +36,7 @@
       zafiro-icons
     ];
     variables = {
-      QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct";
+      QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct"; #can only be qt5ct or qt6ct, but NOT both. qt6ct can use either, but qt5ct needs qt5ct 
     };
   };
 
