@@ -3,9 +3,11 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 /* Icons color */
-.toolbarbutton-icon,
+.toolbarbutton-icon:not([class*="identity-color-"] .toolbarbutton-icon),
 menuitem:not([class*='identity']) .menu-iconic-left .menu-iconic-icon,
 .urlbar-page-action:not([readeractive]),
+.urlbar-icon,
+#blocked-permissions-container > .blocked-permission-icon,
 .button-icon:not(#hack),
 .bookmark-item[container],
 .notification-anchor-icon,
@@ -44,6 +46,7 @@ button.close::before,
 #permissions-granted-icon,
 #downloads-indicator-icon,
 .textbox-search-clear,
+.urlbarView-type-icon,
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-close .toolbarbutton-icon,
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-max .toolbarbutton-icon,
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon,
@@ -58,7 +61,7 @@ button.close::before,
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-restore .toolbarbutton-icon:-moz-window-inactive,
 :root[tabsintitlebar] #titlebar .titlebar-buttonbox .titlebar-min .toolbarbutton-icon:-moz-window-inactive,
 :root[tabsintitlebar][inFullscreen] #window-controls #restore-button .toolbarbutton-icon {
-	fill: var(--gnome-inactive-toolbar-icon-fill) !important;
+	fill-opacity: 0.5 !important;
 }
 
 /* Dimmed icons */
@@ -74,7 +77,8 @@ button.close::before,
 
 /* Fix icons sizes */
 .permission-popup-permission-remove-button > .button-box > .button-icon,
-.menu-iconic-icon {
+.menu-iconic-icon,
+link[href="chrome://global/skin/dropmarker.css"] + image {
 	height: 16px !important;
 	width: 16px !important;
 }
@@ -134,7 +138,7 @@ arrowscrollbox[orient="horizontal"] {
 .widget-overflow-list .subviewbutton-nav::after,
 .PanelUI-subView .subviewbutton-nav::after,
 .protections-popup-category::after,
-.subviewbutton-back,
+.subviewbutton-back .toolbarbutton-icon,
 .menu-right {
 	fill-opacity: 1 !important;
 	opacity: .3;
@@ -185,10 +189,7 @@ arrowscrollbox[orient="horizontal"] {
 
 /* Arrow up buttons */
 .expander-up > .button-box {
-	-moz-appearance: none !important;
 	list-style-image: url("./icons/pan-up-symbolic.svg") !important;
-	width: 16px !important;
-	height: 16px !important;
 }
 
 /* Search entries */
@@ -257,10 +258,15 @@ menuitem[type="radio"][checked="true"] {
 }
 menuitem[type="radio"] .menu-iconic-icon {
 	border-radius: 100%;
-	border: 1px solid var(--gnome-inactive-toolbar-icon-fill);
+	border: 1px solid var(--gnome-toolbar-icon-fill);
 }
 menuitem[type="radio"][disabled="true"] .menu-iconic-icon {
 	opacity: 0.5;
+}
+
+/* Dropmarker */
+link[href="chrome://global/skin/dropmarker.css"] + image {
+	 list-style-image: url("./icons/pan-down-symbolic.svg") !important;
 }
 
 /* Close button */
@@ -361,7 +367,7 @@ button.close::before {
 }
 /* Preferences button */
 #preferences-button,
-.search-setting-button-compact > .button-box > .button-icon,
+.search-setting-button > .button-box > .button-icon,
 .unified-extensions-item-menu-button.subviewbutton {
 	list-style-image: url("./icons/settings-symbolic.svg") !important;
 }
@@ -389,7 +395,7 @@ button.close::before {
 }
 /* Developer button */
 #developer-button {
-	list-style-image: url("./icons/applications-engineering-symbolic.svg") !important;
+	list-style-image: url("./icons/build-configure-symbolic.svg") !important;
 }
 /* Email link button */
 #email-link-button {
@@ -432,13 +438,42 @@ button.close::before {
 #star-button[starred] {
 	fill: var(--gnome-toolbar-star-button) !important;
 }
-
+/* Privacy */
+#print-button {
+	list-style-image: url("./icons/printer-symbolic.svg") !important;
+}
+/* Picture-in-picture */
+#picture-in-picture-button > .urlbar-icon {
+	list-style-image: url("./icons/pip-in-symbolic.svg") !important;
+}
+#picture-in-picture-button[pipactive] > .urlbar-icon {
+	list-style-image: url("./icons/pip-out-symbolic.svg") !important;
+}
+/* Read mode */
+#reader-mode-button > .urlbar-icon {
+	list-style-image: url("./icons/newspaper-symbolic.svg") !important;
+}
+#reader-mode-button[readeractive] > .urlbar-icon {
+	fill: var(--gnome-accent) !important;
+}
+/* Blocked media */
+.autoplay-media-icon.blocked-permission-icon {
+	list-style-image: url("./icons/play-large-disabled-symbolic.svg") !important;
+}
+/* DRM */
+.drm-icon {
+	list-style-image: url("./icons/chain-link-symbolic.svg") !important;
+}
 /* History button */
 #history-panelmenu,
 #sidebar-box[sidebarcommand="viewHistorySidebar"] > #sidebar-header > #sidebar-switcher-target > #sidebar-icon,
 .urlbarView-row[source="history"] > .urlbarView-row-inner > .urlbarView-no-wrap > .urlbarView-favicon,
 #urlbar-engine-one-off-item-history {
 	list-style-image: url("./icons/preferences-system-time-symbolic.svg") !important;
+}
+/* Forget history */
+#panic-button {
+	list-style-image: url("./icons/history-undo-symbolic.svg") !important;
 }
 /* All tabs button */
 #alltabs-button {

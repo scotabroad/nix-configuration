@@ -13,7 +13,7 @@
 	background: none !important;
 }
 
-#nav-bar, #PersonalToolbar, #toolbar-menubar, #TabsToolbar, findbar {
+#PersonalToolbar, #toolbar-menubar, #TabsToolbar, findbar {
 	appearance: none !important;
 	border: 0 !important;
 	background: var(--gnome-toolbar-background) !important;
@@ -30,8 +30,7 @@ findbar {
 #TabsToolbar:-moz-window-inactive, 
 findbar:-moz-window-inactive,
 .container.infobar:-moz-window-inactive {
-	background: var(--gnome-inactive-toolbar-background) !important;
-	border-color: var(--gnome-inactive-toolbar-border-color) !important;
+	transition: background .2s ease-out;
 }
 
 #navigator-toolbox:-moz-window-inactive label,
@@ -144,6 +143,11 @@ findbar:-moz-window-inactive description,
 /* Text link */
 .text-link {
 	color: var(--gnome-accent) !important;
+}
+
+/* Selection*/
+*::-moz-selection {
+	background-color: var(--gnome-selection-bg) !important;
 }
 
 /* OPTIONAL: Hide WebRTC indicator */

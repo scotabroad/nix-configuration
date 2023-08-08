@@ -49,6 +49,7 @@
 	toolbar .toolbarbutton-1 > .toolbarbutton-icon {
 		width: 16px !important;
 		height: 16px !important;
+		padding: 0 !important;
 	}
 
 	/* Navbar icons */
@@ -69,7 +70,9 @@
 		list-style-image: url("moz-icon://stock/open-menu-symbolic?size=dialog") !important;
 	}
 	/* New tab button */
-	#new-tab-button .toolbarbutton-icon {
+	#new-tab-button .toolbarbutton-icon,
+	#tabs-newtab-button  .toolbarbutton-icon,
+	#TabsToolbar #new-tab-button .toolbarbutton-icon {
 		filter: var(--gnome-icons-hack-filter);
 		list-style-image: url("moz-icon://stock/tab-new-symbolic?size=dialog") !important;
 	}
