@@ -17,7 +17,7 @@
           enable = true;
           packages = with pkgs; [ 
             OVMFFull.fd
-            pkgsCross.aarch64-multiplatform.OVMF.fd
+            #pkgsCross.aarch64-multiplatform.OVMF.fd broken for now
           ];
         };
       };

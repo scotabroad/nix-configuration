@@ -47,7 +47,7 @@
   };
 
   fonts = {
-    fonts = with pkgs; [
+    packages = with pkgs; [
       terminus_font
       nerdfonts
       ubuntu_font_family
