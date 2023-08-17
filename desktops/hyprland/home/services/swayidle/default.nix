@@ -28,6 +28,6 @@ in {
         command = suspendScript.outPath;
       }
     ];
-    systemdTarget = "hyprland-session.target";
+    systemdTarget = "graphical-session.target";
   };
 }
