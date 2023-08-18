@@ -14,12 +14,12 @@ exec-once = ${pkgs.xorg.xprop}/bin/xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 
 exec-once = hyprpaper & waybar & fcitx5 -r & nm-applet --indicator
 
 input {
-    kb_file  = 
+    kb_file = 
     kb_layout = us
-    kb_variant  = 
-    kb_model  = 
-    kb_options  = 
-    kb_rules  = 
+    kb_variant = 
+    kb_model = 
+    kb_options = 
+    kb_rules = 
 
     follow_mouse = 1
 

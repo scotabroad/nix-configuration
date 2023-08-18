@@ -1,23 +1,11 @@
 { config, inputs, pkgs, lib, ... }:
 
 let
-  greetdSwayConfig = pkgs.writeText "greetd-sway-config" ''
-    exec "dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP"
-    input "type:touchpad" {
-      tap enabled
-    }
-
-    xwayland disable
-
-    bindsym XF86MonBrightnessUp exec light -A 5
-    bindsym XF86MonBrightnessDown exec light -U 5
-    bindsym Mod4+shift+e exec swaynag \
-      -t warning \
-      -m 'What do you want to do?' \
-      -b 'Poweroff' 'systemctl poweroff' \
-      -b 'Reboot' 'systemctl reboot'
-
-    exec "${config.programs.regreet.package}/bin/regreet; swaymsg exit"
+  #Note: the usage of wlr-randr is specific to the 13" Framework laptop... fix to make more generic
+  greetdCageScript = pkgs.writeScriptBin "greetd-cage-script" ''
+    dbus-update-activation-environment --systemd WAYLAND_DISPLAY WAYLAND_SOCK XDG_CURRENT_DESKTOP
+    ${pkgs.wlr-randr}/bin/wlr-randr --output eDP-1 --mode 2256x1504@59.999001Hz --scale 2.000000
+    ${config.programs.regreet.package}/bin/regreet
   '';
 in {
   programs.regreet = {
@@ -28,8 +16,7 @@ in {
   services = {
     greetd = {
       #enable = true;
-      #settings.default_session.command =  "${config.programs.sway.package}/bin/sway --config ${greetdSwayConfig}"; #Should only if sway is in defined via programs.sway.enable = true
-      settings.default_session.command =  "${lib.getExe pkgs.sway} --config ${greetdSwayConfig}";
+      settings.default_session.command =  "${lib.getExe pkgs.cage} -s -- sh -c ${greetdCageScript}/bin/greetd-cage-script";
     };
   };
 }
