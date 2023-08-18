@@ -1745,7 +1745,7 @@ function prompt_my_cpu_temp() {
   #		     $(</sys/class/thermal/thermal_zone6/temp)) / 7000"
   integer cpu_temp="($(</sys/class/thermal/thermal_zone1/temp)) / 1000" 
   if (( cpu_temp >= 80 )); then
-    p10k segment -s HOT  -f red    -t "${cpu_temp}"$'\uE339' -i $'\uF737'
+    p10k segment -s HOT  -f red    -t "${cpu_temp}"$'\uE339' -i $'󰈸'
   elif (( cpu_temp >= 70 )); then
     p10k segment -s DANGER -f '#d08770' -t "${cpu_temp}"$'\uE339' -i $'\uE350'
   elif (( cpu_temp >= 60 )); then
