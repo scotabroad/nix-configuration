@@ -8,7 +8,7 @@
   imports = [
     ./boot/efi.nix
     ./hardware-configuration.nix
-    ./programs/steam.nix
+    ./programs
     ./users
     ./virtualisation.nix
   ];
@@ -27,10 +27,11 @@
       curl
       firefox
       git
+      htop
       killall
+      unzip
       wget
       which
-      unzip
       zip
     ];
   };

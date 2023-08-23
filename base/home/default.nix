@@ -23,6 +23,9 @@
       gnome.eog
       gnome.evince
       gnome.gedit
+      gnome.gnome-calculator
+      gnome.nautilus
+      gnome.gnome-system-monitor
       libreoffice
       octaveFull
       qpwgraph

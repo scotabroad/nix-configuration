@@ -69,7 +69,7 @@
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system pkgs;
         modules = [
-          ./theme/everforest/desktops/hyprland/system/default.nix
+          ./theme/everforest/desktops/wayland/system.nix
           hyprland.nixosModules.default
           nixos-hardware.nixosModules.framework
           home-manager.nixosModules.home-manager
@@ -83,7 +83,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users.${name} = {
-                imports = [ ./theme/everforest/desktops/hyprland/home/default.nix ];
+                imports = [ ./theme/everforest/desktops/wayland/home.nix ];
                 _module.args = { inherit fullName email uid; };
               };   
             };
