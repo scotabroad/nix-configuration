@@ -1,0 +1,85 @@
+/* Define Dracula Palette */
+@define-color background #282a36;
+@define-color current-line #44475a;
+@define-color foreground #f8f8f2;
+@define-color comment #6272a4;
+@define-color cyan #8be9fd;
+@define-color green #50fa7b;
+@define-color orange #ffb86c;
+@define-color pink #ff79c6;
+@define-color purple #bd93f9;
+@define-color red #ff5555;
+@define-color yellow #f1fa8c;
+
+
+window > box {
+    background-color: alpha(@background, 0.9);
+}
+
+window > box > scrolledwindow > overshoot,
+window > box > scrolledwindow > undershoot {
+    /*Default Value:*/
+    /*background-image: -gtk-gradient (radial, center top, 0, ce        nter top, 0.5, to (rgb(182,174,165)), to (rgba(182,174,165,0    )))     , -gtk-gradient (radial, center top, 0, center top, 0.6,     from (r    gba(46,52,54,0.07)), to (rgba(46,52,54,0)));*/
+    background-image: none;
+}
+
+button, label, image { /*button = ?
+	                *label = labels for buttons
+			*image = search bar icon*/
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    color: @foreground; /*button color only affect button focus, unless button focus has its own value*/
+}
+
+button {
+    /*padding and margin can affect custom column count*/
+    padding: 3px; /*space around buttons*/
+    margin: 0px;  /*space between buttons*/
+    border-radius: 0px;
+    text-shadow: none;
+    color: @foreground;
+}
+
+button:hover {
+    background-color: alpha(@purple, 0.5);
+}
+
+button:focus { /*seems like annoying outlined box is from here*/
+    background-color: alpha(@purple, 0.5);
+    color: alpha(@purple, 0); /*affects box-shadow*/
+    box-shadow: 0 0 0 0px; /*right-border bottom-border shadow/blur all-border*/
+    outline: none;
+}
+
+/*This affect category buttons, could remove*/
+button:checked {
+    background-color: alpha(@purple, 0.9);
+}
+
+#searchbox {
+    background: alpha(@current-line, 0.75);
+    border: 1.5px solid @comment;
+    border-radius: 0px;
+    color: @foreground; /*text color*/
+    margin-top: 25px;
+    margin-bottom: 20px
+}
+
+#searchbox:focus {
+    /*Default
+     * box-shadow: 0 0 0 1px rgba(53,132,228,1);*/
+    box-shadow: 0 0 0 1px @comment
+}
+
+#separator {
+    background-color: @purple;
+    margin-left: 500px;
+    margin-right: 500px;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+#description {
+    margin-bottom: -100px /* -100 effectively disables this */
+}

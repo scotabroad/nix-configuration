@@ -1,0 +1,194 @@
+/* Define Rose Pine Palette */
+@define-color base #191724;
+@define-color surface #1f1d2e;
+@define-color overlay #26233a;
+@define-color muted #6e6a86;
+@define-color subtle #908caa;
+@define-color text #e0def4;
+@define-color love #eb6f92;
+@define-color gold #f6c177;
+@define-color rose #ebbcba;
+@define-color pine #31748f;
+@define-color foam #9ccfd8;
+@define-color iris #c4a7e7;
+@define-color highlight-low #21202e;
+@define-color highlight-med #403d52;
+@define-color highlight-high #524f67;
+
+
+* {
+    all: initial;
+    border: none;
+    border-radius: 0;
+    font-family: Ubuntu Nerd Font;
+    font-size: 13px;
+    min-height: 0;
+}
+
+label, box {
+    color: inherit;
+}
+
+window#waybar {
+    background: alpha(@overlay, 0.9);
+    border: 2px solid @iris;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    color: @text;
+}
+
+tooltip {
+    background: alpha(@overlay, 0.5);
+    border-radius: 0px 0px 0px 0px;
+    border: 1.5px solid @iris;
+}
+
+tooltip label {
+    color: @text;
+    padding: 7.5px;
+}
+
+/* -- Modules -- */
+#window,
+#custom-search,
+#tags,
+#layout, 
+#clock, 
+#tray, 
+#cpu, 
+#memory, 
+#temperature,
+#pulseaudio, 
+#battery,
+#custom-power { 
+    color: @text;
+    background: transparent;
+    border: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    padding: 0 10px;
+}
+
+/* -- Left Modules -- */
+
+#window {
+    color: @love;
+    border-radius: 0px 0px 0px 0px;
+    margin-left: 0px;
+    min-height: 24px;
+    min-width: 16px;
+    padding: 0 5px;
+}
+
+#custom-search {
+    border-radius: 0px 0px 0px 0px;
+    margin-left: 0px;
+}
+
+#tags {
+    padding: 0 0px;
+    border-radius: 0px 0px 0px 0px;
+    border-left: 0px;
+}
+
+#tags button {
+    min-height: 24px;
+    min-width: 16px;
+    padding: 0 5px;
+    border-radius: 0px 0px 0px 0px;
+    background: transparent;
+    color: @subtle;
+}
+
+#tags button.focused {
+    background: @iris;
+    color: @overlay;
+}
+
+#tags button.occupied:not(.focused) {
+    background: transparent;
+    color: @text;
+}
+
+/* -- Center Modules -- */
+
+#clock {
+    border-radius: 0px;
+}
+
+/* -- Right Modules -- */
+
+#tray {
+    border-radius: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+menu {
+    background: alpha(@base, 0.9);
+    border-radius: 0px 0px 0px 0px;
+    border: 1.5px solid @iris;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+menu menuitem {
+    border-radius: 0px 0px 0px 0px;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: @text;
+}
+
+menu menuitem:hover {
+    background: @iris;
+    color: @base;
+}
+
+menu menuitem box {
+    /*This is for Wi-Fi and stuff with icons*/
+    /*All boxes here contain an image and a label*/
+    background: inherit;
+    color: inherit;
+}
+
+menu menuitem label {
+    padding: 5px;
+}
+
+#cpu {
+    border-radius: 0px 0px 0px 0px;
+}
+
+#memory, #temperature, #pulseaudio, #battery {
+    border-right: 0px;
+    border-left: 0px;
+}
+
+#temperature.critical {
+    color: @love;
+}
+
+#battery.charging {
+    color: @pine;
+}
+
+#battery.threes:not(.charging) {
+    color: @love;
+}
+
+#battery.twos:not(.charging) {
+    color: @love;
+}
+
+#battery.ones:not(.charging) {
+    color: @love;
+}
+
+#custom-power {
+    border-radius: 0px 0px 0px 0px;
+    margin-right: 0px;
+}

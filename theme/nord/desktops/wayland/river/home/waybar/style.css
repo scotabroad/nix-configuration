@@ -1,0 +1,205 @@
+/* Define Nord Palette */
+/* Polar Night */
+@define-color nord0 #2e3440;
+@define-color nord1 #3b4252;
+@define-color nord2 #434c5e;
+@define-color nord3 #4c566a;
+
+/* Snow Storm */
+@define-color nord4 #d8dee9;
+@define-color nord5 #e5e9f0;
+@define-color nord6 #eceff4;
+
+/* Frost */
+@define-color nord7  #8fbcbb;
+@define-color nord8  #88c0d0;
+@define-color nord9  #81a1c1;
+@define-color nord10 #5e81ac;
+
+/* Aurora */
+@define-color nord11 #bf616a; /* Red */
+@define-color nord12 #d08770; /* Orange */
+@define-color nord13 #ebcb8b; /* Yellow */
+@define-color nord14 #a3be8c; /* Green */
+@define-color nord15 #b48ead; /* Magenta */
+
+/* Extra */
+@define-color nord16 #1d2128; /* a darker nord0 */
+
+
+* {
+    all: initial;
+    border: none;
+    border-radius: 0;
+    font-family: Ubuntu Nerd Font;
+    font-size: 13px;
+    min-height: 0;
+}
+
+label, box {
+    color: inherit;
+}
+
+window#waybar {
+    background: alpha(@nord1, 0.9);
+    border: 2px solid @nord7;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    color: @nord4;
+}
+
+tooltip {
+    background: alpha(@nord1, 0.5);
+    border-radius: 0px 0px 0px 0px;
+    border: 1.5px solid @nord7;
+}
+
+tooltip label {
+    color: @nord4;
+    padding: 7.5px;
+}
+
+/* -- Modules -- */
+#window,
+#custom-search,
+#tags,
+#layout, 
+#clock, 
+#tray, 
+#cpu, 
+#memory, 
+#temperature,
+#pulseaudio, 
+#battery,
+#custom-power { 
+    color: @nord4;
+    background: transparent;
+    border: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    padding: 0 10px;
+}
+
+/* -- Left Modules -- */
+
+#window {
+    color: @nord11;
+    border-radius: 0px 0px 0px 0px;
+    margin-left: 0px;
+    min-height: 24px;
+    min-width: 16px;
+    padding: 0 5px;
+}
+
+#custom-search {
+    border-radius: 0px 0px 0px 0px;
+    margin-left: 0px;
+}
+
+#tags {
+    padding: 0 0px;
+    border-radius: 0px 0px 0px 0px;
+    border-left: 0px;
+}
+
+#tags button {
+    min-height: 24px;
+    min-width: 16px;
+    padding: 0 5px;
+    border-radius: 0px 0px 0px 0px;
+    background: transparent;
+    color: @nord3;
+}
+
+#tags button.focused {
+    background: @nord7;
+    color: @nord1;
+}
+
+#tags button.occupied:not(.focused) {
+    background: transparent;
+    color: @nord4;
+}
+
+/* -- Center Modules -- */
+
+#clock {
+    border-radius: 0px;
+}
+
+/* -- Right Modules -- */
+
+#tray {
+    border-radius: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+menu {
+    background: alpha(@nord0, 0.9);
+    border-radius: 0px 0px 0px 0px;
+    border: 1.5px solid @nord7;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+menu menuitem {
+    border-radius: 0px 0px 0px 0px;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: @nord4;
+}
+
+menu menuitem:hover {
+    background: @nord7;
+    color: @nord0;
+}
+
+menu menuitem box {
+    /*This is for Wi-Fi and stuff with icons*/
+    /*All boxes here contain an image and a label*/
+    background: inherit;
+    color: inherit;
+}
+
+menu menuitem label {
+    padding: 5px;
+}
+
+#cpu {
+    border-radius: 0px 0px 0px 0px;
+}
+
+#memory, #temperature, #pulseaudio, #battery {
+    border-right: 0px;
+    border-left: 0px;
+}
+
+#temperature.critical {
+    color: @nord11;
+}
+
+#battery.charging {
+    color: @nord14;
+}
+
+#battery.threes:not(.charging) {
+    color: @nord11;
+}
+
+#battery.twos:not(.charging) {
+    color: @nord11;
+}
+
+#battery.ones:not(.charging) {
+    color: @nord11;
+}
+
+#custom-power {
+    border-radius: 0px 0px 0px 0px;
+    margin-right: 0px;
+}

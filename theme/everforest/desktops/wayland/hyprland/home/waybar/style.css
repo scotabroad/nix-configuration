@@ -16,7 +16,7 @@
 @define-color green #a7c080;
 @define-color aqua #83c092;
 @define-color blue #7fbbb3;
-@define-color purlple #d699b6;
+@define-color purple #d699b6;
 @define-color grey0 #7a8478;
 @define-color grey1 #859289;
 @define-color grey2 #9da9a0;
@@ -32,6 +32,10 @@
     font-family: Ubuntu Nerd Font;
     font-size: 13px;
     min-height: 0;
+}
+
+label, box {
+    color: inherit;
 }
 
 window#waybar {
@@ -106,14 +110,6 @@ tooltip label {
     color: @bg2;
 }
 
-#workspaces label {
-    color: @default;
-}
-
-#workspaces button.active label {
-    color: @bg2;
-}
-
 /* -- Center Modules -- */
 
 #clock {
@@ -128,8 +124,7 @@ tooltip label {
     margin-left: 15px;
 }
 
-#tray menu,
-#tray menu menuitem:hover menu {
+menu {
     background: alpha(@bg0, 0.9);
     border-radius: 10px 10px 10px 10px;
     border: 1.5px solid @green;
@@ -139,27 +134,27 @@ tooltip label {
     padding-bottom: 3px;
 }
 
-#tray menu menuitem,
-#tray menu menuitem:hover menu menuitem {
+menu menuitem {
     border-radius: 7.5px 7.5px 7.5px 7.5px;
     padding-left: 25px;
     padding-right: 25px;
-}
-
-#tray menu menuitem:hover,
-#tray menu menuitem:hover menu menuitem:hover {
-    background: @green;
-}
-
-#tray menu label,
-#tray menu menuitem:hover menu label {
     color: @default;
-    padding: 5px;
 }
 
-#tray menu menuitem:hover label,
-#tray menu menuitem:hover menu menuitem:hover label {
+menu menuitem:hover {
+    background: @green;
     color: @bg0;
+}
+
+menu menuitem box {
+    /*This is for Wi-Fi and stuff with icons*/
+    /*All boxes here contain an image and a label*/
+    background: inherit;
+    color: inherit;
+}
+
+menu menuitem label {
+    padding: 5px;
 }
 
 #cpu {

@@ -11,11 +11,11 @@ final: prev: {
         libpulseaudio
         libvorbis
         stdenv.cc.cc.lib
-        xorg.libXcursor
-        xorg.libXi
-        xorg.libXinerama
-        xorg.libXScrnSaver
+        #xorg.libXcursor
+        #xorg.libXi
+        #xorg.libXinerama
+        #xorg.libXScrnSaver
       ];
-    extraProfile = "export GDK_SCALE=2";
+    #extraProfile = "export GDK_SCALE=2";
   };
 }

@@ -108,20 +108,20 @@
 
         "custom/close": {
           "format": "{}",
-          "exec": "/nix/store/4ff6w6iayr37407y176klwvcicqbxia2-hyprland-close/bin/hyprland-close",
+          "exec": "${pkgs.hyprland-close}/bin/hyprland-close",
           "on-click": "hyprctl dispatch killactive",
           "tooltip": false
         },
 
         "custom/power": {
           "format": "  ",
-          "on-click": "pkill nwgbar || nwgbar -o 0 -layer-shell-exclusive-zone -1",
+          "on-click": "pkill nwgbar || nwgbar -c $HOME/.config/nwg-launchers/nwgbar/hyprland.css -t $HOME/.config/nwg-launchers/nwgbar/hyprland.json -o 0 -layer-shell-exclusive-zone -1",
           "tooltip": false
         },
 
         "custom/search": {
           "format": "   Applications",
-          "on-click": "pkill nwggrid || nwggrid -o -0 -layer-shell-exclusive-zone -1",
+          "on-click": "pkill nwggrid || nwggrid -c $HOME/.config/nwg-launchers/nwggrid/hyprland.css -o -0 -layer-shell-exclusive-zone -1",
           "tooltip": false
         }
       }

@@ -88,13 +88,8 @@ xwayland {
 #toolkit-specific scale
 env = GDK_SCALE, 2
 env = XCURSOR_SIZE, 24
-env = CLUTTER_BACKEND, wayland
-env = GDK_BACKEND, wayland,x11 #wayland,x11
-env = GDK_PIXBUF_MODULE_FILE, ${pkgs.librsvg}/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
 env = QT_AUTO_SCREEN_SCALE_FACTOR, 1
-env = QT_QPA_PLATFORM, wayland;xcb
 env = QT_WAYLAND_DISABLE_WINDOWDECORATION, 1
-env = SDL_VIDEODRIVER, wayland #disable or set to x11 for older games with older SDL version
 
 $mod1 = SUPER
 
@@ -116,12 +111,12 @@ bind = CTRL_ALT, T, exec, kitty
 bind = CTRL_SHIFT, escape, exec, gnome-system-monitor
 bind = ALT, Print, exec, grim -g "$(slurp)" #screenshot tool
 bind = , Print, exec, grim #screenshot tool
-bind = $mod1, R, exec, pkill nwggrid || nwggrid -o 0 -layer-shell-exclusive-zone -1
+bind = $mod1, R, exec, pkill nwggrid || nwggrid -c $HOME/.config/nwg-launchers/nwggrid/hyprland.css -o 0 -layer-shell-exclusive-zone -1
 
 # management
 bind = CTRL, Q, killactive, 
-bind = $mod1, Q, exec, pkill nwgbar || nwgbar -o 0 -layer-shell-exclusive-zone -1
-bind = CTRL_ALT, Delete, exec, pkill nwgbar || nwgbar -o 0 -layer-shell-exclusive-zone -1
+bind = $mod1, Q, exec, pkill nwgbar || nwgbar -c $HOME/.config/nwg-launchers/nwgbar/hyprland.css -t $HOME/.config/nwg-launchers/nwgbar/hyprland.json -o 0 -layer-shell-exclusive-zone -1
+bind = CTRL_ALT, Delete, exec, pkill nwgbar || nwgbar -c $HOME/.config/nwg-launchers/nwgbar/hyprland.css -t $HOME/.config/nwg-launchers/nwgbar/hyprland.json -o 0 -layer-shell-exclusive-zone -1
 bind = $mod1, L, exec, swaylock -f
 
 # audio

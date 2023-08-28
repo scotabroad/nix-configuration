@@ -1,5 +1,5 @@
 { config, inputs, pkgs, ... }:
 
 {
-  home.file.".config/nwg-launchers/nwggrid/style.css".source = ./style.css;
+  home.file.".config/nwg-launchers/nwggrid/hyprland.css".source = ./style.css;
 }

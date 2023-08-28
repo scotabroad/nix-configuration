@@ -14,17 +14,21 @@ in {
     enable = true;
     events = [
       {
-        event = "before-sleep";
+        event = "before-sleep"; #will run before systemd puts the system to sleep
         command = "${pkgs.systemd}/bin/loginctl lock-session";
       }
       {
-        event = "lock";
+        event = "lock"; #when logind says session should be locked
         command = "${pkgs.swaylock}/bin/swaylock -f";
       }
     ];
     timeouts = [
       {
         timeout = 300; #in seconds
+        command = "${pkgs.swaylock}/bin/swaylock -f"; 
+      }
+      {
+        timeout = 3600; #in seconds
         command = suspendScript.outPath;
       }
     ];

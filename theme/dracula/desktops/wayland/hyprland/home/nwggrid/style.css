@@ -61,7 +61,7 @@ button:checked {
     background: alpha(@current-line, 0.75);
     border-color: @comment;
     border-radius: 20px;
-    color: @foreground;
+    color: @foreground; /*text color*/
     margin-top: 25px;
     margin-bottom: 20px
 }

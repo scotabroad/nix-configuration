@@ -1,0 +1,63 @@
+/* Define Rose Pine Dawn Palette */
+@define-color base #faf4ed;
+@define-color surface #fffaf3;
+@define-color overlay #f2e9e1;
+@define-color muted #9893a5;
+@define-color subtle #797593;
+@define-color text #575279;
+@define-color love #b4637a;
+@define-color gold #ea9d34;
+@define-color rose #d7827e;
+@define-color pine #286983;
+@define-color foam #56949f;
+@define-color iris #907aa9;
+@define-color highlight-low #f4ede8;
+@define-color highlight-med #dfdad9;
+@define-color highlight-high #cecacd;
+
+
+window > scrolledwindow {
+    background-color: alpha(@base, 0.0)
+}
+
+#bar {
+    margin: 0 0px /* affects top/bottom & left/right alignment */
+}
+
+image {
+    background: none;
+    border-style: none;
+    box-shadow: none;
+    color: @text;
+    text-shadow: none;
+}
+
+button {
+    background: none;
+    border-style: none;
+    border-radius: 0 0 0 0px;
+    box-shadow: none;
+    color: @text; /*button text and hover if hover not defined*/
+    text-shadow: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px;
+    -gtk-icon-shadow: none; /*has to be a color*/
+}
+
+button:hover {
+    background-color: alpha(@overlay, 0.8)
+}
+
+button:focus {
+    background-color: alpha(@overlay, 0.8);
+    box-shadow: 0 0 0 0px; /*right bottom blur border*/
+    outline: none;
+}
+
+grid {
+    /* e.g. for common background to all buttons */
+    background: alpha(@base, 0.75);
+    border: 2px solid @iris;
+    border-radius: 0 0 0 0px;
+}

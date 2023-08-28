@@ -21,6 +21,10 @@
     min-height: 0;
 }
 
+label, box {
+    color: inherit;
+}
+
 window#waybar {
     background: transparent;
     color: @foreground;
@@ -93,14 +97,6 @@ tooltip label {
     color: @background;
 }
 
-#workspaces label {
-    color: @foreground;
-}
-
-#workspaces button.active label {
-    color: @background;
-}
-
 /* -- Center Modules -- */
 
 #clock {
@@ -115,9 +111,8 @@ tooltip label {
     margin-left: 15px;
 }
 
-#tray menu,
-#tray menu menuitem:hover menu {
-    background: alpha(@background, 1);
+menu {
+    background: alpha(@background, 0.9);
     border-radius: 10px 10px 10px 10px;
     border: 1.5px solid @comment;
     padding-left: 3px;
@@ -126,27 +121,27 @@ tooltip label {
     padding-bottom: 3px;
 }
 
-#tray menu menuitem,
-#tray menu menuitem:hover menu menuitem {
+menu menuitem {
     border-radius: 7.5px 7.5px 7.5px 7.5px;
     padding-left: 25px;
     padding-right: 25px;
-}
-
-#tray menu menuitem:hover,
-#tray menu menuitem:hover menu menuitem:hover {
-    background: @purple;
-}
-
-#tray menu label,
-#tray menu menuitem:hover menu label {
     color: @foreground;
-    padding: 5px;
 }
 
-#tray menu menuitem:hover label,
-#tray menu menuitem:hover menu menuitem:hover label {
+menu menuitem:hover {
+    background: @purple;
     color: @background;
+}
+
+menu menuitem box {
+    /*This is for Wi-Fi and stuff with icons*/
+    /*All boxes here contain an image and a label*/
+    background: inherit;
+    color: inherit;
+}
+
+menu menuitem label {
+    padding: 5px;
 }
 
 #cpu {

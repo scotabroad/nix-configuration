@@ -3,7 +3,7 @@
 {
   imports = [
     ./hyprland/home
-    #./river/home
+    ./river/home
     #./sway/home
     ./shared/home
   ];
