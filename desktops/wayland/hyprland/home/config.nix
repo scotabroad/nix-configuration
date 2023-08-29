@@ -10,7 +10,6 @@ ONLY PUT THINGS IN HERE TO BE SHARED BY ALL THEMES.
 
 
 monitor = , highres, auto, 2
-exec-once = ${pkgs.dbus}/bin/dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec-once = hyprpaper &
 exec-once = ${pkgs.waybar-hyprland}/bin/waybar --config $HOME/.config/waybar/hyprland --style $HOME/.config/waybar/hyprland.css &
 exec-once = fcitx5 -r & nm-applet --indicator

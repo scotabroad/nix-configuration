@@ -3,6 +3,7 @@
 {
   imports = [
     ./programs
+    ./services
   ];
 
   home = {
