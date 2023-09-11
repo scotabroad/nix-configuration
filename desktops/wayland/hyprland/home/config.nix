@@ -11,7 +11,7 @@ ONLY PUT THINGS IN HERE TO BE SHARED BY ALL THEMES.
 
 monitor = , highres, auto, 2
 exec-once = hyprpaper &
-exec-once = ${pkgs.waybar-hyprland}/bin/waybar --config $HOME/.config/waybar/hyprland --style $HOME/.config/waybar/hyprland.css &
+exec-once = ${pkgs.waybar}/bin/waybar --config $HOME/.config/waybar/hyprland --style $HOME/.config/waybar/hyprland.css &
 exec-once = fcitx5 -r & nm-applet --indicator
 
 input {
@@ -146,11 +146,29 @@ bind = $mod1, left, workspace, -1
 bind = $mod1, right, workspace, +1
 bind = $mod1, up, togglespecialworkspace
 bind = $mod1, down, togglespecialworkspace
+bind = $mod1, 1, workspace, 1
+bind = $mod1, 2, workspace, 2
+bind = $mod1, 3, workspace, 3
+bind = $mod1, 4, workspace, 4
+bind = $mod1, 5, workspace, 5
+bind = $mod1, 6, workspace, 6
+bind = $mod1, 7, workspace, 7
+bind = $mod1, 8, workspace, 8
+bind = $mod1, 9, workspace, 9
 
 # move apps between workspaces
 bind = $mod1_ALT, left, movetoworkspace, -1
 bind = $mod1_ALT, right, movetoworkspace, +1
 bind = $mod1_ALT, up, movetoworkspace, special
 bind = $mod1_ALT, down, movetoworkspace, +0
+bind = $mod1_ALT, 1, movetoworkspace, 1
+bind = $mod1_ALT, 2, movetoworkspace, 2
+bind = $mod1_ALT, 3, movetoworkspace, 3
+bind = $mod1_ALT, 4, movetoworkspace, 4
+bind = $mod1_ALT, 5, movetoworkspace, 5
+bind = $mod1_ALT, 6, movetoworkspace, 6
+bind = $mod1_ALT, 7, movetoworkspace, 7
+bind = $mod1_ALT, 8, movetoworkspace, 8
+bind = $mod1_ALT, 9, movetoworkspace, 9
 '';
 }

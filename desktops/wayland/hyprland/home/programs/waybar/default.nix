@@ -11,7 +11,7 @@
         "modules-left": [
           "custom/close",
           "custom/search",
-          "wlr/workspaces"
+          "hyprland/workspaces"
         ],
         "modules-center": [ "clock" ],
         "modules-right": [
@@ -98,12 +98,10 @@
           "on-click": "true"
         },
 
-        "wlr/workspaces": {
-          "disable-scroll": true,
-          "sort-by-number": true,
+        "hyprland/workspaces": {
+          "all-outputs": true,
+          "sort-by": "number",
           "on-click": "activate",
-          "on-scroll-up": "hyprctl dispatch workspace e+1",
-          "on-scroll-down": "hyprctl dispatch workspace e-1"
         },
 
         "custom/close": {

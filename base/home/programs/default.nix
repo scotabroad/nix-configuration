@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./exa
+    ./eza
     ./firefox
     ./fzf
     ./git

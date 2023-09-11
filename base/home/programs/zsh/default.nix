@@ -38,6 +38,7 @@
     '';
     initExtra = ''
       export PATH=$HOME/bin:$PATH
+      unalias ls
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
     '';
   };

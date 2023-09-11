@@ -15,6 +15,7 @@ in {
   environment = {
     systemPackages = with pkgs; [
       cage
+      weston
       wlr-randr
     ];
     variables = {
@@ -22,9 +23,11 @@ in {
       GDK_BACKEND = "wayland,x11";
       GDK_PIXBUF_MODULE_FILE = "${pkgs.librsvg}/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache";
       QT_QPA_PLATFORM = "wayland;xcb";
-      SDL_VIDEODRIVER = "wayland"; #disable or set to x11 for older games with older SDL version
+      #SDL_VIDEODRIVER = "wayland"; #disable or set to x11 for older games with older SDL version
     };
   };
+
+  hardware.opengl.enable = true; #Sway and Weston need this
 
   programs.regreet = {
     enable = true;
