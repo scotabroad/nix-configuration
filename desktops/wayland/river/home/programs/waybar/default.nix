@@ -100,7 +100,8 @@
         },
 
         "river/layout": {
-          "on-click": "riverctl send-layout-cmd luatile 'toggle_layout()'"
+          "on-click": "riverctl send-layout-cmd luatile 'toggle_layout(1)'",
+          "on-click-right": "riverctl send-layout-cmd luatile 'toggle_layout(-1)'"
         },
 
         "river/tags": {
