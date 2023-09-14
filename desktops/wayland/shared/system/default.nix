@@ -22,7 +22,7 @@ in {
       CLUTTER_BACKEND = "wayland";
       GDK_BACKEND = "wayland,x11";
       GDK_PIXBUF_MODULE_FILE = "${pkgs.librsvg}/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache";
-      GDK_SCALE = "2";
+      #GDK_SCALE = "2"; #interferes with river... keep explicit in Hyprland
       QT_AUTO_SCREEN_SCALE_FACTOR = "1";
       QT_QPA_PLATFORM = "wayland;xcb";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";

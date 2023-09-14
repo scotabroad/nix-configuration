@@ -84,6 +84,9 @@ xwayland {
     force_zero_scaling = true
 }
 
+#toolkit-specific scale
+env = GDK_SCALE, 2
+
 $mod1 = SUPER
 
 # window rules
