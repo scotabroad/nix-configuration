@@ -12,7 +12,6 @@
       hyprpaper
       hyprpicker
       nwg-launchers
-      socat #for waybar-close
       waybar
     ];
   };

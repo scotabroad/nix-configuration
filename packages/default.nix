@@ -15,7 +15,7 @@
     rose-pine-icon-theme = prev.callPackage ./rose-pine-icons.nix {};
   })
   # For now, scripts will be packaged using the old format
-  (import ./hyprland-close { inherit pkgs; })
+  (import ./hyprland-close.nix { inherit pkgs; })
   (import ./lightdm-dpi-fix.nix { inherit pkgs; })
   (import ./trim-generations { inherit pkgs; })
   

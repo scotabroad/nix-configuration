@@ -1,0 +1,147 @@
+# This is the example configuration file for river.
+#
+# If you wish to edit this, you will probably want to copy it to
+# $XDG_CONFIG_HOME/river/init or $HOME/.config/river/init first.
+#
+# See the river(1), riverctl(1), and rivertile(1) man pages for complete
+# documentation.
+
+wlr-randr --output eDP-1 --scale 2.000000
+dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP && systemctl --user start river-session.target
+waybar --config $HOME/.config/waybar/river --style $HOME/.config/waybar/river.css &
+fcitx5 -r &
+nm-applet --indicator &
+
+## INPUT ##
+#Make window focus follow cursor
+riverctl focus-follows-cursor normal
+#Touchpad things
+for pad in $(riverctl list-inputs | grep -i touchpad)
+do
+	riverctl input $pad events enabled
+	riverctl input $pad tap enabled
+	riverctl input $pad click-method clickfinger
+	riverctl input $pad natural-scroll enabled
+done
+# Set keyboard repeat rate
+riverctl set-repeat 50 300
+
+## LAYOUT ##
+# Set the default layout generator to be river-luatile and start it.
+# River will send the process group of the init executable SIGTERM on exit.
+riverctl default-layout luatile
+exec river-luatile &
+#Make sure windows enter the stack correctly
+riverctl attach-mode bottom
+
+# window rules
+# Make all views with an app-id that starts with "float" and title "foo" start floating.
+riverctl rule-add float -app-id 'float*' -title 'foo'
+# Make all views with app-id "bar" and any title use client-side decorations
+riverctl rule-add csd -app-id "bar"
+
+# Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
+
+# some nice mouse binds
+riverctl map-pointer normal Super BTN_LEFT move-view
+riverctl map-pointer normal Super BTN_RIGHT resize-view
+riverctl map-pointer normal Super BTN_MIDDLE toggle-float
+
+# open apps
+riverctl map normal Control+Alt T spawn kitty
+riverctl map normal Super R spawn "pkill nwggrid || nwggrid -c $HOME/.config/nwg-launchers/nwggrid/river.css -o -0 -layer-shell-exclusive-zone -1"
+riverctl map normal None Print spawn 'grim'
+# riverctl map normal Alt Print spawn 'grim -g $(slurp)' Invalid geometry
+
+# management
+riverctl map normal Control Q close
+riverctl map normal Super E spawn "pkill river-luatile; pkill waybar; $HOME/.config/river/init"
+riverctl map normal Super Q spawn "pkill nwgbar || nwgbar -c $HOME/.config/nwg-launchers/nwgbar/river.css -t $HOME/.config/nwg-launchers/nwgbar/river.json -o 0 -layer-shell-exclusive-zone -1"
+riverctl map normal Control+Alt Delete spawn "pkill nwgbar || nwgbar -c $HOME/.config/nwg-launchers/nwgbar/river.css -t $HOME/.config/nwg-launchers/nwgbar/river.json -o 0 -layer-shell-exclusive-zone -1"
+riverctl map normal Super L spawn "swaylock -f"
+
+# Declare a passthrough mode. This mode has only a single mapping to return to
+# normal mode. This makes it useful for testing a nested wayland compositor
+riverctl declare-mode passthrough
+riverctl map normal Super F11 enter-mode passthrough
+riverctl map passthrough Super F11 enter-mode normal
+
+# Various media key mapping examples for both normal and locked mode which do
+# not have a modifier
+for mode in normal locked
+do
+    # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
+    riverctl map $mode None XF86AudioRaiseVolume  spawn 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+'
+    riverctl map $mode None XF86AudioLowerVolume  spawn 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-'
+    riverctl map $mode None XF86AudioMute         spawn 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'
+
+    # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
+    riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
+    riverctl map $mode None XF86AudioPlay  spawn 'playerctl play-pause'
+    riverctl map $mode None XF86AudioPrev  spawn 'playerctl previous'
+    riverctl map $mode None XF86AudioNext  spawn 'playerctl next'
+
+    # Control screen backlight brightness with light (https://github.com/haikarainen/light)
+    riverctl map $mode None XF86MonBrightnessUp   spawn 'light -A 5'
+    riverctl map $mode None XF86MonBrightnessDown spawn 'light -U 5'
+
+done
+
+# switch window mode
+riverctl map normal Super V toggle-float
+# can river make ALL windows on a tag float?
+riverctl map normal Super F toggle-fullscreen
+
+# switch between apps
+riverctl map normal Super Tab focus-view next
+riverctl map normal Super+Shift Tab focus-view previous
+riverctl map normal Super Down focus-view next
+riverctl map normal Super Up focus-view previous
+riverctl map normal Super+Shift Down swap next
+riverctl map normal Super+Shift Up swap previous
+
+# switch between outputs/monitors
+riverctl map normal Super Period focus-output next
+riverctl map normal Super Comma focus-output previous
+riverctl map normal Super+Shift Period send-to-output next
+riverctl map normal Super+Shift Comma send-to-output previous
+
+# adjust the ratio on current tag for certain layouts
+riverctl map normal Super Left send-layout-cmd luatile "inc_ratio(-0.05)"
+riverctl map normal Super Right send-layout-cmd luatile "inc_ratio(0.05)"
+
+# adjust the number of windows in master pane for certain layouts
+riverctl map normal Super+Shift Left send-layout-cmd luatile "inc_nmaster(1)"
+riverctl map normal Super+Shift Right send-layout-cmd luatile "inc_nmaster(-1)"
+
+# other commands affecting layouts
+riverctl map normal Super G send-layout-cmd luatile "toggle_gaps()"
+riverctl map normal Super T send-layout-cmd luatile "toggle_ratio()"
+riverctl map normal Super Space send-layout-cmd luatile "toggle_layout(1)"
+riverctl map normal Super+Shift Space send-layout-cmd luatile "toggle_layout(-1)"
+
+for i in $(seq 1 9)
+do
+    tags=$((1 << ($i - 1)))
+
+    # Super+[1-9] to focus tag [0-8] ... Move workspaces
+    riverctl map normal Super $i set-focused-tags $tags
+
+    # Super+Alt+[1-9] to tag focused view with tag [0-8] ... Move app to workspace
+    riverctl map normal Super+Alt $i set-view-tags $tags
+
+    # Super+Shift+[1-9] to toggle focus of tag [0-8] ... Toggle workspace visibility
+    riverctl map normal Super+Shift $i toggle-focused-tags $tags
+
+    # Super+Shift+Alt+[1-9] to toggle tag [0-8] of focused view ... add app to workspace
+    riverctl map normal Super+Shift+Alt $i toggle-view-tags $tags
+done
+
+# Super+0 to focus all tags
+# Super+Alt+0 to tag focused view with all tags
+all_tags=$(((1 << 32) - 1))
+riverctl map normal Super 0 set-focused-tags $all_tags
+riverctl map normal Super+Alt 0 set-view-tags $all_tags
+
+# Set background and border color
+sh $HOME/.config/river/theme &

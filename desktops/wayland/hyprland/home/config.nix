@@ -84,12 +84,6 @@ xwayland {
     force_zero_scaling = true
 }
 
-#toolkit-specific scale
-env = GDK_SCALE, 2
-env = XCURSOR_SIZE, 24
-env = QT_AUTO_SCREEN_SCALE_FACTOR, 1
-env = QT_WAYLAND_DISABLE_WINDOWDECORATION, 1
-
 $mod1 = SUPER
 
 # window rules
@@ -102,7 +96,7 @@ windowrulev2 = idleinhibit focus, class:^(mpv|.+exe)$
 windowrulev2 = idleinhibit focus, class:^(firefox)$, title:^(.*YouTube.*)$
 windowrulev2 = idleinhibit fullscreen, class:^(firefox)$
 
-#some nice mousebinds
+# some nice mousebinds
 bindm = $mod1, mouse:272, movewindow #left click
 
 # open apps
@@ -117,6 +111,12 @@ bind = CTRL, Q, killactive,
 bind = $mod1, Q, exec, pkill nwgbar || nwgbar -c $HOME/.config/nwg-launchers/nwgbar/hyprland.css -t $HOME/.config/nwg-launchers/nwgbar/hyprland.json -o 0 -layer-shell-exclusive-zone -1
 bind = CTRL_ALT, Delete, exec, pkill nwgbar || nwgbar -c $HOME/.config/nwg-launchers/nwgbar/hyprland.css -t $HOME/.config/nwg-launchers/nwgbar/hyprland.json -o 0 -layer-shell-exclusive-zone -1
 bind = $mod1, L, exec, swaylock -f
+
+# passthrough mode (for VMs)
+bind = $mod1, F11, submap, passthrough
+submap = passthrough
+bind = $mod1, F11, submap, reset
+submap = reset
 
 # audio
 bind = , xf86audiolowervolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
