@@ -34,7 +34,8 @@ menuitem[type="radio"] .menu-iconic-icon {
 menuitem:not(.menuitem-iconic) {
 	padding-right: 18px !important;
 }
-menuitem :is(label, description)[value][crop]::before {
+menuitem :is(label, description)[value][crop]::before,
+.menu-iconic-text[value][crop]::before {
 	min-width: min-content !important;
 }
 menuitem:not([acceltext]) .menu-accel-container {
@@ -78,7 +79,8 @@ panel  {
 .permission-popup-section,
 .popup-notification-header-container,
 .popup-notification-body-container,
-.popup-notification-footer-container {
+.popup-notification-footer-container,
+.translations-panel-content {
 	padding: 0 var(--gnome-menu-padding) var(--gnome-menu-padding) !important;
 }
 :is(
@@ -108,7 +110,7 @@ panel  {
 .subviewbutton.panel-subview-footer-button:not(:only-child, #downloadsHistory) {
 	margin: 0 var(--gnome-menu-padding) !important;
 }
-.subviewbutton.panel-subview-footer-button:not(:only-child, #downloadsHistory):last-child {
+.subviewbutton.panel-subview-footer-button:not(:only-child, #downloadsHistory, #translations-panel-translate):last-child {
 	margin-bottom: var(--gnome-menu-padding) !important;
 }
 
@@ -116,7 +118,8 @@ panel  {
 #notification-popup,
 #permission-popup,
 #editBookmarkPanel,
-#downloadsPanel {
+#downloadsPanel,
+#translations-panel {
 	--gnome-menu-padding: 12px !important;
 }
 

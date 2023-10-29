@@ -12,6 +12,7 @@
 
 /* Buttons */
 menulist,
+.customizationmode-button,
 #nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton),
 .subviewbutton.panel-subview-footer,
 .panel-footer button,
@@ -42,6 +43,7 @@ button.close,
 #editBMPanel_newFolderButton,
 .unified-extensions-item-menu-button {
 	-moz-appearance: none !important;
+	align-items: center !important;
 	background: var(--gnome-button-background) !important;
 	border-radius: 6px !important;
 	border: 0 !important;
@@ -63,6 +65,7 @@ button.close,
 /* Flat Buttons */
 #nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton),
 .close-icon:not(.tab-close-button),
+.dialog-button-box button,
 button.close,
 #protections-popup-info-button,
 .permission-popup-permission-remove-button,
@@ -84,6 +87,8 @@ button.close,
 
 /* Text buttons */
 menulist,
+.customizationmode-button,
+#sidebar-switcher-target,
 .subviewbutton.panel-subview-footer,
 .panel-footer button,
 #appMenu-popup .panel-banner-item,
@@ -100,7 +105,7 @@ menulist,
 .button.connect-device,
 #item-choose button,
 #editBMPanel_newFolderButton {
-	padding: 2px 16px !important;
+	padding: 2px 9px !important;
 }
 .subviewbutton.panel-subview-footer label,
 .panel-footer button,
@@ -119,33 +124,11 @@ menulist,
 	text-align: center !important;
 }
 
-/* Drop down buttons */
-#sidebar-switcher-target,
-#viewButton {
-	padding: 2px 16px !important;
-	position: relative;
-}
-#sidebar-switcher-arrow,
-#viewButton .button-menu-dropmarker { /* Arrow position, type b */
-	transform: translate(6px, 0)
-}
-.menulist-label-box {
-	padding: 2px 26px 2px 16px !important;
-	position: relative;
-}
-.menulist-label-box:after { /* Arrow position */
-	position: absolute !important;
-	right: 8px !important;
-	top: 8px !important;
-}
-.menulist-label-box:after { /* Create arrow if icon tag no exist */
-	content: "";
-}
-
 /* Hover buttons */
 menulist:hover,
-.subviewbutton.panel-subview-footer:hover,
-.panel-footer button:hover,
+.customizationmode-button:hover,
+.subviewbutton.panel-subview-footer:not([disabled="true"]):hover,
+.panel-footer button:not([disabled="true"]):hover,
 #downloadsPanel-mainView .download-state .downloadButton:hover,
 #appMenu-popup .panel-banner-item:hover,
 #appMenu-popup .toolbaritem-combined-buttons toolbarbutton:not(#appMenu-fxa-label):not([disabled="true"]):hover,
@@ -162,8 +145,7 @@ menulist:hover .menulist-label-box,
 .tracking-protection-button:hover,
 .dialog-button:hover,
 .autocomplete-richlistitem[type="loginsFooter"]:hover,
-.dialog-button-box button:not([disabled="true"]):hover,
-.searchbar-engine-one-off-item:hover,
+.searchbar-engine-one-off-item:not([selected]):hover,
 .button.connect-device:hover,
 #editBMPanel_newFolderButton:hover {
 	outline: 0 !important;
@@ -174,6 +156,7 @@ menulist:hover .menulist-label-box,
 #nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton):not([open]):not([disabled="true"]):not([checked]):hover,
 .close-icon:not(.tab-close-button):hover,
 button.close:hover,
+.dialog-button-box button:not([disabled="true"]):hover,
 #protections-popup-info-button:hover,
 .permission-popup-permission-remove-button:hover,
 #item-choose button:hover,
@@ -184,6 +167,7 @@ button.close:hover,
 
 /* Active buttons */
 menulist[open],
+.customizationmode-button:is([open], :active),
 .subviewbutton.panel-subview-footer:active,
 .panel-footer button:active,
 #downloadsPanel-mainView .download-state .downloadButton:active,
@@ -202,8 +186,8 @@ menulist[open] .menulist-label-box,
 .tracking-protection-button:active,
 .dialog-button:active,
 .autocomplete-richlistitem[type="loginsFooter"]:active,
-.dialog-button-box button:not([disabled="true"]):active,
 .button.connect-device:active,
+.searchbar-engine-one-off-item[selected],
 #editBMPanel_newFolderButton:active {
 	background: var(--gnome-button-active-background) !important;
 }
@@ -214,6 +198,7 @@ menulist[open] .menulist-label-box,
 #nav-bar toolbarbutton:not(#urlbar-zoom-button):not(.subviewbutton):not([disabled="true"])[checked],
 .close-icon:not(.tab-close-button):active,
 button.close:active,
+.dialog-button-box button:not([disabled="true"]):active,
 #protections-popup-info-button:not(#hack):active,
 #protections-popup-info-button:not(#hack)[checked],
 .permission-popup-permission-remove-button:active,

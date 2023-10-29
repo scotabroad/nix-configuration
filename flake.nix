@@ -39,23 +39,23 @@
       lib = nixpkgs.lib;
       stdenv = nixpkgs.legacyPackages.${system}.stdenv;
       
-      make-packages = ps: attrs:
-        import ps ({
-          inherit system;
-          config.allowUnfree = true;
-          config.allowBroken = true;
-        } // attrs);
+      #make-packages = ps: attrs:
+      #  import ps ({
+      #    inherit system;
+      #    config.allowUnfree = true;
+      #    config.allowBroken = true;
+      #  } // attrs);
 
-      pkgs = make-packages nixpkgs{
-        
-        overlays = [
-          hyprland.overlays.default
-          hyprpicker.overlays.default
-          nur.overlay
-        ]
-        ++ import ./overlays { inherit pkgs; }
-        ++ import ./packages { inherit lib pkgs; };
-      };
+      #pkgs = make-packages nixpkgs{
+      #  
+      #  overlays = [
+      #    hyprland.overlays.default
+      #    hyprpicker.overlays.default
+      #    nur.overlay
+      #  ]
+      #  ++ import ./overlays { inherit pkgs; }
+      #  ++ import ./packages { inherit lib pkgs; };
+      #};
 
       #User info
       name = "liamdp";
@@ -67,9 +67,23 @@
 
       # nixos is my hostname (lame, I know)
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        inherit system pkgs;
         modules = [
-          ./theme/everforest/desktops/wayland/system.nix
+          ({config, pkgs, ...}: {
+            nixpkgs = {
+              config = {
+                allowUnfree = true;
+                allowBroken = true;
+              };
+              overlays = [
+                hyprland.overlays.default
+                hyprpicker.overlays.default
+                nur.overlay
+              ]
+              ++ import ./overlays { inherit pkgs; }
+              ++ import ./packages { inherit lib pkgs; };
+            };
+          })
+          ./theme/dracula/desktops/wayland/system.nix
           hyprland.nixosModules.default
           nixos-hardware.nixosModules.framework
           home-manager.nixosModules.home-manager
@@ -83,7 +97,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users.${name} = {
-                imports = [ ./theme/everforest/desktops/wayland/home.nix ];
+                imports = [ ./theme/dracula/desktops/wayland/home.nix ];
                 _module.args = { inherit fullName email uid; };
               };   
             };

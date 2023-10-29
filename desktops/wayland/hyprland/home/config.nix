@@ -98,6 +98,8 @@ windowrulev2 = workspace special silent, title:^(.*is sharing (your screen|a win
 windowrulev2 = idleinhibit focus, class:^(mpv|.+exe)$
 windowrulev2 = idleinhibit focus, class:^(firefox)$, title:^(.*YouTube.*)$
 windowrulev2 = idleinhibit fullscreen, class:^(firefox)$
+# all floating windows should center when first opened
+windowrulev2 = center 1, floating:1
 
 # some nice mousebinds
 bindm = $mod1, mouse:272, movewindow #left click

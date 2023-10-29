@@ -28,5 +28,5 @@
     virt-manager
     virtiofsd
   ];
-  services.spice-vdagentd.enable = true;
+  services.spice-vdagentd.enable = false; #this is for quests
 }

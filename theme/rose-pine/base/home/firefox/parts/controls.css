@@ -4,20 +4,25 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 /* Checkbox */
+input[type="checkbox"],
 checkbox:not(.treenode-checkbox) > .checkbox-check {
+	appearance: none !important;
 	border: 0 !important;
 	border-radius: 6px !important;
 	color: var(--gnome-window-color) !important;
 	height: 20px !important;
 	width: 20px !important;
 }
+input[type="checkbox"]:not(:checked),
 checkbox:not(.treenode-checkbox) > .checkbox-check:not([checked]) {
 	background-color: transparent !important;
 	box-shadow: inset 0 0 0 2px var(--gnome-trough-background);
 }
+input[type="checkbox"]:not(:checked):hover,
 checkbox:not(.treenode-checkbox) > .checkbox-check:not([checked]):hover {
 	box-shadow: inset 0 0 0 2px var(--gnome-trough-hover-background);
 }
+input[type="checkbox"]:checked,
 checkbox:not(.treenode-checkbox) > .checkbox-check[checked] {
 	background-color: var(--gnome-accent-bg) !important;
 	background-image: url("./icons/select-symbolic.svg") !important;
@@ -27,7 +32,9 @@ checkbox:not(.treenode-checkbox) > .checkbox-check[checked] {
 
 /* Radio */
 radio > .radio-check {
+	appearance: none !important;
 	border: 0 !important;
+	border-radius: 50% !important;
 	color: var(--gnome-window-color) !important;
 	height: 20px !important;
 	padding: 3px !important;
@@ -46,47 +53,24 @@ radio > .radio-check[selected] {
 	fill: white !important;
 }
 
+.radio-label {
+	margin-inline-start: 3px !important;
+}
+
 /* Switchers */
-.protections-popup-tp-switch-box {
-	padding: 0 !important;
-	-moz-box-pack: start !important;
-}
-#protections-popup-tp-switch:not([enabled])[showdotindicator]::after {
-	display: none !important;
-}
-#protections-popup-tp-switch {
-	background: var(--gnome-trough-background) !important;
+.toggle-button {
+	--toggle-height: 26px !important;
+	--toggle-width: 48px !important;
+	--toggle-border-radius: 24px !important;
+	--toggle-border-color: var(--gnome-trough-background) !important;
+	--toggle-background-color:  var(--gnome-trough-background) !important;
+	--toggle-background-color-pressed: var(--gnome-accent-bg) !important;
+	--toggle-dot-height: 22px !important;
+	--toggle-dot-background-color: #e0def4 !important;
+	--toggle-dot-background-color-on-pressed: #e0def4 !important;
+	
 	border: 0 !important;
-	border-radius: 24px !important;
-	min-width: 48px !important;
-	width: 48px !important;
-	min-height: 26px !important;
-	padding: 0 !important;
-	position: relative !important;
-	display: block !important;
-	margin: 0 !important;
 }
-#protections-popup-tp-switch:hover {
-	background-image: var(--gnome-trough-hover-background) !important;
-}
-#protections-popup-tp-switch::before {
-	position: absolute !important;
-	top: 2px;
-	left: 2px;
-	background: #e0def4 !important;
+.toggle-button::before {
 	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
-	border: 0 !important;
-	border-radius: 24px !important;
-	height: 22px !important;
-	width: 22px !important;
-	transition: left .2s ease;
-	outline: 0 !important;
-}
-#protections-popup-tp-switch[enabled] {
-	background: var(--gnome-accent-bg) !important;
-	padding-inline-start: 24px !important;
-}
-#protections-popup-tp-switch[enabled]::before {
-	background: #e0def4 !important;
-	left: 24px;
 }

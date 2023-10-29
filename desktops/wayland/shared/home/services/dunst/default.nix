@@ -4,12 +4,12 @@
   # Manage dunst
   services.dunst = {
     enable = true;
-    waylandDisplay = "wayland-0"; 
+    #waylandDisplay = "wayland-0"; 
     settings = {
       global = {
         # Where notifications show on screen
         origin = "top-center";
-        offset = "0x55";
+        offset = "0x0";
 
         progress_bar = "true";
         #transparency = 10; #This only works on Xorg!!! 
@@ -19,7 +19,11 @@
 
 	      # Disable frame
         frame_width = 0;
-        font = "UbuntuMono Nerd Font Mono 20";
+        font = "UbuntuMono Nerd Font Mono 12";
+
+        #Wayland stuff
+        layer = "overlay";
+        corner_radius = 10; #Yeah, this also affects River
       };
 
       urgency_low = {
