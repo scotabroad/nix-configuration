@@ -9,16 +9,16 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "regreet-git";
-  version = "unstable-2023-04-29";
+  version = "unstable-2023-09-28";
 
   src = fetchFromGitHub {
     owner = "rharish101";
     repo = "ReGreet";
-    rev = "ccffff87f621d9ea0d3c0f6ca64b361509d1dbc3";
-    hash = "sha256-6VdM7W8Sx+D6Lp8LijuWWvGhRS+QIW4CWn1OATGqBPc=";
+    rev = "4dfbc1983229cbc79672794985a3412146f9eacd";
+    hash = "sha256-Bfsz8SlBrep8RC2wmkXUxtTUdtv2m/0DGignZDxd5qg=";
   };
-
-  cargoHash = "sha256-eIApTeVDi/KLUGn3PwU26+MekpKRTvXnDxg2MV9pG0w=";
+  
+  cargoHash = "sha256-ZLIREWzZngdrd9zy5GpXrULZRV+scugNA+mMDjKMbMU=";
 
   buildFeatures = [ "gtk4_8" ];
 

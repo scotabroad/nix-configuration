@@ -11,6 +11,7 @@
       #  ]
       #))
       nvim-treesitter.withAllGrammars
+      vim-lexurgy
       vim-numbertoggle
       vim-parinfer
       yuck-vim

@@ -1,0 +1,60 @@
+diff --git a/syntax/lsc.vim b/syntax/lsc.vim
+index 1587b73..163c6da 100644
+--- a/syntax/lsc.vim
++++ b/syntax/lsc.vim
+@@ -1,7 +1,7 @@
+ " vim-lexurgy : vim support for the Lexurgy Sound Change Applier
+ " Copyright (C) 2021  Daman Morris <damanm72@gmail.com>
+ 
+-syntax keyword lscTodos TODO XXX FIXME NOTE
++syntax keyword lscTodos TODO XXX FIXME NOTE " fails if inside comments
+ 
+ syntax keyword lscKeywords
+     \ Class class
+@@ -17,24 +17,27 @@ syntax keyword lscKeywords
+     \ RTL Rtl rtl
+     \ Literal literal
+     \ Unchanged unchanged
+-
+-
+-syntax match lscNumber "\v\d+"
+-syntax match lscName "\v\w+"
+-syntax match lscString "\V\(\(\\\\\.\)\|\[^ \\,.=>()*[\\]{}+?/\\-_:!~@#&\n\r\]\)\+"
+-syntax match lscComment "\v^\#.*"
+-syntax match lscClassref "\v\@\w+"
+-syntax match lscChangeRule "\v^\w+(-(\w+|\d+))*"
+-syntax match lscDeclModifiers "\v\(([Ss]yllable|[Bb]efore|[Ff]irst|[Ff]loating)\)"
+-syntax match lscSpecialChars "\v\zs(\$|\*)\ze([^\w]|$)"
+-syntax match lscFeatureVar "\v\$\w+"
+-syntax match lscSyl "\V<syl>"
+-syntax match lscSpecialRule "\v[Ss]yllables"
+-
++    \ Defer defer
++  " questionable literal keyword...
++" =>, /, // should be operators?
++syntax match lscNumber "\v[^\\@-]\zs\d+" " match one or more of digits [0-9] that are not preceded by \, $, @, or -
++syntax match lscMult "\v\*\zs\d+" " should match digits [0-9] perceded by *
++"syntax match lscName "\v\w+" " match one or more of any word character [a-zA-Z0-9_]
++"syntax match lscString "\V\(\(\\\.\)\|\[^ \\,.=>()*[\]{}+?/\-_:!~@#&\n\r]\)\+" 
++" seems to match \ followed by one of any character or one of NOT  \,.=>()*[]{}+?/-_!~@#&\n\r (incl. space)
++syntax match lscComment "#.*$" " match anything between # and end of line
++syntax match lscClassref "\v\@\w+" " match @ and one or more of any word character [a-zA-Z0-9_]
++syntax match lscChangeRule "\v^\w+(-\w+)*" "Could be simplified to \v^\w+(-\w+)* as \d is in \w
++syntax match lscDeclModifiers "\v\(([Ss]yllable|[Bb]efore|[Ff]irst|[Ff]loating)\)" " matches (words)
++syntax match lscSpecialChars "\v\zs(\$|\*)\ze([^\w]|$)" " match $ or * when followed by non [a-zA-Z0-9_] or EOF
++syntax match lscFeatureVar "\v\$\w+" " match $ and one or more of any word character [a-zA-Z0-9_]
++syntax match lscSyl "\V<syl>" " matches <syl> exactly
++syntax match lscSpecialRule "\v([Ss]yllables|[Dd]eromanizer|[Rr]omanizer(-\w+)*)" " matches Syllable or syllable
+ 
+ highlight default link lscTodos Todo
+ highlight default link lscKeywords Keyword
+ highlight default link lscNumber Number
++highlight default link lscMult Number
+ highlight default link lscComment Comment
+ highlight default link lscClassref Type
+ highlight default link lscChangeRule Function
+@@ -43,3 +46,4 @@ highlight default link lscDeclModifiers Type
+ highlight default link lscSpecialChars Special
+ highlight default link lscSyl Keyword
+ highlight default link lscSpecialRule Label
++"highlight default link lscString String
