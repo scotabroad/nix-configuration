@@ -11,6 +11,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:hyprwm/Hyprland";
     };
+    hyprland-plugins = {
+      inputs.hyprland.follows = "hyprland";
+      url = "github:hyprwm/hyprland-plugins";
+    };
     hyprpicker = {
       url = "github:hyprwm/hyprpicker";
     };
@@ -29,6 +33,7 @@
     nixos-hardware, 
     nur, 
     hyprland, 
+    hyprland-plugins, 
     hyprpicker, 
     ... 
   }@inputs:
@@ -67,6 +72,7 @@
 
       # nixos is my hostname (lame, I know)
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
         modules = [
           ({config, pkgs, ...}: {
             nixpkgs = {
@@ -83,7 +89,7 @@
               ++ import ./packages { inherit lib pkgs; };
             };
           })
-          ./theme/dracula/desktops/wayland/system.nix
+          ./theme/nord/desktops/wayland/system.nix
           hyprland.nixosModules.default
           nixos-hardware.nixosModules.framework
           home-manager.nixosModules.home-manager
@@ -97,7 +103,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users.${name} = {
-                imports = [ ./theme/dracula/desktops/wayland/home.nix ];
+                imports = [ ./theme/nord/desktops/wayland/home.nix ];
                 _module.args = { inherit fullName email uid; };
               };   
             };

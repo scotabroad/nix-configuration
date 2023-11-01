@@ -35,13 +35,8 @@ input {
 general {
     gaps_in = 5
     gaps_out = 10
-    border_size = 2
     apply_sens_to_raw = false # whether to apply the sensitivity to raw input (e.g. used by games where you aim using your mouse)
     resize_on_border = true
-}
-
-decoration {
-    rounding = 10
 }
 
 animations {
