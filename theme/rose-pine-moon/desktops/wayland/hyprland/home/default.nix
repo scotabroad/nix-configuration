@@ -18,13 +18,17 @@
           #col.inactive_border = rgba(232136ff) rgba(2a273fff) rgba(2a283eff) rgba(393552ff) rgba(2a283eff) rgba(2a273fff) rgba(232136ff) 135deg
       }
       decoration {
+          col.shadow = rgba(c4a7e7ee)
+          col.shadow_inactive = rgba(232136ee)
+          drop_shadow = true
+          shadow_range = 6
+          shadow_render_power = 2
           blur {
               enabled = true
               size = 3
               passes = 1
               new_optimizations = true
           }
-          drop_shadow = false
           dim_inactive = true
           dim_strength = 0.2
           rounding = 10
