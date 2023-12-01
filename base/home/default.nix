@@ -3,8 +3,9 @@
 {
 
   imports = [
-    ./programs
     ./dconf
+    ./files
+    ./programs
     ./users
   ];
 

@@ -48,4 +48,10 @@ in {
       settings.default_session.command =  "${lib.getExe pkgs.cage} -s -- sh -c ${greetdCageScript}/bin/greetd-cage-script";
     };
   };
+
+  xdg.portal = {
+    configPackages = [
+      inputs.xdg-desktop-portal-hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland
+    ];
+  };
 }

@@ -15,13 +15,22 @@
       inputs.hyprland.follows = "hyprland";
       url = "github:hyprwm/hyprland-plugins";
     };
-    hyprpicker = {
-      url = "github:hyprwm/hyprpicker";
-    };
+    #hyprpaper = {
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #  url = "github:hyprwm/hyprpaper";
+    #};
+    #hyprpicker = {
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #  url = "github:hyprwm/hyprpicker";
+    #};
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/master";
     nur.url = "github:nix-community/NUR";
+    xdg-desktop-portal-hyprland = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:hyprwm/xdg-desktop-portal-hyprland";
+    };
   };
 
   outputs = { 
@@ -33,8 +42,8 @@
     nixos-hardware, 
     nur, 
     hyprland, 
-    hyprland-plugins, 
-    hyprpicker, 
+    hyprland-plugins,
+    xdg-desktop-portal-hyprland,
     ... 
   }@inputs:
     let
@@ -82,7 +91,8 @@
               };
               overlays = [
                 hyprland.overlays.default
-                hyprpicker.overlays.default
+                #hyprpicker.overlays.default
+                xdg-desktop-portal-hyprland.overlays.default
                 nur.overlay
               ]
               ++ import ./overlays { inherit pkgs; }
@@ -91,7 +101,7 @@
           })
           ./theme/nord/desktops/wayland/system.nix
           hyprland.nixosModules.default
-          nixos-hardware.nixosModules.framework
+          nixos-hardware.nixosModules.framework-11th-gen-intel
           home-manager.nixosModules.home-manager
           {
             #NixOS stuff
