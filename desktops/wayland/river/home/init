@@ -51,7 +51,7 @@ riverctl map-pointer normal Super BTN_MIDDLE toggle-float
 riverctl map normal Control+Alt T spawn kitty
 riverctl map normal Super R spawn "pkill nwggrid || nwggrid -c $HOME/.config/nwg-launchers/nwggrid/river.css -o -0 -layer-shell-exclusive-zone -1"
 riverctl map normal None Print spawn 'grim'
-# riverctl map normal Alt Print spawn 'grim -g $(slurp)' Invalid geometry
+riverctl map normal Alt Print spawn 'grim -g "$(slurp)"'
 
 # management
 riverctl map normal Control Q close
