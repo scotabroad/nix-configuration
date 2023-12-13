@@ -8,7 +8,7 @@ stdenv.mkDerivation rec {
     owner = "AdisonCavani";
     repo = "distro-grub-themes";
     rev = "8211cd9e987aa27fee701d73eccd843f242b56fa";
-    sha256 = "iRlHr35MB3gWJNDkmnviczxY+1SGXSyRX3Ue1mUlSmc=";
+    hash = "sha256-iRlHr35MB3gWJNDkmnviczxY+1SGXSyRX3Ue1mUlSmc=";
   };
 
   installPhase = ''

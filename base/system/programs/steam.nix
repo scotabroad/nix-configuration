@@ -1,6 +1,10 @@
 { config, inputs, pkgs, ... }:
 
-{
+{ 
+  environment.systemPackages = with pkgs; [
+    gamescope
+  ];
+
   hardware = {
     # Enable steam hardware
     steam-hardware.enable = true;

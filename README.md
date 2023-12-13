@@ -1,22 +1,9 @@
 # Nix Configuration
 
 ## About
-This is my NixOS configuration. I use a flake to manage everything. Six themes are available (Dracula, Nord, Rosé Pine, Rosé Pine Moon, Rosé Pine Dawn, and Everforest) for one desktop (Hyprland). These can easily be changed from with in the flake, which also includes user info.
+This is my NixOS configuration. I use a flake to manage everything. Four themes are available (Adwaita-Dark, Everforest, Dracula, and Nord) for one desktop (GNOME). These can easily be changed from with in the flake, which also includes user info.
 
 You are free to copy and implement this configuration however you want, so long as you update the user info inside the flake.nix and do not file issues or bug reports. This is my personal configuration, I fix whichever bugs I want on my implementation.
-
-## Desktops
-
-### Hyprland
-
-| Theme | Kitty | Nautilus | Firefox |
-| :---: | :---: | :---: | :---: |
-| Everforest | ![Image](images/kitty-everforest.png) | ![Image](images/nautilus-everforest.png) | ![Image](images/firefox-everforest.png) |
-| Rosé-Pine | ![Image](images/kitty-rose-pine.png) | ![Image](images/nautilus-rose-pine.png) | ![Image](images/firefox-rose-pine.png) |
-| Rosé-Pine-Moon | ![Image](images/kitty-rose-pine-moon.png) | ![Image](images/nautilus-rose-pine-moon.png) | ![Image](images/firefox-rose-pine-moon.png) |
-| Rosé-Pine-Dawn | ![Image](images/kitty-rose-pine-dawn.png) | ![Image](images/nautilus-rose-pine-dawn.png) | ![Image](images/firefox-rose-pine-dawn.png) |
-| Nord | ![Image](images/kitty-nord.png) | ![Image](images/nautilus-nord.png) | ![Image](images/firefox-nord.png) |
-| Dracula | ![Image](images/kitty-dracula.png) | ![Image](images/nautilus-dracula.png) | ![Image](images/firefox-dracula.png) |
 
 ## TO DO
 

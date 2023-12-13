@@ -3,7 +3,6 @@
 {
   imports = [
     ../../../../base/home
-    ./fcitx5
     ./firefox
     ./gedit
     ./kitty
@@ -22,6 +21,8 @@
     file = {
       ".config/gtk-4.0/gtk.css".source = "${pkgs.nordic}/share/themes/Nordic/gtk-4.0/gtk.css";
       ".config/gtk-4.0/gtk-dark.css".source = "${pkgs.nordic}/share/themes/Nordic/gtk-4.0/gtk-dark.css";
+      ".config/gtk-4.0/assets".source = "${pkgs.nordic}/share/themes/Nordic/assets";
+      ".config/assets".source = "${pkgs.nordic}/share/themes/Nordic/assets";
     };
     pointerCursor = {
       name = "Nordzy-cursors";

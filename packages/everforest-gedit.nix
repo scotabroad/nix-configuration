@@ -9,7 +9,7 @@ final: prev: {
       owner = "Fausto-Korpsvart";
       repo = "Everforest-GTK-Theme";
       rev = "8481714cf9ed5148694f1916ceba8fe21e14937b";
-      sha256 = "NO12ku8wnW/qMHKxi5TL/dqBxH0+cZbe+fU0iicb9JU=";
+      hash = "sha256-NO12ku8wnW/qMHKxi5TL/dqBxH0+cZbe+fU0iicb9JU=";
     };
 
     installPhase = ''

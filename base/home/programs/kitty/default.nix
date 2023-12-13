@@ -5,10 +5,11 @@
   programs.kitty = {
     enable = true;
     package = pkgs.kitty;
-    font = {
-      name = "Ubuntu Mono Nerd Font Mono";
-      package = pkgs.nerdfonts;
-    };
+    #TODO: Move font config into each theme... adwaita will not use Ubuntu
+    #font = {
+    #  name = "Ubuntu Mono Nerd Font Mono";
+    #  package = pkgs.nerdfonts;
+    #};
     #keybindings = {
     #  "ctrl+c" = "copy_or_interrupt";
     #  "ctrl+v" = "paste_from_clipboard";

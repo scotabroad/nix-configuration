@@ -39,13 +39,6 @@
   # Select internationalisation properties.
   i18n = {
     defaultLocale = "en_US.UTF-8";
-    inputMethod = {
-      enabled = "fcitx5";
-      fcitx5.addons = with pkgs; [
-        fcitx5-chinese-addons #this is needed for fcitx5-table-other
-        fcitx5-table-other
-      ];
-    };
   };
   
   # Networking Options

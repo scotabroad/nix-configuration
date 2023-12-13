@@ -3,7 +3,6 @@
 {
   imports = [
     ../../../../base/home
-    ./fcitx5
     ./firefox
     ./gedit
     ./kitty
@@ -23,6 +22,7 @@
       ".config/gtk-4.0/gtk.css".source = "${pkgs.everforest-gtk-theme}/share/themes/Everforest-Dark-BL/gtk-4.0/gtk.css";
       ".config/gtk-4.0/gtk-dark.css".source = "${pkgs.everforest-gtk-theme}/share/themes/Everforest-Dark-BL/gtk-4.0/gtk-dark.css";
       ".config/gtk-4.0/assets".source = "${pkgs.everforest-gtk-theme}/share/themes/Everforest-Dark-BL/gtk-4.0/assets";
+      ".config/assets".source = "${pkgs.everforest-gtk-theme}/share/themes/Everforest-Dark-BL/gtk-4.0/assets";
     };
     pointerCursor = {
       name = "Yaru";

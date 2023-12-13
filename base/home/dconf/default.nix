@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./gedit.nix
-    #./ibus.nix
+    #./test.nix
   ];
 }

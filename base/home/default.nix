@@ -4,7 +4,6 @@
 
   imports = [
     ./dconf
-    ./files
     ./programs
     ./users
   ];
@@ -16,25 +15,15 @@
   home = {
     packages = with pkgs; [
       # Personal
+      audacity
       discord
       element-desktop
-      epiphany
-      gnome.aisleriot
-      gnome.dconf-editor
-      gnome.eog
-      gnome.evince
-      gnome.gedit
-      gnome.gnome-calculator
-      gnome.nautilus
-      gnome.gnome-system-monitor
+      krita
       libreoffice
       octaveFull
-      qpwgraph
-      rhythmbox
       scarab
       trim-generations
       vivaldi
-      vlc
     ];
 
     # This value determines the Home Manager release that your

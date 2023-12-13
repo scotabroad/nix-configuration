@@ -9,7 +9,7 @@ final: prev: {
       owner = "arcticicestudio";
       repo = "nord-gedit";
       rev = "acadf99a71ca3cdf0d653c5daa8afc62b9f71aec";
-      sha256 = "dml2mEDm4Sk87IUCS0T1GMG9L7Je/53rFKIuJL9JSpE=";
+      hash = "sha256-dml2mEDm4Sk87IUCS0T1GMG9L7Je/53rFKIuJL9JSpE=";
     };
 
     #Install to PATH/share/gtksourceview-4/styles

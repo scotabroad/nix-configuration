@@ -9,7 +9,7 @@ final: prev: {
       owner = "dracula";
       repo = "gedit";
       rev = "ed2f4cf0eda35669e8c676e1b1e0aaaef53d3eea";
-      sha256 = "s27tJgxx05qf5TTG6sYVrnDEoXw1bW/bm6/rLh/8y0s=";
+      hash = "sha256-s27tJgxx05qf5TTG6sYVrnDEoXw1bW/bm6/rLh/8y0s=";
     };
 
     #Install to PATH/share/gtksourceview-4/styles
