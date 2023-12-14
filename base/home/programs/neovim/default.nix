@@ -14,7 +14,6 @@
       vim-lexurgy
       vim-numbertoggle
       vim-parinfer
-      yuck-vim
     ];
     vimdiffAlias = true;
   };

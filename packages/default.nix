@@ -17,5 +17,4 @@
   (import ./everforest-gedit.nix { inherit lib pkgs; })
   (import ./nord-gedit.nix { inherit lib pkgs; })
   (import ./vim-lexurgy.nix { inherit pkgs; })
-  (import ./yuck-vim.nix { inherit pkgs; })
 ]
