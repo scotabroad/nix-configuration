@@ -36,7 +36,7 @@
       core-utilities.enable = true;
       core-developer-tools.enable = false;
       evolution-data-server.enable = true;
-      games.enable = false;
+      games.enable = true;
       gnome-browser-connector.enable = true;
       tracker.enable = true;
       tracker-miners.enable = true;

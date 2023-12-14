@@ -20,7 +20,7 @@
       element-desktop
       krita
       libreoffice
-      octaveFull
+      qpwgraph
       scarab
       trim-generations
       vivaldi
