@@ -49,14 +49,19 @@
     
     xserver = {
       enable = true;
-      displayManager.gdm = {
-        enable = true;
-        autoSuspend = true;
-        autoLogin.delay = 0;
-        wayland = true;
+      displayManager = {
+        defaultSession = "gnome";
+        gdm = {
+          enable = true;
+          autoSuspend = true;
+          autoLogin.delay = 0;
+          wayland = true;
+        };
       };
-      desktopManager.gnome = {
-        enable = true;
+      desktopManager = {
+        gnome = {
+          enable = true;
+        };
       };
     };
   };
