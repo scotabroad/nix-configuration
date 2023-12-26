@@ -6,6 +6,9 @@
       excludePackages = [
       ];
     };
+    systemPackages = with pkgs.gnome; [
+      aisleriot
+    ];
   };
   
   i18n = {
