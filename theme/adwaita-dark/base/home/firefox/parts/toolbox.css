@@ -9,17 +9,14 @@
 
 /* Toolbox colors */
 #navigator-toolbox {
-	border: 0 !important;
 	background: none !important;
+	border-color: var(--gnome-toolbar-border-color) !important;
 }
 
 #PersonalToolbar, #toolbar-menubar, #TabsToolbar, findbar {
 	appearance: none !important;
 	border: 0 !important;
 	background: var(--gnome-toolbar-background) !important;
-}
-#nav-bar, #PersonalToolbar, #toolbar-menubar:not([inactive=true]), #TabsToolbar {
-	border-bottom: 1px solid var(--gnome-toolbar-border-color) !important;
 }
 findbar {
 	border-top: 1px solid var(--gnome-toolbar-border-color) !important;
@@ -152,14 +149,14 @@ findbar:-moz-window-inactive description,
 }
 
 /* OPTIONAL: Hide WebRTC indicator */
-@supports -moz-bool-pref("gnomeTheme.hideWebrtcIndicator") {
+@media (-moz-bool-pref: "gnomeTheme.hideWebrtcIndicator") {
 	#webrtcIndicator {
 		display: none;
 	}
 }
 
 /* OPTIONAL: Move Bookmarks toolbar under tabs */
-@supports -moz-bool-pref("gnomeTheme.bookmarksToolbarUnderTabs") {
+@media (-moz-bool-pref: "gnomeTheme.bookmarksToolbarUnderTabs") {
 	#navigator-toolbox #titlebar {
 		order: 2 !important;
 	}

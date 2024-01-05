@@ -16,6 +16,8 @@
 		--gnome-window-background: #434c5e; /*Nordic calls this theme_bg_color*/
 		--gnome-window-color: #d8dee9; /*Nordic calls this theme_fg_color*/
 		--gnome-view-background: #3b4252; /*Nordic calls this theme_base_color*/
+		--gnome-sidebar-background: #2b313c;
+		--gnome-secondary-sidebar-background: #393F4C;
 
 		/* Card */
 		--gnome-card-background: #3b4252;

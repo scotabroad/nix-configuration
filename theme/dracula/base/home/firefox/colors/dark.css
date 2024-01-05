@@ -16,6 +16,8 @@
 		--gnome-window-background: #1e1f29; /*Dracula calls this theme_bg_color*/
 		--gnome-window-color: #f8f8f2; /*Dracula calls this theme_fg_color*/
 		--gnome-view-background: #282a36; /*Dracula calls this theme_base_color*/
+		--gnome-sidebar-background: #1e1f29;
+		--gnome-secondary-sidebar-background: #2E2F38;
 
 		/* Card */
 		--gnome-card-background: #282a36;

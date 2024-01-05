@@ -16,6 +16,8 @@
 		--gnome-window-background: #1e2327; /*Everforest Dark BL calls this theme_bg_color*/
 		--gnome-window-color: #fff9e8; /*Everforest Dark BL calls this theme_fg_color*/
 		--gnome-view-background: #1e2327; /*Everforest Dark BL calls this theme_base_color*/
+		--gnome-sidebar-background: #1e2327;
+		--gnome-secondary-sidebar-background: #272C2E;
 
 		/* Card */
 		--gnome-card-background: #1e2327;

@@ -73,11 +73,6 @@
 	display: inherit !important;
 }
 
-/* Hide window controls when navbar is hidden */
-:root[tabsintitlebar][inFullscreen] #navigator-toolbox[style*='margin-top:'] #titlebar .titlebar-buttonbox-container {
-  top: -999px;
-}
-
 /* Remove tabsbar titlebar blank spaces */
 :root[tabsintitlebar] #TabsToolbar .titlebar-placeholder {
 	display: none !important;
@@ -113,11 +108,10 @@
 }
 
 /* Window buttons style */
-:root[tabsintitlebar] #titlebar .titlebar-button,
-:root[tabsintitlebar][inFullscreen] #window-controls toolbarbutton {
+:root[tabsintitlebar]:not([inFullscreen]) #titlebar .titlebar-button {
 	-moz-appearance: none !important;
 	padding: 0 2px !important;
-	background: var(--gnome-button-background);
+	background: var(--gnome-button-background) !important;
 	transition: background 0.3s;
 }
 
@@ -128,11 +122,17 @@
 	width: 24px !important;
 }
 
-:root[tabsintitlebar][inFullscreen] #window-controls toolbarbutton {
+:root[tabsintitlebar][inFullscreen] #titlebar .titlebar-buttonbox {
+  background: transparent !important;
 	border-radius: 6px !important;
-	height: 34px;
-	margin: 0 3px !important;
-	width: 34px;
+	height: 34px !important;
+	width: 34px !important;
+	transition: background .3s;
+}
+
+:root[tabsintitlebar][inFullscreen] #titlebar .titlebar-buttonbox:hover {
+  outline: 0 !important;
+  background: var(--gnome-hover-color) !important;
 }
 
 :root[tabsintitlebar] #titlebar toolbarbutton > .toolbarbutton-icon {
@@ -160,7 +160,7 @@
 }
 
 /* OPTIONAL: Allow draging the window from headerbar buttons */
-@supports -moz-bool-pref("gnomeTheme.dragWindowHeaderbarButtons") {
+@media (-moz-bool-pref: "gnomeTheme.dragWindowHeaderbarButtons") {
 	:root[tabsintitlebar] #nav-bar *,
 	:root[tabsintitlebar] #titlebar .titlebar-button,
 	:root[tabsintitlebar][inFullscreen] #window-controls toolbarbutton {
