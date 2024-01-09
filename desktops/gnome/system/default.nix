@@ -3,7 +3,8 @@
 {
   environment = {
     gnome = {
-      excludePackages = [
+      excludePackages = with pkgs; [
+        gnome-console
       ];
     };
     systemPackages = with pkgs.gnome; [
