@@ -11,9 +11,15 @@ in {
       command = "${pkgs.gnome.gnome-terminal}/bin/gnome-terminal";
       name = "Terminal";
     };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+      binding = "<Shift><Control>Escape";
+      command = "${pkgs.gnome.gnome-system-monitor}/bin/gnome-system-monitor";
+      name = "Task Manager";
+    };
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [
       "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+      "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
       ];
       logout = [ "<Control><Alt>Delete" "<Super>q" ];
       screensaver = [ "<Super>l" ];
