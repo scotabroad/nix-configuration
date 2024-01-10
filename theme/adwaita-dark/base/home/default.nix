@@ -4,7 +4,6 @@
   imports = [
     ../../../../base/home
     ./firefox
-    ./kitty
     ./neovim
   ];
   

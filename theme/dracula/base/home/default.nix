@@ -4,8 +4,6 @@
   imports = [
     ../../../../base/home
     ./firefox
-    ./gedit
-    ./kitty
     ./neovim
     ./qt5ct
     ./qt6ct

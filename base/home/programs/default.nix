@@ -6,7 +6,6 @@
     ./firefox
     ./fzf
     ./git
-    ./kitty
     ./neovim
     ./obs-studio
     ./zoxide
