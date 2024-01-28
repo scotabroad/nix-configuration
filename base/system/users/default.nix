@@ -11,8 +11,8 @@ in {
       "wheel"
       "video"
       "networkmanager"
-      "libvirtd" #allows users access the virsh command
-      "docker" #NOTE: this is equivalent to being root!
+      #"libvirtd" #allows users access the virsh command
+      #"docker" #NOTE: this is equivalent to being root!
     ];
     isNormalUser = true;
     shell = pkgs.zsh;

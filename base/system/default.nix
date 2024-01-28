@@ -10,7 +10,7 @@
     ./hardware-configuration.nix
     ./programs
     ./users
-    ./virtualisation.nix
+    #./virtualisation.nix
   ];
 
   # Set up Environment
