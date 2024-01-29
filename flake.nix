@@ -55,7 +55,7 @@
               ++ import ./packages { inherit lib pkgs; };
             };
           })
-          ./theme/nord/desktops/gnome/system/default.nix
+          ./theme/adwaita-dark/desktops/gnome/system/default.nix
           nixos-hardware.nixosModules.framework-11th-gen-intel
           home-manager.nixosModules.home-manager
           {
@@ -68,7 +68,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users.${name} = {
-                imports = [ ./theme/nord/desktops/gnome/home/default.nix ];
+                imports = [ ./theme/adwaita-dark/desktops/gnome/home/default.nix ];
                 _module.args = { inherit fullName email uid; };
               };   
             };
