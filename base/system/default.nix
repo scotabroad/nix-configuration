@@ -27,7 +27,6 @@
       curl
       firefox
       git
-      htop
       killall
       unzip
       wget

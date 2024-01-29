@@ -15,12 +15,9 @@
   home = {
     packages = with pkgs; [
       # Personal
-      audacity
       discord
       element-desktop
-      krita
       libreoffice
-      qpwgraph
       scarab
       trim-generations
       vivaldi
