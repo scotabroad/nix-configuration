@@ -12,6 +12,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" "mem_sleep_default=deep" "nvme.noacpi=1" ];
   boot.extraModulePackages = [ ];
+  boot.plymouth.enable = true;
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/37487499-a519-4fa0-a649-ad103517a439";
