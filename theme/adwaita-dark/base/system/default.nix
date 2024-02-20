@@ -51,6 +51,7 @@
       terminus_font
       nerdfonts
       cantarell-fonts
+      ubuntu_font_family
     ];
     fontconfig = {
       enable = true;

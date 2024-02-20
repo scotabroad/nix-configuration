@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 final: prev: {
-  gnome = prev.gnome.overrideScope' (gfinal: gprev: {
+  gnome = prev.gnome.overrideScope (gfinal: gprev: {
     gnome-terminal = gprev.gnome-terminal.overrideAttrs (oldAttrs: {
       patches = [
         (prev.fetchpatch {

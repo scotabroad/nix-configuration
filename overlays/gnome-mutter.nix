@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 final: prev: {
-  gnome = prev.gnome.overrideScope' (gfinal: gprev: {
+  gnome = prev.gnome.overrideScope (gfinal: gprev: {
     mutter = gprev.mutter.overrideAttrs (oldAttrs: {
       src = pkgs.fetchgit {
         url = "https://gitlab.gnome.org/vanvugt/mutter.git";
