@@ -18,6 +18,7 @@
       discord
       element-desktop
       libreoffice
+      qpwgraph
       scarab
       trim-generations
       vivaldi

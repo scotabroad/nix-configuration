@@ -35,6 +35,9 @@
     ];
   };
 
+  #Disable Pulseaudio
+  hardware.pulseaudio.enable = false;
+
   # Select internationalisation properties.
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -102,6 +105,18 @@
 
     # Enable the OpenSSH daemon.
     openssh.enable = true;
+
+    pipewire = {
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+      audio.enable = true;
+      jack.enable = true;
+      pulse.enable = true;
+      socketActivation = true;
+      wireplumber.enable = true;
+    };
     
     # Enable CUPS to print documents.
     printing = {
@@ -110,7 +125,7 @@
     };
   };
   
-  # Enable sound.
+  # Enable ALSA sound.
   sound = {
     enable = true;
     mediaKeys.enable = true;
