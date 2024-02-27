@@ -4,14 +4,14 @@
   virtualisation = {
     #Docker
     docker = {
-      enable = true;
+      enable = false;
       storageDriver = "btrfs";
     };
     #Virt-Manager
     libvirtd = {
       enable = true;
       qemu = {
-        package = pkgs.qemu_full;
+        package = pkgs.qemu;
         swtpm.enable = true; #Simulate a TPM
         ovmf = {
           enable = true;
@@ -28,5 +28,5 @@
     virt-manager
     virtiofsd
   ];
-  services.spice-vdagentd.enable = false; #this is for quests
+  services.spice-vdagentd.enable = false; #this is for guests
 }
