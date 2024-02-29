@@ -7,24 +7,24 @@
 
   # tty console settings
   console = {
-    # Enable Adwaita theme
+    # Enable Yaru theme
     colors = [
-      "1d1d1d"
-      "ed333b"
-      "57e389"
-      "ff7800"
-      "62a0ea"
-      "9141ac"
-      "5bc8af"
-      "deddda"
-      "9a9996"
+      "171421"
+      "c01c28"
+      "26a269"
+      "a2734c"
+      "12488b"
+      "a347ba"
+      "2aa1b3"
+      "d0cfcc"
+      "5e5c64"
       "f66151"
-      "8ff0a4"
-      "ffa348"
-      "99c1f1"
-      "dc8add"
-      "93ddc2"
-      "f6f5f4"
+      "33da7a"
+      "e9ad0c"
+      "2a7bde"
+      "c061cb"
+      "33c7de"
+      "ffffff"
     ];
     # Bigger tty font
     font = "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
@@ -32,10 +32,10 @@
 
   environment = {
     systemPackages = with pkgs; [
-      gnome.gnome-themes-extra
-      gnome.adwaita-icon-theme
+      yaru-theme
     ];
     variables = {
+      GTK_THEME = "Yaru:dark";
       #QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct"; #can only be qt5ct or qt6ct, but NOT both. qt6ct can use either, but qt5ct needs qt5ct
     };
   };
@@ -50,20 +50,19 @@
     packages = with pkgs; [
       terminus_font
       nerdfonts
-      cantarell-fonts
       ubuntu_font_family
     ];
     fontconfig = {
       enable = true;
       defaultFonts = {
         monospace = [
-          "SauceCodePro Nerd Font Mono"
+          "Ubuntu Mono Nerd Font Complete Mono"
         ];
         sansSerif = [
-          "Cantarell Regular"
+          "Ubuntu Regular"
         ];
         serif = [
-          "Cantarell Regular"
+          "Ubuntu Regular"
         ];
       };
     };

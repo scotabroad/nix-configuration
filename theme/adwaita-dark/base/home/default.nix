@@ -16,7 +16,7 @@
   home = {
     pointerCursor = {
       name = "Adwaita";
-      package = pkgs.nordzy-cursor-theme;
+      package = pkgs.gnome.adwaita-icon-theme;
       size = 24;
       gtk.enable = true;
       x11 = {

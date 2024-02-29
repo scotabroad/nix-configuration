@@ -21,8 +21,18 @@ in {
 
   dconf.settings = {
     "org/gnome/shell/extensions/user-theme".name = "Dracula";
+    "org/gnome/desktop/interface" = {
+      document-font-name = "Ubuntu 11";
+      #font-name = "Ubuntu 11";
+      monospace-font-name = "Ubuntu Mono 10";
+    };
+    "org/gnome/desktop/sound" = {
+      theme-name = "freedesktop";
+    };
     "org/gnome/desktop/wm/preferences" = {
       button-layout = myButtons;
+      titlebar-uses-system-font = true;
+      titlebar-font = "Ubuntu Bold 11";
     };
     "org/gnome/settings-daemon/plugins/xsettings" = {
       overrides = [

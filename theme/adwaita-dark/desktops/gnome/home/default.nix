@@ -20,8 +20,18 @@ in {
   ];
   dconf.settings = {
     "org/gnome/shell/extensions/user-theme".name = "Default";
+    "org/gnome/desktop/interface" = {
+      document-font-name = "Cantarell 11";
+      #font-name = "Cantarell 11";
+      monospace-font-name = "Source Code Pro 10";
+    };
+    "org/gnome/desktop/sound" = {
+      theme-name = "freedesktop";
+    };
     "org/gnome/desktop/wm/preferences" = {
       button-layout = myButtons;
+      titlebar-uses-system-font = true;
+      titlebar-font = "Cantarell Bold 11";
     };
     "org/gnome/settings-daemon/plugins/xsettings" = {
       overrides = [
