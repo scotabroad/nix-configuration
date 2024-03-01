@@ -42,8 +42,8 @@
 
   qt = {
     enable = true;
-    platformTheme = lib.mkForce "gnome";
-    style = "adwaita-dark";
+    platformTheme = lib.mkForce "gtk2";
+    style = "gtk2";
   };
 
   fonts = {
