@@ -21,7 +21,7 @@ in {
       "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
       "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
       ];
-      logout = [ "<Control><Alt>Delete" "<Super>q" ];
+      logout = [ "<Control><Alt>Delete" ]; #Conflicts with <super>q for dock
       screensaver = [ "<Super>l" ];
     };
     "org/gnome/desktop/wm/keybindings" = {
@@ -38,9 +38,9 @@ in {
       move-to-workspace-down = [];
       move-to-workspace-last = [];
       move-to-workspace-left = [ "<Alt><Super>Left" ];
-      move-to-workspace-right = [ "<Alt><Super>Right"];
+      move-to-workspace-right = [ "<Alt><Super>Right" ];
       move-to-workspace-up = [];
-      panel-run-dialog = [ "<Super>r"];
+      panel-run-dialog = [ "<Super>r" ];
       switch-input-source = [ "<Control>space" ];
       switch-input-source-backward = [ "<Shift><Control>space" ];
       switch-to-workspace-1 = [];
@@ -50,13 +50,13 @@ in {
       switch-to-workspace-right = [ "<Shift><Super>Right" ];
       switch-to-workspace-up = [];
       toggle-fullscreen = [ "<Super>f" ];
-      unmaximize = [ "<Super>Down" "<Alt>F5"];
+      unmaximize = [ "<Super>Down" "<Alt>F5" ];
     };
     "org/gnome/shell/keybindings" = {
-      screenshot = [ "Print" ];
-      screenshot-window = [ "<Super>Print" ];
-      show-screen-recording-ui = [ "<Super><Alt>Up" ];
-      show-screenshot-ui = [ "<Alt>Print" ];
+      screenshot = [ "Print" ]; #<Shift>Print is default
+      screenshot-window = [ "<Super>Print" ]; #<Alt>Print is default
+      show-screen-recording-ui = [ "<Ctrl><Shift><Alt>r" ]; #<Ctrl><Shift><Alt>R is default
+      show-screenshot-ui = [ "<Alt>Print" ]; #Print is default
     };
   };
 }
