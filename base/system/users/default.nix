@@ -11,7 +11,7 @@ in {
       "wheel"
       "video"
       "networkmanager"
-      #"libvirtd" #allows users access the virsh command
+      "libvirtd" #allows users access the virsh command
       #"docker" #NOTE: this is equivalent to being root!
     ];
     isNormalUser = true;
