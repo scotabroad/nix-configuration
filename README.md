@@ -1,7 +1,7 @@
 # Nix Configuration
 
 ## About
-This is my NixOS configuration. I use a flake to manage everything. Five themes are available (Adwaita-Dark, Dracula, Everforest, Nord, and Yaru-Dark) for one desktop (GNOME). These can easily be changed from with in the flake, which also includes user info.
+This is my NixOS configuration. I use a flake to manage everything. Two themes are available (Adwaita-Dark and Yaru-Dark) for one desktop (GNOME). These can easily be changed from with in the flake, which also includes user info.
 
 You are free to copy and implement this configuration however you want, so long as you update the user info inside the flake.nix and do not file issues or bug reports. This is my personal configuration, I fix whichever bugs I want on my implementation.
 
@@ -10,9 +10,6 @@ You are free to copy and implement this configuration however you want, so long 
 | Name | Image |
 | :---: | :---: |
 | Adwaita-Dark | ![Image](images/adwaita-dark.png) |
-| Dracula | ![Image](images/dracula.png) |
-| Everforest | ![Image](images/everforest.png) |
-| Nord | ![Image](images/nord.png) |
 | Yaru-Dark | ![Image](images/yaru-dark.png) |
 
 ## TO DO

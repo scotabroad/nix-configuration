@@ -3,8 +3,6 @@
 [
   (final: prev: {
     custom-wallpapers = prev.callPackage ./custom-wallpapers.nix {};
-    everforest-gtk-theme = prev.callPackage ./everforest-gtk.nix {};
-    everforest-icon-theme = prev.callPackage ./everforest-icons.nix {};
     framework-grub-theme = pkgs.callPackage ./framework-grub.nix {};
     nixos-grub-theme = prev.callPackage ./nixos-grub.nix {};
   })
