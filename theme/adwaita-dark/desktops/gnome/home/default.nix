@@ -20,6 +20,10 @@ in {
   ];
   dconf.settings = {
     "org/gnome/shell/extensions/user-theme".name = "Default";
+    "org/gnome/desktop/background" = {
+      picture-uri = "file://${pkgs.nixos-artwork.wallpapers.simple-blue}/share/backgrounds/nixos/nix-wallpaper-simple-blue.png";
+      picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.simple-dark-gray}/share/backgrounds/nixos/nix-wallpaper-simple-dark-gray.png";
+    };
     "org/gnome/desktop/interface" = {
       document-font-name = "Cantarell 11";
       #font-name = "Cantarell 11";
