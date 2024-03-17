@@ -17,48 +17,6 @@
       # Disable private window dark theme
       "browser.theme.dark-private-windows" = false;
     };
-    userChrome =
-      builtins.readFile ./symbolic-tab-icons.css
-    + builtins.readFile ./system-icons.css
-    
-    + builtins.readFile ./colors/light.css
-    + builtins.readFile ./colors/dark.css
-
-    + builtins.readFile ./parts/remove-white-flash.css
-    
-    + builtins.readFile ./parts/dialogs.css
-    + builtins.readFile ./parts/popups-contents.css
-    + builtins.readFile ./parts/popups.css
-
-    + builtins.readFile ./parts/icons.css
-    + builtins.readFile ./parts/controls.css
-    + builtins.readFile ./parts/entries.css
-    + builtins.readFile ./parts/buttons-fixes.css
-    + builtins.readFile ./parts/buttons.css
-
-    + builtins.readFile ./parts/toolbox.css
-    + builtins.readFile ./parts/headerbar.css
-    + builtins.readFile ./parts/csd.css
-    + builtins.readFile ./parts/urlbar.css
-    + builtins.readFile ./parts/tabsbar.css
-    + builtins.readFile ./parts/findbar.css
-    + builtins.readFile ./parts/sidebar.css
-    + builtins.readFile ./parts/lists.css
-    + ''
-    #customization-footer::before {
-            background: url(./icons/icon.svg) no-repeat;
-            background-size: contain;
-            content: "Firefox GNOME theme v122";
-            padding: 9px 9px 9px 50px;
-    }
-    '';
-
-    userContent = 
-      builtins.readFile ./colors/light.css
-    + builtins.readFile ./colors/dark.css
-    + builtins.readFile ./pages/newtab.css
-    + builtins.readFile ./pages/privatebrowsing.css
-    + builtins.readFile ./parts/video-player.css;
   };
-  home.file.".mozilla/firefox/${name}/chrome/icons".source = ./icons;
+  home.file.".mozilla/firefox/${name}/chrome".source = pkgs.firefox-gnome-theme;
 }

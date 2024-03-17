@@ -3,6 +3,8 @@
 [
   (final: prev: {
     custom-wallpapers = prev.callPackage ./custom-wallpapers.nix {};
+    firefox-gnome-theme = prev.callPackage ./firefox-gnome-theme.nix {};
+    firefox-yaru-theme = prev.callPackage ./firefox-yaru-theme.nix {};
     framework-grub-theme = pkgs.callPackage ./framework-grub.nix {};
     nixos-grub-theme = prev.callPackage ./nixos-grub.nix {};
   })
