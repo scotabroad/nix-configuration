@@ -27,7 +27,6 @@ in {
       "--color=auto"
     ];
   };
-
   programs.bash.shellAliases = lib.mkIf config.programs.bash.enable aliases;
   programs.zsh.shellAliases = lib.mkIf config.programs.zsh.enable aliases;
 }
