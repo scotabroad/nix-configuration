@@ -40,7 +40,7 @@
       unalias ls
       bindkey -r '^L'
       function hard_clear() {
-        BUFFER="clear"
+        BUFFER="${pkgs.ncurses}/bin/clear"
         zle accept-line
       }
       zle -N hard_clear
