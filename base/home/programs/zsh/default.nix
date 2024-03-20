@@ -38,6 +38,13 @@
     initExtra = ''
       export PATH=$HOME/bin:$PATH
       unalias ls
+      bindkey -r '^L'
+      function hard_clear() {
+        BUFFER="clear"
+        zle accept-line
+      }
+      zle -N hard_clear
+      bindkey '^L' hard_clear
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
     '';
   };
