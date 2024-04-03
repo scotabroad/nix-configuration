@@ -6,7 +6,7 @@ final: prev: {
       patches = [
         (prev.fetchpatch {
           url = "https://aur.archlinux.org/cgit/aur.git/plain/transparency.patch?h=gnome-terminal-transparency";
-          hash = "sha256-HgkV4+K6lG+e9hXeIVpfdv+6jZ/qgpCv1iceicHCYqs=";
+          hash = "sha256-MmiyYHxWM6uB9aA6R9ZMKcDfZe9y1z7o/7KXTzdZMY8=";
         })
       ];
     });
