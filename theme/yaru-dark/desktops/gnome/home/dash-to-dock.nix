@@ -9,6 +9,7 @@
     };
     "org/gnome/shell/extensions/dash-to-dock" = {
       activate-single-window = true;
+      always-center-icons = false;
       animate-show-apps = true;
       animation-time = 0.2;
       #Keybindings to launch nth dash app
@@ -44,6 +45,7 @@
       app-shift-hotkey-7 = ["<Shift><Super>7"];
       app-shift-hotkey-8 = ["<Shift><Super>8"];
       app-shift-hotkey-9 = ["<Shift><Super>9"];
+      application-counter-overrides-notifications = true;
       apply-custom-theme = false;
       apply-glossy-effect = true;
       autohide = true;
@@ -51,7 +53,7 @@
       background-color = "#ffffff";
       background-opacity = 0.8;
       bolt-support = true;
-      click-action = "focus-or-previews";
+      click-action = "focus-or-appspread";
       custom-background-color = false;
       customize-alphas = false;
       custom-theme-customize-running-dots = false;
@@ -59,7 +61,9 @@
       custom-theme-running-dots-border-width = 0;
       custom-theme-running-dots-color = "#ffffff";
       custom-theme-shrink = true; #Ubuntu also marked as TODO
+      dance-urgent-applications = true;
       dash-max-icon-size = 48;
+      default-windows-preview-to-open = false;
       disable-overview-on-startup = true;
       dock-fixed = true; #needs to be false to allow for intellihide, but this is not enabled by default on Ubuntu
       dock-position = "LEFT";
@@ -76,11 +80,14 @@
       isolate_locations = true;
       isolate_monitors = false;
       isolate_workspaces = false;
+      manualhide = false;
       max-alpha = 0.8;
       middle-click-action = "launch";
       min-alpha = 0.2;
       minimize-shift = true;
       multimonitor = false;
+      preferred-monitor = -2; #DEPRECATED
+      preferred-monitor-by-connector = "primary";
       pressure-threshold = 100;
       preview-size-scale = 0;
       require-pressure-to-show = true;
@@ -94,9 +101,13 @@
       shortcut = ["<Super>q"]; #what does this do?
       shortcut-text = "<Super>q";
       shortcut-timeout = 2;
-      show-apps-at-top = false;
+      show-apps-always-in-the-edge = true;
+      show-apps-at-top = false; #change this to true to look more like Unity7, even though Noble Numbat has this false
       show-delay = 0.25;
+      show-dock-urgent-notify = true;
       show-favorites = true;
+      show-icons-emblems = true;
+      show-icons-notifications-counter = true;
       show-mounts = true;
       show-mounts-network = true;
       show-mounts-only-mounted = false;

@@ -23,7 +23,7 @@ in {
     "org/gnome/shell/extensions/user-theme".name = "Yaru-dark";
     "org/gnome/desktop/background" = {
       picture-uri = "${pkgs.custom-wallpapers}/warty-final-ubuntu.png";
-      picture-uri-dark = "${pkgs.custom-wallpapers}/warty-final-ubuntu.png";
+      picture-uri-dark = "${pkgs.custom-wallpapers}/ubuntu-wallpaper-d.png";
     };
     "org/gnome/desktop/interface" = {
       document-font-name = "Ubuntu 11";
