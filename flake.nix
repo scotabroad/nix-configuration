@@ -8,8 +8,8 @@
       url = "github:nix-community/home-manager/master";
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixpkgs.url = "github:NixOS/nixpkgs/master";
-    #nixpkgs-unstable.url = "github:NixOS/nixpkgs/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/master";
     nur.url = "github:nix-community/NUR";
   };
 
@@ -19,7 +19,7 @@
     home-manager, 
     nixos-hardware, 
     nixpkgs, 
-    #nixpkgs-unstable, 
+    nixpkgs-unstable, 
     nur, 
     ... 
   }@inputs:
