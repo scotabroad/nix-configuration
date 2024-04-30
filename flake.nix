@@ -7,6 +7,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager/master";
     };
+    lexurgy.url = "github:scotabroad/lexurgy-nix-shell";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/master";
@@ -16,7 +17,8 @@
   outputs = { 
     self, 
     flake-utils, 
-    home-manager, 
+    home-manager,
+    lexurgy,
     nixos-hardware, 
     nixpkgs, 
     nixpkgs-unstable, 
@@ -54,6 +56,9 @@
               ++ import ./overlays { inherit pkgs; }
               ++ import ./packages { inherit lib pkgs; };
             };
+            environment.systemPackages = [
+              lexurgy.packages.${pkgs.system}.lexurgy
+            ];
           })
           ./theme/yaru-dark/desktops/gnome/system/default.nix
           nixos-hardware.nixosModules.framework-11th-gen-intel
