@@ -53,13 +53,13 @@ in {
   programs.gnome-terminal.profile = {
     "6df3d4ab-f391-4e2f-9917-e8dd0cfa4763" = {
       colors = {
-        backgroundColor = "rgb(23,20,33)"; 
+        backgroundColor = "rgb(255,255,255)";
         boldColor = null; #same as foreground
         cursor = {
           background = "rgb(222,221,218)";
           foreground = "rgb(29,29,29)";
         };
-        foregroundColor = "rgb(222,221,218)";
+        foregroundColor = "rgb(23,20,33)";
         highlight = {
           background = "rgb(48,48,48)";
           foreground = "rgb(192,191,188)";

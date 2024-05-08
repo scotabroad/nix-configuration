@@ -145,19 +145,17 @@ index 409c89f..c2891cc 100644
 +	--gnome-toolbar-star-button: #787878;
  	
  	/* Window */
--	--gnome-window-background: #fafafa;
-+	--gnome-window-background: #2c2c2c;
+	--gnome-window-background: #fafafa;
  	--gnome-window-color: rgba(0, 0, 0, 0.8);
--	--gnome-view-background: #ffffff;
-+	--gnome-view-background: #272727;
+	--gnome-view-background: #ffffff;
  	--gnome-view-color: var(--gnome-window-color);
  	--gnome-view-selected-background: color-mix(in srgb, var(--gnome-accent-bg) 25%, transparent);
  	--gnome-view-selected-hover-background: color-mix(in srgb, var(--gnome-accent-bg) 32%, transparent);
  	--gnome-view-selected-active-background: color-mix(in srgb, var(--gnome-accent-bg) 39%, transparent);
 -	--gnome-sidebar-background: #ebebeb;
 -	--gnome-secondary-sidebar-background: #f3f3f3;
-+	--gnome-sidebar-background: #fdfdfd;
-+	--gnome-secondary-sidebar-background: #959595;
++	--gnome-sidebar-background: #ffffff;
++	--gnome-secondary-sidebar-background: #fdfdfd;
  	
  	/* Card */
  	--gnome-card-background: #ffffff;

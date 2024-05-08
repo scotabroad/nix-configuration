@@ -20,7 +20,7 @@ in {
     ./dash-to-dock.nix
   ];
   dconf.settings = {
-    "org/gnome/shell/extensions/user-theme".name = "Yaru-dark";
+    "org/gnome/shell/extensions/user-theme".name = "Yaru";
     "org/gnome/desktop/background" = {
       picture-uri = "${pkgs.custom-wallpapers}/warty-final-ubuntu.png";
       picture-uri-dark = "${pkgs.custom-wallpapers}/ubuntu-wallpaper-d.png";

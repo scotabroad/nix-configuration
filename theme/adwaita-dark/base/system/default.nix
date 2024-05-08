@@ -9,22 +9,22 @@
   console = {
     # Enable Adwaita theme
     colors = [
-      "1d1d1d"
-      "ed333b"
-      "57e389"
-      "ff7800"
-      "62a0ea"
-      "9141ac"
-      "5bc8af"
-      "deddda"
-      "9a9996"
+      "171417"
+      "c01c28"
+      "26a269"
+      "a2734c"
+      "12488b"
+      "a347ba"
+      "2aa1b3"
+      "d0cfcc"
+      "5e5c64"
       "f66151"
-      "8ff0a4"
-      "ffa348"
-      "99c1f1"
-      "dc8add"
-      "93ddc2"
-      "f6f5f4"
+      "33d17a"
+      "e9ad0c"
+      "2a7bde"
+      "c061cb"
+      "33c7de"
+      "ffffff"
     ];
     # Bigger tty font
     font = "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";

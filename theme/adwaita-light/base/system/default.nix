@@ -7,9 +7,9 @@
 
   # tty console settings
   console = {
-    # Enable Yaru theme
+    # Enable Adwaita theme
     colors = [
-      "171421"
+      "171417"
       "c01c28"
       "26a269"
       "a2734c"
@@ -32,37 +32,38 @@
 
   environment = {
     systemPackages = with pkgs; [
-      yaru-theme
+      gnome.gnome-themes-extra
+      gnome.adwaita-icon-theme
     ];
     variables = {
-      GTK_THEME = "Yaru:dark";
       #QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct"; #can only be qt5ct or qt6ct, but NOT both. qt6ct can use either, but qt5ct needs qt5ct
     };
   };
 
   qt = {
     enable = true;
-    platformTheme = lib.mkForce "gtk2";
-    style = "gtk2";
+    platformTheme = lib.mkForce "gnome";
+    style = "adwaita";
   };
 
   fonts = {
     packages = with pkgs; [
       terminus_font
       nerdfonts
+      cantarell-fonts
       ubuntu_font_family
     ];
     fontconfig = {
       enable = true;
       defaultFonts = {
         monospace = [
-          "Ubuntu Mono Nerd Font Complete Mono"
+          "SauceCodePro Nerd Font Mono"
         ];
         sansSerif = [
-          "Ubuntu Regular"
+          "Cantarell Regular"
         ];
         serif = [
-          "Ubuntu Regular"
+          "Cantarell Regular"
         ];
       };
     };
