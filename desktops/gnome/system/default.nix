@@ -51,10 +51,13 @@
       bolt.enable = true;
     };
     
+    displayManager = {
+      defaultSession = "gnome";
+    };
+    
     xserver = {
       enable = true;
       displayManager = {
-        defaultSession = "gnome";
         gdm = {
           enable = true;
           autoSuspend = true;

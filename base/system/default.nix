@@ -132,7 +132,7 @@
   };
 
   # Set your time zone.
-  time.timeZone = "America/Phoenix";
+  time.timeZone = "America/Denver";
 
   # Enable Zram
   zramSwap = {
