@@ -4,7 +4,7 @@
   # Boot Options
   boot = {
     # Kernel
-    kernelPackages = pkgs.linuxKernel.packages.linux_6_8; # Latest
+    kernelPackages = pkgs.linuxPackages; # Latest
 
     # Boot Loader settings
     loader = {
