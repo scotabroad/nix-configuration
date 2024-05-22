@@ -8,7 +8,7 @@
     ./git
     ./neovim
     ./obs-studio
-    ./vscode
+    #./vscode
     ./zoxide
     ./zsh
   ];

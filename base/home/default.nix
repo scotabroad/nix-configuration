@@ -15,8 +15,11 @@
   home = {
     packages = with pkgs; [
       # Personal
+      chromium
       discord
+      goldendict-ng
       element-desktop
+      krita
       libreoffice
       qpwgraph
       scarab
