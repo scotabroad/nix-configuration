@@ -21,6 +21,7 @@
       element-desktop
       krita
       libreoffice
+      musescore
       qpwgraph
       scarab
       trim-generations
