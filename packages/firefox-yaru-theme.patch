@@ -1,3 +1,105 @@
+diff --git a/README.md b/README.md
+index f806054..1c79d93 100644
+--- a/README.md
++++ b/README.md
+@@ -269,11 +269,6 @@ Optional features can be enabled by creating new `boolean` preferences in `about
+ 	
+ 	> **Note:** Enabling with `gnomeTheme.hideSingleTab` will replace the single tab with a title bar.
+ 
+-- **OLED black theme** `gnomeTheme.oledBlack`
+-
+-	Change the dark theme into the black variant.
+-	
+-
+ ### Extensions support
+ 
+ We also have optional features to enable support for some Firefox extensions.
+diff --git a/theme/colors/black.css b/theme/colors/black.css
+deleted file mode 100644
+index 022648a..0000000
+--- a/theme/colors/black.css
++++ /dev/null
+@@ -1,80 +0,0 @@
+-@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+-
+-/* Variables that start with --gnome- are added by me and are assigned
+- * to elements somewhere in this code. The rest of the variables are
+- * built-in in Firefox, so you need to add an !important if you wanna
+- * override them. */
+-@media (prefers-color-scheme: dark) {	
+-	:root {
+-		/* Accent */
+-		--gnome-accent-bg: #1161CB;
+-		--gnome-accent: #1161CB;
+-
+-		--gnome-toolbar-star-button: var(--gnome-palette-yellow-1);
+-
+-		/* Window */
+-		--gnome-window-background: #000000;
+-		--gnome-window-color: white;
+-		--gnome-view-background: #1e1e1e;
+-		--gnome-sidebar-background: #303030;
+-		--gnome-secondary-sidebar-background: #2a2a2a;
+-
+-		/* Card */
+-		--gnome-card-background: rgba(255, 255, 255, 0.08);
+-		--gnome-card-shade-color: color-mix(in srgb, black 36%, transparent);
+-
+-		/* Menu */
+-		--gnome-menu-background: #303030;
+-
+-		/* Header bar */
+-		--gnome-headerbar-background: #000000;
+-		--gnome-headerbar-shade-color: rgba(0, 0, 0, 0.9);
+-
+-		/* Toolbars */
+-		--gnome-toolbar-icon-fill: #eeeeec;
+-
+-		/* Tabs */
+-		--gnome-tabbar-tab-hover-background: #252524; /* Hardcoded color */
+-		--gnome-tabbar-tab-active-background: #191918; /* Hardcoded color */
+-		--gnome-tabbar-tab-active-background-contrast: #4F4F4F; /* Hardcoded color */
+-		--gnome-tabbar-tab-active-hover-background: #272725; /* Hardcoded color */
+-		
+-		--gnome-tabbar-identity-color-green: var(--gnome-palette-green-1);
+-		--gnome-tabbar-identity-color-yellow: var(--gnome-palette-yellow-2);
+-		--gnome-tabbar-identity-color-orange: var(--gnome-palette-orange-3);
+-		--gnome-tabbar-identity-color-red: var(--gnome-palette-red-1);
+-		--gnome-tabbar-identity-color-purple: var(--gnome-palette-purple-1);
+-		
+-		/* Text color for Firefox Logo in new private tab */
+-		--gnome-private-wordmark: #FBFBFE;
+-		/* New private tab background */
+-		--gnome-private-in-content-page-background: #242424;
+-		/* Private browsing info box */
+-		--gnome-private-text-primary-color: #FBFBFE;
+-	}
+-
+-	/* Backdrop colors */
+-	:root:-moz-window-inactive {
+-		--gnome-tabbar-tab-hover-background: #2c2c2c; /* Hardcoded color */
+-		--gnome-tabbar-tab-active-background: #2e2e2e; /* Hardcoded color */
+-	}
+-
+-	/* Private colors */
+-	:root[privatebrowsingmode="temporary"] {
+-		--gnome-accent-fg: #78aeed;
+-		/* Headerbar */
+-		--gnome-headerbar-background: #252F49 !important;
+-		/* Tabs */	
+-		--gnome-tabbar-tab-hover-background: #343e56; /* Hardcoded color */
+-		--gnome-tabbar-tab-active-background: #343e56; /* Hardcoded color */
+-		--gnome-tabbar-tab-active-background-contrast: #495675; /* Hardcoded color */
+-		--gnome-tabbar-tab-active-hover-background: #414a61; /* Hardcoded color */
+-	}
+-
+-	/* Private and backdrop colors */
+-	:root[privatebrowsingmode="temporary"]:-moz-window-inactive {
+-		--gnome-headerbar-background: #252F49 !important;
+-		--gnome-tabbar-tab-hover-background: #242c3f; /* Hardcoded color */
+-		--gnome-tabbar-tab-active-background: #272e41; /* Hardcoded color */
+-	}
+-}
 diff --git a/theme/colors/dark-maia.css b/theme/colors/dark-maia.css
 deleted file mode 100644
 index 9e141e7..0000000
@@ -18,7 +120,7 @@ index 9e141e7..0000000
 -	}
 -}
 diff --git a/theme/colors/dark.css b/theme/colors/dark.css
-index 278607e..84e3e33 100644
+index 278607e..85040c0 100644
 --- a/theme/colors/dark.css
 +++ b/theme/colors/dark.css
 @@ -1,3 +1,4 @@
@@ -33,7 +135,7 @@ index 278607e..84e3e33 100644
 -		--gnome-accent-bg: var(--gnome-palette-blue-3);
 -		--gnome-accent: #78aeed;
 +		--gnome-accent-bg: #e95420; /*accent_bg_color or theme_selected_bg_color*/
-+		--gnome-accent: #e95420; /*accent_color*/ 
++		--gnome-accent: #e95420; /*accent_color*/
  
 -		--gnome-toolbar-star-button: var(--gnome-palette-yellow-1);
 +		--gnome-toolbar-star-button: #b9b9b9;
@@ -128,10 +230,10 @@ index 8b7f55f..0000000
 -	--tab-loading-fill: #16A085! important;
 -}
 diff --git a/theme/colors/light.css b/theme/colors/light.css
-index 409c89f..c2891cc 100644
+index 409c89f..24bcac8 100644
 --- a/theme/colors/light.css
 +++ b/theme/colors/light.css
-@@ -54,29 +54,29 @@
+@@ -54,11 +54,11 @@
  	--gnome-palette-dark-5: #000000;
  	
  	/* Accent */
@@ -145,10 +247,8 @@ index 409c89f..c2891cc 100644
 +	--gnome-toolbar-star-button: #787878;
  	
  	/* Window */
-	--gnome-window-background: #fafafa;
- 	--gnome-window-color: rgba(0, 0, 0, 0.8);
-	--gnome-view-background: #ffffff;
- 	--gnome-view-color: var(--gnome-window-color);
+ 	--gnome-window-background: #fafafa;
+@@ -68,15 +68,15 @@
  	--gnome-view-selected-background: color-mix(in srgb, var(--gnome-accent-bg) 25%, transparent);
  	--gnome-view-selected-hover-background: color-mix(in srgb, var(--gnome-accent-bg) 32%, transparent);
  	--gnome-view-selected-active-background: color-mix(in srgb, var(--gnome-accent-bg) 39%, transparent);
@@ -220,8 +320,20 @@ index 409c89f..c2891cc 100644
  }
  
  /* Private colors */
+diff --git a/theme/gnome-theme.css b/theme/gnome-theme.css
+index bfbbe29..66c5cae 100644
+--- a/theme/gnome-theme.css
++++ b/theme/gnome-theme.css
+@@ -24,7 +24,6 @@
+ 
+ @import "colors/light.css";
+ @import "colors/dark.css";
+-@import "colors/black.css" screen and (-moz-bool-pref: "gnomeTheme.oledBlack"); 
+ 
+ @import "system-icons.css";
+ @import "symbolic-tab-icons.css";
 diff --git a/theme/parts/toolbox.css b/theme/parts/toolbox.css
-index 0f0141e..658b7dd 100644
+index 0f0141e..704ef6d 100644
 --- a/theme/parts/toolbox.css
 +++ b/theme/parts/toolbox.css
 @@ -120,10 +120,10 @@ findbar:-moz-window-inactive description,
@@ -229,7 +341,7 @@ index 0f0141e..658b7dd 100644
  }
  .notificationbox-stack notification-message[type="warning"] {
 -	background: #ffe900 !important;	
-+	background: #b9b9b9 !important;	
++	background: #b9b9b9 !important;
  }
  .notificationbox-stack notification-message[type="critical"] {
 -	background: #d70022 !important;
