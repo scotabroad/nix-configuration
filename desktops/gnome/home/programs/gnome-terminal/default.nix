@@ -2,7 +2,7 @@
 
 {
   programs.gnome-terminal = {
-    enable = true;
+    enable = false; #Why? Because scope changed from pkgs.gnome.gnome-terminal to just pkgs.gnome-terminal
     profile = {
       "6df3d4ab-f391-4e2f-9917-e8dd0cfa4763" = {
         allowBold = true;

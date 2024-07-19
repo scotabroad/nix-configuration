@@ -125,12 +125,6 @@
     };
   };
   
-  # Enable ALSA sound.
-  sound = {
-    enable = true;
-    mediaKeys.enable = true;
-  };
-
   # Set your time zone.
   time.timeZone = "America/Denver";
 

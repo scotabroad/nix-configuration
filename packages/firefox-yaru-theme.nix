@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   pname = "firefox-yaru-theme";
-  version = "127";
+  version = "128";
 
   src = fetchFromGitHub {
     owner = "rafaelmardojai";
     repo = "firefox-gnome-theme";
     rev = "v${version}";
-    hash = "sha256-ihOVmsno400zgdgSdRRxKRzmKiydH0Vux7LtSDpCyUI=";
+    hash = "sha256-zB+Zd0V0ayKP/zg9n1MQ8J/Znwa49adylRftxuc694k=";
   };
 
   patches = [ ./firefox-yaru-theme.patch ];

@@ -1,8 +1,8 @@
 diff --git a/README.md b/README.md
-index f806054..1c79d93 100644
+index 8306426..e4d0795 100644
 --- a/README.md
 +++ b/README.md
-@@ -269,11 +269,6 @@ Optional features can be enabled by creating new `boolean` preferences in `about
+@@ -275,11 +275,6 @@ Optional features can be enabled by creating new `boolean` preferences in `about
  	
  	> **Note:** Enabling with `gnomeTheme.hideSingleTab` will replace the single tab with a title bar.
  
@@ -321,17 +321,17 @@ index 409c89f..24bcac8 100644
  
  /* Private colors */
 diff --git a/theme/gnome-theme.css b/theme/gnome-theme.css
-index bfbbe29..66c5cae 100644
+index a33f11c..e837e2d 100644
 --- a/theme/gnome-theme.css
 +++ b/theme/gnome-theme.css
-@@ -24,7 +24,6 @@
- 
+@@ -29,7 +29,6 @@
+ /* Colors */
  @import "colors/light.css";
  @import "colors/dark.css";
 -@import "colors/black.css" screen and (-moz-bool-pref: "gnomeTheme.oledBlack"); 
  
- @import "system-icons.css";
- @import "symbolic-tab-icons.css";
+ /* Optional */
+ @import "system-icons.css" screen and (-moz-bool-pref: "gnomeTheme.systemIcons");
 diff --git a/theme/parts/toolbox.css b/theme/parts/toolbox.css
 index 0f0141e..704ef6d 100644
 --- a/theme/parts/toolbox.css

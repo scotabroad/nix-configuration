@@ -15,8 +15,10 @@
   home = {
     packages = with pkgs; [
       # Personal
+      audacity
       chromium
       discord
+      drawio
       goldendict-ng
       element-desktop
       krita

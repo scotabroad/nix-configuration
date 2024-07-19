@@ -56,7 +56,7 @@ in {
         boldColor = null; #same as foreground
         cursor = { 
           background = "rgb(255,255,255)"; #bbbbbb/rgb(187,187,187)
-          foreground = "rgb(48,10,37)";
+          foreground = "rgb(48,10,36)";
         };
         foregroundColor = "rgb(255,255,255)"; #eeeeec/rgb(238,238,236)
         highlight = {

@@ -9,8 +9,9 @@
   # Additional Packages
   home = {
     packages = with pkgs; [
-      gnome.dconf-editor
-      gnome.gnome-tweaks
+      dconf-editor
+      gnome-terminal #for now
+      gnome-tweaks
     ];
   };
 }
