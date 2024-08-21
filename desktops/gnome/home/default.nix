@@ -10,7 +10,6 @@
   home = {
     packages = with pkgs; [
       dconf-editor
-      gnome-terminal #for now
       gnome-tweaks
     ];
   };

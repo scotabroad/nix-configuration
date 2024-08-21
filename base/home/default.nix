@@ -16,11 +16,10 @@
     packages = with pkgs; [
       # Personal
       audacity
-      chromium
       discord
       drawio
       goldendict-ng
-      element-desktop
+      #element-desktop Surprisingly depends on a now deprecated and insecure library, libolm
       krita
       libreoffice
       musescore
