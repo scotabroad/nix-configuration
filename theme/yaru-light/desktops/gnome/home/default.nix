@@ -82,7 +82,8 @@ in {
           "rgb(255,255,255)" #eeeeec/rgb(238,238,236)
         ];
       };
-      font = "UbuntuMono Nerd Font Mono 12";
+      #font = "UbuntuMono Nerd Font Mono 12";
+      font = "Iosevka Nerd Font Mono 12";
       transparencyPercent = 10;
     };
   };
