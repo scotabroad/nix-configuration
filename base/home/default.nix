@@ -18,7 +18,7 @@
       audacity
       discord
       drawio
-      goldendict-ng
+      #goldendict-ng #broken
       #element-desktop Surprisingly depends on a now deprecated and insecure library, libolm
       krita
       libreoffice

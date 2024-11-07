@@ -1,19 +1,18 @@
 diff --git a/README.md b/README.md
-index 8306426..e4d0795 100644
+index 976a246..8ee5136 100644
 --- a/README.md
 +++ b/README.md
-@@ -275,11 +275,6 @@ Optional features can be enabled by creating new `boolean` preferences in `about
+@@ -275,10 +275,6 @@ Optional features can be enabled by creating new `boolean` preferences in `about
  	
  	> **Note:** Enabling with `gnomeTheme.hideSingleTab` will replace the single tab with a title bar.
  
 -- **OLED black theme** `gnomeTheme.oledBlack`
 -
 -	Change the dark theme into the black variant.
--	
 -
- ### Extensions support
+ - **Show "List All Tabs" button** `gnomeTheme.allTabsButton`
  
- We also have optional features to enable support for some Firefox extensions.
+ 	Show the `List All Tabs` button all the time, like stock Firefox.
 diff --git a/theme/colors/black.css b/theme/colors/black.css
 deleted file mode 100644
 index 022648a..0000000
@@ -321,7 +320,7 @@ index 409c89f..24bcac8 100644
  
  /* Private colors */
 diff --git a/theme/gnome-theme.css b/theme/gnome-theme.css
-index a33f11c..e837e2d 100644
+index bcd009f..3990b1c 100644
 --- a/theme/gnome-theme.css
 +++ b/theme/gnome-theme.css
 @@ -29,7 +29,6 @@

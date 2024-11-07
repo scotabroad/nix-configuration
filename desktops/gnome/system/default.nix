@@ -7,7 +7,7 @@
         gnome-console
       ];
     };
-    systemPackages = with pkgs.gnome; [
+    systemPackages = with pkgs; [
       aisleriot
     ];
   };
@@ -45,8 +45,8 @@
       evolution-data-server.enable = true;
       games.enable = false;
       gnome-browser-connector.enable = true;
-      tracker.enable = true;
-      tracker-miners.enable = true;
+      localsearch.enable = true;
+      tinysparql.enable = true;
       sushi.enable = true;
     };
 
