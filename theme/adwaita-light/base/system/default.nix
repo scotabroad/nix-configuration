@@ -49,7 +49,10 @@
   fonts = {
     packages = with pkgs; [
       terminus_font
-      nerdfonts
+      nerd-fonts.iosevka
+      nerd-fonts.iosevka-term
+      nerd-fonts.sauce-code-pro
+      nerd-fonts.tinos
       cantarell-fonts
       ubuntu_font_family
     ];

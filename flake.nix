@@ -51,7 +51,7 @@
                 allowBroken = true;
               };
               overlays = [
-                nur.overlay
+                nur.overlays.default
               ]
               ++ import ./overlays { inherit pkgs; }
               ++ import ./packages { inherit lib pkgs; };

@@ -8,7 +8,7 @@ final: prev: {
       owner = "vanvugt";
       repo = "mutter";
       rev = "triple-buffering-v4-47";
-      sha256 = "sha256-JaqJvbuIAFDKJ3y/8j/7hZ+/Eqru+Mm1d3EvjfmCcug=";
+      sha256 = "sha256-1VXEzKwzrqLCZby2oWxjclA08kPhxs/Om5N17qYeglM=";
     };
   });
 }

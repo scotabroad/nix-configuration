@@ -3,7 +3,7 @@
 [
   (import ./discord.nix { inherit pkgs; })
   (import ./gnome-aisleriot.nix { inherit pkgs; })
-  #(import ./gnome-mutter.nix { inherit pkgs; }) #Version mismatch... patch is for 47.1, nixos-unstable has 47.0
-  #(import ./gnome-terminal.nix { inherit pkgs; }) #Version mismatch... patch is for 3.54.1, nixos-unstable has 3.52.2
+  #(import ./gnome-mutter.nix { inherit pkgs; }) #While patch is for 47.3, nixos-unstable has 47.3, patch manages dependencies differently than nixos-unstable
+  (import ./gnome-terminal.nix { inherit pkgs; })
   (import ./steam.nix { inherit pkgs; })
 ]

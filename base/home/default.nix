@@ -23,6 +23,7 @@
       krita
       libreoffice
       musescore
+      polyglot
       qpwgraph
       scarab
       trim-generations
