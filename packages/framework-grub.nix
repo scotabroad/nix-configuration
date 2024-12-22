@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   pname = "framework-grub-theme";
-  version = "3.1";
+  version = "3.2";
 
   src = fetchFromGitHub {
     owner = "AdisonCavani";
     repo = "distro-grub-themes";
-    rev = "8211cd9e987aa27fee701d73eccd843f242b56fa";
-    hash = "sha256-iRlHr35MB3gWJNDkmnviczxY+1SGXSyRX3Ue1mUlSmc=";
+    rev = "ebbd17419890059e371a6f2dbf2a7e76190327d4";
+    hash = "sha256-FWkDtoLMTTk2Lz4d4LkFjtV/xYyIlpwZlX5Np1QhXls=";
   };
 
   installPhase = ''

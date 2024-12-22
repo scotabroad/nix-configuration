@@ -21,7 +21,8 @@
         device = "nodev"; # "nodev" for efi only
         efiInstallAsRemovable = true; #Good for Framework BIOS updates
         efiSupport = true;
-        font = "${pkgs.nerd-fonts.ubuntu-mono}/share/fonts/truetype/NerdFonts/UbuntuMonoNerdFontMono-Regular.ttf";
+        #font = "${pkgs.grub2}/share/grub/unicode.pf2";
+        font = "${pkgs.nerd-fonts.ubuntu-mono}/share/fonts/truetype/NerdFonts/UbuntuMono/UbuntuMonoNerdFont-Regular.ttf";
         fontSize = 28;
         theme = pkgs.nixos-grub-theme;
         # splashImage = null;
