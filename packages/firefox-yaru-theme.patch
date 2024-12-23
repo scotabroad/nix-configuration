@@ -18,7 +18,7 @@ index 0035c2a..3d4c34e 100644
 +		--gnome-destructive-bg: #ab1325;
 +		--gnome-success-bg: #0e7f1f;
 +		--gnome-warning-bg: #b9b9b9;
-+		--gnome-error-bg: var(--gnome-palette-red-4); /* #0e7f17? */
++		--gnome-error-bg: #ab1325;
  
 -		--gnome-toolbar-star-button: var(--gnome-palette-yellow-1);
 +		--gnome-toolbar-star-button: #b9b9b9;
@@ -146,17 +146,6 @@ index 097a23c..b085454 100644
  	
  	/* Elements */
  	--gnome-border-color: color-mix(in srgb, currentColor 15%, transparent);
-@@ -120,8 +120,8 @@
- 	--gnome-button-checked-background: var(--gnome-button-active-background);
- 	--gnome-button-checked-hover-background: color-mix(in srgb, currentColor 35%, transparent);
- 	--gnome-button-checked-active-background: color-mix(in srgb, currentColor 40%, transparent);
--	--gnome-button-suggested-background: var(--gnome-accent-bg);
--	--gnome-button-destructive-background: color-mix(in srgb, currentColor 15%, transparent);
-+	--gnome-button-suggested-background: #11a428;
-+	--gnome-button-destructive-background: #d01728;
- 	--gnome-button-destructive-hover-background: color-mix(in srgb, currentColor 20%, transparent);
- 	--gnome-button-destructive-active-background: color-mix(in srgb, currentColor 35%, transparent);
- 
 @@ -134,10 +134,10 @@
  	/* Tabs */
  	--gnome-tabbar-background: var(--gnome-headerbar-background);
