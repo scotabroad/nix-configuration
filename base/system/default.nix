@@ -35,9 +35,6 @@
     ];
   };
 
-  #Disable Pulseaudio
-  hardware.pulseaudio.enable = false;
-
   # Select internationalisation properties.
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -123,6 +120,9 @@
       enable = true;
       drivers = [ pkgs.hplipWithPlugin ];
     };
+  
+    #Disable Pulseaudio
+    pulseaudio.enable = false;
   };
   
   # Set your time zone.

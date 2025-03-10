@@ -172,18 +172,6 @@ index 097a23c..b085454 100644
  	}
  
  	/* Private browsing colors */
-diff --git a/theme/gnome-theme.css b/theme/gnome-theme.css
-index 908c46e..42739f9 100644
---- a/theme/gnome-theme.css
-+++ b/theme/gnome-theme.css
-@@ -29,7 +29,6 @@
- /* Colors */
- @import "colors/light.css";
- @import "colors/dark.css";
--@import "colors/black.css" screen and (-moz-bool-pref: "gnomeTheme.oledBlack"); 
- 
- /* Optional */
- @import "system-icons.css" screen and (-moz-bool-pref: "gnomeTheme.systemIcons");
 diff --git a/theme/parts/toolbox.css b/theme/parts/toolbox.css
 index 10b1391..826ad55 100644
 --- a/theme/parts/toolbox.css

@@ -32,10 +32,11 @@
 
   environment = {
     systemPackages = with pkgs; [
-      gnome.gnome-themes-extra
-      gnome.adwaita-icon-theme
+      #gnome-themes-extra
+      adwaita-icon-theme
     ];
     variables = {
+      GTK_THEME = "Adwaita:dark";
       #QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct"; #can only be qt5ct or qt6ct, but NOT both. qt6ct can use either, but qt5ct needs qt5ct
     };
   };

@@ -11,7 +11,7 @@
     package = pkgs.firefox;
     profiles.${name} = {
       isDefault = true;
-      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+      extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
         user-agent-string-switcher
       ];
       search = {

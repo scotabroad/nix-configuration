@@ -83,8 +83,7 @@ in {
           "rgb(255,255,255)"
         ];
       };
-      #font = "SauceCodePro Nerd Font Mono 10";
-      font = "UbuntuMono Nerd Font Mono 12";
+      font = "SauceCodePro Nerd Font Mono 10";
       transparencyPercent = 10;
     };
   };

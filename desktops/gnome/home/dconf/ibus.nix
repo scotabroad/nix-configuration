@@ -5,6 +5,11 @@ let
   mkTuple = lib.hm.gvariant.mkTuple;
 in {
   dconf.settings = {
+    "com/github/libpinyin/ibus-libpinyin/libpinyin" = {
+      init-simplified-chinese = false;
+      lookup-table-orientation = 0;
+    };
+
     "desktop/ibus/general" = {
       engines-order = ["table:ipa-x-sampa"];
       preload-engines = ["table:ipa-x-sampa"];
@@ -30,7 +35,10 @@ in {
 
     "org/gnome/desktop/input-sources" = {
       current= (mkUint32 0);
-      sources = [(mkTuple ["xkb" "us"]) (mkTuple ["ibus" "table:ipa-x-sampa"])];
+      sources = [(mkTuple ["xkb" "us"])
+                 (mkTuple ["ibus" "table:ipa-x-sampa"])
+                 (mkTuple ["ibus" "libpinyin"])
+                ];
       xkb-options = [ "grp:alt_shift_toggle" ];
     };
   };

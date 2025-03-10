@@ -23,6 +23,7 @@
       krita
       libreoffice
       musescore
+      obsidian
       polyglot
       qpwgraph
       scarab
