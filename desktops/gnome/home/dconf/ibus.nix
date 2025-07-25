@@ -11,8 +11,8 @@ in {
     };
 
     "desktop/ibus/general" = {
-      engines-order = ["table:ipa-x-sampa"];
-      preload-engines = ["table:ipa-x-sampa"];
+      engines-order = ["table:ipa-x-sampa" "libpinyin" "rime"];
+      preload-engines = ["table:ipa-x-sampa" "libpinyin" "rime"];
       #version= "1.5.26";
     };
 
@@ -38,6 +38,7 @@ in {
       sources = [(mkTuple ["xkb" "us"])
                  (mkTuple ["ibus" "table:ipa-x-sampa"])
                  (mkTuple ["ibus" "libpinyin"])
+                 (mkTuple ["ibus" "rime"])
                 ];
       xkb-options = [ "grp:alt_shift_toggle" ];
     };

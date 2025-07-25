@@ -15,17 +15,17 @@
         user-agent-string-switcher
       ];
       search = {
-        default = "DuckDuckGo";
+        default = "ddg";
         engines = {
           "Arch Wiki" = {
             urls = [{
               template = "https://wiki.archlinux.org/index.php?search={searchTerms}";
             }];
-            iconUpdateURL = "https://wiki.archlinux.org/favicon.ico";
+            icon = "https://wiki.archlinux.org/favicon.ico";
             updateInterval = 24 * 60 * 60 * 1000; # every day
             definedAliases = [ "@aw" ];
           };
-          "DuckDuckGo".metaData.alias = "@d";
+          "ddg".metaData.alias = "@d";
           "Nix Options" = {
             urls = [{
               template = "https://search.nixos.org/options";
@@ -56,7 +56,7 @@
             urls = [{
               template = "https://nixos.wiki/index.php?search={searchTerms}";
             }];
-            iconUpdateURL = "https://nixos.wiki/favicon.png";
+            icon = "https://nixos.wiki/favicon.png";
             updateInterval = 24 * 60 * 60 * 1000; # every day
             definedAliases = [ "@nu" ];
           };
@@ -64,7 +64,7 @@
             urls = [{
               template = "https://wiki.nixos.org/w/index.php?search={searchTerms}";
             }];
-            iconUpdateURL = "https://wiki.nixos.org/favicon.ico";
+            icon = "https://wiki.nixos.org/favicon.ico";
             updateInterval = 24 * 60 * 60 * 1000; # every day
             definedAliases = [ "@nw" ];
           };
@@ -72,7 +72,7 @@
             urls = [{
               template = "https://en.wiktionary.org/wiki/{searchTerms}";
             }];
-            iconUpdateURL = "https://en.wiktionary.org/favicon.ico";
+            icon = "https://en.wiktionary.org/favicon.ico";
             updateInterval = 24 * 60 * 60 * 1000; # every day
             definedAliases = [ "@wk" ];
           };
@@ -80,14 +80,14 @@
             urls = [{
               template = "https://en.wiktionary.org/wiki/{searchTerms}#Latin";
             }];
-            iconUpdateURL = "https://en.wiktionary.org/favicon.ico";
+            icon = "https://en.wiktionary.org/favicon.ico";
             updateInterval = 24 * 60 * 60 * 1000; # every day
             definedAliases = [ "@wl" ];
           };
         };
         force = true;
         order = [
-          "DuckDuckGo"
+          "ddg"
           "Nix Packages"
           "Nix Options"
           "Official NixOS Wiki"

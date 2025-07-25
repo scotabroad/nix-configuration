@@ -1,5 +1,5 @@
 diff --git a/theme/colors/dark.css b/theme/colors/dark.css
-index 0035c2a..3d4c34e 100644
+index a1ff9c7..4823cda 100644
 --- a/theme/colors/dark.css
 +++ b/theme/colors/dark.css
 @@ -1,3 +1,4 @@
@@ -67,7 +67,7 @@ index 0035c2a..3d4c34e 100644
  		
  		--gnome-tabbar-identity-color-green: var(--gnome-palette-green-1);
  		--gnome-tabbar-identity-color-yellow: var(--gnome-palette-yellow-2);
-@@ -51,14 +52,14 @@
+@@ -54,14 +55,14 @@
  		/* Text color for Firefox Logo in new private tab */
  		--gnome-private-wordmark: #FBFBFE;
  		/* New private tab background */
@@ -81,11 +81,11 @@ index 0035c2a..3d4c34e 100644
  			--gnome-tabbar-tab-hover-background: #2c2c2c; /* Hardcoded color */
 -			--gnome-tabbar-tab-active-background: #2e2e2e; /* Hardcoded color */
 +			--gnome-tabbar-tab-active-background: #2c2c2c; /* Hardcoded color */
+ 			--gnome-sidebar-background: #2a2a2a;
+ 			--gnome-secondary-sidebar-background: #272727;
  		}
- 		
- 		/* Private browsing colors */
 diff --git a/theme/colors/light.css b/theme/colors/light.css
-index 097a23c..b085454 100644
+index 70821e3..bec896d 100644
 --- a/theme/colors/light.css
 +++ b/theme/colors/light.css
 @@ -57,18 +57,18 @@
@@ -161,7 +161,7 @@ index 097a23c..b085454 100644
  	--gnome-tabbar-tab-needs-attetion: var(--gnome-palette-blue-2);
  	
  	--gnome-tabbar-identity-color-blue: var(--gnome-accent);
-@@ -159,8 +159,8 @@
+@@ -162,8 +162,8 @@
  	/* Backdrop colors */
  	&:-moz-window-inactive {
  		--gnome-headerbar-background: var(--gnome-window-background);
@@ -169,14 +169,14 @@ index 097a23c..b085454 100644
 -		--gnome-tabbar-tab-active-background: #f0f0f0; /* Hardcoded color */
 +		--gnome-tabbar-tab-hover-background: #fafafa; /* Hardcoded color */
 +		--gnome-tabbar-tab-active-background: #fafafa; /* Hardcoded color */
+ 		--gnome-sidebar-background: #f2f2f2;
+ 		--gnome-secondary-sidebar-background: #f6f6f6;
  	}
- 
- 	/* Private browsing colors */
 diff --git a/theme/parts/toolbox.css b/theme/parts/toolbox.css
-index 10b1391..826ad55 100644
+index 404b7d1..655b6b9 100644
 --- a/theme/parts/toolbox.css
 +++ b/theme/parts/toolbox.css
-@@ -82,10 +82,10 @@ findbar:-moz-window-inactive description,
+@@ -86,10 +86,10 @@ findbar:-moz-window-inactive description,
  	margin: 0 !important;
  	
  	&[type="warning"] {

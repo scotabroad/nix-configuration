@@ -18,15 +18,17 @@
       audacity
       discord
       drawio
-      #goldendict-ng #broken
-      #element-desktop Surprisingly depends on a now deprecated and insecure library, libolm
+      goldendict-ng
+      element-desktop
+      fontforge-gtk
+      inkscape
       krita
       libreoffice
       musescore
       obsidian
-      polyglot
       qpwgraph
       scarab
+      tectonic
       trim-generations
       vivaldi
       vlc

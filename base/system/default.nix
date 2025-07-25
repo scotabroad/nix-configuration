@@ -35,6 +35,18 @@
     ];
   };
 
+  fonts.packages = with pkgs; [
+    #edu fonts are from Ministry of Education, ROC (Taiwan)
+    eduli #clerical
+    edukai #standard
+    edusong #song
+    nomnatong #Chữ Nôm
+    noto-fonts-cjk-serif
+    noto-fonts-cjk-sans
+    wqy_zenhei
+    wqy_microhei
+  ];
+
   # Select internationalisation properties.
   i18n = {
     defaultLocale = "en_US.UTF-8";

@@ -22,8 +22,8 @@ in {
   dconf.settings = {
     "org/gnome/shell/extensions/user-theme".name = "Yaru-dark";
     "org/gnome/desktop/background" = {
-      picture-uri = "${pkgs.custom-wallpapers}/warty-final-ubuntu.png";
-      picture-uri-dark = "${pkgs.custom-wallpapers}/ubuntu-wallpaper-d.png";
+      picture-uri = "${pkgs.custom-wallpapers}/aurora.webp";
+      picture-uri-dark = "${pkgs.custom-wallpapers}/aurora.webp";
     };
     "org/gnome/desktop/interface" = {
       document-font-name = "Ubuntu 11";

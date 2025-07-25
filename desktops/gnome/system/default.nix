@@ -18,7 +18,7 @@
       type = "ibus";
       ibus.engines = with pkgs.ibus-engines; [
         libpinyin
-        table
+        rime
         table-chinese
         table-others
       ];
@@ -40,7 +40,7 @@
     gnome = {
       core-os-services.enable = true;
       core-shell.enable = true;
-      core-utilities.enable = true;
+      core-apps.enable = true;
       core-developer-tools.enable = false;
       evolution-data-server.enable = true;
       games.enable = false;
@@ -54,25 +54,24 @@
       bolt.enable = true;
     };
     
+    desktopManager = {
+      gnome = {
+        enable = true;
+      };
+    };
+    
     displayManager = {
       defaultSession = "gnome";
+      gdm = {
+        enable = true;
+        autoSuspend = true;
+        autoLogin.delay = 0;
+        wayland = true;
+      };
     };
     
     xserver = {
-      enable = true;
-      displayManager = {
-        gdm = {
-          enable = true;
-          autoSuspend = true;
-          autoLogin.delay = 0;
-          wayland = true;
-        };
-      };
-      desktopManager = {
-        gnome = {
-          enable = true;
-        };
-      };
+      enable = false;
     };
   };
 }

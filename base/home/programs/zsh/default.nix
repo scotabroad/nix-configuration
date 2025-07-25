@@ -29,13 +29,14 @@
       ignoreDups = true;
       expireDuplicatesFirst = true;
       save = 5000;
-      path = "$HOME/.zsh_history";
+      share = true;
+      path = "${config.home.homeDirectory}/.zsh_history";
     };
     #Prevent interference from /etc/zshrc
     envExtra = ''
       setopt no_global_rcs
     '';
-    initExtra = ''
+    initContent = ''
       export PATH=$HOME/bin:$PATH
       unalias ls
       bindkey -r '^L'
