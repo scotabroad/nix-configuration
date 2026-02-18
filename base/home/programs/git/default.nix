@@ -4,10 +4,10 @@
   # Manage git
   programs.git = {
     enable = true;
-    aliases = {
-      yolo = "!git commit -am \"$(curl -s whatthecommit.com/index.txt)\"";
-    };
-    extraConfig = {
+    settings = {
+      alias = {
+        yolo = "!git commit -am \"$(curl -s whatthecommit.com/index.txt)\"";
+      };
       core = {
         editor = "nvim";
       };

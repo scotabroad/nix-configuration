@@ -9,6 +9,7 @@
     };
     systemPackages = with pkgs; [
       aisleriot
+      file-roller
     ];
   };
   
@@ -18,6 +19,7 @@
       type = "ibus";
       ibus.engines = with pkgs.ibus-engines; [
         libpinyin
+        table
         rime
         table-chinese
         table-others
@@ -27,7 +29,7 @@
 
   programs = {
     evince.enable = true;
-    file-roller.enable = true;
+    #file-roller.enable = true;
     firefox.nativeMessagingHosts.packages = with pkgs; [
       gnome-browser-connector
     ];

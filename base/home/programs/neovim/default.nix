@@ -5,21 +5,7 @@
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
-      #(nvim-treesitter.withPlugins (
-      #  plugins: with plugins; [
-      #    tree-sitter-nix
-      #  ]
-      #))
-      { plugin = nvim-treesitter.withAllGrammars;
-        type = "lua";
-        config = ''
-          require('nvim-treesitter.configs').setup {
-            highlight = {
-              enable = true,
-            },
-          }
-        '';
-      }
+      nvim-treesitter.withAllGrammars
       vim-lexurgy
       vim-numbertoggle
       vim-parinfer

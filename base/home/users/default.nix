@@ -6,8 +6,10 @@
     username = name;
   };
 
-  programs.git = {
-    userName = fullName;
-    userEmail = email;
+  programs.git.settings = {
+    user = {
+      name = fullName;
+      email = email;
+    };
   };
 }

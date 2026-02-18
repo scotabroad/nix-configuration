@@ -55,7 +55,7 @@
       nerd-fonts.ubuntu
       nerd-fonts.ubuntu-mono
       nerd-fonts.ubuntu-sans
-      ubuntu_font_family
+      ubuntu-classic
     ];
     fontconfig = {
       enable = true;

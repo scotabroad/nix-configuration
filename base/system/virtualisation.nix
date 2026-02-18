@@ -9,7 +9,7 @@
     };
     #Virt-Manager
     libvirtd = {
-      enable = true;
+      enable = false; #Don't really have use anymore
       qemu = {
         package = pkgs.qemu;
         swtpm.enable = true; #Simulate a TPM
@@ -25,8 +25,8 @@
   };
 
   environment.systemPackages = with pkgs; [
-    virt-manager
-    virtiofsd
+    #virt-manager
+    #virtiofsd
   ];
   services.spice-vdagentd.enable = false; #this is for guests
 }

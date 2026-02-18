@@ -18,14 +18,18 @@
       audacity
       discord
       drawio
-      goldendict-ng
       element-desktop
       fontforge-gtk
+      goldendict-ng
+      hyperrogue
       inkscape
       krita
       libreoffice
       musescore
       obsidian
+      (octaveFull.withPackages (opkgs: with opkgs; [ 
+        symbolic
+      ]))
       qpwgraph
       scarab
       tectonic

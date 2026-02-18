@@ -49,7 +49,7 @@
     font = {
       name = "Ubuntu Regular";
       size = 11;
-      package = pkgs.ubuntu_font_family;
+      package = pkgs.ubuntu-classic;
     };
 
     iconTheme = {

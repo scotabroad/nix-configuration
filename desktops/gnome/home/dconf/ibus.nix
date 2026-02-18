@@ -31,6 +31,7 @@ in {
 
     "org/freedesktop/ibus/engine/table/ipa-x-sampa" = {
       inputmode = 1;
+      lookuptablepagesize = 6;
     };
 
     "org/gnome/desktop/input-sources" = {

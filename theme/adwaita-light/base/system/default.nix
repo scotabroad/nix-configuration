@@ -55,7 +55,7 @@
       nerd-fonts.sauce-code-pro
       nerd-fonts.tinos
       cantarell-fonts
-      ubuntu_font_family
+      ubuntu-classic
     ];
     fontconfig = {
       enable = true;
