@@ -30,7 +30,7 @@
 
       config = nixpkgs.config;
       lib = nixpkgs.lib;
-      stdenv = nixpkgs.legacyPackages.${system}.stdenv;
+      stdenv = nixpkgs.legacyPackages.${stdenv.hostPlaform.system}.stdenv;
       
       #User info
       name = "liamdp";
@@ -57,7 +57,7 @@
               ++ import ./packages { inherit lib pkgs; };
             };
             environment.systemPackages = [
-              lexurgy.packages.${pkgs.system}.lexurgy
+              lexurgy.packages.${pkgs.stdenv.hostPlatform.system}.lexurgy
             ];
           })
           ./theme/yaru-dark/desktops/gnome/system/default.nix

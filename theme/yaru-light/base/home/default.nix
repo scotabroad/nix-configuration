@@ -15,11 +15,12 @@
   };
 
   home = {
-    file = {
-      ".config/gtk-4.0/gtk-dark.css".source = "${pkgs.yaru-theme}/share/themes/Yaru/gtk-4.0/gtk-dark.css";
-      ".config/gtk-4.0/assets".source = "${pkgs.yaru-theme}/share/themes/Yaru/gnome-shell";
-      ".config/assets".source = "${pkgs.yaru-theme}/share/themes/Yaru/gnome-shell";
-    };
+    #New implementation of gtk4 theming... see if it works
+    #file = {
+    #  ".config/gtk-4.0/gtk-dark.css".source = "${pkgs.yaru-theme}/share/themes/Yaru/gtk-4.0/gtk-dark.css";
+    #  ".config/gtk-4.0/assets".source = "${pkgs.yaru-theme}/share/themes/Yaru/gnome-shell";
+    #  ".config/assets".source = "${pkgs.yaru-theme}/share/themes/Yaru/gnome-shell";
+    #};
     pointerCursor = {
       name = "Yaru";
       package = pkgs.yaru-theme;
@@ -72,5 +73,7 @@
       #Please use AdwStyleManager:color-scheme instead.
       #gtk-application-prefer-dark-theme = 0;
     };
+
+    gtk4.theme = config.gtk.theme;
   };
 }

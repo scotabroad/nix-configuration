@@ -67,5 +67,7 @@
       #Please use AdwStyleManager:color-scheme instead.
       #gtk-application-prefer-dark-theme = 0;
     };
+
+    gtk4.theme = config.gtk.theme;
   };
 }

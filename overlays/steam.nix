@@ -12,10 +12,10 @@ final: prev: {
         libpulseaudio
         libvorbis
         stdenv.cc.cc.lib # Provides libstdc++.so.6
-        xorg.libXcursor
-        xorg.libXi
-        xorg.libXinerama
-        xorg.libXScrnSaver
+        libXcursor
+        libXi
+        libXinerama
+        libXScrnSaver
       ];
     #extraProfile = "export GDK_SCALE=2";
   };

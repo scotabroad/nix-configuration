@@ -13,6 +13,8 @@
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
+    withPython3 = true;
+    withRuby = true;
     extraConfig = ''
       set number
       autocmd FileType c setlocal et ts=4 sw=4

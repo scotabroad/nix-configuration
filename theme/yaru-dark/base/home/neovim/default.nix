@@ -5,6 +5,7 @@
   programs.neovim = {
     plugins = with pkgs.vimPlugins; [
       { plugin = adwaita-nvim;
+        type = "viml";
         config = ''
           let g:adwaita_transparent = v:true
           colorscheme adwaita
