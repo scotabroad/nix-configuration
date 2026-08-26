@@ -44,6 +44,21 @@
     nomnatong #Chữ Nôm
     noto-fonts-cjk-serif
     noto-fonts-cjk-sans
+    openlilylib-fonts.ross
+    openlilylib-fonts.haydn
+    openlilylib-fonts.cadence
+    openlilylib-fonts.bravura
+    openlilylib-fonts.paganini
+    openlilylib-fonts.profondo
+    openlilylib-fonts.gonville
+    openlilylib-fonts.lilyjazz
+    openlilylib-fonts.beethoven
+    openlilylib-fonts.scorlatti
+    openlilylib-fonts.improviso
+    openlilylib-fonts.lilyboulez
+    openlilylib-fonts.sebastiano
+    openlilylib-fonts.gutenberg1939
+    openlilylib-fonts.lv-goldenage
     roboto
     wqy_zenhei
     wqy_microhei

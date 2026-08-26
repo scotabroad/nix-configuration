@@ -3,7 +3,7 @@
 { 
   environment.systemPackages = with pkgs; [
     gamescope
-    lutris
+    #lutris #broken due to openldap for now
   ];
 
   hardware = {

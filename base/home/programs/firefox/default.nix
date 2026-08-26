@@ -8,6 +8,7 @@
   #Firefox config
   programs.firefox = {
     enable = true;
+    configPath = ".mozilla/firefox";
     package = pkgs.firefox;
     profiles.${name} = {
       isDefault = true;

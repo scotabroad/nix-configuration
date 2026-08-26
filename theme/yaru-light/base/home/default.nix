@@ -22,6 +22,7 @@
     #  ".config/assets".source = "${pkgs.yaru-theme}/share/themes/Yaru/gnome-shell";
     #};
     pointerCursor = {
+      enable = true;
       name = "Yaru";
       package = pkgs.yaru-theme;
       size = 24;

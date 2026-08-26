@@ -6,6 +6,7 @@
     ./firefox
     ./fzf
     ./git
+    ./lilypond
     ./neovim
     ./obs-studio
     #./vscode

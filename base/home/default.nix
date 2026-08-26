@@ -21,6 +21,7 @@
       element-desktop
       fontforge-gtk
       goldendict-ng
+      helio-workstation
       hyperrogue
       inkscape
       krita

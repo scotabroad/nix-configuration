@@ -68,7 +68,6 @@
         enable = true;
         autoSuspend = true;
         autoLogin.delay = 0;
-        wayland = true;
       };
     };
     
