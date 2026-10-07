@@ -55,5 +55,8 @@
 
     #Disable bookmarks in toolbar
     "browser.toolbars.bookmarks.visibility" = "never";
+
+    #Undo new design
+    "browser.nova.enable" = false;
   };
 }
